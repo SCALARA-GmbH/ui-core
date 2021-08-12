@@ -1,0 +1,11 @@
+version: '2.3'
+
+services:
+  ui-core:
+    build:
+      context: core
+    command: ["http-server", "/usr/storybook", "--silent", "--proxy", "http://localhost:8080?"]
+    environment:
+      - PORT=6006
+    ports:
+      - 6006:6006

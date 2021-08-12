@@ -1,0 +1,45 @@
+import { withKnobs } from '@storybook/addon-knobs';
+import * as React from 'react';
+
+import { Button, IconButton, useTheme } from '../..';
+import Grid from '../Grid';
+import useGridItemClass from '../GridItemHook';
+
+export default {
+  title: 'Elements/Controls/IconButton',
+  component: IconButton,
+  decorators: [withKnobs],
+};
+
+export const IconButtonStorySBS = (): JSX.Element => {
+  const theme = useTheme();
+  return (
+    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <IconButton label={'Button'} iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} />
+        <IconButton iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <IconButton label={'Button'} iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} disabled />
+        <IconButton iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} disabled />
+      </div>
+    </div>
+  );
+};
+IconButtonStorySBS.storyName = 'Overview';
+
+export const GridStory = (): JSX.Element => {
+  const classGridItem = useGridItemClass({ xs: { start: '2', end: 'span 7' } });
+  return (
+    <Grid xs={12} style={{ margin: 4 }}>
+      <IconButton
+        label={'Button'}
+        iconName={'close'}
+        style={{ margin: 8 }}
+        tooltip={'Tooltip'}
+        className={classGridItem}
+      />
+    </Grid>
+  );
+};
+GridStory.storyName = 'In Grid';

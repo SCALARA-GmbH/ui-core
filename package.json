@@ -1,0 +1,16 @@
+{
+  "name": "scalara",
+  "version": "1.0.0",
+  "author": "scalara-team",
+  "license": "GPL",
+  "description": "SCALARA GmbH ui library mostly based on Material UI",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "prepare": "husky install",
+    "pre-commit": "lerna run --concurrency 1 --stream pre-commit"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lerna": "^3.20.2"
+  }
+}

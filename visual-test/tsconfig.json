@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "incremental": true,
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "include": [
+    "./types",
+    "./utils/*.ts",
+    "./test/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

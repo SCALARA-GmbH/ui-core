@@ -1,0 +1,10 @@
+coverage:
+  status:
+    project:
+      uiCore:
+        target: auto
+        threshold: 1%
+        flags:
+          - ui-core
+        paths:
+          - core

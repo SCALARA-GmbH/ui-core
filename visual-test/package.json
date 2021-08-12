@@ -1,0 +1,44 @@
+{
+  "name": "ui-core-test",
+  "version": "1.0.0",
+  "description": "visual regression and interaction tests for uiCore stories",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test:basics": "playwright test ./test/basics/*.spec.ts --config=./test/basics/playwright.config.ts",
+    "test:components:interactions": "playwright test test/components/*.spec.ts --config=./test/components/playwright.config.ts",
+    "test:elements:interactions": "playwright test test/elements/*.spec.ts --config=./test/elements/playwright.config.ts",
+    "test:generate": "playwright codegen http://localhost:6006",
+    "lint": "./node_modules/.bin/eslint --config .eslintrc.js",
+    "tsc": "./node_modules/.bin/tsc --pretty --noEmit",
+    "pre-commit": "lint-staged",
+    "wait-on": "wait-on",
+    "adaptFixtures": "node -r tsconfig-paths/register -r ts-node/register ./utils/adaptFixtures.ts"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json}": "eslint"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.12.3",
+    "lint-staged": "^11.0.1",
+    "playwright": "^1.12.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "wait-on": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "eslint": ">=6.0.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-semistandard": "15.0.1",
+    "eslint-config-standard": ">=14.1.0",
+    "eslint-plugin-import": ">=2.18.0",
+    "eslint-plugin-node": ">=9.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": ">=4.2.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "prettier": "^2.2.1"
+  }
+}

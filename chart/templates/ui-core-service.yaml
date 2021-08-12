@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-core-service
+  namespace: {{.Values.namespace}}
+spec:
+  selector:
+    name: ui-core
+
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: 6006
+      protocol: TCP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-core-deployment
+  namespace: {{.Values.namespace}}
+  labels:
+    name: ui-core
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: ui-core
+  template:
+    metadata:
+      name: ui-core-template
+      labels:
+        name: ui-core
+    spec:
+      containers:
+        - name: ui-core
+          image: {{ .Values.uiCore.image }}
+          imagePullPolicy: Always
+          command: ["http-server", "/usr/storybook", "--silent", "--proxy", "http://localhost:8080?"]
+          ports:
+            - containerPort: 6006
+
+          env:
+            - name: PORT
+              value: '6006'
+
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 6006
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 6006
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            successThreshold: 2
+            timeoutSeconds: 2

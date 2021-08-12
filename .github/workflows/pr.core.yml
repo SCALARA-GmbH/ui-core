@@ -1,0 +1,70 @@
+name: pull-request-core
+on:
+  pull_request:
+    paths:
+      - 'core/**'
+      - 'visual-test/**'
+      - '.github/workflows/pr.core.yml'
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.3'
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn type-check
+      - run: yarn lint
+      - run: yarn test
+
+  visual-test:
+    defaults:
+      run:
+        working-directory: visual-test
+    runs-on: self-hosted
+    needs: [unit-test]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.3'
+          cache: 'yarn'
+
+      - run: docker rm -f $(docker ps -aq) || echo 'no containers to remove'
+      - run: docker volume rm $(docker volume ls -q) || echo 'no volumes to remove'
+      - run: docker-compose down -v
+      - run: docker-compose pull
+      - run: docker-compose up --build -d ui-core
+
+      - run: yarn install
+      - name: lint
+        run: |
+          yarn lint
+      - name: wait on storybook
+        timeout-minutes: 5
+        run: |
+          yarn run wait-on "http-get://localhost:6006"
+      - name: test basics
+        run: |
+          yarn test:basics
+      - name: test component interactions
+        run: |
+          yarn test:components:interactions
+      - name: test elements interactions
+        run: |
+          yarn test:elements:interactions
+      - name: Dump docker logs on failure
+        if: failure()
+        uses: jwalton/gh-docker-logs@v1
+      - name: upload visual regression on failure
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: visual-regression
+          path: ./visual-test/test-results/

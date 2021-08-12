@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "baseUrl": "./"
+  },
+  "include": ["./.eslintrc.js", "./ava.config.js"]
+}

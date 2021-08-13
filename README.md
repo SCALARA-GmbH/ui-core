@@ -1,4 +1,4 @@
-# SCALARA Mono Repository <!-- omit in toc -->
+# SCALARA UI Repository <!-- omit in toc -->
 
 - [Git Flow](#git-flow)
   - [Master Branch](#master-branch)

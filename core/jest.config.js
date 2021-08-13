@@ -1,4 +1,8 @@
 module.exports = {
+  collectCoverageFrom: [
+    'src/components/**/*.(ts|tsx|js|jsx)',
+    'src/**/{!(stories),}.(ts|tsx|js|jsx)'
+  ],
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testMatch: ['**/?(*.)+(spec).ts?(x)'],

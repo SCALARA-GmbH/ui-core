@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render } from '../../../testUtils/render';
+import { render } from '../../../test-utils/render';
 import { GridItem } from '../../index';
 
 import Grid from './Grid';
@@ -12,7 +12,7 @@ describe('<Grid />', () => {
         <GridItem>
           <div>test</div>
         </GridItem>
-      </Grid>,
+      </Grid>
     );
     expect(container).toBeInTheDocument();
   });
@@ -23,7 +23,7 @@ describe('<Grid />', () => {
         <GridItem>
           <div>test</div>
         </GridItem>
-      </Grid>,
+      </Grid>
     );
     expect(console.warn).not.toHaveBeenCalled();
   });
@@ -34,7 +34,7 @@ describe('<Grid />', () => {
         <GridItem>
           <div>test</div>
         </GridItem>
-      </Grid>,
+      </Grid>
     );
     expect(console.error).not.toHaveBeenCalled();
   });

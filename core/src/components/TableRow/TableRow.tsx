@@ -12,7 +12,9 @@ import { useStyles } from './styles';
 export interface TableRowProps {
   actionIconButtonProps?: IconButtonProps;
   className?: string;
-  children?: React.ReactElement<TableCellProps> | React.ReactElement<TableCellProps>[];
+  children?:
+    | React.ReactElement<TableCellProps>
+    | React.ReactElement<TableCellProps>[];
   onClick?: () => void;
   style?: React.CSSProperties;
   testId?: string;
@@ -24,7 +26,7 @@ const TableRow: React.FunctionComponent<TableRowProps> = ({
   className = '',
   onClick,
   style = {},
-  testId = '',
+  testId = ''
 }) => {
   const classes = useStyles({ onClick });
   const theme = useTheme();
@@ -32,20 +34,32 @@ const TableRow: React.FunctionComponent<TableRowProps> = ({
 
   return (
     <div
-      className={classNames(classes.root, { [classes.clickable]: !!onClick }, className)}
+      className={classNames(
+        classes.root,
+        { [classes.clickable]: !!onClick },
+        className
+      )}
       data-testid={testId}
       style={style}
       onClick={onClick}
     >
       <Grid justifyContent={'stretch'} className={classes.grid}>
         {React.Children.map(children, (child) => {
-          if (isMobile && (child as React.ReactElement<TableCellProps>)?.props.hideOnMobile) {
+          if (
+            isMobile &&
+            (child as React.ReactElement<TableCellProps>)?.props.hideOnMobile
+          ) {
             return null;
           }
           return child;
         })}
       </Grid>
-      {actionIconButtonProps && <IconButton testId={`${testId}-action-icon-button`} {...actionIconButtonProps} />}
+      {actionIconButtonProps && (
+        <IconButton
+          testId={`${testId}-action-icon-button`}
+          {...actionIconButtonProps}
+        />
+      )}
     </div>
   );
 };

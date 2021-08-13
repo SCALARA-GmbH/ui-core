@@ -10,14 +10,18 @@ import { Popover } from './Popover';
 export default {
   title: 'Components/Popover',
   component: Popover,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 export const PopoverStory = (): JSX.Element => {
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [anchorElInfo, setAnchorElInfo] = React.useState<null | HTMLElement>(null);
-  const [anchorElMin, setAnchorElMin] = React.useState<null | HTMLElement>(null);
+  const [anchorElInfo, setAnchorElInfo] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElMin, setAnchorElMin] = React.useState<null | HTMLElement>(
+    null
+  );
 
   const ref1 = React.useRef(null);
   const ref2 = React.useRef(null);
@@ -45,21 +49,48 @@ export const PopoverStory = (): JSX.Element => {
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
         flexDirection: 'column',
-        padding: '12px',
+        padding: '12px'
       }}
     >
-      <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', padding: '12px' }} ref={ref1}>
-        <Button label={'Toggle neutral Popover'} variant={'contained'} type="button" onClick={handleClick} />
+      <div
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          padding: '12px'
+        }}
+        ref={ref1}
+      >
+        <Button
+          label={'Toggle neutral Popover'}
+          variant={'contained'}
+          type="button"
+          onClick={handleClick}
+        />
         <Popover open={open} anchorElement={anchorEl}>
-          Mit SCALARA wollen wir Hausverwaltern eine umfangreiche, moderne, aber erschwingliche Software zur Verfügung
-          stellen, damit sie die Vorteile der Digitalisierung nutzen können. Das Team von SCALARA kombiniert Erfahrung
-          aus dem Verwalteralltag mit dem IT-Know How eines innovativen Tech- Unternehmens. Dabei haben wir immer die
-          Bedürfnisse aller Beteiligten der Immobilienverwaltung im Blick: Durch ihre Verbindung und neu gewonnene
-          Transparenz soll Vertrauen untereinander geschaffen werden.
+          Mit SCALARA wollen wir Hausverwaltern eine umfangreiche, moderne, aber
+          erschwingliche Software zur Verfügung stellen, damit sie die Vorteile
+          der Digitalisierung nutzen können. Das Team von SCALARA kombiniert
+          Erfahrung aus dem Verwalteralltag mit dem IT-Know How eines
+          innovativen Tech- Unternehmens. Dabei haben wir immer die Bedürfnisse
+          aller Beteiligten der Immobilienverwaltung im Blick: Durch ihre
+          Verbindung und neu gewonnene Transparenz soll Vertrauen untereinander
+          geschaffen werden.
         </Popover>
       </div>
-      <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', padding: '12px' }} ref={ref2}>
-        <Button label={'Toggle info Popover'} variant={'contained'} type="button" onClick={handleClickInfo} />
+      <div
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          padding: '12px'
+        }}
+        ref={ref2}
+      >
+        <Button
+          label={'Toggle info Popover'}
+          variant={'contained'}
+          type="button"
+          onClick={handleClickInfo}
+        />
         <Popover open={openInfo} anchorElement={anchorElInfo} variant={'info'}>
           <>
             Schalten Sie zunächst Ihr
@@ -67,8 +98,20 @@ export const PopoverStory = (): JSX.Element => {
           </>
         </Popover>
       </div>
-      <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', padding: '12px' }} ref={ref3}>
-        <Button label={'Toggle small Popover'} variant={'contained'} type="button" onClick={handleClickMin} />
+      <div
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          padding: '12px'
+        }}
+        ref={ref3}
+      >
+        <Button
+          label={'Toggle small Popover'}
+          variant={'contained'}
+          type="button"
+          onClick={handleClickMin}
+        />
         <Popover open={openMin} anchorElement={anchorElMin} variant={'info'}>
           SCALARA
         </Popover>
@@ -78,7 +121,12 @@ export const PopoverStory = (): JSX.Element => {
 };
 PopoverStory.storyName = 'Overview';
 
-const Labels = ['Accounts', 'Transactions', 'Business plan', 'Fiscal year'] as const;
+const Labels = [
+  'Accounts',
+  'Transactions',
+  'Business plan',
+  'Fiscal year'
+] as const;
 type LabelTypes = typeof Labels;
 export type Label = LabelTypes[number];
 
@@ -108,28 +156,41 @@ export const PopoverVisualTestStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'row'
       }}
     >
       <div
-        style={{ backgroundColor: theme.colors.background.primary, display: 'flex', width: '640px', padding: '12px' }}
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          width: '640px',
+          padding: '12px'
+        }}
         ref={ref1}
       >
         <Typography>long text</Typography>
 
         {anchorEl1 && (
           <Popover open anchorElement={anchorEl1} testId={'visual'}>
-            Mit SCALARA wollen wir Hausverwaltern eine umfangreiche, moderne, aber erschwingliche Software zur Verfügung
-            stellen, damit sie die Vorteile der Digitalisierung nutzen können. Das Team von SCALARA kombiniert Erfahrung
-            aus dem Verwalteralltag mit dem IT-Know How eines innovativen Tech- Unternehmens. Dabei haben wir immer die
-            Bedürfnisse aller Beteiligten der Immobilienverwaltung im Blick: Durch ihre Verbindung und neu gewonnene
-            Transparenz soll Vertrauen untereinander geschaffen werden.
+            Mit SCALARA wollen wir Hausverwaltern eine umfangreiche, moderne,
+            aber erschwingliche Software zur Verfügung stellen, damit sie die
+            Vorteile der Digitalisierung nutzen können. Das Team von SCALARA
+            kombiniert Erfahrung aus dem Verwalteralltag mit dem IT-Know How
+            eines innovativen Tech- Unternehmens. Dabei haben wir immer die
+            Bedürfnisse aller Beteiligten der Immobilienverwaltung im Blick:
+            Durch ihre Verbindung und neu gewonnene Transparenz soll Vertrauen
+            untereinander geschaffen werden.
           </Popover>
         )}
       </div>
 
       <div
-        style={{ backgroundColor: theme.colors.background.primary, display: 'flex', width: '640px', padding: '12px' }}
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          width: '640px',
+          padding: '12px'
+        }}
         ref={ref2}
       >
         <Typography>info variant</Typography>
@@ -144,7 +205,12 @@ export const PopoverVisualTestStory = (): JSX.Element => {
       </div>
 
       <div
-        style={{ backgroundColor: theme.colors.background.primary, display: 'flex', width: '640px', padding: '12px' }}
+        style={{
+          backgroundColor: theme.colors.background.primary,
+          display: 'flex',
+          width: '640px',
+          padding: '12px'
+        }}
         ref={ref3}
       >
         <Typography>small text</Typography>

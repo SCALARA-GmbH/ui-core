@@ -8,20 +8,46 @@ import useGridItemClass from '../GridItemHook';
 export default {
   title: 'Elements/Controls/IconButton',
   component: IconButton,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 export const IconButtonStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', flexDirection: 'column' }}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <IconButton label={'Button'} iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} />
-        <IconButton iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} />
+        <IconButton
+          label={'Button'}
+          iconName={'close'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+        />
+        <IconButton
+          iconName={'close'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+        />
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <IconButton label={'Button'} iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} disabled />
-        <IconButton iconName={'close'} style={{ margin: 8 }} tooltip={'Tooltip'} disabled />
+        <IconButton
+          label={'Button'}
+          iconName={'close'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+          disabled
+        />
+        <IconButton
+          iconName={'close'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+          disabled
+        />
       </div>
     </div>
   );

@@ -15,13 +15,17 @@ const useStyles = makeStylesWithProps<{ width?: number }>(
     root: {
       width: ({ width }) => width && `${width}%`,
       padding: spacing(2.5, 1.5, 1, 1.5),
-      borderBottom: `1px solid ${colors.border.main}`,
-    },
+      borderBottom: `1px solid ${colors.border.main}`
+    }
   }),
-  { name: 'SCA__DataTableHeadCell' },
+  { name: 'SCA__DataTableHeadCell' }
 );
 
-const DataTableHeadCell: React.FunctionComponent<Props> = ({ text, align, widthPercentage }) => {
+const DataTableHeadCell: React.FunctionComponent<Props> = ({
+  text,
+  align,
+  widthPercentage
+}) => {
   const classes = useStyles({ width: widthPercentage });
   return (
     <TableCell className={classes.root} component={'th'} align={align}>

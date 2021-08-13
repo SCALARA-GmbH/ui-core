@@ -5,6 +5,6 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   moduleNameMapper: {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
-    '^testUtils/(.*)': '<rootDir>/testUtils/$1',
-  },
+    '^test-utils/(.*)': '<rootDir>/test-utils/$1'
+  }
 };

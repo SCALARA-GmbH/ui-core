@@ -4,7 +4,7 @@ import {
   InputBaseComponentProps,
   ListItemText,
   MenuItem,
-  Select as MuiSelect,
+  Select as MuiSelect
 } from '@material-ui/core';
 import classNames from 'classnames';
 import * as React from 'react';
@@ -19,9 +19,9 @@ const iconUseStyle = makeStyles(() =>
   createStyles({
     root: {
       position: 'relative',
-      marginTop: '5px',
-    },
-  }),
+      marginTop: '5px'
+    }
+  })
 );
 
 export interface SelectOption {
@@ -42,7 +42,9 @@ export interface SelectProps {
   label?: string;
   name?: string;
   onBlur?: () => void;
-  onChange?: (event: React.ChangeEvent<{ name?: string; value: string }>) => void;
+  onChange?: (
+    event: React.ChangeEvent<{ name?: string; value: string }>
+  ) => void;
   options: SelectOption[];
   required?: HTMLInputElement['required'];
   style?: React.CSSProperties;
@@ -66,7 +68,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
   testId,
   onBlur,
   onChange,
-  value,
+  value
 }) => {
   const [internalError, setInternalError] = React.useState<boolean>(error);
   const classes = useStyles({ color, disabled });
@@ -76,13 +78,15 @@ const Select: React.FunctionComponent<SelectProps> = ({
     <div className={className}>
       <div
         className={classNames(classes.inputWrapper, {
-          [classes.inputWrapperFilled]: value !== undefined && value !== null,
+          [classes.inputWrapperFilled]: value !== undefined && value !== null
         })}
         style={style}
       >
         <Typography
           testId={`${testId}-label`}
-          className={classNames(classes.label, { [classes.labelElevated]: isElevated })}
+          className={classNames(classes.label, {
+            [classes.labelElevated]: isElevated
+          })}
           variant={isElevated ? 'c3' : 'c1'}
         >
           {required ? `${label}*` : label}
@@ -106,22 +110,26 @@ const Select: React.FunctionComponent<SelectProps> = ({
             if (internalError) {
               setInternalError(false);
             }
-            onChange?.(e as React.ChangeEvent<{ name?: string; value: string }>);
+            onChange?.(
+              e as React.ChangeEvent<{ name?: string; value: string }>
+            );
           }}
           required={required}
-          renderValue={(selected) => options.find(({ value }) => value === selected)?.title}
+          renderValue={(selected) =>
+            options.find(({ value }) => value === selected)?.title
+          }
           input={
             <InputBase
               classes={{
                 input: classes.inputBaseInput,
-                error: classes.errorBaseInput,
+                error: classes.errorBaseInput
               }}
               className={classes.input}
               disabled={disabled}
               error={error || internalError}
               inputProps={{
                 'data-testid': `${testId}-input`,
-                ...inputProps,
+                ...inputProps
               }}
               onInvalid={(event) => {
                 event.preventDefault();
@@ -153,7 +161,9 @@ const Select: React.FunctionComponent<SelectProps> = ({
                   className={classes.optionImage}
                   disableTypography
                   primary={<Typography>{option.title}</Typography>}
-                  secondary={<Typography variant={'c3'}>{option.subtitle}</Typography>}
+                  secondary={
+                    <Typography variant={'c3'}>{option.subtitle}</Typography>
+                  }
                 />
               </ThemeProvider>
             </MenuItem>

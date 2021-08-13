@@ -2,7 +2,12 @@ import classNames from 'classnames';
 import * as React from 'react';
 
 import { useStyles } from './styles';
-import { AlignContent, AlignItems, JustifyContent, JustifyItems } from './types';
+import {
+  AlignContent,
+  AlignItems,
+  JustifyContent,
+  JustifyItems
+} from './types';
 
 export type Columns = 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -33,7 +38,7 @@ const Grid: React.FunctionComponent<GridProps> = ({
   sm,
   md,
   lg,
-  xl,
+  xl
 }) => {
   const getColumns = (breakpoint: Columns): Omit<Columns, 'auto'> => {
     if (breakpoint === 'auto') {
@@ -51,7 +56,7 @@ const Grid: React.FunctionComponent<GridProps> = ({
     lg: getColumns(lg || md || sm || xs),
     xl: getColumns(xl || lg || md || sm || xs),
     justifyContent,
-    justifyItems,
+    justifyItems
   });
   return (
     <div className={classNames(classes.root, className)} style={style}>

@@ -9,7 +9,11 @@ export interface Props {
   onClick?: () => void;
 }
 
-const AccordionItem: React.FunctionComponent<Props> = ({ children, className, onClick }) => {
+const AccordionItem: React.FunctionComponent<Props> = ({
+  children,
+  className,
+  onClick
+}) => {
   const classes = useStyles({ clickable: !!onClick });
 
   return (

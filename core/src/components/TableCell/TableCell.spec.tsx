@@ -1,7 +1,7 @@
 import { queryByText } from '@testing-library/react';
 import * as React from 'react';
 
-import { render } from '../../../testUtils/render';
+import { render } from '../../../test-utils/render';
 
 import TableCell from './TableCell';
 
@@ -21,7 +21,9 @@ describe('<TableCell />', () => {
     expect(console.error).not.toHaveBeenCalled();
   });
   it('renders with title and subtitle', () => {
-    const { container } = render(<TableCell title={'title'} subtitle={'subtitle'} />);
+    const { container } = render(
+      <TableCell title={'title'} subtitle={'subtitle'} />
+    );
 
     const title = queryByText(container, 'title');
     expect(title).toBeTruthy();
@@ -29,7 +31,9 @@ describe('<TableCell />', () => {
     expect(subtitle).toBeTruthy();
   });
   it('does not render title if hideTitle is set', () => {
-    const { container } = render(<TableCell title={'title'} subtitle={'subtitle'} hideTitle />);
+    const { container } = render(
+      <TableCell title={'title'} subtitle={'subtitle'} hideTitle />
+    );
 
     const title = queryByText(container, 'title');
     expect(title).toBeFalsy();
@@ -37,7 +41,9 @@ describe('<TableCell />', () => {
     expect(subtitle).toBeTruthy();
   });
   it('does not render subtitle if hideSubtitle is set', () => {
-    const { container } = render(<TableCell title={'title'} subtitle={'subtitle'} hideSubtitle />);
+    const { container } = render(
+      <TableCell title={'title'} subtitle={'subtitle'} hideSubtitle />
+    );
 
     const title = queryByText(container, 'title');
     expect(title).toBeTruthy();

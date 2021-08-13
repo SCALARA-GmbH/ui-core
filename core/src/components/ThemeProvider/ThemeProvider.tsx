@@ -13,7 +13,10 @@ export interface ThemeProps {
   type?: PaletteType;
 }
 
-const ThemeProvider: React.FunctionComponent<ThemeProps> = ({ children, type = 'light' }) => {
+const ThemeProvider: React.FunctionComponent<ThemeProps> = ({
+  children,
+  type = 'light'
+}) => {
   const getTheme = React.useCallback(() => ScalaraTheme(type), [type]);
 
   return (

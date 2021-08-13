@@ -9,7 +9,9 @@ import { NavigationItemProps } from './NavigationItem';
 import { useStyles } from './styles';
 
 export interface Props {
-  children: React.ReactElement<NavigationItemProps>[] | React.ReactElement<NavigationItemProps>;
+  children:
+    | React.ReactElement<NavigationItemProps>[]
+    | React.ReactElement<NavigationItemProps>;
   header?: string;
   title?: string;
   onClick?: (value: string) => void;
@@ -25,7 +27,7 @@ const Navigation: React.FunctionComponent<Props> = ({
   children,
   onClick,
   disabled,
-  isSecondary,
+  isSecondary
 }) => {
   const classes = useStyles({ disabled, isSecondary });
 
@@ -34,7 +36,7 @@ const Navigation: React.FunctionComponent<Props> = ({
       className={classes.drawer}
       variant="permanent"
       classes={{
-        paper: classes.drawerPaper,
+        paper: classes.drawerPaper
       }}
       anchor="left"
     >
@@ -48,13 +50,16 @@ const Navigation: React.FunctionComponent<Props> = ({
         </Typography>
       </div>
       <List className={classes.list}>
-        {React.Children.map<React.ReactNode, React.ReactElement<NavigationItemProps>>(children, (child) => (
+        {React.Children.map<
+          React.ReactNode,
+          React.ReactElement<NavigationItemProps>
+        >(children, (child) => (
           <li>
             <ListItem
               disabled={disabled}
               className={cx(classes.item, {
                 [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey,
+                [classes.deselected]: selectedKey !== child.props.selectKey
               })}
               button
               disableRipple

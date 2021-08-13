@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import { Variant } from './types';
 import Typography, { getTag, Tag } from './Typography';
@@ -27,7 +27,7 @@ describe('<Typography />', () => {
     ['c1', 'p'],
     ['c2', 'p'],
     ['c3', 'p'],
-    ['c4', 'p'],
+    ['c4', 'p']
   ])('returns $expected for variant $a', (a, expected) => {
     expect(getTag(a)).toBe(expected);
   });
@@ -38,7 +38,9 @@ describe('<Typography />', () => {
   });
   it('fires onClick when clicked', () => {
     const handleClick = jest.fn();
-    const { getByTestId } = render(<Typography testId="test" onClick={handleClick} />);
+    const { getByTestId } = render(
+      <Typography testId="test" onClick={handleClick} />
+    );
 
     fireEvent.click(getByTestId('test'));
     expect(handleClick).toHaveBeenCalledTimes(1);
@@ -48,7 +50,7 @@ describe('<Typography />', () => {
     const { getByTestId } = render(
       <div onClick={handleClick}>
         <Typography testId="test" onClick={handleClick} />
-      </div>,
+      </div>
     );
 
     fireEvent.click(getByTestId('test'));
@@ -59,7 +61,7 @@ describe('<Typography />', () => {
     const { getByTestId } = render(
       <div onClick={handleClick}>
         <Typography testId="test" />
-      </div>,
+      </div>
     );
     fireEvent.click(getByTestId('test'));
     expect(handleClick).toHaveBeenCalledTimes(1);

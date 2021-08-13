@@ -11,58 +11,61 @@ export const useStyles = makeStyles(
         minHeight: '92px',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'center'
       },
       label: {
-        marginBottom: theme.spacing(0.5),
+        marginBottom: theme.spacing(0.5)
       },
       multiline: {
         alignItems: 'flex-start',
         height: 'fit-content',
-        padding: theme.spacing(2, 2, 2, 2),
+        padding: theme.spacing(2, 2, 2, 2)
       },
       adornedEnd: {
-        padding: theme.spacing(2, 2, 2, 2),
+        padding: theme.spacing(2, 2, 2, 2)
       },
       notAdornedEnd: {
-        padding: theme.spacing(2, 2, 2, 2),
+        padding: theme.spacing(2, 2, 2, 2)
       },
       endAdornment: {
         margin: 0,
         height: '100%',
         maxHeight: 'none',
-        backgroundColor: theme.type === 'light' ? theme.colors.neutral['6'] : theme.colors.neutral['3'],
+        backgroundColor:
+          theme.type === 'light'
+            ? theme.colors.neutral['6']
+            : theme.colors.neutral['3']
       },
       input: {
         ...getFontStyle('c3'),
         color: theme.colors.text.main,
         '&::placeholder': {
-          color: theme.colors.neutral['3'],
+          color: theme.colors.neutral['3']
         },
         transition: 'background-color 0.2s',
         borderRadius: 0,
         backgroundColor: theme.colors.neutral['6'],
         '&:disabled': {
-          backgroundColor: theme.colors.background.disabled,
+          backgroundColor: theme.colors.background.disabled
         },
         '&:hover:enabled': {
-          backgroundColor: theme.colors.neutral['5'],
+          backgroundColor: theme.colors.neutral['5']
         },
         '&:focus:enabled': {
-          backgroundColor: theme.colors.neutral['6'],
-        },
+          backgroundColor: theme.colors.neutral['6']
+        }
       },
       error: {
         boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
         borderRadius: 0,
         '&:invalid': {
           boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
-          borderRadius: 0,
-        },
+          borderRadius: 0
+        }
       },
       bottomText: {
-        minHeight: 18,
-      },
+        minHeight: 18
+      }
     }),
-  { name: 'SCA__TextField' },
+  { name: 'SCA__TextField' }
 );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import Chip from './Chip';
 
@@ -26,14 +26,18 @@ describe('<Chip />', () => {
   });
   it('fires onClick when clicked', () => {
     const handleClick = jest.fn();
-    const { getByLabelText } = render(<Chip label="test" ariaLabel={'test'} onClick={handleClick} />);
+    const { getByLabelText } = render(
+      <Chip label="test" ariaLabel={'test'} onClick={handleClick} />
+    );
 
     fireEvent.click(getByLabelText('test'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
   it('does not fire onClick when clicked while disabled', () => {
     const handleClick = jest.fn();
-    const { getByLabelText } = render(<Chip label="test" ariaLabel={'test'} disabled onClick={handleClick} />);
+    const { getByLabelText } = render(
+      <Chip label="test" ariaLabel={'test'} disabled onClick={handleClick} />
+    );
 
     fireEvent.click(getByLabelText('test'));
     expect(handleClick).toHaveBeenCalledTimes(0);

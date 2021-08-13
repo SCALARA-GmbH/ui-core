@@ -8,7 +8,7 @@ export const TEXT_COLORS = [
   'subtitle',
   'label',
   'altLabel',
-  'disabled',
+  'disabled'
 ] as const;
 type TextColorTypes = typeof TEXT_COLORS;
 export type TextColor = TextColorTypes[number];

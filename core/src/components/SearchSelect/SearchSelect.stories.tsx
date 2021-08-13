@@ -14,9 +14,9 @@ export default {
       maxWidth: '1158px',
       gap: '22px',
       gutterLeft: '172px',
-      gutterRight: '172px',
-    },
-  },
+      gutterRight: '172px'
+    }
+  }
 };
 
 const teamMembers: SearchSelectOption[] = [
@@ -26,8 +26,8 @@ const teamMembers: SearchSelectOption[] = [
     cells: ['CTO', 'the know-it-all ', 'aka the overconfident'],
     avatarProps: {
       type: 'person',
-      image: 'armin.png',
-    },
+      image: 'armin.png'
+    }
   },
   {
     value: '1',
@@ -35,80 +35,80 @@ const teamMembers: SearchSelectOption[] = [
     cells: ['Devops specialist', 'the just', 'aka captain obvious'],
     avatarProps: {
       type: 'person',
-      image: 'piotr.jpeg',
-    },
+      image: 'piotr.jpeg'
+    }
   },
   {
     value: '2',
     title: 'Liane Walter',
     avatarProps: {
       type: 'person',
-      image: 'liane.jpeg',
+      image: 'liane.jpeg'
     },
-    cells: ['Fullstack Dev', 'the punctilious one ', 'aka the talker'],
+    cells: ['Fullstack Dev', 'the punctilious one ', 'aka the talker']
   },
   {
     value: '3',
     title: 'Elmar Hufenbach',
     avatarProps: {
       type: 'person',
-      image: 'elmar.jpeg',
+      image: 'elmar.jpeg'
     },
-    cells: ['CPO', 'the sleeping bear', 'aka the 3CPO'],
+    cells: ['CPO', 'the sleeping bear', 'aka the 3CPO']
   },
   {
     value: '4',
     title: 'Lamina Amatyakul Vedder',
     avatarProps: {
       type: 'person',
-      image: 'lamina.jpeg',
+      image: 'lamina.jpeg'
     },
-    cells: ['Fullstack Developer', 'the unbiased ', 'aka the cheerful one'],
+    cells: ['Fullstack Developer', 'the unbiased ', 'aka the cheerful one']
   },
   {
     value: '5',
     title: 'Ferdinand Von Klocke',
     avatarProps: {
       type: 'person',
-      image: 'ferdi.png',
+      image: 'ferdi.png'
     },
-    cells: ['CFO', 'the wise', 'aka that old dude'],
+    cells: ['CFO', 'the wise', 'aka that old dude']
   },
   {
     value: '6',
     title: 'Shari Heep',
     avatarProps: {
       type: 'person',
-      image: 'shari.png',
+      image: 'shari.png'
     },
-    cells: ['CEO', 'the one with fire', 'aka snow white'],
+    cells: ['CEO', 'the one with fire', 'aka snow white']
   },
   {
     value: '7',
     title: 'Stefanie Fleischer',
     avatarProps: {
       type: 'person',
-      image: 'stefie.png',
+      image: 'stefie.png'
     },
-    cells: ['UX Designer', 'the one with eagle-eyes', 'aka Scully'],
+    cells: ['UX Designer', 'the one with eagle-eyes', 'aka Scully']
   },
   {
     value: '8',
     title: 'Lisa Laagland',
     avatarProps: {
       type: 'person',
-      image: 'lisa.jpeg',
+      image: 'lisa.jpeg'
     },
-    cells: ['UI Designer', 'the yogi', 'aka -'],
+    cells: ['UI Designer', 'the yogi', 'aka -']
   },
   {
     value: '9',
     title: 'Anonymous',
     avatarProps: {
-      type: 'person',
+      type: 'person'
     },
-    cells: ['Unknown', 'hidden force', 'is with you'],
-  },
+    cells: ['Unknown', 'hidden force', 'is with you']
+  }
 ];
 
 export const SearchSelectStory = (): JSX.Element => {
@@ -120,7 +120,13 @@ export const SearchSelectStory = (): JSX.Element => {
   };
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16, maxWidth: '1096px' }}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 16,
+        maxWidth: '1096px'
+      }}
+    >
       <div style={{ paddingTop: '16px' }}>
         <SearchSelect
           placeholder={'enter name, role or nickname'}
@@ -189,7 +195,11 @@ const top100Films = [
   { title: 'Apocalypse Now', year: 1979 },
   { title: 'Alien', year: 1979 },
   { title: 'Sunset Boulevard', year: 1950 },
-  { title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb', year: 1964 },
+  {
+    title:
+      'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
+    year: 1964
+  },
   { title: 'The Great Dictator', year: 1940 },
   { title: 'Cinema Paradiso', year: 1988 },
   { title: 'The Lives of Others', year: 2006 },
@@ -236,7 +246,7 @@ const top100Films = [
   { title: 'Inglourious Basterds', year: 2009 },
   { title: 'Snatch', year: 2000 },
   { title: '3 Idiots', year: 2009 },
-  { title: 'Monty Python and the Holy Grail', year: 1975 },
+  { title: 'Monty Python and the Holy Grail', year: 1975 }
 ];
 
 export const SearchSelectLongStory = (): JSX.Element => {
@@ -248,7 +258,13 @@ export const SearchSelectLongStory = (): JSX.Element => {
   };
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16, minWidth: 680 }}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 16,
+        minWidth: 680
+      }}
+    >
       <div style={{ paddingTop: '16px' }}>
         <SearchSelect
           placeholder={'enter name or year'}
@@ -258,7 +274,7 @@ export const SearchSelectLongStory = (): JSX.Element => {
           options={top100Films.map(({ title, year }, index) => ({
             value: index.toString(),
             title,
-            cells: [year.toString()],
+            cells: [year.toString()]
           }))}
           onChange={onChange}
         />
@@ -272,55 +288,59 @@ const realestates = [
   {
     title: 'Anna Schneider',
     cells: ['Anna-Schneider-Steig 2', '50667', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' }
   },
   {
     title: 'Anna Schneider',
     cells: ['Anna-Schneider-Steig 3', '50667', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' }
   },
   {
     title: 'Anna Schneider',
     cells: ['Anna-Schneider-Steig 4', '50667', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-2.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-2.png' }
   },
   {
     title: 'Ursulakloster',
     cells: ['Ursulagartenstr 56', '50668', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-2.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-2.png' }
   },
   {
     title: 'Ursulakloster',
     cells: ['Ursulagartenstr 57', '50668', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-3.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-3.png' }
   },
   {
     title: 'Ursulakloster',
     cells: ['Ursulagartenstr 598', '50668', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-4.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-4.png' }
   },
   {
     title: 'Ursulakloster',
     cells: ['Ursulagartenstr 51', '50668', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-4.png' },
+    avatarProps: { alt: `real estate image`, image: 'realestate-4.png' }
   },
   {
     title: 'Ursulakloster',
     cells: ['Ursulagartenstr 26', '50667', 'Köln'],
-    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' },
-  },
+    avatarProps: { alt: `real estate image`, image: 'realestate-1.png' }
+  }
 ];
 
 const useCellStyle = makeStyles((theme) => ({
   cells: {
-    paddingLeft: theme.spacing(1.5),
+    paddingLeft: theme.spacing(1.5)
   },
   avatar: {
-    marginRight: theme.spacing(2.5),
-  },
+    marginRight: theme.spacing(2.5)
+  }
 }));
 
-const SelectedComponent: React.FunctionComponent<SearchSelectOption> = ({ cells, title, avatarProps }) => {
+const SelectedComponent: React.FunctionComponent<SearchSelectOption> = ({
+  cells,
+  title,
+  avatarProps
+}) => {
   const classes = useCellStyle();
   const lastCell = cells.slice(cells.length - 1);
   const firstCells = cells.slice(0, cells.length - 1);
@@ -339,23 +359,27 @@ const useOptionStyle = makeStyles((theme) => ({
   title: {
     display: 'flex',
     alignItems: 'center',
-    flex: 4,
+    flex: 4
   },
   avatar: {
-    marginRight: theme.spacing(2.5),
+    marginRight: theme.spacing(2.5)
   },
   cell1: {
-    flex: 3,
+    flex: 3
   },
   cell2: {
-    flex: 2,
+    flex: 2
   },
   cell3: {
-    flex: 3,
-  },
+    flex: 3
+  }
 }));
 
-const OptionComponent: React.FunctionComponent<SearchSelectOption> = ({ cells, title, avatarProps }) => {
+const OptionComponent: React.FunctionComponent<SearchSelectOption> = ({
+  cells,
+  title,
+  avatarProps
+}) => {
   const classes = useOptionStyle();
   if (cells.length !== 3) throw new Error('cells not equal to 3');
   return (
@@ -391,7 +415,7 @@ export const SearchSelectWithCustomSelectedComponent = (): JSX.Element => {
         backgroundColor: theme.colors.background.primary,
         maxWidth: 1096,
         paddingLeft: '48px',
-        paddingRight: '48px',
+        paddingRight: '48px'
       }}
       data-testid={'visual'}
     >
@@ -399,7 +423,9 @@ export const SearchSelectWithCustomSelectedComponent = (): JSX.Element => {
         <SearchSelect
           SelectedComponent={SelectedComponent}
           OptionComponent={OptionComponent}
-          placeholder={'Geben Sie die Bezeichnung, Straße, PLZ oder den Ort einer Immobilie ein'}
+          placeholder={
+            'Geben Sie die Bezeichnung, Straße, PLZ oder den Ort einer Immobilie ein'
+          }
           header={'Wählen Sie ein Objekt aus dem Portfolio'}
           name="Immobilie"
           value={value}
@@ -407,14 +433,15 @@ export const SearchSelectWithCustomSelectedComponent = (): JSX.Element => {
             value: index.toString(),
             avatarProps,
             title,
-            cells,
+            cells
           }))}
           notFoundText={'Keine Immobilie gefunden'}
           onChange={onChange}
           testId={'visual'}
         />
         <Typography style={{ padding: '16px' }}>
-          This text is going to be covered since the search select area lays on top of it
+          This text is going to be covered since the search select area lays on
+          top of it
         </Typography>
       </div>
     </div>

@@ -30,7 +30,7 @@ export const useStyles = makeStylesWithProps<{
           return 0;
         }
         return theme.spacing(2, 0);
-      },
+      }
     },
     vertical: {
       borderRight: ({ color }) => `1px solid ${getColor({ color, theme })}`,
@@ -39,7 +39,7 @@ export const useStyles = makeStylesWithProps<{
           return 0;
         }
         return theme.spacing(0, 2);
-      },
-    },
-  }),
+      }
+    }
+  })
 );

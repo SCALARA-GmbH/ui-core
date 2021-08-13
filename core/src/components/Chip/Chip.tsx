@@ -24,7 +24,7 @@ const Chip: React.FunctionComponent<ChipProps> = ({
   disabled,
   ariaLabel = '',
   label = '',
-  selected = false,
+  selected = false
 }) => {
   const classes = useStyles({ color });
   return (
@@ -35,9 +35,9 @@ const Chip: React.FunctionComponent<ChipProps> = ({
           [classes.clickable]: !!onClick,
           [classes.selected]: selected,
           [classes.disabled]: disabled,
-          [classes.enabled]: !disabled,
+          [classes.enabled]: !disabled
         },
-        className,
+        className
       )}
       role={onClick && 'button'}
       aria-label={ariaLabel}
@@ -52,7 +52,7 @@ const Chip: React.FunctionComponent<ChipProps> = ({
         className={classNames({
           [classes.label]: !disabled && !selected,
           [classes.labelDisabled]: disabled,
-          [classes.labelSelected]: selected,
+          [classes.labelSelected]: selected
         })}
         variant={'c5'}
         wrap={Wrap.NO_WRAP}

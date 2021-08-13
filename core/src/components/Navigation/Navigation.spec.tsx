@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render } from 'testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
@@ -9,7 +9,7 @@ describe('<Navigation />', () => {
     const { container } = render(
       <Navigation>
         <NavigationItem label={'Buchung'} selectKey={'Buchung'} />
-      </Navigation>,
+      </Navigation>
     );
 
     expect(container).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('<Navigation />', () => {
       <Navigation>
         <NavigationItem label={'Konten'} selectKey={'Konten'} />
         <NavigationItem label={'Buchungen'} selectKey={'Buchung'} />
-      </Navigation>,
+      </Navigation>
     );
 
     expect(getByRole('button', { name: 'Konten' })).toBeTruthy();
@@ -34,7 +34,7 @@ describe('<Navigation />', () => {
       <Navigation onClick={handleClick}>
         <NavigationItem label={'Konten'} selectKey={'Konten'} />
         <NavigationItem label={'Buchungen'} selectKey={'Buchungen'} />
-      </Navigation>,
+      </Navigation>
     );
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
@@ -49,10 +49,13 @@ describe('<Navigation />', () => {
       <Navigation onClick={handleClick} disabled>
         <NavigationItem label={'Konten'} selectKey={'Konten'} />
         <NavigationItem label={'Buchungen'} selectKey={'Buchungen'} />
-      </Navigation>,
+      </Navigation>
     );
 
-    expect(getByRole('button', { name: 'Buchungen' })).toHaveAttribute('aria-disabled', 'true');
+    expect(getByRole('button', { name: 'Buchungen' })).toHaveAttribute(
+      'aria-disabled',
+      'true'
+    );
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
 

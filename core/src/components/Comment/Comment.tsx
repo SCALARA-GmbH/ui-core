@@ -15,7 +15,13 @@ export interface Props {
   title?: string;
 }
 
-const Comment: React.FunctionComponent<Props> = ({ avatarProps, text, extra, title, className }) => {
+const Comment: React.FunctionComponent<Props> = ({
+  avatarProps,
+  text,
+  extra,
+  title,
+  className
+}) => {
   const classes = useStyles();
   return (
     <div className={classNames(classes.root, className)}>
@@ -24,16 +30,27 @@ const Comment: React.FunctionComponent<Props> = ({ avatarProps, text, extra, tit
       </div>
       <div className={classes.content}>
         {title && (
-          <Typography variant={'c2'} className={classNames(classes.marginRight, classes.marginBottom)}>
+          <Typography
+            variant={'c2'}
+            className={classNames(classes.marginRight, classes.marginBottom)}
+          >
             {title}
           </Typography>
         )}
         {extra && (
-          <Typography variant={'c2'} color={'label'} className={classes.marginBottom}>
+          <Typography
+            variant={'c2'}
+            color={'label'}
+            className={classes.marginBottom}
+          >
             {extra}
           </Typography>
         )}
-        <div className={classes.text}>{text && <Typography wrap={Wrap.PRESERVE_BREAK_LINES}>{text}</Typography>}</div>
+        <div className={classes.text}>
+          {text && (
+            <Typography wrap={Wrap.PRESERVE_BREAK_LINES}>{text}</Typography>
+          )}
+        </div>
       </div>
     </div>
   );

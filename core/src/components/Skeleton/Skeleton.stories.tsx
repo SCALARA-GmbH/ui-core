@@ -4,7 +4,7 @@ import { Avatar, Skeleton, Typography } from '../..';
 
 export default {
   title: 'Components/Skeleton',
-  component: Skeleton,
+  component: Skeleton
 };
 
 export const SkeletonStory = (): JSX.Element => {

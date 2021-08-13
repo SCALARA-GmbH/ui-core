@@ -6,7 +6,7 @@ import { CssBaseline } from './CssBaseline';
 
 export default {
   title: 'Basics/CssBaseline',
-  component: CssBaseline,
+  component: CssBaseline
 };
 
 export const CssBaselineStory = (): JSX.Element => {

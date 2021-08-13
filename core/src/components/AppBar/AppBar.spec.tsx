@@ -1,12 +1,14 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import AppBar from './AppBar';
 
 describe('<AppHeader />', () => {
   it('renders without crashing', () => {
-    const { container } = render(<AppBar menuItems={[]} menuTrayLabel={'test'} selectedId={0} />);
+    const { container } = render(
+      <AppBar menuItems={[]} menuTrayLabel={'test'} selectedId={0} />
+    );
     expect(container).toBeInTheDocument();
   });
   it('renders without warning', () => {
@@ -26,11 +28,11 @@ describe('<AppHeader />', () => {
         onClick={handleClick}
         menuItems={[
           { id: 0, label: 'RELATIONS', title: 'TITLE' },
-          { id: 1, label: 'THINGS', title: 'TITLE' },
+          { id: 1, label: 'THINGS', title: 'TITLE' }
         ]}
         menuTrayLabel={'test'}
         selectedId={0}
-      />,
+      />
     );
 
     fireEvent.click(getByRole('button', { name: 'RELATIONS' }));
@@ -45,14 +47,16 @@ describe('<AppHeader />', () => {
         onClick={handleClick}
         menuItems={[
           { id: 0, label: 'RELATIONS', title: 'TITLE' },
-          { id: 1, label: 'THINGS', title: 'TITLE' },
+          { id: 1, label: 'THINGS', title: 'TITLE' }
         ]}
         menuTrayLabel={'testingLabel'}
         selectedId={0}
-      />,
+      />
     );
 
-    fireEvent.click(getByRole('button', { name: 'testingLabel', hidden: true }));
+    fireEvent.click(
+      getByRole('button', { name: 'testingLabel', hidden: true })
+    );
 
     // clicking on mobile and desktop
     const items = getAllByRole('button', { name: 'RELATIONS', hidden: true });

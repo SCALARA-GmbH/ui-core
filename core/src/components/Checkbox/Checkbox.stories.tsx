@@ -8,19 +8,46 @@ import { Button, Checkbox, Grid, useTheme } from '../..';
 
 export default {
   title: 'Elements/Controls/Checkbox',
-  component: Checkbox,
+  component: Checkbox
 };
 
 export const CheckboxStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <Checkbox style={{ padding: 8 }} name={'test'} />
-      <Checkbox style={{ padding: 8 }} name={'test2'} label={'Accept the agreement'} />
-      <Checkbox style={{ padding: 8 }} name={'checked'} checked label={'I am checked'} />
-      <Checkbox style={{ padding: 8 }} required name={'test3'} label={'I am required'} />
-      <Checkbox style={{ padding: 8 }} disabled name={'test3'} label={'I am disabled'} />
-      <Checkbox style={{ padding: 8 }} disabled name={'test3'} label={'I am checked and disabled'} checked />
+      <Checkbox
+        style={{ padding: 8 }}
+        name={'test2'}
+        label={'Accept the agreement'}
+      />
+      <Checkbox
+        style={{ padding: 8 }}
+        name={'checked'}
+        checked
+        label={'I am checked'}
+      />
+      <Checkbox
+        style={{ padding: 8 }}
+        required
+        name={'test3'}
+        label={'I am required'}
+      />
+      <Checkbox
+        style={{ padding: 8 }}
+        disabled
+        name={'test3'}
+        label={'I am disabled'}
+      />
+      <Checkbox
+        style={{ padding: 8 }}
+        disabled
+        name={'test3'}
+        label={'I am checked and disabled'}
+        checked
+      />
       <Checkbox
         style={{ padding: 8 }}
         name={'test4'}
@@ -39,16 +66,22 @@ export const CheckFormStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        test: yup.boolean().required(),
-      }),
-    ),
+        test: yup.boolean().required()
+      })
+    )
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 
   return (
     <div style={{ padding: 16 }}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Checkbox required ref={register} label={'Check me'} name={'test'} errorText={'This is required'} />
+        <Checkbox
+          required
+          ref={register}
+          label={'Check me'}
+          name={'test'}
+          errorText={'This is required'}
+        />
         <Button label={'Submit'} variant={'contained'} type="submit" />
       </form>
     </div>
@@ -62,19 +95,25 @@ export const CheckFormDefaultValueStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        test: yup.boolean().required(),
-      }),
+        test: yup.boolean().required()
+      })
     ),
     defaultValues: {
-      test: true,
-    },
+      test: true
+    }
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 
   return (
     <Grid xs={1} style={{ padding: 16 }}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Checkbox required ref={register} label={'Checked by default'} name={'test'} errorText={'This is required'} />
+        <Checkbox
+          required
+          ref={register}
+          label={'Checked by default'}
+          name={'test'}
+          errorText={'This is required'}
+        />
         <Button label={'Submit'} variant={'contained'} type="submit" />
       </form>
     </Grid>

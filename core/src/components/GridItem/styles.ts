@@ -16,20 +16,20 @@ export const useStyles = makeStylesWithProps<{
       alignSelf: ({ alignSelf }) => alignSelf,
       justifySelf: ({ justifySelf }) => justifySelf,
       [breakpoints.up('xs')]: {
-        gridColumnStart: ({ xs }) => `span ${xs}`,
+        gridColumnStart: ({ xs }) => `span ${xs}`
       },
       [breakpoints.up('sm')]: {
-        gridColumnStart: ({ sm }) => `span ${sm}`,
+        gridColumnStart: ({ sm }) => `span ${sm}`
       },
       [breakpoints.up('md')]: {
-        gridColumnStart: ({ md }) => `span ${md}`,
+        gridColumnStart: ({ md }) => `span ${md}`
       },
       [breakpoints.up('lg')]: {
-        gridColumnStart: ({ lg }) => `span ${lg}`,
+        gridColumnStart: ({ lg }) => `span ${lg}`
       },
       [breakpoints.up('xl')]: {
-        gridColumnStart: ({ xl }) => `span ${xl}`,
-      },
-    },
-  }),
+        gridColumnStart: ({ xl }) => `span ${xl}`
+      }
+    }
+  })
 );

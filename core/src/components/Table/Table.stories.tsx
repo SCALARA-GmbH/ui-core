@@ -1,31 +1,41 @@
 import { createStyles } from '@material-ui/core';
 import * as React from 'react';
 
-import { Avatar, makeStyles, Paper, Table, TableCell, TableRow, useTheme } from '../..';
+import {
+  Avatar,
+  makeStyles,
+  Paper,
+  Table,
+  TableCell,
+  TableRow,
+  useTheme
+} from '../..';
 
 export default {
   title: 'Components/Table',
-  component: Table,
+  component: Table
 };
 
 const useStyles = makeStyles(({ spacing }) =>
   createStyles({
     avatar: {
-      paddingRight: spacing(1),
+      paddingRight: spacing(1)
     },
     withAvatar: {
       display: 'flex',
       flexDirection: 'row-reverse',
       justifyContent: 'flex-end',
-      alignItems: 'center',
-    },
-  }),
+      alignItems: 'center'
+    }
+  })
 );
 
 export const TableStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}
+    >
       <Paper>
         <Table>
           <TableRow>
@@ -53,7 +63,9 @@ TableStorySBS.storyName = 'Overview';
 export const TableClickStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}
+    >
       <Paper>
         <Table>
           <TableRow onClick={() => console.log('onClick')}>
@@ -82,11 +94,18 @@ export const TableCustomCellStorySBS = (): JSX.Element => {
   const theme = useTheme();
   const classes = useStyles();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 24 }}
+    >
       <Paper>
         <Table>
           <TableRow onClick={() => console.log('onClick')}>
-            <TableCell title={'Piotr'} subtitle={'Milobedzki'} hideTitle className={classes.withAvatar}>
+            <TableCell
+              title={'Piotr'}
+              subtitle={'Milobedzki'}
+              hideTitle
+              className={classes.withAvatar}
+            >
               <div className={classes.avatar}>
                 <Avatar
                   onClick={() => console.log('click')}
@@ -97,7 +116,12 @@ export const TableCustomCellStorySBS = (): JSX.Element => {
                 />
               </div>
             </TableCell>
-            <TableCell title={'Piotr'} subtitle={'Milobedzki'} hideSubtitle className={classes.withAvatar}>
+            <TableCell
+              title={'Piotr'}
+              subtitle={'Milobedzki'}
+              hideSubtitle
+              className={classes.withAvatar}
+            >
               <div className={classes.avatar}>
                 <Avatar
                   onClick={() => console.log('click')}
@@ -108,7 +132,13 @@ export const TableCustomCellStorySBS = (): JSX.Element => {
                 />
               </div>
             </TableCell>
-            <TableCell title={'Piotr'} subtitle={'Milobedzki'} hideSubtitle hideTitle className={classes.withAvatar}>
+            <TableCell
+              title={'Piotr'}
+              subtitle={'Milobedzki'}
+              hideSubtitle
+              hideTitle
+              className={classes.withAvatar}
+            >
               <div className={classes.avatar}>
                 <Avatar
                   onClick={() => console.log('click')}
@@ -157,7 +187,10 @@ export const TableRowActionStory = (): JSX.Element => (
     <Paper>
       <Table>
         <TableRow
-          actionIconButtonProps={{ iconName: 'close', onClick: () => alert('clicked icon button') }}
+          actionIconButtonProps={{
+            iconName: 'close',
+            onClick: () => alert('clicked icon button')
+          }}
           onClick={() => alert('clicked row')}
         >
           <TableCell title={'Value 1'} subtitle={'Meta 1'} />
@@ -165,7 +198,10 @@ export const TableRowActionStory = (): JSX.Element => (
           <TableCell subtitle={'Meta 3'} />
         </TableRow>
         <TableRow
-          actionIconButtonProps={{ iconName: 'close', onClick: () => alert('clicked icon button') }}
+          actionIconButtonProps={{
+            iconName: 'close',
+            onClick: () => alert('clicked icon button')
+          }}
           onClick={() => alert('clicked row')}
         >
           <TableCell title={'Value 1'} />
@@ -173,7 +209,10 @@ export const TableRowActionStory = (): JSX.Element => (
           <TableCell title={'Value 3'} subtitle={'Meta 3'} />
         </TableRow>
         <TableRow
-          actionIconButtonProps={{ iconName: 'close', onClick: () => alert('clicked icon button') }}
+          actionIconButtonProps={{
+            iconName: 'close',
+            onClick: () => alert('clicked icon button')
+          }}
           onClick={() => alert('clicked row')}
         >
           <TableCell title={'Value 1'} subtitle={'Meta 1'} />

@@ -11,10 +11,10 @@ interface Props {
 const useStyles = makeStyles(
   (theme) => ({
     root: {
-      borderColor: theme.colors.border.main,
-    },
+      borderColor: theme.colors.border.main
+    }
   }),
-  { name: 'SCA__DataTable' },
+  { name: 'SCA__DataTable' }
 );
 
 const DataTable: React.FunctionComponent<Props> = ({ children, ariaLabel }) => {

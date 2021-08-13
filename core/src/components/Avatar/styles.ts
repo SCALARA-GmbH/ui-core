@@ -16,13 +16,16 @@ const getSize = (size: Size): number => {
   }
 };
 
-export const useStyles = makeStylesWithProps<{ size: Size; onClick?: () => void }>((theme) =>
+export const useStyles = makeStylesWithProps<{
+  size: Size;
+  onClick?: () => void;
+}>((theme) =>
   createStyles({
     root: {
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
       background: theme.colors.background.primary,
       height: (props) => getSize(props.size),
-      width: (props) => getSize(props.size),
+      width: (props) => getSize(props.size)
     },
     badge: {
       backgroundColor: theme.colors.success.main,
@@ -35,8 +38,8 @@ export const useStyles = makeStylesWithProps<{ size: Size; onClick?: () => void 
         width: '100%',
         height: '100%',
         borderRadius: '50%',
-        content: '""',
-      },
+        content: '""'
+      }
     },
     editOverlay: {
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
@@ -48,17 +51,17 @@ export const useStyles = makeStylesWithProps<{ size: Size; onClick?: () => void 
       margin: theme.spacing(2, 0, 0, 2),
       color: theme.colors.text.main,
       '&:hover': {
-        opacity: ({ onClick }) => (onClick ? 1 : 0),
-      },
+        opacity: ({ onClick }) => (onClick ? 1 : 0)
+      }
     },
     icon: {
       width: '100%',
       height: '100%',
       paddingTop: theme.spacing(1),
-      strokeWidth: ({ size }) => (size === 'large' ? 3 : 1.5),
+      strokeWidth: ({ size }) => (size === 'large' ? 3 : 1.5)
     },
     iconOutline: {
-      boxShadow: `0px 0px 0px 1.5px ${theme.colors.text.main} inset`,
-    },
-  }),
+      boxShadow: `0px 0px 0px 1.5px ${theme.colors.text.main} inset`
+    }
+  })
 );

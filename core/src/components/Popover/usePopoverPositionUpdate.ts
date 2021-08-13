@@ -8,13 +8,13 @@ export interface UsePopoverPositionUpdateResults {
 }
 
 export const usePopoverPositionUpdate = (
-  { offset } = { offset: { x: 25, y: -75 } },
+  { offset } = { offset: { x: 25, y: -75 } }
 ): UsePopoverPositionUpdateResults => {
   const popoverRef = React.useRef<PopperJs>(null);
 
   const positionRef = React.useRef<{ x: number; y: number }>({
     x: 0,
-    y: 0,
+    y: 0
   });
 
   const anchorElement = {
@@ -26,8 +26,8 @@ export const usePopoverPositionUpdate = (
       right: positionRef.current.x,
       bottom: positionRef.current.y,
       width: 0,
-      height: 0,
-    }),
+      height: 0
+    })
   };
   const update = ({ x, y }: { x: number; y: number }) => {
     positionRef.current = { x: x + offset.x, y: y + offset.y };
@@ -40,6 +40,6 @@ export const usePopoverPositionUpdate = (
   return {
     update,
     anchorElement,
-    popoverRef,
+    popoverRef
   };
 };

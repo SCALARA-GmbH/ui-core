@@ -10,15 +10,15 @@ export const useStyles = makeStyles(
     createStyles({
       root: {
         display: 'flex',
-        alignItems: 'flex-start',
+        alignItems: 'flex-start'
       },
       icon: {
         width: 18,
         height: 18,
         boxShadow: `inset 0 0 0 2px ${theme.colors.neutral['3']}`,
         'input:disabled ~ &': {
-          boxShadow: `inset 0 0 0 2px ${theme.colors.disabled}`,
-        },
+          boxShadow: `inset 0 0 0 2px ${theme.colors.disabled}`
+        }
       },
       checkedIcon: {
         borderRadius: 0,
@@ -28,40 +28,43 @@ export const useStyles = makeStyles(
           width: 18,
           height: 18,
           backgroundImage: `url("${checkSvg}")`,
-          content: '""',
+          content: '""'
         },
         'input:disabled ~ &': {
-          backgroundColor: theme.colors.disabled,
-        },
+          backgroundColor: theme.colors.disabled
+        }
       },
       focus: {
         background: theme.colors.neutral['6'],
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
-        boxShadow: `0px 0px 0px 7px ${fade(theme.colors.secondary.default as string, 0.15)} `,
+        boxShadow: `0px 0px 0px 7px ${fade(
+          theme.colors.secondary.default as string,
+          0.15
+        )} `
       },
       checkbox: {
         padding: theme.spacing(0.5),
         color: theme.colors.neutral['3'],
         '&:hover': {
-          backgroundColor: theme.colors.background.hover,
+          backgroundColor: theme.colors.background.hover
         },
-        borderRadius: 0,
+        borderRadius: 0
       },
       checked: {
-        color: theme.colors.secondary.default,
+        color: theme.colors.secondary.default
       },
       error: {
         '&:hover': { backgroundColor: theme.colors.neutral['6'] },
         padding: theme.spacing(0.5),
-        color: theme.colors.error.main,
+        color: theme.colors.error.main
       },
       text: {
         paddingLeft: theme.spacing(0.5),
         paddingTop: theme.spacing(0.25),
         display: 'flex',
-        flexDirection: 'column',
-      },
+        flexDirection: 'column'
+      }
     }),
-  { name: 'SCA__CheckBox' },
+  { name: 'SCA__CheckBox' }
 );

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render } from 'testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import ThemeProvider from '../ThemeProvider';
 
@@ -7,7 +7,9 @@ import SideMenu from './SideMenu';
 
 describe('<SideMenu />', () => {
   it('renders without crashing', () => {
-    const { container } = render(<SideMenu menuHandle={null} onClose={jest.fn()} menuItems={[]} />);
+    const { container } = render(
+      <SideMenu menuHandle={null} onClose={jest.fn()} menuItems={[]} />
+    );
 
     expect(container).toBeInTheDocument();
   });
@@ -17,8 +19,10 @@ describe('<SideMenu />', () => {
       <SideMenu
         menuHandle={null}
         onClose={jest.fn()}
-        menuItems={[{ id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }]}
-      />,
+        menuItems={[
+          { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+        ]}
+      />
     );
 
     expect(container).toBeInTheDocument();
@@ -35,7 +39,9 @@ describe('<SideMenu />', () => {
           <SideMenu
             menuHandle={ref.current}
             onClose={jest.fn()}
-            menuItems={[{ id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }]}
+            menuItems={[
+              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+            ]}
             onClick={handleClick}
           />
         </ThemeProvider>
@@ -57,7 +63,9 @@ describe('<SideMenu />', () => {
           <SideMenu
             menuHandle={null}
             onClose={jest.fn()}
-            menuItems={[{ id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }]}
+            menuItems={[
+              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+            ]}
             onClick={handleClick}
           />
         </ThemeProvider>

@@ -3,7 +3,7 @@ import {
   DialogContent,
   DialogProps as MuiDialogProps,
   DialogTitle,
-  useMediaQuery,
+  useMediaQuery
 } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
@@ -33,7 +33,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
   onClose,
   open = false,
   title,
-  backLabel,
+  backLabel
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -49,17 +49,33 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
       onClose={onClose}
       scroll={'body'}
       classes={{
-        paperScrollBody: classes.scrollPaper,
+        paperScrollBody: classes.scrollPaper
       }}
     >
       <DialogTitle disableTypography className={classes.titleWrapper}>
-        {onBack && <IconButton Icon={Icon} iconName={'arrow-left'} onClick={onBack} ariaLabel={backLabel} />}
-        <Typography className={cx({ [classes.offsetBackButton]: !onBack })} align={'center'} variant={'t3'} fullWidth>
+        {onBack && (
+          <IconButton
+            Icon={Icon}
+            iconName={'arrow-left'}
+            onClick={onBack}
+            ariaLabel={backLabel}
+          />
+        )}
+        <Typography
+          className={cx({ [classes.offsetBackButton]: !onBack })}
+          align={'center'}
+          variant={'t3'}
+          fullWidth
+        >
           {title}
         </Typography>
-        {fullScreen && <IconButton Icon={Icon} iconName={'close'} onClick={onClose} />}
+        {fullScreen && (
+          <IconButton Icon={Icon} iconName={'close'} onClick={onClose} />
+        )}
       </DialogTitle>
-      <DialogContent classes={{ root: classes.content }}>{children}</DialogContent>
+      <DialogContent classes={{ root: classes.content }}>
+        {children}
+      </DialogContent>
     </MuiDialog>
   );
 };

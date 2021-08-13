@@ -1,7 +1,7 @@
 import { ListItemAvatar, ListItemText } from '@material-ui/core';
 import MuiAutocomplete, {
   AutocompleteProps as MuiAutocompleteProps,
-  createFilterOptions,
+  createFilterOptions
 } from '@material-ui/lab/Autocomplete';
 import * as React from 'react';
 
@@ -27,7 +27,12 @@ export interface AutocompleteProps {
   clearLabel?: string;
   name: HTMLInputElement['name'];
   noOptionsText?: string;
-  options: MuiAutocompleteProps<SelectOption, boolean, boolean, boolean>['options'];
+  options: MuiAutocompleteProps<
+    SelectOption,
+    boolean,
+    boolean,
+    boolean
+  >['options'];
   style?: React.CSSProperties;
   testId?: string;
   onChange?: (option: SelectOption) => void;
@@ -61,7 +66,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   onNewOptionClick,
   renderNewOptionTitle,
   onClear,
-  virtualized,
+  virtualized
 }) => {
   const classes = useStyles();
 
@@ -69,7 +74,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
     <MuiAutocomplete
       autoComplete={false}
       classes={{
-        popupIndicator: classes.popupIndicator,
+        popupIndicator: classes.popupIndicator
       }}
       className={className}
       clearText={clearLabel}
@@ -83,7 +88,9 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           if (params.inputValue !== '') {
             filtered.push({
               value: params.inputValue,
-              title: renderNewOptionTitle?.(params.inputValue) || `New "${params.inputValue}"`,
+              title:
+                renderNewOptionTitle?.(params.inputValue) ||
+                `New "${params.inputValue}"`
             });
           }
         }
@@ -118,7 +125,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           inputProps={{
             ...params.inputProps,
             'aria-label': ariaLabel || label || name,
-            autoComplete: 'new-password',
+            autoComplete: 'new-password'
           }}
           label={label}
           ref={params.InputProps.ref}
@@ -145,7 +152,9 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
       PaperComponent={PaperComponent}
       ListboxComponent={
         virtualized
-          ? (ListboxComponentVirtualized as React.ComponentType<React.HTMLAttributes<HTMLElement>>)
+          ? (ListboxComponentVirtualized as React.ComponentType<
+              React.HTMLAttributes<HTMLElement>
+            >)
           : undefined
       }
     />

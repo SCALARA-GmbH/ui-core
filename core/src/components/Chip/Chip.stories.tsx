@@ -8,13 +8,13 @@ import { COLORS } from './styles';
 export default {
   title: 'Components/Chip',
   component: Chip,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(0.5),
-  },
+    margin: theme.spacing(0.5)
+  }
 }));
 
 export const ChipStorySBS = (): JSX.Element => {
@@ -22,13 +22,30 @@ export const ChipStorySBS = (): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       {COLORS.map((color) => (
         <div key={color} style={{ display: 'flex', flexWrap: 'wrap' }}>
           <Chip className={classes.root} label={'Basic'} color={color} />
-          <Chip className={classes.root} label={'Disabled'} color={color} disabled />
-          <Chip className={classes.root} label={'Clickable'} onClick={() => alert(`onClick ${color}`)} color={color} />
-          <Chip className={classes.root} label={'Selected'} selected color={color} />
+          <Chip
+            className={classes.root}
+            label={'Disabled'}
+            color={color}
+            disabled
+          />
+          <Chip
+            className={classes.root}
+            label={'Clickable'}
+            onClick={() => alert(`onClick ${color}`)}
+            color={color}
+          />
+          <Chip
+            className={classes.root}
+            label={'Selected'}
+            selected
+            color={color}
+          />
         </div>
       ))}
     </div>

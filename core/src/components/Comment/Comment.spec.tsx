@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render } from '../../../testUtils/render';
+import { render } from '../../../test-utils/render';
 
 import Comment from './Comment';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render } from '../../../testUtils/render';
+import { render } from '../../../test-utils/render';
 
 import Checkbox from './Checkbox';
 
@@ -20,16 +20,22 @@ describe('<Checkbox />', () => {
     expect(console.error).not.toHaveBeenCalled();
   });
   it('can get byRole with name', () => {
-    const { getByRole } = render(<Checkbox name={'checkbox'} ariaLabel={'checkbox'} />);
+    const { getByRole } = render(
+      <Checkbox name={'checkbox'} ariaLabel={'checkbox'} />
+    );
     expect(getByRole('checkbox', { name: 'checkbox' })).toBeTruthy();
   });
   it('can get byRole with name', () => {
-    const { getByLabelText } = render(<Checkbox name={'checkbox'} ariaLabel={'checkbox label'} />);
+    const { getByLabelText } = render(
+      <Checkbox name={'checkbox'} ariaLabel={'checkbox label'} />
+    );
     expect(getByLabelText('checkbox label')).toBeTruthy();
   });
 
   it('can get byRole with label', () => {
-    const { getByText } = render(<Checkbox name={'checkbox'} label={'testing label'} />);
+    const { getByText } = render(
+      <Checkbox name={'checkbox'} label={'testing label'} />
+    );
     expect(getByText('testing label')).toBeTruthy();
   });
 });

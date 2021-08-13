@@ -7,7 +7,7 @@ import { Hierarchy, Variant } from '../Button/types';
 export default {
   title: 'Components/Card',
   component: Card,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 export const CardStory = (): JSX.Element => (
@@ -26,7 +26,7 @@ export const CardStory = (): JSX.Element => (
           hierarchy={hierarchy}
           variant={variant}
         />
-      )),
+      ))
     )}
   </Grid>
 );
@@ -34,13 +34,17 @@ CardStory.storyName = 'Overview';
 
 export const LabStory = (): JSX.Element => (
   <Card
-    hierarchy={select('Hierarchy', ['normal', 'primary', 'secondary', 'error'], 'normal')}
+    hierarchy={select(
+      'Hierarchy',
+      ['normal', 'primary', 'secondary', 'error'],
+      'normal'
+    )}
     variant={select('Variant', ['filled', 'outlined'], 'outlined')}
     label={text('Button', 'Lorem')}
     title={text('Title', 'Lorem ipsum')}
     text={text(
       'Text',
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At',
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At'
     )}
     onClick={() => console.log('clicked')}
     img={text('Image', 'http://lorempixel.com/400/200/')}

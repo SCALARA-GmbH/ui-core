@@ -10,13 +10,15 @@ import Avatar from './Avatar';
 export default {
   title: 'Components/Avatar',
   component: Avatar,
-  decorators: [withKnobs, withActions],
+  decorators: [withKnobs, withActions]
 };
 
 export const AvatarOverviewSBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <div
         style={{
           display: 'flex',
@@ -24,12 +26,14 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8,
+          padding: 8
         }}
       >
         {SIZES.map((size) => (
           <Avatar
-            image={'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'}
+            image={
+              'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
+            }
             key={size}
             size={size}
             editable
@@ -45,11 +49,17 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8,
+          padding: 8
         }}
       >
         {SIZES.map((size) => (
-          <Avatar key={size} size={size} editable onClick={() => console.log('onClick')} tooltip={'You can click me'} />
+          <Avatar
+            key={size}
+            size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+          />
         ))}
       </div>
       <div
@@ -59,7 +69,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8,
+          padding: 8
         }}
       >
         {SIZES.map((size) => (
@@ -102,7 +112,7 @@ export const AvatarRegisteredOverview = (): JSX.Element => {
       style={{
         display: 'flex',
         alignItems: 'center',
-        padding: 8,
+        padding: 8
       }}
     >
       {SIZES.map((size) => (
@@ -111,7 +121,9 @@ export const AvatarRegisteredOverview = (): JSX.Element => {
           size={size}
           registered
           type="person"
-          image={'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'}
+          image={
+            'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
+          }
         />
       ))}
     </div>

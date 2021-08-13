@@ -39,7 +39,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   Icon = IconComponent,
   iconName,
   tooltip,
-  label,
+  label
 }) => {
   const classes = useStyles({ disabled });
   const labelClasses = useLabelStyles();
@@ -67,7 +67,11 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
         type={type}
       >
         <span className={classes.span}>
-          <Icon className={classes.icon} name={iconName} testId={`${testId}-icon`} />
+          <Icon
+            className={classes.icon}
+            name={iconName}
+            testId={`${testId}-icon`}
+          />
           {label && (
             <Typography
               span
@@ -76,7 +80,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
               className={classNames(labelClasses.root, {
                 [labelClasses.enabled]: !disabled && !hovered,
                 [labelClasses.disabled]: disabled,
-                [labelClasses.hovered]: hovered,
+                [labelClasses.hovered]: hovered
               })}
             >
               {label}

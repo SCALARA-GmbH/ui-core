@@ -8,7 +8,7 @@ import useGridItemStyles from '../GridItemHook';
 export default {
   title: 'Basics/Grid',
   component: Grid,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 export const GridStory = (): JSX.Element => {
@@ -17,7 +17,7 @@ export const GridStory = (): JSX.Element => {
     backgroundColor: theme.colors.primary.default,
     border: `1px solid ${theme.colors.secondary.default}`,
     color: theme.colors.neutral.F,
-    height: 64,
+    height: 64
   };
   return (
     <Grid xs={5} justifyContent={'stretch'}>
@@ -51,7 +51,7 @@ export const GridStyleHookStory = (): JSX.Element => {
     backgroundColor: theme.colors.primary.default,
     border: `1px solid ${theme.colors.secondary.default}`,
     color: theme.colors.neutral.F,
-    height: 64,
+    height: 64
   };
 
   return (
@@ -80,22 +80,66 @@ export const GridPlaygroundStory = (): JSX.Element => (
   <Grid
     alignContent={select(
       'AlignContent',
-      ['start', 'end', 'center', 'stretch', 'space-between', 'space-around', 'space-evenly'],
-      'start',
+      [
+        'start',
+        'end',
+        'center',
+        'stretch',
+        'space-between',
+        'space-around',
+        'space-evenly'
+      ],
+      'start'
     )}
-    alignItems={select('AlignItems', ['start', 'end', 'center', 'stretch'], 'stretch')}
+    alignItems={select(
+      'AlignItems',
+      ['start', 'end', 'center', 'stretch'],
+      'stretch'
+    )}
     justifyContent={select(
       'JustifyContent',
-      ['start', 'end', 'center', 'stretch', 'space-between', 'space-around', 'space-evenly'],
-      'start',
+      [
+        'start',
+        'end',
+        'center',
+        'stretch',
+        'space-between',
+        'space-around',
+        'space-evenly'
+      ],
+      'start'
     )}
-    justifyItems={select('JustifyItems', ['start', 'end', 'center', 'stretch'], 'stretch')}
+    justifyItems={select(
+      'JustifyItems',
+      ['start', 'end', 'center', 'stretch'],
+      'stretch'
+    )}
     style={{ backgroundColor: '#CCEAFF' }}
-    xs={select('xs', ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined], 3)}
-    sm={select('sm', ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined], undefined)}
-    md={select('md', ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined], undefined)}
-    lg={select('lg', ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined], undefined)}
-    xl={select('xl', ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined], undefined)}
+    xs={select(
+      'xs',
+      ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined],
+      3
+    )}
+    sm={select(
+      'sm',
+      ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined],
+      undefined
+    )}
+    md={select(
+      'md',
+      ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined],
+      undefined
+    )}
+    lg={select(
+      'lg',
+      ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined],
+      undefined
+    )}
+    xl={select(
+      'xl',
+      ['auto', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined],
+      undefined
+    )}
   >
     {[0, 1, 2, 3, 4, 5].map((value) => (
       <GridItem key={value} style={{ backgroundColor: '#99D4FF' }}>

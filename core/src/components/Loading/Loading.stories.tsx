@@ -4,13 +4,15 @@ import { Loading, useTheme } from '../..';
 
 export default {
   title: 'Basics/Loading',
-  component: Loading,
+  component: Loading
 };
 
 export const LoadingStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.main, padding: '16px' }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.main, padding: '16px' }}
+    >
       <Loading />
     </div>
   );

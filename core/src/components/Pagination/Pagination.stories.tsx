@@ -4,7 +4,7 @@ import { Grid, Pagination } from '../..';
 
 export default {
   title: 'Components/Pagination',
-  component: Pagination,
+  component: Pagination
 };
 
 export const PaginationStory = (): JSX.Element => {
@@ -78,7 +78,12 @@ export const PaginationRangeStory = (): JSX.Element => {
       <Grid xs={1}>
         <Pagination count={11} defaultPage={6} siblingCount={0} />
         <Pagination count={11} defaultPage={6} /> {/* Default ranges */}
-        <Pagination count={11} defaultPage={6} siblingCount={0} boundaryCount={2} />
+        <Pagination
+          count={11}
+          defaultPage={6}
+          siblingCount={0}
+          boundaryCount={2}
+        />
         <Pagination count={11} defaultPage={6} boundaryCount={2} />
       </Grid>
     </div>

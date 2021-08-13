@@ -56,7 +56,7 @@ const AppBar: React.FunctionComponent<Props> = ({
   onClick,
   menuTrayLabel,
   selectedId,
-  className,
+  className
 }) => {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState<boolean>(false);
@@ -79,7 +79,10 @@ const AppBar: React.FunctionComponent<Props> = ({
         >
           {item.iconName && <Icon name={item.iconName} />}
           {item.title && (
-            <Typography className={classes.leftItemButtons} color={item.id === selectedId ? 'primary' : 'initial'}>
+            <Typography
+              className={classes.leftItemButtons}
+              color={item.id === selectedId ? 'primary' : 'initial'}
+            >
               {item.title}
             </Typography>
           )}
@@ -89,11 +92,21 @@ const AppBar: React.FunctionComponent<Props> = ({
   );
 
   return (
-    <MuiAppBar position="static" className={cx(className, classes.backgroundColor)}>
+    <MuiAppBar
+      position="static"
+      className={cx(className, classes.backgroundColor)}
+    >
       <Toolbar>
-        <LogoComponent {...LogoComponentProps} className={cx(LogoComponentProps?.className, classes.logoRightBorder)} />
+        <LogoComponent
+          {...LogoComponentProps}
+          className={cx(LogoComponentProps?.className, classes.logoRightBorder)}
+        />
         <div className={classes.mobileLeft}>
-          <IconButton onClick={() => setMobileOpen(true)} iconName={'menu'} ariaLabel={menuTrayLabel} />
+          <IconButton
+            onClick={() => setMobileOpen(true)}
+            iconName={'menu'}
+            ariaLabel={menuTrayLabel}
+          />
           <Drawer
             anchor="left"
             open={mobileOpen}
@@ -101,7 +114,10 @@ const AppBar: React.FunctionComponent<Props> = ({
             classes={{ paper: classes.backgroundColor }}
           >
             <div className={cx(classes.drawerHeader, classes.toolbarMixin)}>
-              <IconButton iconName={'arrow-left'} onClick={() => setMobileOpen(false)} />
+              <IconButton
+                iconName={'arrow-left'}
+                onClick={() => setMobileOpen(false)}
+              />
             </div>
             {leftSideList(classes.backgroundColor, classes.mobileItems)}
           </Drawer>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import Button from './Button';
 
@@ -26,14 +26,18 @@ describe('<Button />', () => {
   });
   it('fires onClick when clicked', () => {
     const handleClick = jest.fn();
-    const { getByTestId } = render(<Button testId="test" onClick={handleClick} />);
+    const { getByTestId } = render(
+      <Button testId="test" onClick={handleClick} />
+    );
 
     fireEvent.click(getByTestId('test'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
   it('does not fire onClick when clicked while disabled', () => {
     const handleClick = jest.fn();
-    const { getByTestId } = render(<Button testId="test" disabled onClick={handleClick} />);
+    const { getByTestId } = render(
+      <Button testId="test" disabled onClick={handleClick} />
+    );
 
     fireEvent.click(getByTestId('test'));
     expect(handleClick).toHaveBeenCalledTimes(0);

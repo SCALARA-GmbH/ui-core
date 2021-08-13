@@ -1,12 +1,14 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import DatePicker from './DatePicker';
 
 describe('<DatePicker />', () => {
   it('renders without crashing', () => {
-    const { container } = render(<DatePicker onChange={jest.fn()} name={'test'} />);
+    const { container } = render(
+      <DatePicker onChange={jest.fn()} name={'test'} />
+    );
     expect(container).toBeInTheDocument();
   });
   it('renders without warning', () => {
@@ -29,7 +31,7 @@ describe('<DatePicker />', () => {
         name={'date'}
         label={'some label'}
         value={new Date('01-15-2012')}
-      />,
+      />
     );
 
     expect(getByTestId('testid')).toHaveValue(`15.01.2012`);
@@ -46,7 +48,7 @@ describe('<DatePicker />', () => {
         label={'some label'}
         value={new Date('01-15-2012')}
         clearLabel={'clear'}
-      />,
+      />
     );
 
     fireEvent.click(getByTestId('testid-clear'));

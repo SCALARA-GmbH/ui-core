@@ -10,25 +10,40 @@ import IconButton from '../IconButton';
 
 export default {
   title: 'Elements/Input/TextField',
-  component: TextField,
+  component: TextField
 };
 
 const useStyles = makeStyles(
   ({ spacing }) => ({
     padding: {
-      padding: spacing(1),
-    },
+      padding: spacing(1)
+    }
   }),
-  { name: 'SCA__TextFieldStory' },
+  { name: 'SCA__TextFieldStory' }
 );
 
 export const TextFieldStorySBS = (): JSX.Element => {
   const theme = useTheme();
   const classes = useStyles();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, minWidth: 384, padding: 16 }}>
-      <TextField placeholder={'Placeholder'} className={classes.padding} name={'test'} />
-      <TextField label={'Label'} placeholder={'Placeholder'} className={classes.padding} name={'test2'} />
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        minWidth: 384,
+        padding: 16
+      }}
+    >
+      <TextField
+        placeholder={'Placeholder'}
+        className={classes.padding}
+        name={'test'}
+      />
+      <TextField
+        label={'Label'}
+        placeholder={'Placeholder'}
+        className={classes.padding}
+        name={'test2'}
+      />
       <TextField
         name={'test3'}
         helperText={'I am a helper text'}
@@ -61,7 +76,13 @@ export const TextFieldVisualInputStory = (): JSX.Element => {
   const theme = useTheme();
   const classes = useStyles();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, minWidth: 384, padding: 16 }}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        minWidth: 384,
+        padding: 16
+      }}
+    >
       <TextField
         helperText={'I am a helper text'}
         label={'Label'}
@@ -107,9 +128,9 @@ export const LoginFormStory = (): JSX.Element => {
     resolver: yupResolver(
       yup.object().shape({
         email: yup.string().email().required(),
-        password: yup.string().required(),
-      }),
-    ),
+        password: yup.string().required()
+      })
+    )
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 
@@ -123,7 +144,13 @@ export const LoginFormStory = (): JSX.Element => {
         type="email"
         ref={register}
       />
-      <TextField label={'Passwort'} name={'password'} required type="password" ref={register} />
+      <TextField
+        label={'Passwort'}
+        name={'password'}
+        required
+        type="password"
+        ref={register}
+      />
       <Button variant={'contained'} type="submit" label="Login" />
     </form>
   );
@@ -137,9 +164,9 @@ export const ValidationFormStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        phone: yup.string().required(),
-      }),
-    ),
+        phone: yup.string().required()
+      })
+    )
   });
   const onSubmit = (data: { phone: string }) => alert(data.phone);
 
@@ -182,18 +209,21 @@ export const AccountFormStory = (): JSX.Element => {
         addressLine: yup.string(),
         postalCode: yup.string(),
         city: yup.string(),
-        country: yup.string(),
-      }),
+        country: yup.string()
+      })
     ),
     defaultValues: {
       firstName: 'Max',
-      lastName: 'Mustermann',
-    },
+      lastName: 'Mustermann'
+    }
   });
   const onSubmit = (data: FormEvent) => alert(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <Grid xs={2}>
         <TextField
           label={'E-Mail'}
@@ -203,7 +233,12 @@ export const AccountFormStory = (): JSX.Element => {
           type="email"
           ref={register}
         />
-        <TextField label={'Firstname'} name={'firstName'} placeholder={'test placeholder'} ref={register} />
+        <TextField
+          label={'Firstname'}
+          name={'firstName'}
+          placeholder={'test placeholder'}
+          ref={register}
+        />
         <TextField label={'Lastname'} name={'lastName'} ref={register} />
         <TextField label={'Phone'} name={'phone'} type="tel" ref={register} />
         <TextField label={'Address'} name={'addressLine'} ref={register} />

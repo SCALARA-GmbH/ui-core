@@ -2,7 +2,11 @@ export * from './utils';
 export * from './hooks';
 
 // Note: has to be imported first
-export { makeStyles, makeStylesWithProps, useTheme } from './components/ThemeProvider/styles';
+export {
+  makeStyles,
+  makeStylesWithProps,
+  useTheme
+} from './components/ThemeProvider/styles';
 
 export { default as Accordion } from './components/Accordion';
 export { default as AccordionItem } from './components/AccordionItem';
@@ -22,7 +26,7 @@ export {
   DataTableCell,
   DataTableHead,
   DataTableRow,
-  DataTableHeadTextCell,
+  DataTableHeadTextCell
 } from './components/DataTable';
 export { default as DatePicker } from './components/DatePicker';
 export { DialogProvider, useDialog } from './components/DialogProvider';
@@ -44,7 +48,10 @@ export { NavigationItem } from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
 export { Popover, usePopoverPositionUpdate } from './components/Popover';
-export { PrimaryNavigation, PrimaryNavigationItem } from './components/PrimaryNavigation';
+export {
+  PrimaryNavigation,
+  PrimaryNavigationItem
+} from './components/PrimaryNavigation';
 export { default as Radio } from './components/Radio';
 export { default as SearchField } from './components/SearchField';
 export { default as SearchSelect } from './components/SearchSelect';

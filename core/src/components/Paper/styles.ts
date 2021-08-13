@@ -9,7 +9,7 @@ export const useStyles = makeStylesWithProps<{
       backgroundColor: colors.background.primary,
       boxShadow: ({ elevated }) => (elevated ? shadows[2] : shadows[1]),
       cursor: ({ hoverable }) => (hoverable ? 'pointer' : 'initial'),
-      transition: 'box-shadow 0.2s',
-    },
-  }),
+      transition: 'box-shadow 0.2s'
+    }
+  })
 );

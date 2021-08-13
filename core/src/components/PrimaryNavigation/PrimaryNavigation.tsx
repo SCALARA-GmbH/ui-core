@@ -11,7 +11,9 @@ import { useStyles } from './styles';
 export interface Props {
   LogoComponent?: React.ComponentType<LogoProps>;
   LogoComponentProps?: LogoProps;
-  children: React.ReactElement<NavigationItemProps>[] | React.ReactElement<NavigationItemProps>;
+  children:
+    | React.ReactElement<NavigationItemProps>[]
+    | React.ReactElement<NavigationItemProps>;
 
   onClick?: (value: string) => void;
   selectedKey?: string;
@@ -22,7 +24,7 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
   LogoComponentProps,
   selectedKey,
   children,
-  onClick,
+  onClick
 }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -33,13 +35,13 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
       anchor="left"
       className={cx({
         [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open,
+        [classes.drawerClose]: !open
       })}
       classes={{
         paper: cx(classes.drawerPaper, {
           [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        }),
+          [classes.drawerClose]: !open
+        })
       }}
       onMouseEnter={() => {
         setOpen(true);
@@ -48,14 +50,21 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
         setOpen(false);
       }}
     >
-      <LogoComponent {...LogoComponentProps} className={classes.logo} color={'white'} />
+      <LogoComponent
+        {...LogoComponentProps}
+        className={classes.logo}
+        color={'white'}
+      />
       <List className={classes.list}>
-        {React.Children.map<React.ReactNode, React.ReactElement<NavigationItemProps>>(children, (child) => (
+        {React.Children.map<
+          React.ReactNode,
+          React.ReactElement<NavigationItemProps>
+        >(children, (child) => (
           <li>
             <ListItem
               className={cx(classes.item, {
                 [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey,
+                [classes.deselected]: selectedKey !== child.props.selectKey
               })}
               button
               disableRipple

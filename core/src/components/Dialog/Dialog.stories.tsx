@@ -4,14 +4,18 @@ import { Button, Dialog, DialogActions, Typography, useDialog } from '../..';
 
 export default {
   title: 'Components/Dialog',
-  component: Dialog,
+  component: Dialog
 };
 
 export const DialogStory = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <div style={{ padding: 16 }}>
-      <Button hierarchy={'primary'} onClick={() => setOpen(true)} label={'Open Dialog'} />
+      <Button
+        hierarchy={'primary'}
+        onClick={() => setOpen(true)}
+        label={'Open Dialog'}
+      />
       <Dialog onClose={() => setOpen(false)} open={open} title={'Title'}>
         <Typography>Hi I am content</Typography>
         <DialogActions onSubmit={() => setOpen(false)} />
@@ -25,7 +29,11 @@ export const DialogDeleteStory = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <div style={{ padding: 16 }}>
-      <Button hierarchy={'primary'} onClick={() => setOpen(true)} label={'Open Delete Dialog'} />
+      <Button
+        hierarchy={'primary'}
+        onClick={() => setOpen(true)}
+        label={'Open Delete Dialog'}
+      />
       <Dialog onClose={() => setOpen(false)} open={open} title={'Title'}>
         <Typography>Hi I am content</Typography>
         <DialogActions
@@ -45,7 +53,11 @@ export const StepDialogStory = (): JSX.Element => {
 
   return (
     <div style={{ padding: 16 }}>
-      <Button hierarchy={'primary'} onClick={() => setOpen(true)} label={'Open Stepper Dialog'} />
+      <Button
+        hierarchy={'primary'}
+        onClick={() => setOpen(true)}
+        label={'Open Stepper Dialog'}
+      />
       <Dialog
         onBack={step > 0 ? () => setStep((prev) => prev - 1) : undefined}
         onClose={() => setOpen(false)}
@@ -60,7 +72,7 @@ export const StepDialogStory = (): JSX.Element => {
           }}
           onSubmit={() => setStep((prev) => prev + 1)}
           SubmitButtonProps={{
-            label: 'Next',
+            label: 'Next'
           }}
         />
       </Dialog>
@@ -81,7 +93,7 @@ export const DialogHookStory = (): JSX.Element => {
       callback: () => alert('Submit from useDialog'),
       hierarchy: 'primary',
       message: 'Lorem ipsum',
-      title: 'Title',
+      title: 'Title'
     });
   };
   const handleShowDialog = () => {
@@ -90,7 +102,7 @@ export const DialogHookStory = (): JSX.Element => {
       callback: () => alert('Submit from useDialog'),
       hierarchy: 'primary',
       message: 'Are you ok with this dialog?',
-      title: 'Example title',
+      title: 'Example title'
     });
   };
   const handleShowErrorDialog = () => {
@@ -98,13 +110,21 @@ export const DialogHookStory = (): JSX.Element => {
       action: 'Yep, do it',
       callback: () => alert('Submit from useDialog'),
       hierarchy: 'error',
-      message: 'Do you really know what you are doing here? This seems very radical',
-      title: 'Much important',
+      message:
+        'Do you really know what you are doing here? This seems very radical',
+      title: 'Much important'
     });
   };
 
   return (
-    <div style={{ padding: 16, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div
+      style={{
+        padding: 16,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start'
+      }}
+    >
       <Button
         hierarchy={'primary'}
         onClick={handleShowSimpleDialog}
@@ -117,7 +137,11 @@ export const DialogHookStory = (): JSX.Element => {
         style={{ marginBottom: 8 }}
         label={'Open filled hook Dialog'}
       />
-      <Button hierarchy={'error'} onClick={handleShowErrorDialog} label={'Open error hook Dialog'} />
+      <Button
+        hierarchy={'error'}
+        onClick={handleShowErrorDialog}
+        label={'Open error hook Dialog'}
+      />
     </div>
   );
 };

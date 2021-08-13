@@ -2,7 +2,7 @@
   "name": "scalara",
   "version": "1.0.0",
   "author": "scalara-team",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-only",
   "description": "SCALARA GmbH ui library mostly based on Material UI",
   "scripts": {
     "bootstrap": "lerna bootstrap",

@@ -104,6 +104,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SCALARA-GmbH/mono.git"
+    "url": "git+https://github.com/SCALARA-GmbH/ui-core.git"
   }
 }

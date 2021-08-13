@@ -18,7 +18,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn type-check
       - run: yarn lint
-      - run: yarn test
+      - run: yarn test:coverage
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

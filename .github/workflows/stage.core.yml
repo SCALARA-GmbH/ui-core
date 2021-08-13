@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - 'releases/**'
-    paths:
-      - 'core/**'
-      - 'visual-test/**'
-      - '.github/workflows/stage.core.yml'
 
 jobs:
   unit-test:

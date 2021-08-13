@@ -1,10 +1,9 @@
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
-import PopperJs from 'popper.js';
 import * as React from 'react';
 
 import { Popover, useTheme } from '../..';
-import { usePopoverPositionUpdate } from '../Popover/usePopoverPositionUpdate';
+import { usePopoverPositionUpdate } from '../Popover';
 import PrimaryNavigation from '../PrimaryNavigation/PrimaryNavigation';
 import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
@@ -17,9 +16,7 @@ export default {
   decorators: [withKnobs],
 };
 
-const Labels = ['Accounts', 'Transactions', 'Business plan', 'Fiscal year'] as const;
-type LabelTypes = typeof Labels;
-export type Label = LabelTypes[number];
+const Labels: string[] = ['Accounts', 'Transactions', 'Business plan', 'Fiscal year'];
 
 export const NavigationStory = (): JSX.Element => {
   const theme = useTheme();
@@ -93,8 +90,7 @@ const PrimaryLabels = [
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
   { key: 'contacts', name: 'Contacts' },
-] as const;
-type PrimaryLabelTypes = typeof PrimaryLabels;
+];
 
 export const TwoLayerNavigationStory = (): JSX.Element => {
   const theme = useTheme();

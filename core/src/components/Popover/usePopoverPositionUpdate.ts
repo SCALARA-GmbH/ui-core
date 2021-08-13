@@ -1,7 +1,15 @@
 import PopperJs from 'popper.js';
 import * as React from 'react';
 
-export const usePopoverPositionUpdate = ({ offset } = { offset: { x: 25, y: -75 } }) => {
+export interface UsePopoverPositionUpdateResults {
+  update: ({ x, y }: { x: number; y: number }) => void;
+  anchorElement: PopperJs.ReferenceObject;
+  popoverRef: React.RefObject<PopperJs>;
+}
+
+export const usePopoverPositionUpdate = (
+  { offset } = { offset: { x: 25, y: -75 } },
+): UsePopoverPositionUpdateResults => {
   const popoverRef = React.useRef<PopperJs>(null);
 
   const positionRef = React.useRef<{ x: number; y: number }>({

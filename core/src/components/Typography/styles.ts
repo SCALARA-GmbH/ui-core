@@ -45,6 +45,7 @@ export const getLineHeight = (variant: Variant): string => {
     case 'c5':
       return '20px';
   }
+  return '22px';
 };
 
 export const getFontSize = (variant: Variant): number => {
@@ -66,6 +67,7 @@ export const getFontSize = (variant: Variant): number => {
     case 'c5':
       return 12;
   }
+  return 14;
 };
 
 export const getFontWeight = (variant: Variant): number | 'normal' => {
@@ -86,6 +88,7 @@ export const getFontWeight = (variant: Variant): number | 'normal' => {
     default:
       return 'normal';
   }
+  return 'normal';
 };
 
 export const getFontStyle = (
@@ -110,7 +113,7 @@ export const useStyles = makeStylesWithProps<{
   selectable?: boolean;
   variant: Variant;
 }>(
-  (theme) =>
+  (theme: Theme) =>
     createStyles({
       root: {
         letterSpacing: 0,

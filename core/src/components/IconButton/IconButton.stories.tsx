@@ -1,7 +1,7 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { Button, IconButton, useTheme } from '../..';
+import { IconButton, useTheme } from '../..';
 import Grid from '../Grid';
 import useGridItemClass from '../GridItemHook';
 

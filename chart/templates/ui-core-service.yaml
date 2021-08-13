@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: ui-core
-          image: {{ .Values.uiCore.image }}
+          image: {{ .Values.image }}
           imagePullPolicy: Always
           command: ["http-server", "/usr/storybook", "--silent", "--proxy", "http://localhost:8080?"]
           ports:

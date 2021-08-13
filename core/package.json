@@ -92,6 +92,7 @@
     "postbuild": "cp package.json dist/ && cp README.package.md dist/README.md && cp -r src/components/ThemeProvider/font dist/components/ThemeProvider",
     "storybook": "start-storybook -s ./public -p 6006",
     "test": "jest",
+    "test:coverage": "yarn run test --coverage",
     "test:watch": "yarn run test --watch",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",

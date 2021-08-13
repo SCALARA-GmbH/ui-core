@@ -17,13 +17,16 @@ const useStyle = makeStyles(
   ({ spacing }) => ({
     icon: {
       minWidth: 0,
-      paddingRight: spacing(1.5),
-    },
+      paddingRight: spacing(1.5)
+    }
   }),
-  { name: 'SCA__PrimaryNavigation-Item' },
+  { name: 'SCA__PrimaryNavigation-Item' }
 );
 
-const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({ label, iconName }) => {
+const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
+  label,
+  iconName
+}) => {
   const classes = useStyle();
   return (
     <>

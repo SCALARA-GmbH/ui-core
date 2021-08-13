@@ -1,4 +1,7 @@
-import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@material-ui/pickers';
+import {
+  DatePicker as MuiDatePicker,
+  DatePickerProps as MuiDatePickerProps
+} from '@material-ui/pickers';
 import * as React from 'react';
 
 import { Icon, IconButton, TextField } from '../../index';
@@ -41,7 +44,7 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   shouldDisableDate,
   style = {},
   testId,
-  value,
+  value
 }) => (
   <MuiDatePicker
     autoOk
@@ -76,7 +79,11 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         inputProps={{ value: params.value }}
         label={label}
         onKeyDown={params.onKeyDown}
-        onClick={(event) => params.onClick?.(event as React.MouseEvent<HTMLDivElement, MouseEvent>)}
+        onClick={(event) =>
+          params.onClick?.(
+            event as React.MouseEvent<HTMLDivElement, MouseEvent>
+          )
+        }
         ref={params.inputRef}
         required={required}
         style={style}

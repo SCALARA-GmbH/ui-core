@@ -4,13 +4,16 @@ import { Grid, Switch, useTheme } from '../..';
 
 export default {
   title: 'Elements/Controls/Switch',
-  component: Switch,
+  component: Switch
 };
 
 export const SwitchStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <Grid xs={2} style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <Grid
+      xs={2}
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <Switch />
       <Switch defaultChecked />
       <Switch label={'Label'} />

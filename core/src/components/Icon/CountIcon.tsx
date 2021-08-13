@@ -15,17 +15,17 @@ const useStyles = makeStyles(
       height: '30px',
       background: '#000000',
       position: 'relative',
-      marginRight: spacing(2),
+      marginRight: spacing(2)
     },
     count: {
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      color: '#FFFFFF',
-    },
+      color: '#FFFFFF'
+    }
   }),
-  { name: 'CountIcon' },
+  { name: 'CountIcon' }
 );
 
 const CountIcon: React.FunctionComponent<Props> = ({ count }) => {

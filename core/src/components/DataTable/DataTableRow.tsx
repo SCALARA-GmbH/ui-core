@@ -11,16 +11,19 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       '&:hover': {
-        backgroundColor: theme.colors.background.hover,
+        backgroundColor: theme.colors.background.hover
       },
       '&:focus-visible': {
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
-        boxShadow: `0px 0px 0px 7px ${fade(theme.colors.secondary.default as string, 0.15)} `,
-      },
-    },
+        boxShadow: `0px 0px 0px 7px ${fade(
+          theme.colors.secondary.default as string,
+          0.15
+        )} `
+      }
+    }
   }),
-  { name: 'SCA__DataTableRow' },
+  { name: 'SCA__DataTableRow' }
 );
 
 const DataTableRow: React.FunctionComponent<Props> = ({ children }) => {

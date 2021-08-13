@@ -1,4 +1,7 @@
-import { Checkbox as MuiCheckbox, CheckboxProps as MuiCheckboxProps } from '@material-ui/core';
+import {
+  Checkbox as MuiCheckbox,
+  CheckboxProps as MuiCheckboxProps
+} from '@material-ui/core';
 import classNames from 'classnames';
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
@@ -38,9 +41,9 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       ariaLabel,
       name,
       disabled = false,
-      onChange,
+      onChange
     },
-    ref,
+    ref
   ) => {
     const classes = useStyles();
     const innerRef = useRef<HTMLInputElement>();
@@ -59,12 +62,17 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     }, [innerRef?.current]);
 
     return (
-      <div className={classNames(classes.root, className, { [classes.focus]: focus })} style={style}>
+      <div
+        className={classNames(classes.root, className, {
+          [classes.focus]: focus
+        })}
+        style={style}
+      >
         <MuiCheckbox
           disableRipple
           classes={{
             root: internalError || error ? classes.error : classes.checkbox,
-            checked: classes.checked,
+            checked: classes.checked
           }}
           id={name}
           disabled={disabled}
@@ -94,7 +102,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           }}
           inputProps={{
             'aria-label': ariaLabel,
-            ...inputProps,
+            ...inputProps
           }}
         />
         <div className={classes.text}>
@@ -102,13 +110,17 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             {required ? `${label}*` : label}
           </Typography>
 
-          <Typography testId={`${testId}-error`} color={error || internalError ? 'error' : 'initial'} variant={'c5'}>
+          <Typography
+            testId={`${testId}-error`}
+            color={error || internalError ? 'error' : 'initial'}
+            variant={'c5'}
+          >
             {(error || internalError) && errorText}
           </Typography>
         </div>
       </div>
     );
-  },
+  }
 );
 
 export default Checkbox;

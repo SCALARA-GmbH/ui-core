@@ -24,7 +24,7 @@ const Paper: React.FunctionComponent<PaperProps> = ({
   hoverable = false,
   style = {},
   onClick,
-  testId = '',
+  testId = ''
 }) => {
   const [innerElevated, setInnerElevated] = useState(false);
   const classes = useStyles({ elevated: innerElevated || elevated, hoverable });

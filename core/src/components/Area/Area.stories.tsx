@@ -6,13 +6,15 @@ import Area from './Area';
 
 export default {
   title: 'Basics/Area',
-  component: Area,
+  component: Area
 };
 
 export const AreaStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <Area style={{ padding: 16, margin: 16 }}>
         <Typography>Area</Typography>
       </Area>

@@ -1,9 +1,9 @@
 {
-  "name": "ui-core-test",
+  "name": "visual-test",
   "version": "1.0.0",
-  "description": "visual regression and interaction tests for uiCore stories",
+  "description": "visual regression and interaction tests for stories",
   "main": "index.js",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "scripts": {
     "test:basics": "playwright test ./test/basics/*.spec.ts --config=./test/basics/playwright.config.ts",
     "test:components:interactions": "playwright test test/components/*.spec.ts --config=./test/components/playwright.config.ts",

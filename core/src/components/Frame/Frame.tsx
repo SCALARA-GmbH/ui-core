@@ -25,9 +25,15 @@ const Frame: React.FunctionComponent<DividerProps> = ({
   style = {},
   alignContent = 'start',
   alignItems = 'start',
-  justifyContent = 'start',
+  justifyContent = 'start'
 }) => {
-  const classes = useStyles({ disableGutters, orientation, justifyContent, alignItems, alignContent });
+  const classes = useStyles({
+    disableGutters,
+    orientation,
+    justifyContent,
+    alignItems,
+    alignContent
+  });
   return (
     <div className={classNames(classes.root, className)} style={style}>
       {children}

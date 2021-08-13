@@ -24,7 +24,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   size = 'medium',
   style = {},
   testId = '',
-  color,
+  color
 }) => {
   const icon = icons[name];
   if (!icon) {

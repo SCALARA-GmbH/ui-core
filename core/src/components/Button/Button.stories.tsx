@@ -10,22 +10,41 @@ import { Hierarchies, Variants } from './types';
 export default {
   title: 'Elements/Controls/Button',
   component: Button,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 export const ButtonStoryVS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', padding: 8 }}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex',
+        padding: 8
+      }}
+    >
       {Hierarchies.map((hierarchy) => (
         <div
           key={hierarchy}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: 16 }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            padding: 16
+          }}
         >
-          <Typography align={'center'} style={{ minHeight: '32px', alignSelf: 'center' }} variant={'c4'}>
+          <Typography
+            align={'center'}
+            style={{ minHeight: '32px', alignSelf: 'center' }}
+            variant={'c4'}
+          >
             contained
           </Typography>
-          <Typography align={'center'} style={{ minHeight: '32px', alignSelf: 'center' }} variant={'c4'}>
+          <Typography
+            align={'center'}
+            style={{ minHeight: '32px', alignSelf: 'center' }}
+            variant={'c4'}
+          >
             {hierarchy}
           </Typography>
           <Button
@@ -35,11 +54,26 @@ export const ButtonStoryVS = (): JSX.Element => {
             variant={'contained'}
             hierarchy={hierarchy}
           />
-          <Button style={{ margin: 8 }} label={'Button'} variant={'contained'} disabled />
+          <Button
+            style={{ margin: 8 }}
+            label={'Button'}
+            variant={'contained'}
+            disabled
+          />
         </div>
       ))}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: 16 }}>
-        <Typography style={{ minHeight: '64px', alignSelf: 'center' }} variant={'c4'}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          padding: 16
+        }}
+      >
+        <Typography
+          style={{ minHeight: '64px', alignSelf: 'center' }}
+          variant={'c4'}
+        >
           outlined
         </Typography>
 
@@ -50,10 +84,25 @@ export const ButtonStoryVS = (): JSX.Element => {
           variant={'outlined'}
           hierarchy={'primary'}
         />
-        <Button style={{ margin: 8 }} label={'Button'} variant={'outlined'} disabled />
+        <Button
+          style={{ margin: 8 }}
+          label={'Button'}
+          variant={'outlined'}
+          disabled
+        />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: 16 }}>
-        <Typography style={{ minHeight: '64px', alignSelf: 'center' }} variant={'c4'}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          padding: 16
+        }}
+      >
+        <Typography
+          style={{ minHeight: '64px', alignSelf: 'center' }}
+          variant={'c4'}
+        >
           text
         </Typography>
 
@@ -64,7 +113,12 @@ export const ButtonStoryVS = (): JSX.Element => {
           variant={'text'}
           hierarchy={'primary'}
         />
-        <Button style={{ margin: 8 }} label={'Button'} variant={'text'} disabled />
+        <Button
+          style={{ margin: 8 }}
+          label={'Button'}
+          variant={'text'}
+          disabled
+        />
       </div>
     </div>
   );
@@ -72,8 +126,15 @@ export const ButtonStoryVS = (): JSX.Element => {
 ButtonStoryVS.storyName = 'Overview';
 
 export const FullWidthStory = (): JSX.Element => (
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-    <Button style={{ margin: 4 }} label={'Small'} variant={'outlined'} fullWidth />
+  <div
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+  >
+    <Button
+      style={{ margin: 4 }}
+      label={'Small'}
+      variant={'outlined'}
+      fullWidth
+    />
     <Button style={{ margin: 4 }} label={'Small'} variant={'contained'} />
   </div>
 );
@@ -83,7 +144,12 @@ export const GridStory = (): JSX.Element => {
   const classGridItem = useGridItemClass({ xs: { start: '2', end: 'span 7' } });
   return (
     <Grid xs={12} style={{ margin: 4 }}>
-      <Button style={{ margin: 4 }} className={classGridItem} variant={'contained'} label={'Button In Grid'} />
+      <Button
+        style={{ margin: 4 }}
+        className={classGridItem}
+        variant={'contained'}
+        label={'Button In Grid'}
+      />
       <Button
         style={{ margin: 4 }}
         className={classGridItem}

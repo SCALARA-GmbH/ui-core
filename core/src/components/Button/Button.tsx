@@ -34,7 +34,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   textAlign = 'center',
   type = 'button',
   variant = 'outlined',
-  label = '',
+  label = ''
 }) => {
   const classes = useStyles({ hierarchy, fullWidth, textAlign, variant });
   const labelClasses = useLabelStyles({ hierarchy, variant });
@@ -49,7 +49,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
             className={classNames(labelClasses.root, labelClasses.outlined, {
               [labelClasses.outlineEnabled]: !disabled && !hovered,
               [labelClasses.disabled]: disabled,
-              [labelClasses.outlineHovered]: hovered,
+              [labelClasses.outlineHovered]: hovered
             })}
             disabled={disabled}
             variant={'c1'}
@@ -65,7 +65,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
             className={classNames(labelClasses.root, {
               [labelClasses.textEnabled]: !disabled && !hovered,
               [labelClasses.disabled]: disabled,
-              [labelClasses.textHovered]: hovered && !focused,
+              [labelClasses.textHovered]: hovered && !focused
             })}
             disabled={disabled}
             variant={'c3'}

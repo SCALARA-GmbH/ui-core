@@ -23,13 +23,19 @@ const DialogActions: React.FunctionComponent<DialogActionsProps> = ({
   className,
   onCancel,
   onDelete,
-  onSubmit,
+  onSubmit
 }) => {
   const classes = useStyles();
 
   return (
     <div className={cx(classes.root, className)}>
-      {onCancel && <Button {...CancelButtonProps} label={CancelButtonProps?.label || 'Abbrechen'} onClick={onCancel} />}
+      {onCancel && (
+        <Button
+          {...CancelButtonProps}
+          label={CancelButtonProps?.label || 'Abbrechen'}
+          onClick={onCancel}
+        />
+      )}
       {onDelete && (
         <Button
           className={classes.buttons}

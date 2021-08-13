@@ -4,13 +4,15 @@ import { Paper, Typography, useTheme } from '../..';
 
 export default {
   title: 'Basics/Paper',
-  component: Paper,
+  component: Paper
 };
 
 export const PaperStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <Paper style={{ padding: 16, margin: 16 }}>
         <Typography>I am a nice paper</Typography>
       </Paper>

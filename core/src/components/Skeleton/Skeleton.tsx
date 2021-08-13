@@ -8,7 +8,12 @@ interface Props {
   width?: number | string;
 }
 
-const Skeleton: React.FunctionComponent<Props> = ({ children, height, variant, width }) => {
+const Skeleton: React.FunctionComponent<Props> = ({
+  children,
+  height,
+  variant,
+  width
+}) => {
   return (
     <MuiLabSkeleton height={height} variant={variant} width={width}>
       {children}

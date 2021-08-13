@@ -1,6 +1,9 @@
 import cx from 'classnames';
 import * as React from 'react';
-import { cssTransition, ToastContainer as ToastifyToastContainer } from 'react-toastify';
+import {
+  cssTransition,
+  ToastContainer as ToastifyToastContainer
+} from 'react-toastify';
 
 import { makeStyles, createStyles } from '../..';
 import { useStyles as useTypographyStyles } from '../Typography/styles';
@@ -16,7 +19,7 @@ const useStyles = makeStyles(
         width: 'auto',
         height: 'auto',
         padding: 0,
-        boxSizing: 'content-box',
+        boxSizing: 'content-box'
       },
       root: {
         boxSizing: 'content-box',
@@ -24,42 +27,42 @@ const useStyles = makeStyles(
         flexDirection: 'column',
         marginBottom: spacing(1),
         border: `1px solid ${colors.border.main}`,
-        backgroundColor: colors.background.primary,
+        backgroundColor: colors.background.primary
       },
       body: {
         display: 'flex',
         borderRadius: 1,
         alignItems: 'center',
         boxShadow: shadows['2'],
-        cursor: 'pointer',
+        cursor: 'pointer'
       },
       fadeInAnimation: {
-        animation: '$fade-to-left 0.4s ease 0s 1 backwards',
+        animation: '$fade-to-left 0.4s ease 0s 1 backwards'
       },
       fadeOutAnimation: {
-        animation: '$fade-to-right 0.4s ease 0s 1 backwards',
+        animation: '$fade-to-right 0.4s ease 0s 1 backwards'
       },
       '@keyframes fade-to-left': {
         '0%': {
           opacity: 0,
-          transform: 'translateX(100%)',
+          transform: 'translateX(100%)'
         },
         '100%': {
           opacity: 1,
-          transform: 'translateX(0)',
-        },
+          transform: 'translateX(0)'
+        }
       },
       '@keyframes fade-to-right': {
         '0%': {
-          opacity: 1,
+          opacity: 1
         },
         '100%': {
           opacity: 0,
-          transform: 'translateX(100%)',
-        },
-      },
+          transform: 'translateX(100%)'
+        }
+      }
     }),
-  { name: 'SCA__Toast-Container' },
+  { name: 'SCA__Toast-Container' }
 );
 
 const ToastContainer: React.FunctionComponent = () => {
@@ -67,13 +70,13 @@ const ToastContainer: React.FunctionComponent = () => {
   const typographyClasses = useTypographyStyles({
     color: 'initial',
     variant: 't3',
-    align: 'left',
+    align: 'left'
   });
 
   const transition = cssTransition({
     duration: 400,
     enter: classes.fadeInAnimation,
-    exit: classes.fadeOutAnimation,
+    exit: classes.fadeOutAnimation
   });
 
   return (

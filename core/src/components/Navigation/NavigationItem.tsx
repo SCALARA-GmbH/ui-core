@@ -8,7 +8,9 @@ export interface NavigationItemProps {
   selectKey: string;
 }
 
-const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({ label }) => {
+const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
+  label
+}) => {
   return (
     <ListItemText>
       <Typography variant={'c1'} span>

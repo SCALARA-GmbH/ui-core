@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import TableRow from './TableRow';
 
@@ -21,7 +21,9 @@ describe('<TableRow />', () => {
   });
   it('fires onClick when clicked on row', () => {
     const handleClick = jest.fn();
-    const { getByTestId } = render(<TableRow testId="test" onClick={handleClick} />);
+    const { getByTestId } = render(
+      <TableRow testId="test" onClick={handleClick} />
+    );
 
     fireEvent.click(getByTestId('test'));
     expect(handleClick).toHaveBeenCalledTimes(1);
@@ -33,8 +35,11 @@ describe('<TableRow />', () => {
       <TableRow
         testId="test"
         onClick={handleClickRow}
-        actionIconButtonProps={{ iconName: 'close', onClick: handleClickAction }}
-      />,
+        actionIconButtonProps={{
+          iconName: 'close',
+          onClick: handleClickAction
+        }}
+      />
     );
 
     fireEvent.click(getByTestId('test'));

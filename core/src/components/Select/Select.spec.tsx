@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { act, fireEvent, render, screen } from 'testUtils/render';
+
+import { act, fireEvent, render, screen } from '../../../test-utils/render';
 
 import Select from './Select';
 
@@ -9,9 +10,9 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' },
+          { value: '1', title: 'test2' }
         ]}
-      />,
+      />
     );
     expect(container).toBeInTheDocument();
   });
@@ -21,9 +22,9 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' },
+          { value: '1', title: 'test2' }
         ]}
-      />,
+      />
     );
     expect(console.warn).not.toHaveBeenCalled();
   });
@@ -33,9 +34,9 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' },
+          { value: '1', title: 'test2' }
         ]}
-      />,
+      />
     );
     expect(console.error).not.toHaveBeenCalled();
   });
@@ -49,10 +50,10 @@ describe('<Select />', () => {
         testId={'testid'}
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' },
+          { value: '1', title: 'test2' }
         ]}
         onChange={handleChange}
-      />,
+      />
     );
     act(() => {
       fireEvent.change(getByTestId('testid-input'), { target: { value: '1' } });
@@ -74,10 +75,10 @@ describe('<Select />', () => {
         testId={'testid'}
         options={[
           { value: '0', title: 'test3' },
-          { value: '1', title: 'test2' },
+          { value: '1', title: 'test2' }
         ]}
         onChange={handleChange}
-      />,
+      />
     );
 
     act(() => {

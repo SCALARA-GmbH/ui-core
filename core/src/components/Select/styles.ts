@@ -3,7 +3,13 @@ import { fade } from '@material-ui/core';
 import { createStyles, makeStylesWithProps, Theme } from '../..';
 import { TextColor } from '../Typography/types';
 
-export const getFrameColor = ({ color, theme }: { color?: TextColor; theme: Theme }): string | undefined => {
+export const getFrameColor = ({
+  color,
+  theme
+}: {
+  color?: TextColor;
+  theme: Theme;
+}): string | undefined => {
   switch (color) {
     case 'initial':
       return theme.colors.border.main;
@@ -21,7 +27,7 @@ export const getFrameColor = ({ color, theme }: { color?: TextColor; theme: Them
 export const getBackgroundColor = ({
   disabled,
   active,
-  theme,
+  theme
 }: {
   disabled?: boolean;
   active?: boolean;
@@ -35,23 +41,30 @@ export const getBackgroundColor = ({
   return 'transparent';
 };
 
-export const useStyles = makeStylesWithProps<{ color: TextColor; disabled: boolean }>((theme) =>
+export const useStyles = makeStylesWithProps<{
+  color: TextColor;
+  disabled: boolean;
+}>((theme) =>
   createStyles({
     inputWrapper: {
-      backgroundColor: ({ disabled }) => getBackgroundColor({ disabled, theme, active: false }),
+      backgroundColor: ({ disabled }) =>
+        getBackgroundColor({ disabled, theme, active: false }),
       borderRadius: 2,
-      boxShadow: (props) => `0px 0px 0px 1px ${getFrameColor({ color: props.color, theme })} inset`,
+      boxShadow: (props) =>
+        `0px 0px 0px 1px ${getFrameColor({ color: props.color, theme })} inset`,
       display: 'flex',
       flexDirection: 'column',
       height: theme.spacing(7),
       marginBottom: theme.spacing(0.5),
       transition: 'background-color 0.2s',
       '&:hover': {
-        backgroundColor: ({ disabled }) => getBackgroundColor({ disabled, theme, active: true }),
-      },
+        backgroundColor: ({ disabled }) =>
+          getBackgroundColor({ disabled, theme, active: true })
+      }
     },
     inputWrapperFilled: {
-      backgroundColor: ({ disabled }) => getBackgroundColor({ disabled, theme, active: true }),
+      backgroundColor: ({ disabled }) =>
+        getBackgroundColor({ disabled, theme, active: true })
     },
     input: {
       flex: 1,
@@ -59,36 +72,36 @@ export const useStyles = makeStylesWithProps<{ color: TextColor; disabled: boole
       '&&': {
         alignItems: 'center',
         fontSize: '16px',
-        lineHeight: '24px',
-      },
+        lineHeight: '24px'
+      }
     },
     inputBaseInput: {
       color: theme.colors.text.main,
       padding: '7px 0 11px 0',
-      alignSelf: 'flex-end',
+      alignSelf: 'flex-end'
     },
     errorBaseInput: {
       boxShadow: `0px 0px 0px 1px ${theme.colors.error.main} inset`,
-      borderRadius: 2,
+      borderRadius: 2
     },
     label: {
       '&&': {
         color: theme.colors.text.main,
         position: 'absolute',
         marginLeft: theme.spacing(2),
-        marginTop: theme.spacing(2),
-      },
+        marginTop: theme.spacing(2)
+      }
     },
     labelElevated: {
       '&&': {
-        marginTop: 7,
-      },
+        marginTop: 7
+      }
     },
     bottomText: {
-      minHeight: 18,
+      minHeight: 18
     },
     optionImage: {
-      paddingRight: theme.spacing(1),
-    },
-  }),
+      paddingRight: theme.spacing(1)
+    }
+  })
 );

@@ -4,7 +4,7 @@ import { Divider, useTheme } from '../..';
 
 export default {
   title: 'Elements/Divider',
-  component: Divider,
+  component: Divider
 };
 
 export const DividerStorySBS = (): JSX.Element => {
@@ -13,7 +13,7 @@ export const DividerStorySBS = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.main,
-        display: 'flex',
+        display: 'flex'
       }}
     >
       <div
@@ -21,7 +21,7 @@ export const DividerStorySBS = (): JSX.Element => {
           display: 'flex',
           flexDirection: 'column',
           padding: 16,
-          width: 200,
+          width: 200
         }}
       >
         <Divider orientation={'horizontal'} />
@@ -33,7 +33,7 @@ export const DividerStorySBS = (): JSX.Element => {
       <div
         style={{
           display: 'flex',
-          padding: 16,
+          padding: 16
         }}
       >
         <Divider orientation={'vertical'} />

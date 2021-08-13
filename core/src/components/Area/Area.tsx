@@ -23,10 +23,14 @@ const Area: React.FunctionComponent<PaperProps> = ({
   style = {},
   onClick,
   testId = '',
-  border = false,
+  border = false
 }) => {
   const [innerElevated, setInnerElevated] = useState(false);
-  const classes = useStyles({ elevated: innerElevated || elevated, hoverable, border });
+  const classes = useStyles({
+    elevated: innerElevated || elevated,
+    hoverable,
+    border
+  });
   return (
     <div
       className={classNames(classes.root, className)}

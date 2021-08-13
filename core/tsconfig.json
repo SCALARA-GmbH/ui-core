@@ -10,10 +10,11 @@
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
     "baseUrl": "./",
     "paths": {
-      "testUtils/*": ["./testUtils/*"]
+      "test-utils/*": ["./test-utils/*"]
     },
     "importHelpers": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["testUtils", "src/components/**/*.spec.tsx", "src/components/**/*.stories.tsx"]
+  "exclude": [
+    "test-utils", "src/components/**/*.spec.tsx", "src/components/**/*.stories.tsx"]
 }

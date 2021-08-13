@@ -29,11 +29,12 @@ const SideMenu: React.FunctionComponent<Props> = ({
   onClose,
   menuItems,
   onClick,
-  selectedId,
+  selectedId
 }) => {
   const classes = useStyles();
 
-  if (menuHandle) menuHandle.className = cx(classes.anchor, classes.toolbarMixin);
+  if (menuHandle)
+    menuHandle.className = cx(classes.anchor, classes.toolbarMixin);
 
   return (
     <Menu

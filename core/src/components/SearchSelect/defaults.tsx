@@ -8,19 +8,19 @@ import { SearchSelectOption } from './SearchSelect';
 const useSelectedStyle = makeStyles(
   (theme) => ({
     cells: {
-      paddingLeft: theme.spacing(1.5),
+      paddingLeft: theme.spacing(1.5)
     },
     avatar: {
-      marginRight: theme.spacing(2.5),
-    },
+      marginRight: theme.spacing(2.5)
+    }
   }),
-  { name: 'SCA__SearchSelect_Default_Selected' },
+  { name: 'SCA__SearchSelect_Default_Selected' }
 );
 
 export const DefaultSelectedComponent: React.FunctionComponent<SearchSelectOption> = ({
   cells,
   title,
-  avatarProps,
+  avatarProps
 }) => {
   const classes = useSelectedStyle();
   return (
@@ -39,19 +39,23 @@ const useOptionStyle = makeStyles(
     title: {
       display: 'flex',
       alignItems: 'center',
-      flex: 2,
+      flex: 2
     },
     avatar: {
-      marginRight: theme.spacing(2.5),
+      marginRight: theme.spacing(2.5)
     },
     column: {
-      flex: 1,
-    },
+      flex: 1
+    }
   }),
-  { name: 'SCA__SearchSelect_Default_Option' },
+  { name: 'SCA__SearchSelect_Default_Option' }
 );
 
-export const DefaultOptionComponent: React.FunctionComponent<SearchSelectOption> = ({ cells, title, avatarProps }) => {
+export const DefaultOptionComponent: React.FunctionComponent<SearchSelectOption> = ({
+  cells,
+  title,
+  avatarProps
+}) => {
   const classes = useOptionStyle();
   return (
     <>

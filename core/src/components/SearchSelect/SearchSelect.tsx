@@ -42,7 +42,7 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
   OptionComponent = DefaultOptionComponent,
   value,
   notFoundText = 'Not Found',
-  testId,
+  testId
 }) => {
   const classes = useStyles({ maxHeight });
   const [open, setOpen] = React.useState<boolean>(false);
@@ -54,7 +54,7 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
     getOptionProps,
     groupedOptions,
     value: autoCompleteValue,
-    setAnchorEl,
+    setAnchorEl
   } = useAutocomplete({
     id: name,
     multiple: false,
@@ -67,7 +67,7 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
     getOptionLabel: (option) => `${option.title} ${option.cells.join(' ')}`,
     getOptionSelected: (option, value) => option.value === value.value,
     value,
-    onClose: () => setOpen(false),
+    onClose: () => setOpen(false)
   });
 
   const theme = useTheme();
@@ -87,12 +87,18 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
           ref={setAnchorEl}
           className={cx(classes.label, {
             [classes.hidden]: open,
-            [classes.visible]: !open,
+            [classes.visible]: !open
           })}
         >
           {autoCompleteValue && <SelectedComponent {...autoCompleteValue} />}
-          {!autoCompleteValue && <Typography variant={'c1'}>{header}</Typography>}
-          <Icon name={'up-down'} color={theme.colors.neutral['3']} className={classes.icon} />
+          {!autoCompleteValue && (
+            <Typography variant={'c1'}>{header}</Typography>
+          )}
+          <Icon
+            name={'up-down'}
+            color={theme.colors.neutral['3']}
+            className={classes.icon}
+          />
         </label>
         <InputBase
           placeholder={placeholder}
@@ -100,14 +106,14 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
             ...getInputProps(),
             type: open ? 'text' : 'hidden',
             'aria-labelledby': `${name}-label`,
-            'aria-controls': name,
+            'aria-controls': name
           }}
           classes={{
-            input: classes.inputBase,
+            input: classes.inputBase
           }}
           className={cx(classes.input, {
             [classes.hidden]: !open,
-            [classes.visible]: open,
+            [classes.visible]: open
           })}
         />
       </div>
@@ -138,7 +144,8 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
               >
                 <li
                   className={cx(classes.row, {
-                    [classes.selected]: autoCompleteValue?.value === option.value,
+                    [classes.selected]:
+                      autoCompleteValue?.value === option.value
                   })}
                 >
                   <OptionComponent {...option} />

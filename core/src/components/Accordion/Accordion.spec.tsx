@@ -1,7 +1,7 @@
 import { queryByRole } from '@testing-library/react';
 import * as React from 'react';
 
-import { act, fireEvent, render } from '../../../testUtils/render';
+import { act, fireEvent, render } from '../../../test-utils/render';
 import AccordionItem from '../AccordionItem';
 
 import Accordion from './Accordion';
@@ -11,7 +11,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).not.toHaveTextContent('Content');
@@ -29,7 +29,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion initiallyOpen>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toHaveTextContent('Content');
@@ -40,7 +40,7 @@ describe('<Accordion /> <AccordionItem />', () => {
       <Accordion initiallyOpen>
         <AccordionItem> Content1 </AccordionItem>
         <AccordionItem> Content2 </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toHaveTextContent('Content1');
@@ -51,7 +51,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion header={<div>header</div>}>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toHaveTextContent('header');
@@ -61,7 +61,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion title={'title'}>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toHaveTextContent('title');
@@ -73,18 +73,24 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { getByTestId } = render(
       <Accordion title={'title'}>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
-    expect(getByTestId('accordion-icon')).toHaveStyle({ transform: 'rotate(0deg)' });
+    expect(getByTestId('accordion-icon')).toHaveStyle({
+      transform: 'rotate(0deg)'
+    });
     act(() => {
       fireEvent.click(getByTestId('accordion'));
     });
-    expect(getByTestId('accordion-icon')).toHaveStyle({ transform: 'rotate(180deg)' });
+    expect(getByTestId('accordion-icon')).toHaveStyle({
+      transform: 'rotate(180deg)'
+    });
     act(() => {
       fireEvent.click(getByTestId('accordion'));
     });
-    expect(getByTestId('accordion-icon')).toHaveStyle({ transform: 'rotate(0deg)' });
+    expect(getByTestId('accordion-icon')).toHaveStyle({
+      transform: 'rotate(0deg)'
+    });
   });
 
   it('calls callback with state of accordion', () => {
@@ -93,9 +99,13 @@ describe('<Accordion /> <AccordionItem />', () => {
     const handleChange = jest.fn();
 
     const { getByLabelText } = render(
-      <Accordion title={'title'} header={<div>testingHeader</div>} onChange={handleChange}>
+      <Accordion
+        title={'title'}
+        header={<div>testingHeader</div>}
+        onChange={handleChange}
+      >
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(handleChange).toHaveBeenCalledWith(false);
@@ -123,7 +133,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { getByText } = render(
       <Accordion title={'title'} initiallyOpen>
         <AccordionItem onClick={handleClick}> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     act(() => {
@@ -139,7 +149,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { getByText } = render(
       <Accordion title={'title'} initiallyOpen>
         <AccordionItem onClick={jest.fn()}> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     act(() => {
@@ -155,7 +165,7 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { getByText } = render(
       <Accordion title={'title'} initiallyOpen>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     act(() => {
@@ -169,10 +179,12 @@ describe('<Accordion /> <AccordionItem />', () => {
     const { container } = render(
       <Accordion>
         <AccordionItem> Content </AccordionItem>
-      </Accordion>,
+      </Accordion>
     );
 
     expect(container).toBeInTheDocument();
-    expect(queryByRole(container, 'heading', { level: 1 })).not.toBeInTheDocument();
+    expect(
+      queryByRole(container, 'heading', { level: 1 })
+    ).not.toBeInTheDocument();
   });
 });

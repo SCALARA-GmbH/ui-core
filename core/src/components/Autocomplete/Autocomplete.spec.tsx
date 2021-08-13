@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { act, fireEvent, render } from '../../../testUtils/render';
+import { act, fireEvent, render } from '../../../test-utils/render';
 
 import Autocomplete from './Autocomplete';
 
@@ -26,9 +26,9 @@ describe('<Autocomplete />', () => {
         name={'test-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' },
+          { title: 'test2', value: '2' }
         ]}
-      />,
+      />
     );
 
     expect(getByRole('textbox', { name: 'test-name' })).toBeTruthy();
@@ -42,13 +42,15 @@ describe('<Autocomplete />', () => {
         name={'test-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' },
+          { title: 'test2', value: '2' }
         ]}
-      />,
+      />
     );
 
     act(() => {
-      fireEvent.change(getByRole('textbox', { name: 'test-name' }), { target: { value: 'tes' } });
+      fireEvent.change(getByRole('textbox', { name: 'test-name' }), {
+        target: { value: 'tes' }
+      });
     });
 
     act(() => {
@@ -67,13 +69,15 @@ describe('<Autocomplete />', () => {
         clearLabel={'clear-input-test-label'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' },
+          { title: 'test2', value: '2' }
         ]}
-      />,
+      />
     );
 
     act(() => {
-      fireEvent.change(getByRole('textbox', { name: 'test-name' }), { target: { value: 'tes' } });
+      fireEvent.change(getByRole('textbox', { name: 'test-name' }), {
+        target: { value: 'tes' }
+      });
     });
 
     act(() => {
@@ -95,15 +99,21 @@ describe('<Autocomplete />', () => {
         ariaLabel={'test-yet-another-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' },
+          { title: 'test2', value: '2' }
         ]}
-      />,
+      />
     );
 
     expect(getByLabelText('test-yet-another-name')).toBeTruthy();
 
-    expect(fireEvent.input(getByLabelText('test-yet-another-name'), { target: { value: 'testing entering text' } }));
+    expect(
+      fireEvent.input(getByLabelText('test-yet-another-name'), {
+        target: { value: 'testing entering text' }
+      })
+    );
 
-    expect(getByLabelText('test-yet-another-name')).toHaveValue('testing entering text');
+    expect(getByLabelText('test-yet-another-name')).toHaveValue(
+      'testing entering text'
+    );
   });
 });

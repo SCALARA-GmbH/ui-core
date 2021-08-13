@@ -31,7 +31,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
   type = 'person',
   editable,
   tooltip = '',
-  registered,
+  registered
 }) => {
   const classes = useStyles({ size, onClick });
 
@@ -39,11 +39,11 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
     <Tooltip title={tooltip} onClick={onClick}>
       <Badge
         classes={{
-          badge: classes.badge,
+          badge: classes.badge
         }}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'right',
+          horizontal: 'right'
         }}
         overlap={'circle'}
         invisible={!registered}
@@ -53,7 +53,11 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
           data-testid={testId}
           src={image}
           alt={alt}
-          className={classNames(classes.root, { [classes.iconOutline]: !image }, className)}
+          className={classNames(
+            classes.root,
+            { [classes.iconOutline]: !image },
+            className
+          )}
         >
           <Icon
             className={classes.icon}
@@ -62,7 +66,13 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
             testId={'fallback-icon'}
           />
         </MaterialAvatar>
-        {editable && onClick && <Icon className={classes.editOverlay} name={'edit'} testId={`${testId}-edit-icon`} />}
+        {editable && onClick && (
+          <Icon
+            className={classes.editOverlay}
+            name={'edit'}
+            testId={`${testId}-edit-icon`}
+          />
+        )}
       </Badge>
     </Tooltip>
   );

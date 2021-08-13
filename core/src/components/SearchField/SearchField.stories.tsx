@@ -5,7 +5,7 @@ import { SearchField, Typography, useTheme } from '../..';
 
 export default {
   title: 'Elements/Input/SearchField',
-  component: SearchField,
+  component: SearchField
 };
 
 export const SearchFieldStorySBS = (): JSX.Element => {
@@ -13,7 +13,11 @@ export const SearchFieldStorySBS = (): JSX.Element => {
   const [value, setValue] = useState<string>('');
   return (
     <div style={{ backgroundColor: theme.colors.background.main, padding: 16 }}>
-      <SearchField label={'Search'} placeholder={'lorem ipsum ...'} onChange={setValue} />
+      <SearchField
+        label={'Search'}
+        placeholder={'lorem ipsum ...'}
+        onChange={setValue}
+      />
       <Typography>You current search is:</Typography>
       <Typography preserveHeight>{value}</Typography>
     </div>

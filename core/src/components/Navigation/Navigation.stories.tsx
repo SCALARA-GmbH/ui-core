@@ -1,10 +1,9 @@
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
-import PopperJs from 'popper.js';
 import * as React from 'react';
 
 import { Popover, useTheme } from '../..';
-import { usePopoverPositionUpdate } from '../Popover/usePopoverPositionUpdate';
+import { usePopoverPositionUpdate } from '../Popover';
 import PrimaryNavigation from '../PrimaryNavigation/PrimaryNavigation';
 import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
@@ -14,12 +13,15 @@ import NavigationItem from './NavigationItem';
 export default {
   title: 'Components/Navigation',
   component: Navigation,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
-const Labels = ['Accounts', 'Transactions', 'Business plan', 'Fiscal year'] as const;
-type LabelTypes = typeof Labels;
-export type Label = LabelTypes[number];
+const Labels: string[] = [
+  'Accounts',
+  'Transactions',
+  'Business plan',
+  'Fiscal year'
+];
 
 export const NavigationStory = (): JSX.Element => {
   const theme = useTheme();
@@ -33,8 +35,18 @@ export const NavigationStory = (): JSX.Element => {
   };
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex' }}>
-      <Navigation header={'Finances'} title={'Accounting'} onClick={handleClick} selectedKey={selected}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex'
+      }}
+    >
+      <Navigation
+        header={'Finances'}
+        title={'Accounting'}
+        onClick={handleClick}
+        selectedKey={selected}
+      >
         {Labels.map((label) => (
           <NavigationItem label={label} key={label} selectKey={label} />
         ))}
@@ -61,8 +73,13 @@ export const NavigationDisabledStory = (): JSX.Element => {
 
   return (
     <div
-      style={{ backgroundColor: theme.colors.background.primary, display: 'flex' }}
-      onMouseMove={(event: React.MouseEvent<HTMLElement>) => update({ x: event.clientX, y: event.clientY })}
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex'
+      }}
+      onMouseMove={(event: React.MouseEvent<HTMLElement>) =>
+        update({ x: event.clientX, y: event.clientY })
+      }
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -77,7 +94,12 @@ export const NavigationDisabledStory = (): JSX.Element => {
           <NavigationItem label={label} key={label} selectKey={label} />
         ))}
       </Navigation>
-      <Popover open={open} popoverRef={popoverRef} anchorElement={anchorElement} variant={'info'}>
+      <Popover
+        open={open}
+        popoverRef={popoverRef}
+        anchorElement={anchorElement}
+        variant={'info'}
+      >
         <>
           Schalten Sie zunächst Ihr
           <br /> Hauptbuch frei
@@ -92,9 +114,8 @@ const PrimaryLabels = [
   { key: 'real-estate', name: 'Real Estate' },
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' },
-] as const;
-type PrimaryLabelTypes = typeof PrimaryLabels;
+  { key: 'contacts', name: 'Contacts' }
+];
 
 export const TwoLayerNavigationStory = (): JSX.Element => {
   const theme = useTheme();
@@ -115,10 +136,25 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
   };
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex', flexDirection: 'column' }}>
-      <PrimaryNavigation LogoComponentProps={{ text: true }} onClick={handleClick} selectedKey={selected}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <PrimaryNavigation
+        LogoComponentProps={{ text: true }}
+        onClick={handleClick}
+        selectedKey={selected}
+      >
         {PrimaryLabels.map((label) => (
-          <PrimaryNavigationItem label={label.name} key={label.key} selectKey={label.key} iconName={label.key} />
+          <PrimaryNavigationItem
+            label={label.name}
+            key={label.key}
+            selectKey={label.key}
+            iconName={label.key}
+          />
         ))}
       </PrimaryNavigation>
       <Navigation

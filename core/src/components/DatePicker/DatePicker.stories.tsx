@@ -8,14 +8,18 @@ import { DatePicker, Button, Grid, useTheme } from '../..';
 
 export default {
   title: 'Elements/Input/DatePicker',
-  component: DatePicker,
+  component: DatePicker
 };
 
 export const DatePickerStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
     <div style={{ backgroundColor: theme.colors.background.main, padding: 16 }}>
-      <DatePicker onChange={(date) => alert(date)} label={'Date'} name={'date'} />
+      <DatePicker
+        onChange={(date) => alert(date)}
+        label={'Date'}
+        name={'date'}
+      />
     </div>
   );
 };
@@ -48,12 +52,12 @@ export const FormStorySBS = (): JSX.Element => {
     resolver: yupResolver(
       yup.object().shape({
         start: yup.date().required(),
-        end: yup.date().nullable(),
-      }),
+        end: yup.date().nullable()
+      })
     ),
     defaultValues: {
-      start: new Date(),
-    },
+      start: new Date()
+    }
   });
 
   React.useEffect(() => {
@@ -74,7 +78,11 @@ export const FormStorySBS = (): JSX.Element => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      style={{ backgroundColor: theme.colors.background.main, padding: 16, maxWidth: 500 }}
+      style={{
+        backgroundColor: theme.colors.background.main,
+        padding: 16,
+        maxWidth: 500
+      }}
     >
       <Grid xs={2}>
         <DatePicker

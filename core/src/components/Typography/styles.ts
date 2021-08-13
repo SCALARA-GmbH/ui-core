@@ -1,8 +1,15 @@
 import { createStyles, makeStylesWithProps, Theme } from '../..';
+import { Color } from '../ThemeProvider/types';
 
 import { TextColor, Variant } from './types';
 
-export const getColor = ({ color, theme }: { color?: TextColor; theme: Theme }) => {
+export const getColor = ({
+  color,
+  theme
+}: {
+  color?: TextColor;
+  theme: Theme;
+}): Color => {
   switch (color) {
     case 'initial':
       return theme.colors.text.main;
@@ -45,6 +52,7 @@ export const getLineHeight = (variant: Variant): string => {
     case 'c5':
       return '20px';
   }
+  return '22px';
 };
 
 export const getFontSize = (variant: Variant): number => {
@@ -66,6 +74,7 @@ export const getFontSize = (variant: Variant): number => {
     case 'c5':
       return 12;
   }
+  return 14;
 };
 
 export const getFontWeight = (variant: Variant): number | 'normal' => {
@@ -89,13 +98,18 @@ export const getFontWeight = (variant: Variant): number | 'normal' => {
 };
 
 export const getFontStyle = (
-  variant: Variant,
-): { fontFamily: 'Open Sans'; fontSize: number; fontWeight: number | 'normal'; lineHeight: string } => {
+  variant: Variant
+): {
+  fontFamily: 'Open Sans';
+  fontSize: number;
+  fontWeight: number | 'normal';
+  lineHeight: string;
+} => {
   return {
     fontFamily: 'Open Sans',
     fontSize: getFontSize(variant),
     fontWeight: getFontWeight(variant),
-    lineHeight: getLineHeight(variant),
+    lineHeight: getLineHeight(variant)
   };
 };
 
@@ -110,18 +124,20 @@ export const useStyles = makeStylesWithProps<{
   selectable?: boolean;
   variant: Variant;
 }>(
-  (theme) =>
+  (theme: Theme) =>
     createStyles({
       root: {
         letterSpacing: 0,
-        color: ({ color, disabled }) => (disabled ? theme.colors.disabled : getColor({ color, theme })),
+        color: ({ color, disabled }) =>
+          disabled ? theme.colors.disabled : getColor({ color, theme }),
         cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
         display: 'block',
         fontFamily: 'Open Sans',
         fontSize: ({ variant }) => getFontSize(variant),
         fontWeight: ({ variant }) => getFontWeight(variant),
         lineHeight: ({ variant }) => getLineHeight(variant),
-        minHeight: ({ preserveHeight, variant }) => (preserveHeight ? getLineHeight(variant) : 0),
+        minHeight: ({ preserveHeight, variant }) =>
+          preserveHeight ? getLineHeight(variant) : 0,
         margin: 0,
         marginBottom: ({ gutterBottom }) => (gutterBottom ? '0.8em' : 0),
         padding: 0,
@@ -142,24 +158,24 @@ export const useStyles = makeStylesWithProps<{
             height: '1px',
             transform: 'scale(0)',
             backgroundColor: theme.colors.secondary.default,
-            transition: 'transform 300ms ease',
+            transition: 'transform 300ms ease'
           },
           '&:hover::after': {
             transform: 'scale(1)',
-            transformOrigin: 'center',
-          },
-        },
+            transformOrigin: 'center'
+          }
+        }
       },
       noWrap: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
+        whiteSpace: 'nowrap'
       },
       withLineBreak: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'pre-wrap',
-      },
+        whiteSpace: 'pre-wrap'
+      }
     }),
-  { name: 'SCA__Typography' },
+  { name: 'SCA__Typography' }
 );

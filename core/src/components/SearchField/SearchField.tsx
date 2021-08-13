@@ -16,7 +16,14 @@ export interface SearchFieldProps {
   label?: TextFieldProps['label'];
   textFieldProps?: Omit<
     TextFieldProps,
-    'className' | 'helperText' | 'label' | 'style' | 'onChange' | 'testId' | 'endAdornment' | 'startAdornment'
+    | 'className'
+    | 'helperText'
+    | 'label'
+    | 'style'
+    | 'onChange'
+    | 'testId'
+    | 'endAdornment'
+    | 'startAdornment'
   >;
 }
 
@@ -30,7 +37,7 @@ const SearchField: React.FunctionComponent<SearchFieldProps> = ({
   style,
   testId,
   textFieldProps,
-  name,
+  name
 }) => {
   const [innerValue, setInnerValue] = useState('');
 
@@ -49,8 +56,17 @@ const SearchField: React.FunctionComponent<SearchFieldProps> = ({
       label={label}
       disabled={disabled}
       onChange={(event) => setInnerValue(event.target.value)}
-      startAdornment={<IconButton iconName={'search'} onClick={() => onChange?.(innerValue)} />}
-      endAdornment={innerValue !== '' && <IconButton iconName={'close'} onClick={() => setInnerValue('')} />}
+      startAdornment={
+        <IconButton
+          iconName={'search'}
+          onClick={() => onChange?.(innerValue)}
+        />
+      }
+      endAdornment={
+        innerValue !== '' && (
+          <IconButton iconName={'close'} onClick={() => setInnerValue('')} />
+        )
+      }
       inputProps={{ value: innerValue }}
       {...textFieldProps}
     />

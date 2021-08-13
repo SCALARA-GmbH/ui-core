@@ -35,14 +35,16 @@ const DialogProvider: React.FunctionComponent<Props> = ({ children }) => {
 
   return (
     <>
-      <DialogContext.Provider value={showMessage}>{children}</DialogContext.Provider>
+      <DialogContext.Provider value={showMessage}>
+        {children}
+      </DialogContext.Provider>
       {config && (
         <Dialog open={open} onClose={() => setOpen(false)} title={config.title}>
           <Typography align={'center'}>{config.message}</Typography>
           <DialogActions
             SubmitButtonProps={{
               hierarchy: config.hierarchy || 'primary',
-              label: config.action,
+              label: config.action
             }}
             onCancel={() => setOpen(false)}
             onSubmit={handleActionAndClose}

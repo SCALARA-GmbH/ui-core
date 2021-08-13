@@ -33,20 +33,41 @@ const Card: React.FunctionComponent<DividerProps> = ({
   testId = '',
   text,
   title,
-  variant = 'outlined',
+  variant = 'outlined'
 }) => {
   const classes = useStyles({ img });
   return (
-    <Paper className={classNames(classes.root, className)} testId={testId} style={style} onClick={onClick}>
+    <Paper
+      className={classNames(classes.root, className)}
+      testId={testId}
+      style={style}
+      onClick={onClick}
+    >
       <div className={classes.image} data-testid={`${testId}-image`} />
       <div className={classes.content}>
-        <Typography className={classes.title} testId={`${testId}-title`} variant={'t3'} onClick={onClick}>
+        <Typography
+          className={classes.title}
+          testId={`${testId}-title`}
+          variant={'t3'}
+          onClick={onClick}
+        >
           {title}
         </Typography>
-        <Typography className={classes.text} testId={`${testId}-text`} variant={'c2'} onClick={onClick}>
+        <Typography
+          className={classes.text}
+          testId={`${testId}-text`}
+          variant={'c2'}
+          onClick={onClick}
+        >
           {text}
         </Typography>
-        <Button label={label} variant={variant} testId={`${testId}-button`} onClick={onClick} hierarchy={hierarchy} />
+        <Button
+          label={label}
+          variant={variant}
+          testId={`${testId}-button`}
+          onClick={onClick}
+          hierarchy={hierarchy}
+        />
       </div>
     </Paper>
   );

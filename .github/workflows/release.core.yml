@@ -20,6 +20,13 @@ jobs:
       - run: yarn type-check
       - run: yarn lint
       - run: yarn test
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./core/coverage/coverage-final.json
+          flags: ui-core
+          name: codecov-ui-core
+          fail_ci_if_error: true
 
 
   visual-test:

@@ -9,11 +9,11 @@ export const useStyles = makeStylesWithProps<{
       alignItems: 'center',
       cursor: (props) => (props.clickable ? 'pointer' : 'default'),
       height: 'fit-content',
-      width: 'fit-content',
+      width: 'fit-content'
     },
     iconWithText: {
       width: '146px',
-      height: '40px',
-    },
-  }),
+      height: '40px'
+    }
+  })
 );

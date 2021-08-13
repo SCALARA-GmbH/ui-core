@@ -33,27 +33,27 @@ const useStyles = makeStyles(
       minWidth: '300px',
       maxWidth: '452px',
       width: '100%',
-      padding: spacing(3, 5, 3, 2.5),
+      padding: spacing(3, 5, 3, 2.5)
     },
     error: {
-      borderLeft: `4px solid ${colors.error.main}`,
+      borderLeft: `4px solid ${colors.error.main}`
     },
     warning: {
-      borderLeft: `4px solid ${colors.warning.main}`,
+      borderLeft: `4px solid ${colors.warning.main}`
     },
     success: {
-      borderLeft: `4px solid ${colors.success.main}`,
+      borderLeft: `4px solid ${colors.success.main}`
     },
     children: {
       color: colors.text.main,
-      flexGrow: 1,
+      flexGrow: 1
     },
     icon: {
       paddingRight: spacing(2.5),
-      flexShrink: 0,
-    },
+      flexShrink: 0
+    }
   }),
-  { name: 'Toast' },
+  { name: 'Toast' }
 );
 
 const ToastIcon: React.FunctionComponent<Props> = ({ children, name }) => {
@@ -64,25 +64,42 @@ const ToastIcon: React.FunctionComponent<Props> = ({ children, name }) => {
       className={cx(classes.root, {
         [classes.success]: name === 'success',
         [classes.error]: name === 'error',
-        [classes.warning]: name === 'warning',
+        [classes.warning]: name === 'warning'
       })}
     >
-      {name && <Icon name={name} color={getColor(name, theme)} className={classes.icon} />}
+      {name && (
+        <Icon
+          name={name}
+          color={getColor(name, theme)}
+          className={classes.icon}
+        />
+      )}
       <div className={classes.children}>{children}</div>
     </div>
   );
 };
 
-export const success = (content: React.ReactNode, options?: ToastOptions | undefined): React.ReactText =>
+export const success = (
+  content: React.ReactNode,
+  options?: ToastOptions | undefined
+): React.ReactText =>
   toast.success(<ToastIcon name={'success'}>{content}</ToastIcon>, options);
 
-export const warning = (content: React.ReactNode, options?: ToastOptions | undefined): React.ReactText =>
+export const warning = (
+  content: React.ReactNode,
+  options?: ToastOptions | undefined
+): React.ReactText =>
   toast.warning(<ToastIcon name={'warning'}>{content}</ToastIcon>, options);
 
-export const error = (content: React.ReactNode, options?: ToastOptions | undefined): React.ReactText =>
+export const error = (
+  content: React.ReactNode,
+  options?: ToastOptions | undefined
+): React.ReactText =>
   toast.error(<ToastIcon name={'error'}>{content}</ToastIcon>, options);
 
-export const neutral = (content: React.ReactNode, options?: ToastOptions | undefined): React.ReactText =>
-  toast(<ToastIcon>{content}</ToastIcon>, options);
+export const neutral = (
+  content: React.ReactNode,
+  options?: ToastOptions | undefined
+): React.ReactText => toast(<ToastIcon>{content}</ToastIcon>, options);
 
 export default { error, warning, success, neutral };

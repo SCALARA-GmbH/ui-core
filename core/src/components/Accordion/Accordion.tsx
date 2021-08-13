@@ -29,7 +29,7 @@ const Accordion: React.FunctionComponent<Props> = ({
   testId = 'accordion',
   initiallyOpen = false,
   onChange,
-  className,
+  className
 }) => {
   const [open, setOpen] = React.useState<boolean>(initiallyOpen);
   const classes = useStyles({ open });
@@ -58,7 +58,9 @@ const Accordion: React.FunctionComponent<Props> = ({
           )}
           {header}
         </div>
-        {actionButtonProps && <IconButton className={classes.action} {...actionButtonProps} />}
+        {actionButtonProps && (
+          <IconButton className={classes.action} {...actionButtonProps} />
+        )}
         <Icon
           className={cx(classes.icon, { [classes.iconOpen]: open })}
           testId={`${testId}-icon`}
@@ -67,7 +69,13 @@ const Accordion: React.FunctionComponent<Props> = ({
         />
       </div>
       {!open && <DefaultDivider />}
-      <Collapse in={open} data-testid={`${testId}-list`} className={classes.content} mountOnEnter unmountOnExit>
+      <Collapse
+        in={open}
+        data-testid={`${testId}-list`}
+        className={classes.content}
+        mountOnEnter
+        unmountOnExit
+      >
         {children}
       </Collapse>
     </div>

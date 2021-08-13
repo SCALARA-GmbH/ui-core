@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { TableCell, TableRow } from '../..';
-import { render } from '../../../testUtils/render';
+import { render } from '../../../test-utils/render';
 
 import Table from './Table';
 
@@ -26,7 +26,7 @@ describe('<Table />', () => {
         <TableRow>
           <TableCell>I am a row</TableCell>
         </TableRow>
-      </Table>,
+      </Table>
     );
     expect(queryByTestId('test-row-divider-1')).not.toBeInTheDocument();
   });
@@ -42,7 +42,7 @@ describe('<Table />', () => {
         <TableRow>
           <TableCell>Row 3</TableCell>
         </TableRow>
-      </Table>,
+      </Table>
     );
     expect(queryByTestId('test-row-divider-1')).toBeInTheDocument();
     expect(queryByTestId('test-row-divider-2')).toBeInTheDocument();

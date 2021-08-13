@@ -41,7 +41,7 @@ const getBorder = (variant: TooltipVariant, theme: Theme): string => {
 const useStyles = makeStylesWithProps<{ variant: TooltipVariant }>(
   (theme) => ({
     popover: {
-      zIndex: 9999,
+      zIndex: 9999
     },
     root: {
       minWidth: '160px',
@@ -49,19 +49,19 @@ const useStyles = makeStylesWithProps<{ variant: TooltipVariant }>(
       display: 'flex',
       alignItems: 'center',
       backgroundColor: theme.colors.text.main,
-      boxShadow: ({ variant }) => getBorder(variant, theme),
+      boxShadow: ({ variant }) => getBorder(variant, theme)
     },
     icon: {
       padding: theme.spacing(0, 0, 0, 1.5),
-      flexShrink: 0,
+      flexShrink: 0
     },
     content: {
       width: '100%',
       color: theme.colors.neutral['6'],
-      padding: theme.spacing(1.5, 1.5, 1.5, 1.5),
-    },
+      padding: theme.spacing(1.5, 1.5, 1.5, 1.5)
+    }
   }),
-  { name: 'Popover' },
+  { name: 'Popover' }
 );
 
 export const Popover: React.FunctionComponent<PopoverProps> = ({
@@ -70,7 +70,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   anchorElement,
   variant = 'neutral',
   children,
-  testId,
+  testId
 }) => {
   const classes = useStyles({ variant });
   const theme = useTheme();
@@ -85,10 +85,18 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       className={classes.popover}
     >
       {({ TransitionProps }) => (
-        <Fade {...TransitionProps} timeout={333} data-testid={testId && `${testId}-fade`}>
+        <Fade
+          {...TransitionProps}
+          timeout={333}
+          data-testid={testId && `${testId}-fade`}
+        >
           <div className={classes.root}>
             {variant === 'info' && (
-              <Icon className={classes.icon} name={'information'} color={getColor(variant, theme)} />
+              <Icon
+                className={classes.icon}
+                name={'information'}
+                color={getColor(variant, theme)}
+              />
             )}
             <Typography variant={'c2'} className={classes.content}>
               {children}

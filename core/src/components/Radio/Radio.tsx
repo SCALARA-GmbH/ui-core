@@ -1,4 +1,7 @@
-import { Radio as MuiRadio, RadioProps as MuiRadioProps } from '@material-ui/core';
+import {
+  Radio as MuiRadio,
+  RadioProps as MuiRadioProps
+} from '@material-ui/core';
 import * as React from 'react';
 
 import { Typography } from '../..';
@@ -9,7 +12,10 @@ import { useStyles } from './styles';
 export interface RadioProps {
   className?: string;
   onBlur?: MuiRadioProps['onBlur'];
-  onChange: (event: React.ChangeEvent<HTMLInputElement>, value: SelectOption['value']) => void;
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: SelectOption['value']
+  ) => void;
   options: SelectOption[];
   style?: React.CSSProperties;
   testId?: string;
@@ -29,7 +35,7 @@ const Radio: React.FunctionComponent<RadioProps> = ({
   options,
   style = {},
   testId,
-  value,
+  value
 }) => {
   const classes = useStyles();
   return (
@@ -40,7 +46,10 @@ const Radio: React.FunctionComponent<RadioProps> = ({
             size={'small'}
             disableRipple
             className={classes.radio}
-            classes={{ checked: classes.checked, colorSecondary: classes.secondary }}
+            classes={{
+              checked: classes.checked,
+              colorSecondary: classes.secondary
+            }}
             value={option.value}
             onChange={(event) => {
               onChange(event, event.target.value);
@@ -49,14 +58,18 @@ const Radio: React.FunctionComponent<RadioProps> = ({
             data-testid={`${testId}-radio-${option.value}`}
             checked={`${value}` === `${option.value}`}
             inputProps={{
-              'aria-label': option.title,
+              'aria-label': option.title
             }}
           />
           <div className={classes.text}>
             <Typography variant={'c3'} color={'subtitle'}>
               {option.title}
             </Typography>
-            <Typography className={classes.subtitle} variant={'c5'} color={'subtitle'}>
+            <Typography
+              className={classes.subtitle}
+              variant={'c5'}
+              color={'subtitle'}
+            >
               {option.subtitle}
             </Typography>
           </div>

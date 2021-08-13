@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - 'releases/**'
-    paths:
-      - 'core/**'
-      - 'visual-test/**'
-      - '.github/workflows/stage.core.yml'
 
 jobs:
   unit-test:
@@ -102,6 +98,13 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./core/coverage/coverage-final.json
+          flags: ui-core
+          name: codecov-ui-core
+          fail_ci_if_error: true
 
   deploy:
     runs-on: ubuntu-20.04

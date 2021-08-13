@@ -21,13 +21,24 @@ const Logo: React.FunctionComponent<LogoProps> = ({
   style = {},
   testId = '',
   onClick,
-  color,
+  color
 }) => {
   const classes = useStyles({ clickable: !!onClick });
   return (
-    <div className={classNames(classes.root, className)} style={style} data-testid={testId} onClick={onClick}>
+    <div
+      className={classNames(classes.root, className)}
+      style={style}
+      data-testid={testId}
+      onClick={onClick}
+    >
       {!text && <Icon name={'scalara-logo'} color={color} />}
-      {text && <Icon name={'scalara-text'} className={classes.iconWithText} color={color} />}
+      {text && (
+        <Icon
+          name={'scalara-text'}
+          className={classes.iconWithText}
+          color={color}
+        />
+      )}
     </div>
   );
 };

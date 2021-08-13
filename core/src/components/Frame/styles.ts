@@ -14,9 +14,11 @@ export const useStyles = makeStylesWithProps<{
       display: 'flex',
       alignItems: ({ alignItems }) => alignItems,
       alignContent: ({ alignContent }) => alignContent,
-      flexDirection: ({ orientation }) => (orientation === 'horizontal' ? 'row' : 'column'),
-      padding: ({ disableGutters }) => (disableGutters ? 0 : theme.spacing(0, 3)),
-      justifyContent: ({ justifyContent }) => justifyContent,
-    },
-  }),
+      flexDirection: ({ orientation }) =>
+        orientation === 'horizontal' ? 'row' : 'column',
+      padding: ({ disableGutters }) =>
+        disableGutters ? 0 : theme.spacing(0, 3),
+      justifyContent: ({ justifyContent }) => justifyContent
+    }
+  })
 );

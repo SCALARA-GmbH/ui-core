@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { fireEvent, render } from '../../../testUtils/render';
+import { fireEvent, render } from '../../../test-utils/render';
 
 import TextField from './TextField';
 
@@ -21,7 +21,12 @@ describe('<TextField />', () => {
   });
   it('renders label and bottom text', () => {
     const { queryByTestId, queryAllByText, queryByText } = render(
-      <TextField name={'test'} testId={'testid'} label={'I am a label'} helperText={'and I am a helper text'} />,
+      <TextField
+        name={'test'}
+        testId={'testid'}
+        label={'I am a label'}
+        helperText={'and I am a helper text'}
+      />
     );
     expect(queryByTestId('testid')).toBeTruthy();
     expect(queryByTestId('testid-label')).toBeTruthy();
@@ -31,20 +36,34 @@ describe('<TextField />', () => {
 
   it('can get by role', () => {
     const { getByRole } = render(
-      <TextField testId={'testid'} label={'I am a label'} name={'test'} helperText={'and I am a helper text'} />,
+      <TextField
+        testId={'testid'}
+        label={'I am a label'}
+        name={'test'}
+        helperText={'and I am a helper text'}
+      />
     );
     expect(getByRole('textbox', { name: 'I am a label' })).toBeTruthy();
   });
 
   it('sets value', () => {
     const { getByRole } = render(
-      <TextField name={'test'} testId={'testid'} label={'I am a label'} helperText={'and I am a helper text'} />,
+      <TextField
+        name={'test'}
+        testId={'testid'}
+        label={'I am a label'}
+        helperText={'and I am a helper text'}
+      />
     );
 
     expect(getByRole('textbox', { name: 'I am a label' })).toHaveValue('');
 
-    fireEvent.input(getByRole('textbox', { name: 'I am a label' }), { target: { value: 'new text value' } });
+    fireEvent.input(getByRole('textbox', { name: 'I am a label' }), {
+      target: { value: 'new text value' }
+    });
 
-    expect(getByRole('textbox', { name: 'I am a label' })).toHaveValue('new text value');
+    expect(getByRole('textbox', { name: 'I am a label' })).toHaveValue(
+      'new text value'
+    );
   });
 });

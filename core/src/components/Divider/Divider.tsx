@@ -30,11 +30,15 @@ const Divider: React.FunctionComponent<DividerProps> = ({
   disableGutters = false,
   orientation = 'vertical',
   style = {},
-  testId = '',
+  testId = ''
 }) => {
   const classes = useStyles({ color, disableGutters });
   return (
-    <div className={classNames(classes.root, className, classes[orientation])} style={style} data-testid={testId} />
+    <div
+      className={classNames(classes.root, className, classes[orientation])}
+      style={style}
+      data-testid={testId}
+    />
   );
 };
 

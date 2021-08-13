@@ -1,4 +1,8 @@
-import { InputAdornment, InputBase, InputBaseComponentProps } from '@material-ui/core';
+import {
+  InputAdornment,
+  InputBase,
+  InputBaseComponentProps
+} from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 import { useRef, useState } from 'react';
@@ -22,8 +26,12 @@ export interface TextFieldProps {
   multiline?: InputBaseComponentProps['multiline'];
   name: string;
   onBlur?: InputBaseComponentProps['onBlur'];
-  onClick?: (event: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement, MouseEvent>) => void;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement, MouseEvent>
+  ) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   onFocus?: InputBaseComponentProps['onFocus'];
   onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
   onMouseDown?: InputBaseComponentProps['onMouseDown'];
@@ -33,7 +41,15 @@ export interface TextFieldProps {
   startAdornment?: InputBaseComponentProps['startAdornment'];
   style?: React.CSSProperties;
   testId?: string;
-  type?: 'email' | 'password' | 'search' | 'tel' | 'text' | 'url' | 'number' | 'date';
+  type?:
+    | 'email'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'text'
+    | 'url'
+    | 'number'
+    | 'date';
 }
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
@@ -61,9 +77,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       required = false,
       startAdornment,
       testId,
-      type = 'text',
+      type = 'text'
     },
-    ref,
+    ref
   ) => {
     const [internalError, setInternalError] = useState<boolean>(error);
     const innerRef = useRef<HTMLInputElement>();
@@ -83,7 +99,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         }
       },
       onClick,
-      ...inputProps,
+      ...inputProps
     };
 
     return (
@@ -106,8 +122,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
               [classes.error]: error || internalError,
               [classes.notAdornedEnd]: !endAdornment && !multiline,
               [classes.adornedEnd]: !!endAdornment,
-              [classes.multiline]: multiline,
-            }),
+              [classes.multiline]: multiline
+            })
           }}
           id={name}
           disabled={disabled}
@@ -156,7 +172,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         </Typography>
       </div>
     );
-  },
+  }
 );
 
 export default TextField;

@@ -10,14 +10,14 @@ import PrimaryNavigationItem from './PrimaryNavigationItem';
 export default {
   title: 'Components/PrimaryNavigation',
   component: PrimaryNavigation,
-  decorators: [withKnobs],
+  decorators: [withKnobs]
 };
 
 const Labels = [
   { key: 'real-estate', name: 'Real Estate' },
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' },
+  { key: 'contacts', name: 'Contacts' }
 ] as const;
 type LabelTypes = typeof Labels;
 export type Label = LabelTypes[number];
@@ -34,10 +34,24 @@ export const PrimaryNavigationStory = (): JSX.Element => {
   };
 
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary, display: 'flex' }}>
-      <PrimaryNavigation LogoComponentProps={{ text: true }} onClick={handleClick} selectedKey={selected}>
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        display: 'flex'
+      }}
+    >
+      <PrimaryNavigation
+        LogoComponentProps={{ text: true }}
+        onClick={handleClick}
+        selectedKey={selected}
+      >
         {Labels.map((label) => (
-          <PrimaryNavigationItem label={label.name} key={label.key} selectKey={label.key} iconName={label.key} />
+          <PrimaryNavigationItem
+            label={label.name}
+            key={label.key}
+            selectKey={label.key}
+            iconName={label.key}
+          />
         ))}
       </PrimaryNavigation>
     </div>

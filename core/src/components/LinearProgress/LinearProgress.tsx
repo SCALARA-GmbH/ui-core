@@ -1,4 +1,7 @@
-import { LinearProgress as MuiLinearProgress, LinearProgressProps as MuiLinearProgressProps } from '@material-ui/core';
+import {
+  LinearProgress as MuiLinearProgress,
+  LinearProgressProps as MuiLinearProgressProps
+} from '@material-ui/core';
 import * as React from 'react';
 
 import { useStyles } from './styles';
@@ -10,14 +13,19 @@ interface LinearProgressProps {
   variant?: MuiLinearProgressProps['variant'];
 }
 
-const LinearProgress: React.FunctionComponent<LinearProgressProps> = ({ className, value, valueBuffer, variant }) => {
+const LinearProgress: React.FunctionComponent<LinearProgressProps> = ({
+  className,
+  value,
+  valueBuffer,
+  variant
+}) => {
   const classes = useStyles();
   return (
     <MuiLinearProgress
       className={className}
       color={'primary'}
       classes={{
-        colorPrimary: classes.linearProgressColor,
+        colorPrimary: classes.linearProgressColor
       }}
       valueBuffer={valueBuffer}
       variant={variant}

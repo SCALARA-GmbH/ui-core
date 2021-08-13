@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { fireEvent, render } from '../../../test-utils/render';
 
+import { fireEvent, render } from '../../../test-utils/render';
 import ThemeProvider from '../ThemeProvider';
 
 import SideMenu from './SideMenu';

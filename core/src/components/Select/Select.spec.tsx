@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { act, fireEvent, render, screen } from '../../../test-utils/render';
 
 import Select from './Select';

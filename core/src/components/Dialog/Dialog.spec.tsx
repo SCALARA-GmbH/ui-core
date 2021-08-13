@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { act, fireEvent, render } from '../../../test-utils/render';
 
 import Dialog from './Dialog';

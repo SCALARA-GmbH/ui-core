@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { render } from '../../../test-utils/render';
 
 import Area from './Area';

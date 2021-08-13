@@ -1,4 +1,5 @@
 import { createStyles, makeStylesWithProps, Theme } from '../..';
+import { Color } from '../ThemeProvider/types';
 
 import { TextColor, Variant } from './types';
 
@@ -8,7 +9,7 @@ export const getColor = ({
 }: {
   color?: TextColor;
   theme: Theme;
-}) => {
+}): Color => {
   switch (color) {
     case 'initial':
       return theme.colors.text.main;

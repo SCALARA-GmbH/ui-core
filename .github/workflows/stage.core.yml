@@ -140,5 +140,5 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.event_name }}_${{ github.sha }}
           KUBECONFIG: /tmp/config
-        run: ${{ steps.install.outputs.helm-path }} upgrade -f ./values.yaml  --kubeconfig /tmp/config --set image=$ECR_REGISTRY/dev-ui-core:$IMAGE_TAG --set namespace=stage stage-ui .
+        run: ${{ steps.install.outputs.helm-path }} upgrade -f ./values.yaml  --kubeconfig $KUBECONFIG --set image=$ECR_REGISTRY/dev-ui-core:$IMAGE_TAG --set namespace=stage stage-ui .
 

@@ -39,6 +39,7 @@ export { default as GridItem } from './components/GridItem';
 export { default as useGridItemClass } from './components/GridItemHook';
 export { Icon } from './components/Icon';
 export { CountIcon } from './components/Icon';
+export { default as IconBubble } from './components/IconBubble';
 export { default as IconButton } from './components/IconButton';
 export { default as LinearProgress } from './components/LinearProgress';
 export { default as Loading } from './components/Loading';

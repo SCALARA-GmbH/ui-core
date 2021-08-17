@@ -125,6 +125,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
               [classes.multiline]: multiline
             })
           }}
+          className={cx({ [classes.noPadding]: multiline })}
           id={name}
           disabled={disabled}
           error={error || internalError}

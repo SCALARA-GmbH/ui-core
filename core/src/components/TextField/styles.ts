@@ -16,6 +16,9 @@ export const useStyles = makeStyles(
       label: {
         marginBottom: theme.spacing(0.5)
       },
+      noPadding: {
+        padding: theme.spacing(0)
+      },
       multiline: {
         alignItems: 'flex-start',
         height: 'fit-content',

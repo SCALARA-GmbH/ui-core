@@ -52,8 +52,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     outlined: {
-      paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
       '&:enabled': {
         background: theme.colors.background.primary,
         color: theme.colors.neutral['0'],
@@ -80,8 +82,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     text: {
-      paddingLeft: theme.spacing(1.5),
-      paddingRight: theme.spacing(1.5),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(1.5),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(1.5),
       '&:enabled': {
         '&:hover': {
           background: theme.colors.neutral['6']
@@ -100,8 +104,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     contained: {
-      paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
       '&:enabled': {
         background: (props) =>
           backgroundStatePalette({ theme, hierarchy: props.hierarchy }).default,

@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import * as React from 'react';
 
 import { Icon } from '../Icon';
@@ -6,6 +7,7 @@ import { makeStyles } from '../ThemeProvider/styles';
 
 interface Props {
   name: IconName;
+  className?: string;
 }
 
 const useStyles = makeStyles(
@@ -21,9 +23,11 @@ const useStyles = makeStyles(
   { name: 'SCA__IconBubble' }
 );
 
-const IconBubble: React.FunctionComponent<Props> = ({ name }) => {
+const IconBubble: React.FunctionComponent<Props> = ({ name, className }) => {
   const classes = useStyles();
-  return <Icon name={name} size="medium" className={classes.icon} />;
+  return (
+    <Icon name={name} size="medium" className={cx(classes.icon, className)} />
+  );
 };
 
 export default IconBubble;

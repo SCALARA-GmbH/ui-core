@@ -125,8 +125,8 @@ export const useStyles = makeStylesWithProps<{
   preserveHeight?: boolean;
   selectable?: boolean;
   variant: Variant;
-  linkVariant?: Variant;
-  linkColor?: TextColor;
+  linkVariant: Variant;
+  linkColor: TextColor;
 }>(
   (theme: Theme) =>
     createStyles({

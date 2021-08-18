@@ -70,7 +70,9 @@ const ToastContainer: React.FunctionComponent = () => {
   const typographyClasses = useTypographyStyles({
     color: 'initial',
     variant: 't3',
-    align: 'left'
+    align: 'left',
+    linkColor: 'secondary',
+    linkVariant: 't3'
   });
 
   const transition = cssTransition({

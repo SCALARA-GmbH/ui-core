@@ -55,6 +55,9 @@ jobs:
         timeout-minutes: 5
         run: |
           yarn run wait-on "http-get://localhost:6006"
+      - name: test assets
+        run: |
+          yarn test:assets
       - name: test basics
         run: |
           yarn test:basics

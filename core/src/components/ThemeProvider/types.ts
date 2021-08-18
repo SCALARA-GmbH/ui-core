@@ -41,7 +41,6 @@ export interface Colors {
   text: {
     main: Color;
     label: Color;
-    altLabel: Color;
     subtitle: Color;
   };
   disabled: Color;

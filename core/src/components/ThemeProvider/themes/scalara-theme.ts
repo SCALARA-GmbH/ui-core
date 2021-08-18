@@ -79,7 +79,6 @@ const theme = (type: PaletteType): Theme => {
     text: {
       main: '#202124',
       label: '#77797A',
-      altLabel: '#A9ACAD',
       subtitle: '#3F4041'
     },
     error: {
@@ -115,7 +114,6 @@ const theme = (type: PaletteType): Theme => {
       text: {
         main: '#FFFFFF',
         label: '#FAFCFD',
-        altLabel: '#A9ACAD',
         subtitle: '#F4F6F7'
       },
       background: {

@@ -26,10 +26,12 @@ export const getColor = ({
       return theme.colors.text.label;
     case 'subtitle':
       return theme.colors.text.subtitle;
-    case 'altLabel':
-      return theme.colors.text.altLabel;
+    case 'clickable':
+      return theme.colors.text.subtitle;
     case 'disabled':
       return theme.colors.disabled;
+    default:
+      return theme.colors.text.main;
   }
 };
 
@@ -123,6 +125,8 @@ export const useStyles = makeStylesWithProps<{
   preserveHeight?: boolean;
   selectable?: boolean;
   variant: Variant;
+  linkVariant: Variant;
+  linkColor?: TextColor;
 }>(
   (theme: Theme) =>
     createStyles({
@@ -146,8 +150,8 @@ export const useStyles = makeStylesWithProps<{
         width: ({ fullWidth }) => (fullWidth ? '100%' : 'auto'),
         '& a': {
           position: 'relative',
-          color: theme.colors.secondary.default,
-          fontWeight: 700,
+          color: ({ linkColor }) => getColor({ color: linkColor, theme }),
+          fontWeight: ({ linkVariant }) => getFontWeight(linkVariant),
           textDecoration: 'none',
           '&:after': {
             content: '""',
@@ -157,7 +161,8 @@ export const useStyles = makeStylesWithProps<{
             width: '100%',
             height: '1px',
             transform: 'scale(0)',
-            backgroundColor: theme.colors.secondary.default,
+            backgroundColor: ({ linkColor }) =>
+              getColor({ color: linkColor, theme }),
             transition: 'transform 300ms ease'
           },
           '&:hover::after': {

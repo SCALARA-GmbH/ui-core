@@ -9,5 +9,5 @@ test('visual', async ({ page }) => {
     `${config.url}/iframe.html?id=basics-typography--typography-story-sbs`
   );
 
-  expect(await page.screenshot()).toMatchSnapshot('color.png');
+  expect(await page.screenshot()).toMatchSnapshot('typography.png');
 });

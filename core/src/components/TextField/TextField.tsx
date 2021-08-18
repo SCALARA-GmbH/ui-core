@@ -107,7 +107,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         <label htmlFor={name}>
           <Typography
             testId={`${testId}-label`}
-            color={disabled ? 'altLabel' : 'label'}
+            color={disabled ? 'disabled' : 'label'}
             variant={'c4'}
             className={classes.label}
             preserveHeight

@@ -32,7 +32,11 @@ const getPalette = ({
 }): ColorPalette => {
   switch (hierarchy) {
     case 'primary':
-      return colors.primary;
+      return {
+        default: colors.neutral['3'],
+        '75': colors.neutral['4'],
+        '50': colors.neutral['6']
+      };
     case 'secondary':
       return colors.secondary;
     case 'tertiary':

@@ -125,7 +125,7 @@ export const useStyles = makeStylesWithProps<{
   preserveHeight?: boolean;
   selectable?: boolean;
   variant: Variant;
-  linkVariant: Variant;
+  linkVariant?: Variant;
   linkColor?: TextColor;
 }>(
   (theme: Theme) =>
@@ -151,7 +151,8 @@ export const useStyles = makeStylesWithProps<{
         '& a': {
           position: 'relative',
           color: ({ linkColor }) => getColor({ color: linkColor, theme }),
-          fontWeight: ({ linkVariant }) => getFontWeight(linkVariant),
+          fontWeight: ({ linkVariant }) =>
+            linkVariant ? getFontWeight(linkVariant) : 700,
           textDecoration: 'none',
           '&:after': {
             content: '""',

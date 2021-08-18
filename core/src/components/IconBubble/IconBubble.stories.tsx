@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { useTheme } from '../..';
 
-import IconBubble from './IconBubble';
+import IconBubble, { Hierarchies } from './IconBubble';
 
 export default {
   title: 'Assets/IconBubble',
@@ -20,10 +20,16 @@ export const IconBubbleStory = (): JSX.Element => {
         display: 'flex',
         flexDirection: 'row',
         height: '1024px',
-        width: '640px'
+        width: '1024px'
       }}
     >
-      <IconBubble name={'unlock-accounts'} />
+      {Hierarchies.map((hierarchy) => (
+        <IconBubble
+          key={hierarchy}
+          name={'unlock-accounts'}
+          hierarchy={hierarchy}
+        />
+      ))}
     </div>
   );
 };

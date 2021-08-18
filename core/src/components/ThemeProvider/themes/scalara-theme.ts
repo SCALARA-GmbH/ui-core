@@ -135,8 +135,8 @@ const theme = (type: PaletteType): Theme => {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 568,
-        md: 768,
+        sm: 704,
+        md: 960,
         lg: 1024,
         xl: 1440
       }

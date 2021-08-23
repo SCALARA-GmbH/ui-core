@@ -10,15 +10,6 @@ export default {
   component: Tooltip
 };
 
-const ForwardRefTypography = React.forwardRef<
-  HTMLDivElement,
-  { children: React.ReactNode }
->((props, ref) => (
-  <div ref={ref}>
-    <Typography>{props.children}</Typography>
-  </div>
-));
-
 export const TooltipStory = (): JSX.Element => {
   const theme = useTheme();
 

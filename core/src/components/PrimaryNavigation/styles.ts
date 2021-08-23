@@ -1,5 +1,5 @@
 import { makeStyles } from '../ThemeProvider/styles';
-import { getFontStyle, getFontWeight } from '../Typography/styles';
+import { getTooltipStyle } from '../Tooltip/Tooltip';
 
 export const useStyles = makeStyles(
   ({ colors, spacing, shadows, transitions }) => ({
@@ -63,19 +63,11 @@ export const useStyles = makeStyles(
         opacity: 1,
         visibility: 'visible'
       },
+      marginTop: -spacing(4.5),
+      left: spacing(7.5),
       position: 'fixed',
       zIndex: 99999,
-      left: spacing(7.5),
-      marginTop: -spacing(4.5),
-      backgroundColor: colors.neutral['1'],
-      color: colors.neutral['6'],
-      borderTopRightRadius: spacing(1),
-      borderBottomRightRadius: spacing(1),
-      borderTopLeftRadius: spacing(1),
-      borderBottomLeftRadius: spacing(0),
-      padding: spacing(1, 2),
-      boxShadow: shadows[1],
-      ...getFontStyle('c2')
+      ...getTooltipStyle({ colors, shadows, spacing })
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

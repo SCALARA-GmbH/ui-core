@@ -16,16 +16,4 @@ describe('<PrimaryNavigationItem />', () => {
 
     expect(container).toBeInTheDocument();
   });
-
-  it('renders with content', () => {
-    const { getByText } = render(
-      <PrimaryNavigationItem
-        label={'Konten'}
-        selectKey={'accounts'}
-        iconName={'unlock-accounts'}
-      />
-    );
-
-    expect(getByText('Konten')).toBeTruthy();
-  });
 });

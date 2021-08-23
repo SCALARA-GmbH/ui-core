@@ -29,9 +29,6 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         alignItems: 'center',
         userSelect: 'none'
       },
-      noPadding: {
-        padding: 0
-      },
       selected: {
         backgroundColor: theme.colors.neutral['6']
       },
@@ -39,9 +36,9 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        width: '100%',
         height: theme.spacing(8),
-        padding: theme.spacing(0, 0, 0, 6),
+        padding: theme.spacing(0, 4, 0, 6),
+        cursor: 'pointer',
         '&:hover': {
           backgroundColor: theme.colors.neutral['6']
         }
@@ -57,6 +54,8 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         paddingRight: theme.spacing(2.5)
       },
       label: {
+        ...getFontStyle('c4'),
+        color: theme.colors.text.label,
         flexDirection: 'row',
         alignItems: 'center',
         minHeight: '56px',

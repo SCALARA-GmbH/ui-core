@@ -1,28 +1,18 @@
 import {
-  createStyles,
   InputBase,
   InputBaseComponentProps,
   ListItemText,
   MenuItem,
   Select as MuiSelect
 } from '@material-ui/core';
-import classNames from 'classnames';
+import cx from 'classnames';
 import * as React from 'react';
 
-import { Avatar, Icon, makeStyles, ThemeProvider, Typography } from '../..';
+import { Avatar, Icon, makeStyles, Typography } from '../..';
 import { AvatarProps } from '../Avatar/Avatar';
 import { TextColor } from '../Typography/types';
 
 import { useStyles } from './styles';
-
-const iconUseStyle = makeStyles(() =>
-  createStyles({
-    root: {
-      position: 'relative',
-      marginTop: '5px'
-    }
-  })
-);
 
 export interface SelectOption {
   avatarProps?: AvatarProps;
@@ -46,11 +36,26 @@ export interface SelectProps {
     event: React.ChangeEvent<{ name?: string; value: string }>
   ) => void;
   options: SelectOption[];
-  required?: HTMLInputElement['required'];
   style?: React.CSSProperties;
   testId?: string;
   value?: string;
+  ariaLabel?: string;
+  required?: boolean;
+  placeholder?: string;
 }
+
+const useIconStyles = makeStyles(
+  (theme) => ({
+    root: {
+      paddingRight: theme.spacing(1)
+    }
+  }),
+  { name: 'SCA__Select-Icon' }
+);
+const ArrowDownIcon = ({ className }: { className: string }) => {
+  const classes = useIconStyles();
+  return <Icon name={'arrow-down'} className={cx(classes.root, className)} />;
+};
 
 const Select: React.FunctionComponent<SelectProps> = ({
   className = '',
@@ -63,113 +68,106 @@ const Select: React.FunctionComponent<SelectProps> = ({
   label = '',
   name,
   options,
-  required = false,
-  style = {},
+  placeholder,
   testId,
   onBlur,
   onChange,
-  value
+  value,
+  required,
+  ariaLabel
 }) => {
   const [internalError, setInternalError] = React.useState<boolean>(error);
   const classes = useStyles({ color, disabled });
-  const isElevated = value !== undefined && value !== null;
 
   return (
-    <div className={className}>
-      <div
-        className={classNames(classes.inputWrapper, {
-          [classes.inputWrapperFilled]: value !== undefined && value !== null
-        })}
-        style={style}
+    <div className={cx(className, classes.root)}>
+      <label className={classes.label} id={name}>
+        {label}
+      </label>
+      <MuiSelect
+        labelId={name}
+        displayEmpty
+        IconComponent={ArrowDownIcon}
+        aria-label={ariaLabel || name}
+        disabled={disabled}
+        id={name}
+        data-testid={testId}
+        value={value ?? ''}
+        onBlur={onBlur}
+        onChange={(e) => {
+          if (internalError) {
+            setInternalError(false);
+          }
+          onChange?.(e as React.ChangeEvent<{ name?: string; value: string }>);
+        }}
+        required={required}
+        renderValue={(selected) => (
+          <span className={classes.value}>
+            {options.find(({ value }) => value === selected)?.title ||
+              placeholder}
+          </span>
+        )}
+        MenuProps={{
+          classes: {
+            paper: classes.paper,
+            list: classes.list
+          }
+        }}
+        input={
+          <InputBase
+            classes={{
+              input: cx(classes.input, {
+                [classes.error]: error || internalError,
+                [classes.disabled]: disabled
+              })
+            }}
+            disabled={disabled}
+            error={error || internalError}
+            inputProps={{
+              'data-testid': `${testId}-input`,
+              ...inputProps
+            }}
+            onInvalid={(event) => {
+              event.preventDefault();
+              setInternalError(true);
+            }}
+          />
+        }
       >
-        <Typography
-          testId={`${testId}-label`}
-          className={classNames(classes.label, {
-            [classes.labelElevated]: isElevated
-          })}
-          variant={isElevated ? 'c3' : 'c1'}
-        >
-          {required ? `${label}*` : label}
-        </Typography>
-        <MuiSelect
-          IconComponent={({ className }) => {
-            const iconClasses = iconUseStyle();
-            return (
-              <div className={iconClasses.root}>
-                <Icon name={'arrow-down'} className={className} />
-              </div>
-            );
-          }}
-          aria-label={label || name}
-          disabled={disabled}
-          id={name}
-          data-testid={testId}
-          value={value ?? ''}
-          onBlur={onBlur}
-          onChange={(e) => {
-            if (internalError) {
-              setInternalError(false);
-            }
-            onChange?.(
-              e as React.ChangeEvent<{ name?: string; value: string }>
-            );
-          }}
-          required={required}
-          renderValue={(selected) =>
-            options.find(({ value }) => value === selected)?.title
-          }
-          input={
-            <InputBase
-              classes={{
-                input: classes.inputBaseInput,
-                error: classes.errorBaseInput
-              }}
-              className={classes.input}
-              disabled={disabled}
-              error={error || internalError}
-              inputProps={{
-                'data-testid': `${testId}-input`,
-                ...inputProps
-              }}
-              onInvalid={(event) => {
-                event.preventDefault();
-                setInternalError(true);
-              }}
-            />
-          }
-        >
-          {!required && (
-            <MenuItem disableRipple disableTouchRipple value={undefined}>
-              <em>&nbsp;</em>
-            </MenuItem>
-          )}
-          {options?.map((option) => (
-            <MenuItem
-              title={option.title}
-              key={`${option.value}`}
-              disableRipple
-              disableTouchRipple
-              value={option.value}
+        <MenuItem value="" disabled className={classes.item}>
+          {placeholder}
+        </MenuItem>
+        {options?.map((option) => (
+          <MenuItem
+            title={option.title}
+            key={option.value}
+            disableRipple
+            disableTouchRipple
+            value={option.value}
+            className={classes.itemRoot}
+          >
+            <span
+              className={cx(classes.item, {
+                [classes.selected]: option.value === value
+              })}
             >
-              <ThemeProvider type={'light'}>
-                {option.avatarProps && (
-                  <div className={classes.optionImage}>
-                    <Avatar size={'small'} {...option.avatarProps} />
-                  </div>
-                )}
-                <ListItemText
-                  className={classes.optionImage}
-                  disableTypography
-                  primary={<Typography>{option.title}</Typography>}
-                  secondary={
-                    <Typography variant={'c3'}>{option.subtitle}</Typography>
-                  }
-                />
-              </ThemeProvider>
-            </MenuItem>
-          ))}
-        </MuiSelect>
-      </div>
+              {option.avatarProps && (
+                <div className={classes.optionImage}>
+                  <Avatar size={'small'} {...option.avatarProps} />
+                </div>
+              )}
+              <ListItemText
+                className={classes.optionImage}
+                disableTypography
+                primary={<Typography variant={'c3'}>{option.title}</Typography>}
+                secondary={
+                  <Typography variant={'c5'}>{option.subtitle}</Typography>
+                }
+              />
+            </span>
+          </MenuItem>
+        ))}
+      </MuiSelect>
       {(error || internalError || helperText) && (
         <Typography
           testId={`${testId}-bottomText`}

@@ -60,6 +60,17 @@ export const TextFieldStorySBS = (): JSX.Element => {
         className={classes.padding}
       />
       <TextField
+        name={'test4'}
+        disabled
+        helperText={'I am filled and disabled'}
+        label={'Label'}
+        inputProps={{
+          defaultValue: 'Filled'
+        }}
+        placeholder={'Placeholder'}
+        className={classes.padding}
+      />
+      <TextField
         name={'test5'}
         error
         errorText={'This is an error'}

@@ -1,4 +1,4 @@
-import { Collapse, InputBase, List, ListItem } from '@material-ui/core';
+import { Collapse, InputBase, List } from '@material-ui/core';
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import cx from 'classnames';
 import * as React from 'react';
@@ -135,22 +135,15 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
           )}
           <List {...getListboxProps()} className={classes.list}>
             {groupedOptions.map((option, index) => (
-              <ListItem
+              <li
                 {...getOptionProps({ option, index })}
                 key={option.value}
-                button
-                disableRipple
-                className={classes.noPadding}
+                className={cx(classes.row, {
+                  [classes.selected]: autoCompleteValue?.value === option.value
+                })}
               >
-                <li
-                  className={cx(classes.row, {
-                    [classes.selected]:
-                      autoCompleteValue?.value === option.value
-                  })}
-                >
-                  <OptionComponent {...option} />
-                </li>
-              </ListItem>
+                <OptionComponent {...option} />
+              </li>
             ))}
           </List>
         </Collapse>

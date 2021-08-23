@@ -1,18 +1,19 @@
-import { createStyles, makeStylesWithProps } from '../..';
+import { makeStyles } from '../..';
 
-export const useStyles = makeStylesWithProps<{
-  elevated: boolean;
-  hoverable: boolean;
-  border: boolean;
-}>(({ colors, shadows }) =>
-  createStyles({
+export const useStyles = makeStyles(
+  ({ colors, shadows }) => ({
     root: {
-      backgroundColor: colors.background.primary,
-      border: ({ border }) =>
-        border ? `1px solid ${colors.border.main}` : 'none',
-      boxShadow: ({ elevated }) => (elevated ? shadows[0] : 'none'),
-      cursor: ({ hoverable }) => (hoverable ? 'pointer' : 'initial'),
-      transition: 'box-shadow 0.2s'
+      backgroundColor: colors.background.primary
+    },
+    border: {
+      border: `1px solid ${colors.border.main}`
+    },
+    elevated: {
+      boxShadow: shadows[0]
+    },
+    hoverable: {
+      cursor: 'pointer'
     }
-  })
+  }),
+  { name: 'SCA__Area' }
 );

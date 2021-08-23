@@ -13,12 +13,25 @@ export default {
 
 export const SelectStorySBS = (): JSX.Element => {
   const theme = useTheme();
-  const [value, setValue] = React.useState<string>('1');
-  const handleChange = (
+  const [office, setOffice] = React.useState<string>('');
+  const [team, setTeam] = React.useState<string>('');
+  const [teamMember, setTeamMember] = React.useState<string>('');
+  const handleOfficeChange = (
     event: React.ChangeEvent<{ name?: string; value: string }>
   ) => {
-    console.log(event.target.value);
-    setValue(event.target.value);
+    setOffice(event.target.value);
+    action(event.target.value);
+  };
+  const handleTeamChange = (
+    event: React.ChangeEvent<{ name?: string; value: string }>
+  ) => {
+    setTeam(event.target.value);
+    action(event.target.value);
+  };
+  const handleTeamMemberChange = (
+    event: React.ChangeEvent<{ name?: string; value: string }>
+  ) => {
+    setTeamMember(event.target.value);
     action(event.target.value);
   };
   return (
@@ -30,10 +43,49 @@ export const SelectStorySBS = (): JSX.Element => {
       }}
     >
       <Select
-        value={value}
+        label={'Office'}
+        name={'Office'}
+        value={office}
+        onChange={handleOfficeChange}
+        placeholder={'Choose Office'}
+        options={[
+          {
+            value: '1',
+            title: 'Brühl Office'
+          },
+          {
+            value: '2',
+            title: 'Köln Office'
+          }
+        ]}
+        required
+      />
+      <Select
+        label={'Teams'}
+        name={'teams'}
+        onChange={handleTeamChange}
+        placeholder={'Select Team'}
+        options={[
+          {
+            value: '1',
+            title: 'The Clippies',
+            subtitle: 'Iteration 1'
+          },
+          {
+            value: '2',
+            title: 'The No-Names-Yet',
+            subtitle: 'Iteration 2'
+          }
+        ]}
+        required
+        value={team}
+      />
+      <Select
+        value={teamMember}
+        placeholder={'Select Team Member...'}
         label={'Team Members'}
-        name={'salutation'}
-        onChange={handleChange}
+        name={'team-member'}
+        onChange={handleTeamMemberChange}
         options={[
           {
             value: '1',
@@ -41,27 +93,15 @@ export const SelectStorySBS = (): JSX.Element => {
             subtitle: 'CTO',
             avatarProps: {
               registered: true,
-              image:
-                'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns'
+              image: 'armin.png'
             }
-          },
-          {
-            value: '2',
-            title: 'Sascha Becker',
-            avatarProps: {
-              registered: true,
-              image:
-                'https://media-exp1.licdn.com/dms/image/C4D03AQGrFXISv4g-gg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=r_qp5IeojHdjudhN0GtU3dW6kYX_uPcFdzghCCswFzc'
-            },
-            subtitle: 'Frontend Hero'
           },
           {
             value: '3',
             title: 'Elmar Hufenbach',
             avatarProps: {
               registered: true,
-              image:
-                'https://media-exp1.licdn.com/dms/image/C4D03AQE0WGsrMkyfKg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=eHT24e-nVE3LqC1OoRhhBx_G0qYIXAMWPggj2dAfcMY'
+              image: 'elmar.jpeg'
             },
             subtitle: 'CPO'
           },
@@ -70,8 +110,7 @@ export const SelectStorySBS = (): JSX.Element => {
             title: 'Lamina Amatyakul Vedder',
             avatarProps: {
               registered: true,
-              image:
-                'https://media-exp1.licdn.com/dms/image/C4D03AQGJV4a4kX-SxQ/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=ykwN2F1R7WPItq5EF_X7bnciU7jPmguVxULLiPp-q5E'
+              image: 'lamina.jpeg'
             },
             subtitle: 'Devops Specialist'
           },
@@ -82,14 +121,25 @@ export const SelectStorySBS = (): JSX.Element => {
               type: 'person'
             },
             subtitle: 'Lorem ipsum'
-          },
+          }
+        ]}
+        required
+      />
+      <Select
+        disabled
+        label={'disabled'}
+        name={'disabled'}
+        placeholder={'disabled'}
+        options={[
           {
-            value: '5',
-            title: 'Lorem ipsum',
+            value: '1',
+            title: 'Armin Jazi',
+            subtitle: 'CTO',
             avatarProps: {
-              type: 'company'
-            },
-            subtitle: 'Lorem ipsum'
+              registered: true,
+              image:
+                'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns'
+            }
           }
         ]}
         required

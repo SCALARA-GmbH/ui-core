@@ -120,12 +120,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           classes={{
             input: cx(classes.input, {
               [classes.error]: error || internalError,
-              [classes.notAdornedEnd]: !endAdornment && !multiline,
-              [classes.adornedEnd]: !!endAdornment,
               [classes.multiline]: multiline
             })
           }}
-          className={cx({ [classes.noPadding]: multiline })}
           id={name}
           disabled={disabled}
           error={error || internalError}

@@ -27,27 +27,13 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
   onClick
 }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
   return (
     <Drawer
       variant="permanent"
       anchor="left"
-      className={cx({
-        [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open
-      })}
+      className={classes.drawer}
       classes={{
-        paper: cx(classes.drawerPaper, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open
-        })
-      }}
-      onMouseEnter={() => {
-        setOpen(true);
-      }}
-      onMouseLeave={() => {
-        setOpen(false);
+        paper: classes.drawerPaper
       }}
     >
       <LogoComponent
@@ -71,7 +57,6 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
               onClick={(event: React.MouseEvent<HTMLElement>) => {
                 // note: this is fixed in mui v5 and does not have to be set manually
                 event.preventDefault();
-                setOpen(false);
                 onClick?.(child.props.selectKey);
               }}
             >

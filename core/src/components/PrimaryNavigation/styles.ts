@@ -4,31 +4,23 @@ import { getFontWeight } from '../Typography/styles';
 export const useStyles = makeStyles(
   ({ colors, spacing, shadows, transitions }) => ({
     drawerPaper: {
-      width: spacing(35),
+      width: spacing(7),
       backgroundColor: colors.neutral['0'],
       border: 'none',
       boxShadow: shadows[0],
       zIndex: 9998
     },
-    drawerOpen: {
-      width: spacing(35),
-      transition: transitions.create('width', {
-        easing: transitions.easing.sharp,
-        duration: transitions.duration.enteringScreen
-      })
-    },
-    drawerClose: {
-      transition: transitions.create('width', {
-        easing: transitions.easing.sharp,
-        duration: transitions.duration.leavingScreen
-      }),
+    drawer: {
       width: spacing(7)
     },
     item: {
-      height: spacing(7),
+      height: spacing(9),
       padding: spacing(1.5, 1),
       '&:hover': {
-        backgroundColor: colors.neutral['1']
+        backgroundColor: colors.neutral['1'],
+        '& svg': {
+          color: colors.neutral.F
+        }
       }
     },
     logo: {
@@ -36,6 +28,10 @@ export const useStyles = makeStyles(
       padding: spacing(1.25)
     },
     selected: {
+      transition: transitions.create('box-shadow', {
+        easing: transitions.easing.easeIn,
+        duration: transitions.duration.short
+      }),
       backgroundColor: colors.neutral['1'],
       boxShadow: `4px 0px 0px 0px ${colors.secondary.default} inset`,
       '& span': {
@@ -49,6 +45,10 @@ export const useStyles = makeStyles(
       cursor: 'default'
     },
     deselected: {
+      transition: transitions.create('box-shadow', {
+        easing: transitions.easing.easeOut,
+        duration: transitions.duration.short
+      }),
       backgroundColor: 'initial',
       '& span': {
         fontWeight: getFontWeight('c2'),

@@ -1,11 +1,9 @@
-import { ListItemIcon, ListItemText } from '@material-ui/core';
+import { ListItemIcon } from '@material-ui/core';
 import * as React from 'react';
 
 import { Icon } from '../Icon';
 import { IconName } from '../Icon/Icon';
 import { makeStyles } from '../ThemeProvider/styles';
-import Typography from '../Typography';
-import { Wrap } from '../Typography/Typography';
 
 export interface NavigationItemProps {
   label: string;
@@ -29,16 +27,9 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
 }) => {
   const classes = useStyle();
   return (
-    <>
-      <ListItemIcon className={classes.icon}>
-        <Icon name={iconName} />
-      </ListItemIcon>
-      <ListItemText>
-        <Typography variant={'c1'} span wrap={Wrap.NO_WRAP}>
-          {label}
-        </Typography>
-      </ListItemText>
-    </>
+    <ListItemIcon className={classes.icon} aria-label={label}>
+      <Icon name={iconName} />
+    </ListItemIcon>
   );
 };
 

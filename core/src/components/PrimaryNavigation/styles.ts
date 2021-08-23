@@ -1,5 +1,5 @@
 import { makeStyles } from '../ThemeProvider/styles';
-import { getFontWeight } from '../Typography/styles';
+import { getFontStyle, getFontWeight } from '../Typography/styles';
 
 export const useStyles = makeStyles(
   ({ colors, spacing, shadows, transitions }) => ({
@@ -34,11 +34,6 @@ export const useStyles = makeStyles(
       }),
       backgroundColor: colors.neutral['1'],
       boxShadow: `4px 0px 0px 0px ${colors.secondary.default} inset`,
-      '& span': {
-        fontWeight: getFontWeight('c1'),
-        userSelect: 'none',
-        color: colors.neutral.F
-      },
       '& svg': {
         color: colors.neutral.F
       },
@@ -50,17 +45,37 @@ export const useStyles = makeStyles(
         duration: transitions.duration.short
       }),
       backgroundColor: 'initial',
-      '& span': {
-        fontWeight: getFontWeight('c2'),
-        userSelect: 'none',
-        color: colors.neutral['4']
-      },
       '& svg': {
         color: colors.neutral['4']
       }
     },
     list: {
       padding: 0
+    },
+    tooltip: {
+      visibility: 'hidden',
+      transition: transitions.create('opacity', {
+        easing: transitions.easing.easeIn,
+        duration: transitions.duration.short
+      }),
+      opacity: 0,
+      'div:hover > &': {
+        opacity: 1,
+        visibility: 'visible'
+      },
+      position: 'fixed',
+      zIndex: 99999,
+      left: spacing(7.5),
+      marginTop: -spacing(4.5),
+      backgroundColor: colors.neutral['1'],
+      color: colors.neutral['6'],
+      borderTopRightRadius: spacing(1),
+      borderBottomRightRadius: spacing(1),
+      borderTopLeftRadius: spacing(1),
+      borderBottomLeftRadius: spacing(0),
+      padding: spacing(1, 2),
+      boxShadow: shadows[1],
+      ...getFontStyle('c2')
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

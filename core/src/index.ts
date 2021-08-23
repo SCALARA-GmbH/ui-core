@@ -67,6 +67,7 @@ export { default as TextField } from './components/TextField';
 export { default as ThemeProvider } from './components/ThemeProvider';
 export { ToastContainer } from './components/Toast';
 export { toast } from './components/Toast';
+export { default as Tooltip } from './components/Tooltip';
 export { default as Typography } from './components/Typography';
 export { Theme } from './components/ThemeProvider/types';
 export { createStyles, withStyles } from '@material-ui/core/styles';

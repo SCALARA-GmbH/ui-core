@@ -60,6 +60,7 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
                 onClick?.(child.props.selectKey);
               }}
             >
+              <span className={classes.tooltip}>{child.props.label}</span>
               {child}
             </ListItem>
           </li>

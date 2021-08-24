@@ -28,7 +28,6 @@ export const useStyles = makeStylesWithProps<{
         width: '100%',
         padding: theme.spacing(0, 3),
         minHeight: theme.spacing(7),
-        color: theme.colors.text.main,
         backgroundColor: theme.colors.background.primary,
         '&:hover': {
           backgroundColor: theme.colors.neutral['6']

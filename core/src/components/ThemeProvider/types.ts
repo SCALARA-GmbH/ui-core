@@ -35,6 +35,9 @@ export interface Colors {
     disabled: Color;
     hover: Color;
   };
+  icon: {
+    control: Color;
+  };
   border: {
     main: Color;
   };

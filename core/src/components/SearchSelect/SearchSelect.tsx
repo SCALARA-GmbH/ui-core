@@ -96,7 +96,7 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
           )}
           <Icon
             name={'up-down'}
-            color={theme.colors.neutral['3']}
+            color={theme.colors.icon.control}
             className={classes.icon}
           />
         </label>

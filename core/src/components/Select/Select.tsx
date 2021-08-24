@@ -8,7 +8,7 @@ import {
 import cx from 'classnames';
 import * as React from 'react';
 
-import { Avatar, Icon, makeStyles, Typography } from '../..';
+import { Avatar, Icon, makeStyles, Typography, useTheme } from '../..';
 import { AvatarProps } from '../Avatar/Avatar';
 import { TextColor } from '../Typography/types';
 
@@ -47,14 +47,21 @@ export interface SelectProps {
 const useIconStyles = makeStyles(
   (theme) => ({
     root: {
-      paddingRight: theme.spacing(1)
+      padding: theme.spacing(0, 1)
     }
   }),
   { name: 'SCA__Select-Icon' }
 );
 const ArrowDownIcon = ({ className }: { className: string }) => {
   const classes = useIconStyles();
-  return <Icon name={'arrow-down'} className={cx(classes.root, className)} />;
+  const theme = useTheme();
+  return (
+    <Icon
+      name={'arrow-down'}
+      className={cx(classes.root, className)}
+      color={theme.colors.icon.control}
+    />
+  );
 };
 
 const Select: React.FunctionComponent<SelectProps> = ({
@@ -137,7 +144,9 @@ const Select: React.FunctionComponent<SelectProps> = ({
         }
       >
         <MenuItem value="" disabled className={classes.item}>
-          {placeholder}
+          <Typography variant={'c3'} color={'label'}>
+            {placeholder}
+          </Typography>
         </MenuItem>
         {options?.map((option) => (
           <MenuItem

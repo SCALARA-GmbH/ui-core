@@ -69,6 +69,9 @@ const theme = (type: PaletteType): Theme => {
       7: '#FAFCFD',
       F: '#FFFFFF'
     },
+    icon: {
+      control: '#77797A'
+    },
     background: {
       primary: '#FFFFFF',
       secondary: '#000000',
@@ -116,6 +119,9 @@ const theme = (type: PaletteType): Theme => {
         default: '#000000',
         '75': '#464748',
         '50': '#8F9192'
+      },
+      icon: {
+        control: '#E5E7E9'
       },
       text: {
         main: '#FFFFFF',

@@ -1,9 +1,11 @@
 import * as React from 'react';
 
-import { Paper } from '../..';
+import { Area } from '../..';
 
 const PaperComponent: React.FunctionComponent = ({ children }) => (
-  <Paper>{children}</Paper>
+  <Area border elevated>
+    {children}
+  </Area>
 );
 
 export default PaperComponent;

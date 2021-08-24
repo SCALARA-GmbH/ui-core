@@ -26,10 +26,7 @@ export const useStyles = makeStylesWithProps<{ disabled: boolean }>(
           '&:focus-visible': {
             outline: `2px solid ${theme.colors.secondary.default}`,
             outlineOffset: `1px`,
-            boxShadow: `0px 0px 0px 7px ${fade(
-              theme.colors.secondary.default as string,
-              0.15
-            )} `
+            boxShadow: theme.shadows[1]
           }
         },
         '&:disabled': {

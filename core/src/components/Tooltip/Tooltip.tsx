@@ -31,7 +31,7 @@ export const getTooltipStyle = ({
 } => ({
   backgroundColor: colors.neutral['1'],
   color: colors.neutral['6'],
-  boxShadow: shadows[1],
+  boxShadow: shadows[0],
   borderTopRightRadius: spacing(1),
   borderBottomRightRadius: spacing(1),
   borderTopLeftRadius: spacing(1),

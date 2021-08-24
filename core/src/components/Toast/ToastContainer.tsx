@@ -33,7 +33,7 @@ const useStyles = makeStyles(
         display: 'flex',
         borderRadius: 1,
         alignItems: 'center',
-        boxShadow: shadows['2'],
+        boxShadow: shadows[0],
         cursor: 'pointer'
       },
       fadeInAnimation: {

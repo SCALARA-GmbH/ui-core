@@ -82,15 +82,16 @@ const Select: React.FunctionComponent<SelectProps> = ({
   return (
     <div className={cx(className, classes.root)}>
       <label className={classes.label} id={name}>
-        {label}
+        <Typography color={disabled ? 'disabled' : 'label'} variant={'c4'}>
+          {label}
+        </Typography>
       </label>
       <MuiSelect
         labelId={name}
         displayEmpty
         IconComponent={ArrowDownIcon}
-        aria-label={ariaLabel || name}
+        aria-label={ariaLabel}
         disabled={disabled}
-        id={name}
         data-testid={testId}
         value={value ?? ''}
         onBlur={onBlur}
@@ -115,6 +116,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
         }}
         input={
           <InputBase
+            required={required}
             classes={{
               input: cx(classes.input, {
                 [classes.error]: error || internalError,

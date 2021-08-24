@@ -20,6 +20,9 @@ export const useStyles = makeStyles(
         alignItems: 'flex-start',
         height: 'fit-content'
       },
+      noPadding: {
+        padding: theme.spacing(0)
+      },
       endAdornment: {
         margin: 0,
         height: '100%',
@@ -51,10 +54,10 @@ export const useStyles = makeStyles(
         }
       },
       error: {
-        boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+        boxShadow: theme.shadows[2],
         borderRadius: 0,
         '&:invalid': {
-          boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+          boxShadow: theme.shadows[2],
           borderRadius: 0
         }
       },

@@ -69,10 +69,7 @@ export const useStyles = makeStylesWithProps<{
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       },
       '&:disabled': {
@@ -96,10 +93,7 @@ export const useStyles = makeStylesWithProps<{
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       }
     },
@@ -125,10 +119,7 @@ export const useStyles = makeStylesWithProps<{
               .default,
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       },
       '&:disabled': {

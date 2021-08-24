@@ -113,7 +113,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             preserveHeight
             span
           >
-            {required ? `${label}*` : label}
+            {label}
           </Typography>
         </label>
         <InputBase
@@ -121,7 +121,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             input: cx(classes.input, {
               [classes.error]: error || internalError,
               [classes.multiline]: multiline
-            })
+            }),
+            multiline: classes.noPadding
           }}
           id={name}
           disabled={disabled}

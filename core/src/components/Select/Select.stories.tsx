@@ -3,7 +3,15 @@ import { select, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Button, Dialog, Grid, Select, Typography, useTheme } from '../..';
+import {
+  Button,
+  Dialog,
+  Grid,
+  makeStyles,
+  Select,
+  Typography,
+  useTheme
+} from '../..';
 
 export default {
   title: 'Elements/Input/Select',
@@ -11,8 +19,15 @@ export default {
   decorators: [withKnobs, withActions]
 };
 
+const useStyles = makeStyles(({ spacing }) => ({
+  marginBottom: {
+    marginBottom: spacing(2)
+  }
+}));
+
 export const SelectStorySBS = (): JSX.Element => {
   const theme = useTheme();
+  const classes = useStyles();
   const [office, setOffice] = React.useState<string>('');
   const [team, setTeam] = React.useState<string>('');
   const [teamMember, setTeamMember] = React.useState<string>('');
@@ -43,8 +58,9 @@ export const SelectStorySBS = (): JSX.Element => {
       }}
     >
       <Select
+        className={classes.marginBottom}
         label={'Office'}
-        name={'Office'}
+        name={`Office-${theme.type}`}
         value={office}
         onChange={handleOfficeChange}
         placeholder={'Choose Office'}
@@ -61,8 +77,9 @@ export const SelectStorySBS = (): JSX.Element => {
         required
       />
       <Select
+        className={classes.marginBottom}
         label={'Teams'}
-        name={'teams'}
+        name={`team-${theme.type}`}
         onChange={handleTeamChange}
         placeholder={'Select Team'}
         options={[
@@ -81,10 +98,11 @@ export const SelectStorySBS = (): JSX.Element => {
         value={team}
       />
       <Select
+        className={classes.marginBottom}
         value={teamMember}
         placeholder={'Select Team Member...'}
         label={'Team Members'}
-        name={'team-member'}
+        name={`team-member-${theme.type}`}
         onChange={handleTeamMemberChange}
         options={[
           {
@@ -126,9 +144,10 @@ export const SelectStorySBS = (): JSX.Element => {
         required
       />
       <Select
+        className={classes.marginBottom}
         disabled
         label={'disabled'}
-        name={'disabled'}
+        name={`disabled-${theme.type}`}
         placeholder={'disabled'}
         options={[
           {

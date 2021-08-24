@@ -12,9 +12,7 @@ export const useStyles = makeStylesWithProps<{
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        minHeight: theme.spacing(11.5),
-        marginBottom: theme.spacing(0.5)
+        justifyContent: 'center'
       },
       paper: {
         border: `1px solid ${theme.colors.border.main}`,
@@ -30,6 +28,7 @@ export const useStyles = makeStylesWithProps<{
         width: '100%',
         padding: theme.spacing(0, 3),
         minHeight: theme.spacing(7),
+        color: theme.colors.text.main,
         backgroundColor: theme.colors.background.primary,
         '&:hover': {
           backgroundColor: theme.colors.neutral['6']
@@ -39,14 +38,23 @@ export const useStyles = makeStylesWithProps<{
         backgroundColor: theme.colors.neutral['6']
       },
       list: {
-        padding: 0
+        backgroundColor: theme.colors.background.primary,
+        padding: theme.spacing(0, 0, 1.5, 0)
       },
       disabled: {
         pointerEvents: 'none'
       },
       input: {
+        display: 'flex',
+        alignItems: 'center',
         ...getFontStyle('c3'),
-        padding: theme.spacing(2, 2, 2, 2),
+        '&:focus-visible': {
+          outline: `2px solid ${theme.colors.secondary.default}`,
+          outlineOffset: `1px`,
+          boxShadow: theme.shadows[1]
+        },
+        padding: theme.spacing(0, 2),
+        minHeight: theme.spacing(6),
         transition: theme.transitions.create('background-color'),
         borderRadius: 0,
         backgroundColor: ({ disabled }) =>
@@ -63,16 +71,14 @@ export const useStyles = makeStylesWithProps<{
         }
       },
       error: {
-        boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+        boxShadow: theme.shadows[2],
         borderRadius: 0,
         '&:invalid': {
-          boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+          boxShadow: theme.shadows[2],
           borderRadius: 0
         }
       },
       label: {
-        ...getFontStyle('c4'),
-        color: theme.colors.text.label,
         marginBottom: theme.spacing(0.5)
       },
       bottomText: {

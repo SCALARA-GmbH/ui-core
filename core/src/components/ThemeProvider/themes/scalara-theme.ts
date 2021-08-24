@@ -14,10 +14,16 @@ declare module '@material-ui/core/styles/createMuiTheme' {
   }
 }
 
-const generateShadows = (color: Color): Shadows => {
-  return new Array(shadows.length).fill(
-    `0px 20px 30px 0px ${fade(color as string, 0.12)}`
-  ) as Shadows;
+const generateShadows = (...colors: Color[]): Shadows => {
+  const scalaraShadows = new Array(shadows.length).fill(
+    `0px 20px 30px 0px ${fade(colors[0] as string, 0.12)}`
+  );
+
+  scalaraShadows[1] = `0px 0px 0px 7px ${fade(colors[1] as string, 0.15)}`;
+
+  scalaraShadows[2] = `0px 0px 0px 2px ${colors[2]} inset`;
+
+  return scalaraShadows as Shadows;
 };
 
 const theme = (type: PaletteType): Theme => {
@@ -140,7 +146,11 @@ const theme = (type: PaletteType): Theme => {
       }
     },
     colors,
-    shadows: generateShadows(colors.shadow.main),
+    shadows: generateShadows(
+      colors.shadow.main,
+      colors.secondary.default,
+      colors.error.main
+    ),
     palette: {
       background: {
         default: '#FFFFFF'

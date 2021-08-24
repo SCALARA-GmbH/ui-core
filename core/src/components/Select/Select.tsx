@@ -47,7 +47,10 @@ export interface SelectProps {
 const useIconStyles = makeStyles(
   (theme) => ({
     root: {
-      padding: theme.spacing(0, 1)
+      position: 'absolute',
+      right: 0,
+      padding: theme.spacing(0, 1),
+      transition: theme.transitions.create('transform')
     }
   }),
   { name: 'SCA__Select-Icon' }
@@ -59,7 +62,7 @@ const ArrowDownIcon = ({ className }: { className: string }) => {
     <Icon
       name={'arrow-down'}
       className={cx(classes.root, className)}
-      color={theme.colors.icon.control}
+      style={{ color: theme.colors.icon.control }}
     />
   );
 };

@@ -15,22 +15,45 @@ export const useStyles = makeStylesWithProps<{
         justifyContent: 'center'
       },
       paper: {
+        borderRadius: 0,
         border: `1px solid ${theme.colors.border.main}`,
         boxShadow: theme.shadows[0]
-      },
-      itemRoot: {
-        cursor: 'pointer',
-        padding: 0
       },
       item: {
         display: 'flex',
         alignItems: 'center',
         width: '100%',
+        cursor: 'pointer',
         padding: theme.spacing(0, 3),
         minHeight: theme.spacing(7),
-        backgroundColor: theme.colors.background.primary,
+        '&&': {
+          backgroundColor: theme.colors.background.primary
+        },
         '&:hover': {
           backgroundColor: theme.colors.neutral['6']
+        },
+        '&.Mui-disabled': {
+          opacity: 1
+        },
+        '&.Mui-selected': {
+          backgroundColor: theme.colors.neutral['6']
+        },
+        '&.Mui-selected:hover': {
+          backgroundColor: theme.colors.neutral['6']
+        }
+      },
+      placeholder: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        cursor: 'pointer',
+        padding: theme.spacing(0, 3),
+        minHeight: theme.spacing(6),
+        '&&': {
+          backgroundColor: theme.colors.background.primary
+        },
+        '&.Mui-disabled': {
+          opacity: 1
         }
       },
       selected: {

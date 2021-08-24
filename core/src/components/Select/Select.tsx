@@ -146,7 +146,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           />
         }
       >
-        <MenuItem value="" disabled className={classes.item}>
+        <MenuItem value="" disabled className={classes.placeholder}>
           <Typography variant={'c3'} color={'label'}>
             {placeholder}
           </Typography>
@@ -158,27 +158,23 @@ const Select: React.FunctionComponent<SelectProps> = ({
             disableRipple
             disableTouchRipple
             value={option.value}
-            className={classes.itemRoot}
+            className={cx(classes.item, {
+              [classes.selected]: option.value === value
+            })}
           >
-            <span
-              className={cx(classes.item, {
-                [classes.selected]: option.value === value
-              })}
-            >
-              {option.avatarProps && (
-                <div className={classes.optionImage}>
-                  <Avatar size={'small'} {...option.avatarProps} />
-                </div>
-              )}
-              <ListItemText
-                className={classes.optionImage}
-                disableTypography
-                primary={<Typography variant={'c3'}>{option.title}</Typography>}
-                secondary={
-                  <Typography variant={'c5'}>{option.subtitle}</Typography>
-                }
-              />
-            </span>
+            {option.avatarProps && (
+              <div className={classes.optionImage}>
+                <Avatar size={'small'} {...option.avatarProps} />
+              </div>
+            )}
+            <ListItemText
+              className={classes.optionImage}
+              disableTypography
+              primary={<Typography variant={'c3'}>{option.title}</Typography>}
+              secondary={
+                <Typography variant={'c5'}>{option.subtitle}</Typography>
+              }
+            />
           </MenuItem>
         ))}
       </MuiSelect>

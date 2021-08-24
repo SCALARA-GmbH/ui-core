@@ -1,5 +1,3 @@
-import { fade } from '@material-ui/core';
-
 import { createStyles, makeStyles, makeStylesWithProps } from '../..';
 
 export const useStyles = makeStylesWithProps<{ disabled: boolean }>(

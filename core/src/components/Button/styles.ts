@@ -1,5 +1,3 @@
-import { fade } from '@material-ui/core';
-
 import { makeStylesWithProps, Theme } from '../..';
 import { ColorPalette } from '../ThemeProvider/types';
 

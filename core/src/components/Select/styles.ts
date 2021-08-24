@@ -47,11 +47,6 @@ export const useStyles = makeStylesWithProps<{
         display: 'flex',
         alignItems: 'center',
         ...getFontStyle('c3'),
-        '&:focus-visible': {
-          outline: `2px solid ${theme.colors.secondary.default}`,
-          outlineOffset: `1px`,
-          boxShadow: theme.shadows[1]
-        },
         padding: theme.spacing(0, 2),
         minHeight: theme.spacing(6),
         transition: theme.transitions.create('background-color'),

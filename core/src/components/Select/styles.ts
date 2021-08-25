@@ -65,7 +65,7 @@ export const useStyles = makeStyles(
         color: theme.colors.disabled
       },
       filled: {
-        backgroundColor: theme.colors.neutral['5'],
+        backgroundColor: theme.colors.neutral['6'],
         color: theme.colors.text.main,
         '&:focus': {
           backgroundColor: theme.colors.neutral['5']
@@ -75,7 +75,7 @@ export const useStyles = makeStyles(
         backgroundColor: theme.colors.neutral['6'],
         color: theme.colors.text.label,
         '&:focus': {
-          backgroundColor: theme.colors.neutral['6']
+          backgroundColor: theme.colors.neutral['5']
         }
       },
       input: {

@@ -33,7 +33,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   return (
     <div>
       <AppBar position="absolute" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
+        <div className={classes.toolbar}>
           <LogoComponent
             className={classes.logoMobile}
             {...LogoComponentProps}
@@ -43,7 +43,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
           <span className={classes.mobileMenuButton}>
             <Hamburger toggled={open} toggle={setOpen} size={18} />
           </span>
-        </Toolbar>
+        </div>
       </AppBar>
       <Drawer
         transitionDuration={333}

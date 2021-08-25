@@ -87,11 +87,17 @@ export const useStyles = makeStyles(
       flexDirection: 'row'
     },
     mobileMenuButton: {
-      marginLeft: 'auto'
+      marginLeft: 'auto',
+      width: spacing(4),
+      height: spacing(4),
+      alignItems: 'center',
+      display: 'flex'
     },
     appBar: {
       position: 'absolute',
-      zIndex: 9999
+      zIndex: 9999,
+      height: spacing(6),
+      padding: spacing(1, 2, 0, 1.5)
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

@@ -36,25 +36,28 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
     <div>
       <AppBar position="absolute" className={classes.appBar}>
         <div className={classes.toolbar}>
-          {!open &&
-            React.Children.map<
-              React.ReactNode,
-              React.ReactElement<NavigationItemProps>
-            >(children, (child) =>
-              child.props.selectKey === selectedKey ? (
-                <span className={classes.appBarSelectedItem}>
-                  <Icon
-                    color={theme.colors.icon.navigation}
-                    name={child.props.iconName}
-                  >
-                    {child.props.label}
-                  </Icon>
-                  <Typography className={classes.deselectedItem}>
-                    {child.props.label}
-                  </Typography>
-                </span>
-              ) : null
-            )}
+          {React.Children.map<
+            React.ReactNode,
+            React.ReactElement<NavigationItemProps>
+          >(children, (child) =>
+            child.props.selectKey === selectedKey ? (
+              <span
+                className={cx(classes.appBarSelectedItem, {
+                  [classes.hide]: open
+                })}
+              >
+                <Icon
+                  color={theme.colors.icon.navigation}
+                  name={child.props.iconName}
+                >
+                  {child.props.label}
+                </Icon>
+                <Typography className={classes.deselectedItem}>
+                  {child.props.label}
+                </Typography>
+              </span>
+            ) : null
+          )}
           {LogoComponent && (
             <LogoComponent
               className={classes.logoMobile}

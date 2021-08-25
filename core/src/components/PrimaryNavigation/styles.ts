@@ -115,7 +115,15 @@ export const useStyles = makeStyles(
     appBarSelectedItem: {
       display: 'flex',
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
+      opacity: 1,
+      transition: transitions.create('opacity', {
+        easing: transitions.easing.easeIn,
+        duration: transitions.duration.short
+      })
+    },
+    hide: {
+      opacity: 0
     },
     logoMobile: {
       position: 'fixed',

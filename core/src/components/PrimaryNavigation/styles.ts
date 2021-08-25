@@ -32,8 +32,11 @@ export const useStyles = makeStyles(
         backgroundColor: colors.neutral['1']
       }
     },
+    mobileSpace: {
+      height: spacing(6)
+    },
     itemMobile: {
-      height: spacing(8),
+      height: spacing(7),
       padding: spacing(1, 1),
       '&:hover': {
         backgroundColor: colors.neutral['1']
@@ -90,6 +93,7 @@ export const useStyles = makeStyles(
       ...getTooltipStyle({ colors, shadows, spacing })
     },
     mobileMenuButton: {
+      marginLeft: 'auto',
       width: spacing(4),
       height: spacing(4),
       alignItems: 'center',

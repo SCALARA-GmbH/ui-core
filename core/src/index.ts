@@ -51,6 +51,8 @@ export { default as Paper } from './components/Paper';
 export { Popover, usePopoverPositionUpdate } from './components/Popover';
 export {
   PrimaryNavigation,
+  PrimaryNavigationDesktop,
+  PrimaryNavigationMobile,
   PrimaryNavigationItem
 } from './components/PrimaryNavigation';
 export { default as Radio } from './components/Radio';

@@ -10,6 +10,18 @@ export const useStyles = makeStyles(
       boxShadow: shadows[0],
       zIndex: 9998
     },
+    drawerPaperMobile: {
+      width: '100%',
+      backgroundColor: colors.neutral['0'],
+      border: 'none',
+      boxShadow: shadows[0],
+      zIndex: 9997,
+      top: spacing(6)
+    },
+    mobileDrawer: {
+      display: 'flex',
+      flexDirection: 'row'
+    },
     drawer: {
       width: spacing(7)
     },
@@ -17,15 +29,22 @@ export const useStyles = makeStyles(
       height: spacing(9),
       padding: spacing(1.5, 1),
       '&:hover': {
-        backgroundColor: colors.neutral['1'],
-        '& svg': {
-          color: colors.neutral.F
-        }
+        backgroundColor: colors.neutral['1']
+      }
+    },
+    itemMobile: {
+      height: spacing(8),
+      padding: spacing(1, 1),
+      '&:hover': {
+        backgroundColor: colors.neutral['1']
       }
     },
     logo: {
       overflowX: 'hidden',
       padding: spacing(1.25)
+    },
+    logoMobile: {
+      marginLeft: 'auto'
     },
     selected: {
       transition: transitions.create('box-shadow', {
@@ -34,9 +53,6 @@ export const useStyles = makeStyles(
       }),
       backgroundColor: colors.neutral['1'],
       boxShadow: `4px 0px 0px 0px ${colors.secondary.default} inset`,
-      '& svg': {
-        color: colors.neutral.F
-      },
       cursor: 'default'
     },
     deselected: {
@@ -44,10 +60,7 @@ export const useStyles = makeStyles(
         easing: transitions.easing.easeOut,
         duration: transitions.duration.short
       }),
-      backgroundColor: 'initial',
-      '& svg': {
-        color: colors.neutral['4']
-      }
+      backgroundColor: 'initial'
     },
     list: {
       padding: 0
@@ -68,6 +81,17 @@ export const useStyles = makeStyles(
       position: 'fixed',
       zIndex: 99999,
       ...getTooltipStyle({ colors, shadows, spacing })
+    },
+    toolbar: {
+      display: 'flex',
+      flexDirection: 'row'
+    },
+    mobileMenuButton: {
+      marginLeft: 'auto'
+    },
+    appBar: {
+      position: 'absolute',
+      zIndex: 9999
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

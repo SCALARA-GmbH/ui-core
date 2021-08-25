@@ -1,8 +1,40 @@
-import { createStyles, makeStyles, makeStylesWithProps } from '../..';
+import { createStyles, makeStyles } from '../..';
 
-export const useStyles = makeStylesWithProps<{ disabled: boolean }>(
+export const useStyles = makeStyles(
   (theme) =>
     createStyles({
+      primary: {
+        '&:enabled': {
+          color: theme.colors.neutral['2'],
+          background: 'none',
+          '&:hover': {
+            background: theme.colors.neutral['6']
+          },
+          '&:active': {
+            background: theme.colors.neutral['6']
+          }
+        },
+        '&:disabled': {
+          cursor: 'not-allowed',
+          background: theme.colors.background.primary
+        }
+      },
+      secondary: {
+        '&:enabled': {
+          color: theme.colors.neutral['2'],
+          background: 'none',
+          '&:hover': {
+            background: theme.colors.neutral['1']
+          },
+          '&:active': {
+            background: theme.colors.neutral['1']
+          }
+        },
+        '&:disabled': {
+          cursor: 'not-allowed',
+          background: theme.colors.background.primary
+        }
+      },
       root: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -13,23 +45,11 @@ export const useStyles = makeStylesWithProps<{ disabled: boolean }>(
         paddingLeft: theme.spacing(1.5),
         paddingRight: theme.spacing(1.5),
         '&:enabled': {
-          color: theme.colors.neutral['2'],
-          background: 'none',
-          '&:hover': {
-            background: theme.colors.neutral['6']
-          },
-          '&:active': {
-            background: theme.colors.neutral['6']
-          },
           '&:focus-visible': {
             outline: `2px solid ${theme.colors.secondary.default}`,
             outlineOffset: `1px`,
             boxShadow: theme.shadows[1]
           }
-        },
-        '&:disabled': {
-          cursor: 'not-allowed',
-          background: theme.colors.background.primary
         }
       },
       span: {
@@ -46,13 +66,8 @@ export const useStyles = makeStylesWithProps<{ disabled: boolean }>(
           outline: 'none'
         }
       },
-      icon: {
-        color: (props) =>
-          props.disabled
-            ? theme.colors.disabled
-            : theme.type === 'dark'
-            ? theme.colors.neutral.F
-            : theme.colors.neutral['0']
+      disabled: {
+        color: theme.colors.disabled
       }
     }),
   { name: 'SCA__IconButton' }

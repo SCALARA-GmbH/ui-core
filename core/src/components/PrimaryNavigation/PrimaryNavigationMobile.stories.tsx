@@ -4,12 +4,12 @@ import * as React from 'react';
 
 import { useTheme } from '../..';
 
-import PrimaryNavigation from './PrimaryNavigation';
 import PrimaryNavigationItem from './PrimaryNavigationItem';
+import PrimaryNavigationMobile from './PrimaryNavigationMobile';
 
 export default {
-  title: 'Components/PrimaryNavigation',
-  component: PrimaryNavigation,
+  title: 'Components/PrimaryNavigationMobile',
+  component: PrimaryNavigationMobile,
   decorators: [withKnobs]
 };
 
@@ -20,7 +20,7 @@ const Labels = [
   { key: 'contacts', name: 'Contacts' }
 ] as const;
 
-export const PrimaryNavigationStory = (): JSX.Element => {
+export const PrimaryNavigationMobileStory = (): JSX.Element => {
   const theme = useTheme();
 
   const click = action('clicked navigation item');
@@ -35,11 +35,11 @@ export const PrimaryNavigationStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        width: '100%'
       }}
     >
-      <PrimaryNavigation
-        LogoComponentProps={{ text: true }}
+      <PrimaryNavigationMobile
+        LogoComponentProps={{ text: true, size: 'small' }}
         onClick={handleClick}
         selectedKey={selected}
       >
@@ -51,8 +51,8 @@ export const PrimaryNavigationStory = (): JSX.Element => {
             iconName={label.key}
           />
         ))}
-      </PrimaryNavigation>
+      </PrimaryNavigationMobile>
     </div>
   );
 };
-PrimaryNavigationStory.storyName = 'Overview';
+PrimaryNavigationMobileStory.storyName = 'Overview';

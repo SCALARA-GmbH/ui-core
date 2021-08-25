@@ -1,9 +1,10 @@
-import { AppBar, Drawer, List, ListItem, Toolbar } from '@material-ui/core';
+import { AppBar, Drawer, List, ListItem } from '@material-ui/core';
 import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 import * as React from 'react';
 
-import { Logo } from '../../index';
+import { Typography, useTheme } from '../../index';
+import { Icon } from '../Icon';
 import { LogoProps } from '../Logo/Logo';
 
 import { NavigationItemProps } from './PrimaryNavigationItem';
@@ -21,27 +22,53 @@ export interface Props {
 }
 
 const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
-  LogoComponent = Logo,
+  LogoComponent,
   LogoComponentProps,
   selectedKey,
   children,
   onClick
 }) => {
   const classes = useStyles();
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   return (
     <div>
       <AppBar position="absolute" className={classes.appBar}>
         <div className={classes.toolbar}>
-          <LogoComponent
-            className={classes.logoMobile}
-            {...LogoComponentProps}
-            color={'white'}
-            size={'small'}
-          />
+          {React.Children.map<
+            React.ReactNode,
+            React.ReactElement<NavigationItemProps>
+          >(children, (child) =>
+            child.props.selectKey === selectedKey ? (
+              <span className={classes.appBarSelectedItem}>
+                <Icon
+                  color={theme.colors.icon.navigation}
+                  name={child.props.iconName}
+                >
+                  {child.props.label}
+                </Icon>
+                <Typography className={classes.deselectedItem}>
+                  {child.props.label}
+                </Typography>
+              </span>
+            ) : null
+          )}
+          {LogoComponent && (
+            <LogoComponent
+              className={classes.logoMobile}
+              {...LogoComponentProps}
+              color={'white'}
+              size={'small'}
+            />
+          )}
           <span className={classes.mobileMenuButton}>
-            <Hamburger toggled={open} toggle={setOpen} size={18} />
+            <Hamburger
+              toggled={open}
+              toggle={setOpen}
+              size={18}
+              color={theme.colors.icon.navigation}
+            />
           </span>
         </div>
       </AppBar>

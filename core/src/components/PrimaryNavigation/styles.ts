@@ -43,9 +43,6 @@ export const useStyles = makeStyles(
       overflowX: 'hidden',
       padding: spacing(1.25)
     },
-    logoMobile: {
-      marginLeft: 'auto'
-    },
     selected: {
       transition: transitions.create('box-shadow', {
         easing: transitions.easing.easeIn,
@@ -61,6 +58,16 @@ export const useStyles = makeStyles(
         duration: transitions.duration.short
       }),
       backgroundColor: 'initial'
+    },
+    selectedItem: {
+      transition: transitions.create('color', {
+        easing: transitions.easing.easeIn,
+        duration: transitions.duration.short
+      }),
+      color: colors.neutral.F
+    },
+    deselectedItem: {
+      color: colors.neutral['4']
     },
     list: {
       padding: 0
@@ -82,12 +89,7 @@ export const useStyles = makeStyles(
       zIndex: 99999,
       ...getTooltipStyle({ colors, shadows, spacing })
     },
-    toolbar: {
-      display: 'flex',
-      flexDirection: 'row'
-    },
     mobileMenuButton: {
-      marginLeft: 'auto',
       width: spacing(4),
       height: spacing(4),
       alignItems: 'center',
@@ -95,9 +97,27 @@ export const useStyles = makeStyles(
     },
     appBar: {
       position: 'absolute',
-      zIndex: 9999,
+      zIndex: 9999
+    },
+    toolbar: {
       height: spacing(6),
-      padding: spacing(1, 2, 0, 1.5)
+      paddingLeft: spacing(1.5),
+      paddingRight: spacing(2.0),
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    },
+    appBarSelectedItem: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    logoMobile: {
+      position: 'fixed',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      top: spacing(1)
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

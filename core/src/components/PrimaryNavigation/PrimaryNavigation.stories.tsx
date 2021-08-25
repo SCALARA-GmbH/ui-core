@@ -2,9 +2,8 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { useTheme } from '../..';
+import { PrimaryNavigation, useTheme } from '../..';
 
-import PrimaryNavigation from './PrimaryNavigation';
 import PrimaryNavigationItem from './PrimaryNavigationItem';
 
 export default {
@@ -38,11 +37,7 @@ export const PrimaryNavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <PrimaryNavigation
-        LogoComponentProps={{ text: true }}
-        onClick={handleClick}
-        selectedKey={selected}
-      >
+      <PrimaryNavigation onClick={handleClick} selectedKey={selected}>
         {Labels.map((label) => (
           <PrimaryNavigationItem
             label={label.name}

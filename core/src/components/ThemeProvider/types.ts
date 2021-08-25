@@ -36,6 +36,7 @@ export interface Colors {
     hover: Color;
   };
   icon: {
+    navigation: Color;
     control: Color;
   };
   border: {

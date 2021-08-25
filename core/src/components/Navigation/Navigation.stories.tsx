@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Popover, useTheme } from '../..';
 import { IconName } from '../Icon/Icon';
 import { usePopoverPositionUpdate } from '../Popover';
-import PrimaryNavigation from '../PrimaryNavigation/PrimaryNavigation';
+import PrimaryNavigationDesktop from '../PrimaryNavigation/PrimaryNavigationDesktop';
 import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
 import Navigation from './Navigation';
@@ -144,7 +144,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
         flexDirection: 'column'
       }}
     >
-      <PrimaryNavigation
+      <PrimaryNavigationDesktop
         LogoComponentProps={{ text: true }}
         onClick={handleClick}
         selectedKey={selected}
@@ -157,7 +157,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
             iconName={label.key as IconName}
           />
         ))}
-      </PrimaryNavigation>
+      </PrimaryNavigationDesktop>
       <Navigation
         header={'Finances'}
         title={'Accounting'}

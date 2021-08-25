@@ -70,6 +70,7 @@ const theme = (type: PaletteType): Theme => {
       F: '#FFFFFF'
     },
     icon: {
+      navigation: '#A9ACAD',
       control: '#77797A'
     },
     background: {
@@ -121,6 +122,7 @@ const theme = (type: PaletteType): Theme => {
         '50': '#8F9192'
       },
       icon: {
+        navigation: '#A9ACAD',
         control: '#E5E7E9'
       },
       text: {

@@ -6,6 +6,8 @@ import { makeStyles, Typography } from '../../index';
 import { Icon } from '../Icon';
 import { IconName } from '../Icon/Icon';
 
+import { useStyles } from './styles';
+
 export interface NavigationItemProps {
   label: string;
   iconName: IconName;
@@ -13,19 +15,6 @@ export interface NavigationItemProps {
   mobile?: boolean;
   selected?: boolean;
 }
-
-const useStyles = makeStyles(({ colors, transitions }) => ({
-  selected: {
-    transition: transitions.create('color', {
-      easing: transitions.easing.easeIn,
-      duration: transitions.duration.short
-    }),
-    color: colors.neutral.F
-  },
-  deselected: {
-    color: colors.neutral['4']
-  }
-}));
 
 const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   label,
@@ -36,8 +25,8 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   const classes = useStyles();
 
   const className = cx({
-    [classes.selected]: selected,
-    [classes.deselected]: !selected
+    [classes.selectedItem]: selected,
+    [classes.deselectedItem]: !selected
   });
 
   return (

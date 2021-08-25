@@ -184,7 +184,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           testId={`${testId}-bottomText`}
           className={classes.bottomText}
           color={error || internalError ? 'error' : color}
-          variant={'c3'}
+          variant={'c5'}
         >
           {error || internalError ? errorText : helperText}
         </Typography>

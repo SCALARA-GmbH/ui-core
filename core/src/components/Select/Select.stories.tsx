@@ -156,8 +156,28 @@ export const SelectStorySBS = (): JSX.Element => {
             subtitle: 'CTO',
             avatarProps: {
               registered: true,
-              image:
-                'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns'
+              image: 'armin.png'
+            }
+          }
+        ]}
+        required
+      />
+      <Select
+        className={classes.marginBottom}
+        disabled
+        label={'error'}
+        name={`error-${theme.type}`}
+        placeholder={'has error'}
+        error
+        errorText={'This selection has error'}
+        options={[
+          {
+            value: '1',
+            title: 'Shari Heep',
+            subtitle: 'CEO',
+            avatarProps: {
+              registered: true,
+              image: 'shari.png'
             }
           }
         ]}

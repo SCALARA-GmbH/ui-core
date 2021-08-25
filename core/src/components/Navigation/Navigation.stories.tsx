@@ -3,6 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { Popover, useTheme } from '../..';
+import { IconName } from '../Icon/Icon';
 import { usePopoverPositionUpdate } from '../Popover';
 import PrimaryNavigation from '../PrimaryNavigation/PrimaryNavigation';
 import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
@@ -153,7 +154,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
             label={label.name}
             key={label.key}
             selectKey={label.key}
-            iconName={label.key}
+            iconName={label.key as IconName}
           />
         ))}
       </PrimaryNavigation>

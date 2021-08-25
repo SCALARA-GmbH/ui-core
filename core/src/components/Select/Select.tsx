@@ -8,7 +8,7 @@ import {
 import cx from 'classnames';
 import * as React from 'react';
 
-import { Avatar, Icon, makeStyles, Typography, useTheme } from '../..';
+import { Avatar, Icon, makeStyles, Typography } from '../..';
 import { AvatarProps } from '../Avatar/Avatar';
 import { TextColor } from '../Typography/types';
 
@@ -50,21 +50,20 @@ const useIconStyles = makeStyles(
       position: 'absolute',
       right: 0,
       padding: theme.spacing(0, 1),
-      transition: theme.transitions.create('transform')
+      transition: theme.transitions.create('transform'),
+      '&.MuiSelect-icon': {
+        color: theme.colors.icon.control
+      },
+      '&.Mui-disabled': {
+        color: theme.colors.disabled
+      }
     }
   }),
   { name: 'SCA__Select-Icon' }
 );
 const ArrowDownIcon = ({ className }: { className: string }) => {
   const classes = useIconStyles();
-  const theme = useTheme();
-  return (
-    <Icon
-      name={'arrow-down'}
-      className={cx(classes.root, className)}
-      style={{ color: theme.colors.icon.control }}
-    />
-  );
+  return <Icon name={'arrow-down'} className={cx(classes.root, className)} />;
 };
 
 const Select: React.FunctionComponent<SelectProps> = ({
@@ -87,7 +86,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
   ariaLabel
 }) => {
   const [internalError, setInternalError] = React.useState<boolean>(error);
-  const classes = useStyles({ color, disabled });
+  const classes = useStyles();
 
   return (
     <div className={cx(className, classes.root)}>
@@ -113,7 +112,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
         }}
         required={required}
         renderValue={(selected) => (
-          <span className={classes.value}>
+          <span>
             {options.find(({ value }) => value === selected)?.title ||
               placeholder}
           </span>
@@ -130,7 +129,9 @@ const Select: React.FunctionComponent<SelectProps> = ({
             classes={{
               input: cx(classes.input, {
                 [classes.error]: error || internalError,
-                [classes.disabled]: disabled
+                [classes.disabled]: disabled,
+                [classes.filled]: value && !disabled,
+                [classes.empty]: !value && !disabled
               })
             }}
             disabled={disabled}

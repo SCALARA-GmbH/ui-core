@@ -125,7 +125,7 @@ const theme = (type: PaletteType): Theme => {
       },
       text: {
         main: '#FFFFFF',
-        label: '#FAFCFD',
+        label: '#A9ACAD',
         subtitle: '#F4F6F7'
       },
       background: {

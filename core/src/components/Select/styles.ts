@@ -1,11 +1,7 @@
-import { createStyles, makeStylesWithProps } from '../..';
+import { createStyles, makeStyles } from '../..';
 import { getFontStyle } from '../Typography/styles';
-import { TextColor } from '../Typography/types';
 
-export const useStyles = makeStylesWithProps<{
-  color: TextColor;
-  disabled: boolean;
-}>(
+export const useStyles = makeStyles(
   (theme) =>
     createStyles({
       root: {
@@ -64,7 +60,23 @@ export const useStyles = makeStylesWithProps<{
         padding: theme.spacing(0, 0, 1.5, 0)
       },
       disabled: {
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        backgroundColor: theme.colors.background.disabled,
+        color: theme.colors.disabled
+      },
+      filled: {
+        backgroundColor: theme.colors.neutral['5'],
+        color: theme.colors.text.main,
+        '&:focus': {
+          backgroundColor: theme.colors.neutral['5']
+        }
+      },
+      empty: {
+        backgroundColor: theme.colors.neutral['6'],
+        color: theme.colors.text.label,
+        '&:focus': {
+          backgroundColor: theme.colors.neutral['6']
+        }
       },
       input: {
         display: 'flex',
@@ -74,17 +86,8 @@ export const useStyles = makeStylesWithProps<{
         minHeight: theme.spacing(6),
         transition: theme.transitions.create('background-color'),
         borderRadius: 0,
-        backgroundColor: ({ disabled }) =>
-          disabled
-            ? theme.colors.background.disabled
-            : theme.colors.neutral['6'],
-        color: ({ disabled }) =>
-          disabled ? theme.colors.disabled : theme.colors.text.main,
         '&:hover': {
           backgroundColor: theme.colors.neutral['5']
-        },
-        '&:focus': {
-          backgroundColor: theme.colors.neutral['6']
         }
       },
       error: {

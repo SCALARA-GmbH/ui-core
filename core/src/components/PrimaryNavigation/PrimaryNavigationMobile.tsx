@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 import * as React from 'react';
 
-import { IconButton, Logo, useTheme } from '../../index';
+import { Logo } from '../../index';
 import { LogoProps } from '../Logo/Logo';
 
 import { NavigationItemProps } from './PrimaryNavigationItem';
@@ -28,7 +28,6 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   onClick
 }) => {
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   return (

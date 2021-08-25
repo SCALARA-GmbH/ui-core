@@ -2,7 +2,7 @@ import { Tooltip } from '@material-ui/core';
 import cx from 'classnames';
 import React from 'react';
 
-import { Icon as IconComponent, Typography, useTheme } from '../..';
+import { Icon as IconComponent, Typography } from '../..';
 import { Size } from '../../types';
 import { IconName } from '../Icon/Icon';
 import { Color } from '../ThemeProvider/types';
@@ -46,13 +46,11 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   Icon = IconComponent,
   iconName,
   tooltip,
-  iconColor,
   label,
   variant = 'primary'
 }) => {
   const classes = useStyles();
   const labelClasses = useLabelStyles();
-  const theme = useTheme();
   const [hovered, setHovered] = React.useState(false);
 
   const renderComponent = () => {
@@ -85,11 +83,6 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
               [classes.disabled]: disabled
             })}
             name={iconName}
-            color={
-              iconColor || theme.type === 'dark'
-                ? theme.colors.neutral.F
-                : theme.colors.neutral['0']
-            }
             testId={`${testId}-icon`}
           />
           {label && (

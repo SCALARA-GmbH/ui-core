@@ -2,6 +2,7 @@ import { createStyles } from '@material-ui/core';
 import * as React from 'react';
 
 import {
+  Area,
   Frame,
   makeStyles,
   Paper,
@@ -55,7 +56,7 @@ const ThemeDemo: React.FunctionComponent = () => {
       style={{ backgroundColor: theme.colors.background.primary }}
       orientation={'vertical'}
     >
-      <Paper className={classes.block}>
+      <Area className={classes.block} elevated>
         <div className={classes.palette}>
           <Typography>Primary</Typography>
           <div className={classes.stripe}>
@@ -327,7 +328,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             </div>
           </div>
         </div>
-      </Paper>
+      </Area>
     </Frame>
   );
 };

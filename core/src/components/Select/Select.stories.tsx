@@ -327,3 +327,50 @@ export const SmallScreen = (): JSX.Element => {
 };
 
 SmallScreen.storyName = 'SmallScreen';
+
+export const SelectVisualStory = (): JSX.Element => {
+  const theme = useTheme();
+  const classes = useStyles();
+  const [office, setOffice] = React.useState<string>('');
+  const handleOfficeChange = (
+    event: React.ChangeEvent<{ name?: string; value: string }>
+  ) => {
+    setOffice(event.target.value);
+    action(event.target.value);
+  };
+  return (
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 16,
+        minWidth: 256
+      }}
+    >
+      <Select
+        testId={'visual'}
+        className={classes.marginBottom}
+        label={'Office'}
+        name={`Office-${theme.type}`}
+        value={office}
+        onChange={handleOfficeChange}
+        placeholder={'Choose Office'}
+        options={[
+          {
+            value: '1',
+            title: 'Brühl Office'
+          },
+          {
+            value: '2',
+            title: 'Köln Office'
+          },
+          {
+            value: '3',
+            title: 'some place else'
+          }
+        ]}
+        required
+      />
+    </div>
+  );
+};
+SelectVisualStory.storyName = 'Visual';

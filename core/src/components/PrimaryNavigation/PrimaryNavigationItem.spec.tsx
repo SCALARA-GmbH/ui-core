@@ -9,7 +9,7 @@ describe('<PrimaryNavigationItem />', () => {
     const { container } = render(
       <PrimaryNavigationItem
         label={'Konten'}
-        selectKey={'accounts'}
+        selected
         iconName={'unlock-accounts'}
       />
     );

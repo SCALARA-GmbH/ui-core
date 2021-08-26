@@ -1,15 +1,7 @@
 import { createStyles } from '@material-ui/core';
 import * as React from 'react';
 
-import {
-  Area,
-  Frame,
-  makeStyles,
-  Paper,
-  Theme,
-  Typography,
-  useTheme
-} from '../../..';
+import { Area, Frame, makeStyles, Theme, Typography, useTheme } from '../../..';
 
 const useStyles = makeStyles(({ spacing }: Theme) =>
   createStyles({

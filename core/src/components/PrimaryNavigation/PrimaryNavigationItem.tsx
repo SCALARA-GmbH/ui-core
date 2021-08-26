@@ -2,7 +2,7 @@ import { ListItemIcon, ListItemText } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 
-import { makeStyles, Typography } from '../../index';
+import { Typography } from '../../index';
 import { Icon } from '../Icon';
 import { IconName } from '../Icon/Icon';
 

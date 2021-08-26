@@ -3,7 +3,7 @@ import { getFontWeight } from '../Typography/styles';
 
 export const useStyles = makeStylesWithProps<{
   disabled?: boolean;
-  isSecondary?: boolean;
+  secondary?: boolean;
 }>(
   ({ colors, spacing }) => ({
     item: {
@@ -51,7 +51,7 @@ export const useStyles = makeStylesWithProps<{
     },
     drawerPaper: {
       width: spacing(28),
-      left: ({ isSecondary }) => (isSecondary ? spacing(7) : 0),
+      left: ({ secondary }) => (secondary ? spacing(7) : 0),
       zIndex: 9997,
       cursor: ({ disabled }) => (disabled ? 'not-allowed' : 'inherit')
     }

@@ -1,5 +1,4 @@
-import { Drawer, List, ListItem } from '@material-ui/core';
-import cx from 'classnames';
+import { Drawer, List } from '@material-ui/core';
 import * as React from 'react';
 
 import DefaultDivider from '../DefaultDivider';
@@ -16,20 +15,17 @@ export interface Props {
   title?: string;
   onClick?: (value: string) => void;
   disabled?: boolean;
-  selectedKey?: string;
-  isSecondary?: boolean;
+  secondary?: boolean;
 }
 
 const Navigation: React.FunctionComponent<Props> = ({
   header,
-  selectedKey,
   title,
   children,
-  onClick,
   disabled,
-  isSecondary
+  secondary
 }) => {
-  const classes = useStyles({ disabled, isSecondary });
+  const classes = useStyles({ disabled, secondary });
 
   return (
     <Drawer
@@ -54,24 +50,7 @@ const Navigation: React.FunctionComponent<Props> = ({
           React.ReactNode,
           React.ReactElement<NavigationItemProps>
         >(children, (child) => (
-          <li>
-            <ListItem
-              disabled={disabled}
-              className={cx(classes.item, {
-                [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey
-              })}
-              button
-              disableRipple
-              onClick={(event: React.MouseEvent<HTMLElement>) => {
-                // note: this is fixed in mui v5 and does not have to be set manually
-                event.preventDefault();
-                if (!disabled) onClick?.(child.props.selectKey);
-              }}
-            >
-              {child}
-            </ListItem>
-          </li>
+          <li>{React.cloneElement(child, { disabled })}</li>
         ))}
       </List>
     </Drawer>

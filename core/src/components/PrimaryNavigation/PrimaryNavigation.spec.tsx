@@ -9,11 +9,7 @@ describe('<Navigation />', () => {
   it('renders without crashing', () => {
     const { container } = render(
       <PrimaryNavigationDesktop>
-        <PrimaryNavigationItem
-          label={'Buchung'}
-          selectKey={'Buchung'}
-          iconName={'select'}
-        />
+        <PrimaryNavigationItem label={'Buchung'} selected iconName={'select'} />
       </PrimaryNavigationDesktop>
     );
 
@@ -25,14 +21,10 @@ describe('<Navigation />', () => {
       <PrimaryNavigationDesktop>
         <PrimaryNavigationItem
           label={'Konten'}
-          selectKey={'Konten'}
+          selected
           iconName={'information'}
         />
-        <PrimaryNavigationItem
-          label={'Buchungen'}
-          selectKey={'Buchung'}
-          iconName={'upload'}
-        />
+        <PrimaryNavigationItem label={'Buchungen'} iconName={'upload'} />
       </PrimaryNavigationDesktop>
     );
 
@@ -44,15 +36,16 @@ describe('<Navigation />', () => {
     const handleClick = jest.fn();
 
     const { getByRole } = render(
-      <PrimaryNavigationDesktop onClick={handleClick}>
+      <PrimaryNavigationDesktop>
         <PrimaryNavigationItem
           label={'Konten'}
-          selectKey={'Konten'}
+          onClick={handleClick}
+          selected
           iconName={'information'}
         />
         <PrimaryNavigationItem
           label={'Buchungen'}
-          selectKey={'Buchung'}
+          onClick={handleClick}
           iconName={'upload'}
         />
       </PrimaryNavigationDesktop>

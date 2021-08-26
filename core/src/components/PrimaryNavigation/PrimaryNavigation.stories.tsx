@@ -46,14 +46,7 @@ export const PrimaryNavigationStory = (): JSX.Element => {
             selected={selected === label.key}
             iconName={label.key}
           />
-        )).concat(
-          <PrimaryNavigationItem
-            key={'logout'}
-            label={'Log out'}
-            iconName={'logout'}
-            selected={selected === 'logout'}
-          />
-        )}
+        ))}
       </PrimaryNavigation>
     </div>
   );

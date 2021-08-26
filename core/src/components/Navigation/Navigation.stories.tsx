@@ -166,7 +166,14 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
             key={label}
             selected={label === selectedSecond}
           />
-        ))}
+        )).concat(
+          <NavigationItem
+            key={'logout'}
+            label={'Log out'}
+            iconName={'logout'}
+            selected={selected === 'logout'}
+          />
+        )}
       </Navigation>
     </div>
   );

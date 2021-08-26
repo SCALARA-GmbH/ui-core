@@ -1,7 +1,9 @@
-import { ListItem, ListItemText } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 
+import { Icon } from '../Icon';
+import { IconName } from '../Icon/Icon';
 import Typography from '../Typography';
 
 import { useStyles } from './styles';
@@ -11,13 +13,15 @@ export interface NavigationItemProps {
   selected?: boolean;
   disabled?: boolean;
   onClick?: () => void;
+  iconName?: IconName;
 }
 
 const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   label,
   selected,
   onClick,
-  disabled
+  disabled,
+  iconName
 }) => {
   const classes = useStyles({ disabled });
   return (
@@ -35,6 +39,11 @@ const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
         if (!disabled) onClick?.();
       }}
     >
+      {iconName && (
+        <ListItemIcon aria-label={label}>
+          <Icon name={iconName} />
+        </ListItemIcon>
+      )}
       <ListItemText>
         <Typography variant={'c1'} span>
           {label}

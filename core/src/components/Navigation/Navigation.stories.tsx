@@ -10,6 +10,7 @@ import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
 import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
+import NavigationItemGroup from './NavigationItemGroup';
 
 export default {
   title: 'Components/Navigation',
@@ -42,15 +43,17 @@ export const NavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <Navigation header={'Finances'} title={'Accounting'}>
-        {Labels.map((label) => (
-          <NavigationItem
-            label={label}
-            key={label}
-            onClick={() => handleClick(label)}
-            selected={label === selected}
-          />
-        ))}
+      <Navigation header={'Finances'}>
+        <NavigationItemGroup title={'Accounting'}>
+          {Labels.map((label) => (
+            <NavigationItem
+              label={label}
+              key={label}
+              onClick={() => handleClick(label)}
+              selected={label === selected}
+            />
+          ))}
+        </NavigationItemGroup>
       </Navigation>
     </div>
   );
@@ -84,15 +87,17 @@ export const NavigationDisabledStory = (): JSX.Element => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Navigation disabled header={'Disabled Finances'} title={'Accounting'}>
-        {Labels.map((label) => (
-          <NavigationItem
-            label={label}
-            key={label}
-            onClick={() => handleClick(label)}
-            selected={selected === label}
-          />
-        ))}
+      <Navigation disabled header={'Disabled Finances'}>
+        <NavigationItemGroup title={'Accounting'}>
+          {Labels.map((label) => (
+            <NavigationItem
+              label={label}
+              key={label}
+              onClick={() => handleClick(label)}
+              selected={selected === label}
+            />
+          ))}
+        </NavigationItemGroup>
       </Navigation>
       <Popover
         open={open}
@@ -154,26 +159,23 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
           />
         ))}
       </PrimaryNavigationDesktop>
-      <Navigation
-        header={'Finances'}
-        title={'Accounting'}
-        onClick={handleSecondClick}
-        secondary
-      >
-        {Labels.map((label) => (
+      <Navigation header={'Finances'} onClick={handleSecondClick} secondary>
+        <NavigationItemGroup title={'Accounting'}>
+          {Labels.map((label) => (
+            <NavigationItem
+              label={label}
+              key={label}
+              selected={label === selectedSecond}
+            />
+          ))}
+        </NavigationItemGroup>
+        <NavigationItemGroup bottom>
           <NavigationItem
-            label={label}
-            key={label}
-            selected={label === selectedSecond}
-          />
-        )).concat(
-          <NavigationItem
-            key={'logout'}
             label={'Log out'}
             iconName={'logout'}
             selected={selected === 'logout'}
           />
-        )}
+        </NavigationItemGroup>
       </Navigation>
     </div>
   );

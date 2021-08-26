@@ -4,15 +4,14 @@ import * as React from 'react';
 import DefaultDivider from '../DefaultDivider';
 import Typography from '../Typography';
 
-import { NavigationItemProps } from './NavigationItem';
+import { NavigationItemGroupProps } from './NavigationItemGroup';
 import { useStyles } from './styles';
 
 export interface Props {
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
+    | React.ReactElement<NavigationItemGroupProps>[]
+    | React.ReactElement<NavigationItemGroupProps>;
   header?: string;
-  title?: string;
   onClick?: (value: string) => void;
   disabled?: boolean;
   secondary?: boolean;
@@ -20,7 +19,6 @@ export interface Props {
 
 const Navigation: React.FunctionComponent<Props> = ({
   header,
-  title,
   children,
   disabled,
   secondary
@@ -40,18 +38,11 @@ const Navigation: React.FunctionComponent<Props> = ({
         {header}
       </Typography>
       <DefaultDivider />
-      <div className={classes.title}>
-        <Typography color={disabled ? 'disabled' : 'initial'} variant={'c1'}>
-          {title}
-        </Typography>
-      </div>
       <List className={classes.list}>
         {React.Children.map<
           React.ReactNode,
-          React.ReactElement<NavigationItemProps>
-        >(children, (child) => (
-          <li>{React.cloneElement(child, { disabled })}</li>
-        ))}
+          React.ReactElement<NavigationItemGroupProps>
+        >(children, (child) => React.cloneElement(child, { disabled }))}
       </List>
     </Drawer>
   );

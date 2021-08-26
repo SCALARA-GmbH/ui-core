@@ -32,7 +32,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     list: {
-      padding: 0
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start'
     },
     drawer: {
       width: spacing(28),
@@ -54,7 +57,10 @@ export const useStyles = makeStylesWithProps<{
       left: ({ secondary }) => (secondary ? spacing(7) : 0),
       zIndex: 9997,
       cursor: ({ disabled }) => (disabled ? 'not-allowed' : 'inherit')
+    },
+    bottom: {
+      marginTop: 'auto'
     }
   }),
-  { name: 'SCA_Navigation' }
+  { name: 'SCA__Navigation' }
 );

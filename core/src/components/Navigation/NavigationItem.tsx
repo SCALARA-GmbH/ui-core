@@ -28,7 +28,9 @@ const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
     <ListItem
       className={cx(classes.item, {
         [classes.selected]: selected,
-        [classes.deselected]: !selected
+        [classes.deselected]: !selected,
+        [classes.icon]: !!iconName,
+        [classes.text]: !iconName
       })}
       button
       disabled={disabled}

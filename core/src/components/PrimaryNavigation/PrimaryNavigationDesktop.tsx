@@ -1,5 +1,4 @@
-import { Drawer, List, ListItem } from '@material-ui/core';
-import cx from 'classnames';
+import { Drawer, List } from '@material-ui/core';
 import * as React from 'react';
 
 import { Logo } from '../../index';
@@ -14,17 +13,12 @@ export interface Props {
   children:
     | React.ReactElement<NavigationItemProps>[]
     | React.ReactElement<NavigationItemProps>;
-
-  onClick?: (value: string) => void;
-  selectedKey?: string;
 }
 
 const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
   LogoComponent = Logo,
   LogoComponentProps,
-  selectedKey,
-  children,
-  onClick
+  children
 }) => {
   const classes = useStyles();
   return (
@@ -46,24 +40,7 @@ const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
           React.ReactNode,
           React.ReactElement<NavigationItemProps>
         >(children, (child) => (
-          <li>
-            <ListItem
-              className={cx(classes.item, {
-                [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey
-              })}
-              button
-              disableRipple
-              onClick={(event: React.MouseEvent<HTMLElement>) => {
-                // note: this is fixed in mui v5 and does not have to be set manually
-                event.preventDefault();
-                onClick?.(child.props.selectKey);
-              }}
-            >
-              <span className={classes.tooltip}>{child.props.label}</span>
-              {child}
-            </ListItem>
-          </li>
+          <li>{child}</li>
         ))}
       </List>
     </Drawer>

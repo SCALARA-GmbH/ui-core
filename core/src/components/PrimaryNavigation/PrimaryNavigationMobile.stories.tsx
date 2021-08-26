@@ -40,14 +40,13 @@ export const PrimaryNavigationMobileStory = (): JSX.Element => {
     >
       <PrimaryNavigationMobile
         LogoComponentProps={{ text: true, size: 'small' }}
-        onClick={handleClick}
-        selectedKey={selected}
       >
         {Labels.map((label) => (
           <PrimaryNavigationItem
             label={label.name}
             key={label.key}
-            selectKey={label.key}
+            selected={label.key === selected}
+            onClick={() => handleClick(label.key)}
             iconName={label.key}
           />
         ))}

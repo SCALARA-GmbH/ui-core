@@ -37,15 +37,23 @@ export const PrimaryNavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <PrimaryNavigation onClick={handleClick} selectedKey={selected}>
+      <PrimaryNavigation>
         {Labels.map((label) => (
           <PrimaryNavigationItem
+            onClick={() => handleClick(label.key)}
             label={label.name}
             key={label.key}
-            selectKey={label.key}
+            selected={selected === label.key}
             iconName={label.key}
           />
-        ))}
+        )).concat(
+          <PrimaryNavigationItem
+            key={'logout'}
+            label={'Log out'}
+            iconName={'logout'}
+            selected={selected === 'logout'}
+          />
+        )}
       </PrimaryNavigation>
     </div>
   );

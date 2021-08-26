@@ -37,13 +37,14 @@ export const PrimaryNavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <PrimaryNavigationDesktop onClick={handleClick} selectedKey={selected}>
+      <PrimaryNavigationDesktop>
         {Labels.map((label) => (
           <PrimaryNavigationItem
             label={label.name}
             key={label.key}
-            selectKey={label.key}
+            onClick={() => handleClick(label.key)}
             iconName={label.key}
+            selected={label.key === selected}
           />
         ))}
       </PrimaryNavigationDesktop>

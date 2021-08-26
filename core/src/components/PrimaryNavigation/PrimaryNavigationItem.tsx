@@ -1,4 +1,4 @@
-import { ListItemIcon, ListItemText } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 
@@ -11,16 +11,17 @@ import { useStyles } from './styles';
 export interface NavigationItemProps {
   label: string;
   iconName: IconName;
-  selectKey: string;
   mobile?: boolean;
   selected?: boolean;
+  onClick?: () => void;
 }
 
 const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   label,
   iconName,
   mobile,
-  selected
+  selected,
+  onClick
 }) => {
   const classes = useStyles();
 
@@ -30,7 +31,23 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   });
 
   return (
-    <>
+    <ListItem
+      className={cx({
+        [classes.selected]: selected,
+        [classes.deselected]: !selected,
+        [classes.itemMobile]: mobile,
+        [classes.item]: !mobile
+      })}
+      button
+      disableRipple
+      onClick={(event: React.MouseEvent<HTMLElement>) => {
+        // note: this is fixed in mui v5 and does not have to be set manually
+        event.preventDefault();
+        onClick?.();
+      }}
+    >
+      {!mobile && <span className={classes.tooltip}>{label}</span>}
+
       <ListItemIcon aria-label={label}>
         <Icon name={iconName} className={className} />
       </ListItemIcon>
@@ -41,7 +58,7 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
           </Typography>
         </ListItemText>
       )}
-    </>
+    </ListItem>
   );
 };
 

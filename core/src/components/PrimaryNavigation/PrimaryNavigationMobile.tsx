@@ -1,4 +1,4 @@
-import { AppBar, Drawer, List, ListItem } from '@material-ui/core';
+import { AppBar, Drawer, List } from '@material-ui/core';
 import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 import * as React from 'react';
@@ -16,17 +16,12 @@ export interface Props {
   children:
     | React.ReactElement<NavigationItemProps>[]
     | React.ReactElement<NavigationItemProps>;
-
-  onClick?: (value: string) => void;
-  selectedKey?: string;
 }
 
 const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   LogoComponent,
   LogoComponentProps,
-  selectedKey,
-  children,
-  onClick
+  children
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -40,7 +35,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
             React.ReactNode,
             React.ReactElement<NavigationItemProps>
           >(children, (child) =>
-            child.props.selectKey === selectedKey ? (
+            child.props.selected ? (
               <span
                 className={cx(classes.appBarSelectedItem, {
                   [classes.hide]: open
@@ -100,24 +95,9 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
             React.ReactElement<NavigationItemProps>
           >(children, (child) => (
             <li>
-              <ListItem
-                className={cx(classes.itemMobile, {
-                  [classes.selected]: selectedKey === child.props.selectKey,
-                  [classes.deselected]: selectedKey !== child.props.selectKey
-                })}
-                button
-                disableRipple
-                onClick={(event: React.MouseEvent<HTMLElement>) => {
-                  // note: this is fixed in mui v5 and does not have to be set manually
-                  event.preventDefault();
-                  onClick?.(child.props.selectKey);
-                }}
-              >
-                {React.cloneElement(child, {
-                  mobile: true,
-                  selected: selectedKey === child.props.selectKey
-                })}
-              </ListItem>
+              {React.cloneElement(child, {
+                mobile: true
+              })}
             </li>
           ))}
         </List>

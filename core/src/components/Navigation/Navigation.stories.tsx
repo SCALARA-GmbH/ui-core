@@ -116,11 +116,44 @@ export const NavigationDisabledStory = (): JSX.Element => {
 NavigationDisabledStory.storyName = 'Disabled';
 
 const PrimaryLabels = [
-  { key: 'real-estate', name: 'Real Estate' },
-  { key: 'finance', name: 'Finances' },
-  { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' }
+  {
+    key: 'real-estate',
+    name: 'Real Estate',
+    icon: 'real-estate',
+    secondaryLabels: ['Units', 'Buildings']
+  },
+  {
+    key: 'finance',
+    icon: 'finance',
+    name: 'Finances',
+    secondaryLabels: [
+      'Accounts',
+      'Transactions',
+      'Business plan',
+      'Fiscal year'
+    ]
+  },
+  {
+    key: 'communication',
+    icon: 'communication',
+    name: 'Communication',
+    secondaryLabels: ['Issues']
+  },
+  {
+    key: 'contacts',
+    icon: 'contacts',
+    name: 'Contacts',
+    secondaryLabels: ['Invitations', 'Business partners']
+  },
+  {
+    key: 'account',
+    icon: 'person',
+    name: 'account',
+    secondaryLabels: ['Profile', 'log out']
+  }
 ];
+type PrimaryLabelTypes = typeof PrimaryLabels;
+export type PrimaryLabel = PrimaryLabelTypes[number];
 
 export const TwoLayerNavigationStory = (): JSX.Element => {
   const theme = useTheme();
@@ -128,16 +161,56 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
   const click = action('clicked navigation item');
   const secondClick = action('clicked secondary navigation item');
   const [selected, setSelected] = React.useState<string>(PrimaryLabels[0].key);
-  const [selectedSecond, setSelectedSecond] = React.useState<string>(Labels[0]);
+  const [selectedSecond, setSelectedSecond] = React.useState<string>(
+    PrimaryLabels[0].secondaryLabels[0]
+  );
 
-  const handleClick = (label: string) => {
-    setSelected(label);
-    click(label);
+  const primaryLabelMap = new Map<string, PrimaryLabel>();
+  PrimaryLabels.forEach((label) => {
+    primaryLabelMap[label.key] = label;
+  });
+
+  const handleClick = (key: string) => {
+    setSelected(key);
+    setSelectedSecond(primaryLabelMap[key].secondaryLabels[0]);
+    click(key);
   };
 
   const handleSecondClick = (label: string) => {
     setSelectedSecond(label);
     secondClick(label);
+  };
+
+  const renderSecondNavigation = () => {
+    if (selected === 'account')
+      return (
+        <Navigation header={'My Account'} onClick={handleSecondClick} secondary>
+          <NavigationItemGroup>
+            <NavigationItem
+              label={'Profile'}
+              key={'Profile'}
+              selected={selectedSecond === 'Profile'}
+            />
+          </NavigationItemGroup>
+          <NavigationItemGroup bottom>
+            <NavigationItem label={'Log out'} iconName={'logout'} />
+          </NavigationItemGroup>
+        </Navigation>
+      );
+    else
+      return (
+        <Navigation header={'Finances'} onClick={handleSecondClick} secondary>
+          <NavigationItemGroup title={'Accounting'}>
+            {primaryLabelMap[selected].secondaryLabels.map((label) => (
+              <NavigationItem
+                label={label}
+                key={label}
+                selected={label === selectedSecond}
+              />
+            ))}
+          </NavigationItemGroup>
+        </Navigation>
+      );
   };
 
   return (
@@ -154,29 +227,13 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
             label={label.name}
             key={label.key}
             selected={label.key === selected}
-            iconName={label.key as IconName}
+            iconName={label.icon as IconName}
             onClick={() => handleClick(label.key)}
+            bottom={label.key === 'account'}
           />
         ))}
       </PrimaryNavigationDesktop>
-      <Navigation header={'Finances'} onClick={handleSecondClick} secondary>
-        <NavigationItemGroup title={'Accounting'}>
-          {Labels.map((label) => (
-            <NavigationItem
-              label={label}
-              key={label}
-              selected={label === selectedSecond}
-            />
-          ))}
-        </NavigationItemGroup>
-        <NavigationItemGroup bottom>
-          <NavigationItem
-            label={'Log out'}
-            iconName={'logout'}
-            selected={selected === 'logout'}
-          />
-        </NavigationItemGroup>
-      </Navigation>
+      {renderSecondNavigation()}
     </div>
   );
 };

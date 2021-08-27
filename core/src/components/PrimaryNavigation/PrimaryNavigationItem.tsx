@@ -14,6 +14,7 @@ export interface NavigationItemProps {
   mobile?: boolean;
   selected?: boolean;
   onClick?: () => void;
+  bottom?: boolean;
 }
 
 const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
@@ -21,11 +22,12 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   iconName,
   mobile,
   selected,
-  onClick
+  onClick,
+  bottom
 }) => {
   const classes = useStyles();
 
-  const className = cx({
+  const itemClass = cx({
     [classes.selectedItem]: selected,
     [classes.deselectedItem]: !selected
   });
@@ -33,6 +35,7 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   return (
     <ListItem
       className={cx({
+        [classes.bottom]: bottom,
         [classes.selected]: selected,
         [classes.deselected]: !selected,
         [classes.itemMobile]: mobile,
@@ -49,11 +52,11 @@ const PrimaryNavigationItem: React.FunctionComponent<NavigationItemProps> = ({
       {!mobile && <span className={classes.tooltip}>{label}</span>}
 
       <ListItemIcon aria-label={label}>
-        <Icon name={iconName} className={className} />
+        <Icon name={iconName} className={itemClass} />
       </ListItemIcon>
       {mobile && (
         <ListItemText>
-          <Typography variant={selected ? 'c1' : 'c2'} className={className}>
+          <Typography variant={selected ? 'c1' : 'c2'} className={itemClass}>
             {label}
           </Typography>
         </ListItemText>

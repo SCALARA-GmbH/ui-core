@@ -46,7 +46,16 @@ export const PrimaryNavigationStory = (): JSX.Element => {
             iconName={label.key}
             selected={label.key === selected}
           />
-        ))}
+        )).concat(
+          <PrimaryNavigationItem
+            bottom
+            label={'My Account'}
+            key={'account'}
+            onClick={() => handleClick('account')}
+            iconName={'person'}
+            selected={selected === 'account'}
+          />
+        )}
       </PrimaryNavigationDesktop>
     </div>
   );

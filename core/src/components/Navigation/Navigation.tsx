@@ -37,7 +37,7 @@ const Navigation: React.FunctionComponent<Props> = ({
       <Typography variant={'t3'} className={classes.header}>
         {header}
       </Typography>
-      <DefaultDivider />
+      <DefaultDivider className={classes.divider} />
       <List className={classes.list}>
         {React.Children.map<
           React.ReactNode,

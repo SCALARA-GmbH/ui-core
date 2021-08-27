@@ -44,12 +44,15 @@ export const useStyles = makeStylesWithProps<{
       userSelect: 'none',
       padding: spacing(1.75, 2.5, 2.25)
     },
+    divider: {
+      marginBottom: spacing(3)
+    },
     title: {
       display: 'flex',
       alignItems: 'center',
       userSelect: 'none',
       height: spacing(6),
-      padding: spacing(3, 2.5, 0)
+      padding: spacing(0, 2.5)
     },
     drawerPaper: {
       width: spacing(28),

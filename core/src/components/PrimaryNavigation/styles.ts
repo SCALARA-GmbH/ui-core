@@ -130,6 +130,12 @@ export const useStyles = makeStyles(
       left: '50%',
       transform: 'translateX(-50%)',
       top: spacing(1)
+    },
+    bottom: {
+      position: 'fixed',
+      bottom: 0,
+      width: spacing(7),
+      marginBottom: spacing(1)
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

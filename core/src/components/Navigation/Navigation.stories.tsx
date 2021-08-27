@@ -149,7 +149,7 @@ const PrimaryLabels = [
     key: 'account',
     icon: 'person',
     name: 'account',
-    secondaryLabels: ['Profile', 'log out']
+    secondaryLabels: ['Profile', 'Business relations', 'log out']
   }
 ];
 type PrimaryLabelTypes = typeof PrimaryLabels;

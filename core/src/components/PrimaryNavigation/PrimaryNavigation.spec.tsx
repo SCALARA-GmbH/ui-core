@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import { fireEvent, render } from '../../../test-utils/render';
+import { fireEvent, render } from 'test-utils/render';
 
 import PrimaryNavigationDesktop from './PrimaryNavigationDesktop';
 import PrimaryNavigationItem from './PrimaryNavigationItem';
@@ -39,13 +38,13 @@ describe('<Navigation />', () => {
       <PrimaryNavigationDesktop>
         <PrimaryNavigationItem
           label={'Konten'}
-          onClick={handleClick}
+          onClick={() => handleClick('test1')}
           selected
           iconName={'information'}
         />
         <PrimaryNavigationItem
           label={'Buchungen'}
-          onClick={handleClick}
+          onClick={() => handleClick('test2')}
           iconName={'upload'}
         />
       </PrimaryNavigationDesktop>
@@ -53,6 +52,6 @@ describe('<Navigation />', () => {
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
 
-    expect(handleClick).toHaveBeenCalledWith('Buchung');
+    expect(handleClick).toHaveBeenCalledWith('test2');
   });
 });

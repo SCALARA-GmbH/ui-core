@@ -12,7 +12,6 @@ export interface Props {
     | React.ReactElement<NavigationItemGroupProps>[]
     | React.ReactElement<NavigationItemGroupProps>;
   header?: string;
-  onClick?: (value: string) => void;
   disabled?: boolean;
   secondary?: boolean;
 }

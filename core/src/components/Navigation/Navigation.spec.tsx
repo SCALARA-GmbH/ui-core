@@ -9,7 +9,7 @@ describe('<Navigation />', () => {
   it('renders without crashing', () => {
     const { container } = render(
       <Navigation>
-        <NavigationItem label={'Buchung'} selectKey={'Buchung'} />
+        <NavigationItem label={'Buchung'} />
       </Navigation>
     );
 
@@ -19,8 +19,8 @@ describe('<Navigation />', () => {
   it('renders two navigation button', () => {
     const { getByRole } = render(
       <Navigation>
-        <NavigationItem label={'Konten'} selectKey={'Konten'} />
-        <NavigationItem label={'Buchungen'} selectKey={'Buchung'} />
+        <NavigationItem label={'Konten'} />
+        <NavigationItem label={'Buchungen'} />
       </Navigation>
     );
 
@@ -32,24 +32,27 @@ describe('<Navigation />', () => {
     const handleClick = jest.fn();
 
     const { getByRole } = render(
-      <Navigation onClick={handleClick}>
-        <NavigationItem label={'Konten'} selectKey={'Konten'} />
-        <NavigationItem label={'Buchungen'} selectKey={'Buchungen'} />
+      <Navigation>
+        <NavigationItem label={'Konten'} onClick={() => handleClick('test')} />
+        <NavigationItem
+          label={'Buchungen'}
+          onClick={() => handleClick('test2')}
+        />
       </Navigation>
     );
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
 
-    expect(handleClick).toHaveBeenCalledWith('Buchungen');
+    expect(handleClick).toHaveBeenCalledWith('test2');
   });
 
   it('does not call onClick handler function if disabled', () => {
     const handleClick = jest.fn();
 
     const { getByRole } = render(
-      <Navigation onClick={handleClick} disabled>
-        <NavigationItem label={'Konten'} selectKey={'Konten'} />
-        <NavigationItem label={'Buchungen'} selectKey={'Buchungen'} />
+      <Navigation disabled>
+        <NavigationItem label={'Konten'} onClick={handleClick} />
+        <NavigationItem label={'Buchungen'} onClick={handleClick} />
       </Navigation>
     );
 
@@ -60,6 +63,6 @@ describe('<Navigation />', () => {
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
 
-    expect(handleClick).not.toHaveBeenCalledWith('Buchungen');
+    expect(handleClick).not.toHaveBeenCalled();
   });
 });

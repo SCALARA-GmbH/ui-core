@@ -184,12 +184,13 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
   const renderSecondNavigation = () => {
     if (selected === 'account')
       return (
-        <Navigation header={'My Account'} onClick={handleSecondClick} secondary>
+        <Navigation header={'My Account'} secondary>
           <NavigationItemGroup>
             <NavigationItem
               label={'Profile'}
               key={'Profile'}
               selected={selectedSecond === 'Profile'}
+              onClick={() => handleSecondClick('Profile')}
             />
           </NavigationItemGroup>
           <NavigationItemGroup bottom>
@@ -199,12 +200,13 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
       );
     else
       return (
-        <Navigation header={'Finances'} onClick={handleSecondClick} secondary>
+        <Navigation header={'Finances'} secondary>
           <NavigationItemGroup title={'Accounting'}>
             {primaryLabelMap[selected].secondaryLabels.map((label) => (
               <NavigationItem
                 label={label}
                 key={label}
+                onClick={() => handleSecondClick(label)}
                 selected={label === selectedSecond}
               />
             ))}

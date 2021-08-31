@@ -1,4 +1,4 @@
-import { Drawer, List } from '@material-ui/core';
+import { Drawer } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 

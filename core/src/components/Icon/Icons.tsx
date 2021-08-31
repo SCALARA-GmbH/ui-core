@@ -54,13 +54,23 @@ export type IconName =
   | 'finance'
   | 'real-estate'
   | 'communication'
-  | 'contacts';
+  | 'contacts'
+  | 'subMenu';
 
 export const icons: Record<IconName, Svg> = {
   circle: {
     children: <circle cx="15" cy="15" r="15" />,
     viewBox: viewBox30,
     size: 30
+  },
+  subMenu: {
+    children: (
+      <>
+        <path d="M18.2,10.6L14,6.3l-1.4,1.4l3.2,3.2H8c-1.7,0-3-1.3-3-3V4H3v4c0,2.8,2.2,5,5,5h7.8l-3.2,3.2l1.4,1.4l5.7-5.7L18.2,10.6z" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24
   },
   error: {
     children: (

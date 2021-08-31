@@ -3,6 +3,7 @@ import cx from 'classnames';
 import * as React from 'react';
 
 import Area from '../Area';
+import { Icon } from '../Icon';
 import { ArrowDownIcon } from '../Select/Select';
 import Typography from '../Typography';
 
@@ -39,6 +40,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
         aria-label={ariaLabel}
         onClick={() => setOpen((value) => !value)}
       >
+        <Icon name={'subMenu'} className={classes.subMenuIcon} />
         {React.Children.map<
           React.ReactNode,
           React.ReactElement<NavigationItemGroupProps>

@@ -44,8 +44,13 @@ export { default as IconButton } from './components/IconButton';
 export { default as LinearProgress } from './components/LinearProgress';
 export { default as Loading } from './components/Loading';
 export { default as Logo } from './components/Logo';
-export { Navigation } from './components/Navigation';
-export { NavigationItem } from './components/Navigation';
+export {
+  Navigation,
+  NavigationItem,
+  NavigationItemGroup,
+  NavigationDesktop,
+  NavigationMobile
+} from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
 export { Popover, usePopoverPositionUpdate } from './components/Popover';

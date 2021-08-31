@@ -38,12 +38,10 @@ const NavigationDesktop: React.FunctionComponent<Props> = ({
         {header}
       </Typography>
       <DefaultDivider className={classes.divider} />
-      <List className={classes.list}>
-        {React.Children.map<
-          React.ReactNode,
-          React.ReactElement<NavigationItemGroupProps>
-        >(children, (child) => React.cloneElement(child, { disabled }))}
-      </List>
+      {React.Children.map<
+        React.ReactNode,
+        React.ReactElement<NavigationItemGroupProps>
+      >(children, (child) => React.cloneElement(child, { disabled }))}
     </Drawer>
   );
 };

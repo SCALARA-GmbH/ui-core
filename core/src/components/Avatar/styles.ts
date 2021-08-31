@@ -1,6 +1,6 @@
 import { fade } from '@material-ui/core';
 
-import { createStyles, makeStylesWithProps } from '../..';
+import { makeStylesWithProps } from '../..';
 import { Size } from '../../types';
 
 const getSize = (size: Size): number => {

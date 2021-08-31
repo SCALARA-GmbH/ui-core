@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from '@material-ui/core';
+import { List, useMediaQuery, useTheme } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 
@@ -42,12 +42,14 @@ const NavigationItemGroup: React.FunctionComponent<NavigationItemGroupProps> = (
           </Typography>
         </div>
       )}
-      {React.Children.map<
-        React.ReactNode,
-        React.ReactElement<NavigationItemProps>
-      >(children, (child) => (
-        <li>{React.cloneElement(child, { disabled })}</li>
-      ))}
+      <List className={classes.list}>
+        {React.Children.map<
+          React.ReactNode,
+          React.ReactElement<NavigationItemProps>
+        >(children, (child) => (
+          <li>{React.cloneElement(child, { disabled })}</li>
+        ))}
+      </List>
     </div>
   );
 };

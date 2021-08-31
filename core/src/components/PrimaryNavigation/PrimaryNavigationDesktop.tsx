@@ -4,15 +4,15 @@ import * as React from 'react';
 import { Logo } from '../../index';
 import { LogoProps } from '../Logo/Logo';
 
-import { NavigationItemProps } from './PrimaryNavigationItem';
+import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import { useStyles } from './styles';
 
 export interface Props {
   LogoComponent?: React.ComponentType<LogoProps>;
   LogoComponentProps?: LogoProps;
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
+    | React.ReactElement<PrimaryNavigationItemProps>[]
+    | React.ReactElement<PrimaryNavigationItemProps>;
 }
 
 const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
@@ -38,7 +38,7 @@ const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
       <List className={classes.list}>
         {React.Children.map<
           React.ReactNode,
-          React.ReactElement<NavigationItemProps>
+          React.ReactElement<PrimaryNavigationItemProps>
         >(children, (child) => (
           <li>{child}</li>
         ))}

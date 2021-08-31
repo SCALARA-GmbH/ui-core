@@ -1,4 +1,5 @@
 import { PaletteType, Theme as MuiTheme } from '@material-ui/core';
+import { CSSProperties } from '@material-ui/core/styles/withStyles';
 import * as React from 'react';
 
 export type Color = React.CSSProperties['color'];

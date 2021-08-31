@@ -2,28 +2,31 @@ import { makeStyles } from '../ThemeProvider/styles';
 import { getTooltipStyle } from '../Tooltip/Tooltip';
 
 export const useStyles = makeStyles(
-  ({ colors, spacing, shadows, transitions }) => ({
+  ({ colors, spacing, shadows, transitions, mixins, zIndex }) => ({
+    mobileRoot: {
+      zIndex: zIndex.primaryNavigation
+    },
     drawerPaper: {
-      width: spacing(7),
+      width: mixins.primaryNavigationDesktopWidth,
       backgroundColor: colors.neutral['0'],
       border: 'none',
-      boxShadow: shadows[0],
-      zIndex: 9998
+      boxShadow: shadows[0]
     },
     drawerPaperMobile: {
       width: '100%',
       backgroundColor: colors.neutral['0'],
       border: 'none',
       boxShadow: shadows[0],
-      zIndex: 9997,
-      top: spacing(6)
+      top: spacing(6),
+      height: '100vh'
     },
     mobileDrawer: {
       display: 'flex',
       flexDirection: 'row'
     },
     drawer: {
-      width: spacing(7)
+      width: mixins.primaryNavigationDesktopWidth,
+      zIndex: zIndex.primaryNavigation
     },
     item: {
       height: spacing(9),
@@ -89,7 +92,6 @@ export const useStyles = makeStyles(
       marginTop: -spacing(4.5),
       left: spacing(7.5),
       position: 'fixed',
-      zIndex: 99999,
       ...getTooltipStyle({ colors, shadows, spacing })
     },
     mobileMenuButton: {
@@ -101,10 +103,10 @@ export const useStyles = makeStyles(
     },
     appBar: {
       position: 'absolute',
-      zIndex: 9999
+      zIndex: zIndex.primaryNavigation - 1
     },
     toolbar: {
-      height: spacing(6),
+      height: mixins.primaryNavigationMobileHeight,
       paddingLeft: spacing(1.5),
       paddingRight: spacing(2.0),
       display: 'flex',
@@ -122,7 +124,7 @@ export const useStyles = makeStyles(
         duration: transitions.duration.short
       })
     },
-    hide: {
+    transparent: {
       opacity: 0
     },
     logoMobile: {
@@ -132,10 +134,29 @@ export const useStyles = makeStyles(
       top: spacing(1)
     },
     bottom: {
+      display: 'flex',
+      flexDirection: 'column',
       position: 'fixed',
       bottom: 0,
-      width: spacing(7),
-      marginBottom: spacing(1)
+      width: mixins.primaryNavigationDesktopWidth,
+      marginBottom: spacing(1),
+      justifyContent: 'center'
+    },
+    bottomMobile: {
+      width: '100%'
+    },
+    dividerBottom: {
+      position: 'fixed',
+      bottom: spacing(10),
+      width: mixins.primaryNavigationDesktopWidth,
+      backgroundColor: colors.neutral['2']
+    },
+    hide: {
+      display: 'none'
+    },
+    dividerBottomMobile: {
+      marginTop: spacing(6),
+      backgroundColor: colors.neutral['2']
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

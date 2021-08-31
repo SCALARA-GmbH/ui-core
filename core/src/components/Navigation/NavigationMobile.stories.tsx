@@ -5,13 +5,13 @@ import * as React from 'react';
 import { Popover, useTheme } from '../..';
 import { usePopoverPositionUpdate } from '../Popover';
 
-import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
 import NavigationItemGroup from './NavigationItemGroup';
+import NavigationMobile from './NavigationMobile';
 
 export default {
-  title: 'Components/Navigation',
-  component: Navigation,
+  title: 'Components/NavigationMobile',
+  component: NavigationMobile,
   decorators: [withKnobs]
 };
 
@@ -22,7 +22,7 @@ const Labels: string[] = [
   'Fiscal year'
 ];
 
-export const NavigationStory = (): JSX.Element => {
+export const NavigationMobileStory = (): JSX.Element => {
   const theme = useTheme();
 
   const click = action('clicked navigation item');
@@ -40,7 +40,7 @@ export const NavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <Navigation header={'Finances'}>
+      <NavigationMobile>
         <NavigationItemGroup title={'Accounting'}>
           {Labels.map((label) => (
             <NavigationItem
@@ -51,13 +51,13 @@ export const NavigationStory = (): JSX.Element => {
             />
           ))}
         </NavigationItemGroup>
-      </Navigation>
+      </NavigationMobile>
     </div>
   );
 };
-NavigationStory.storyName = 'Overview';
+NavigationMobileStory.storyName = 'Overview';
 
-export const NavigationDisabledStory = (): JSX.Element => {
+export const NavigationMobileDisableStory = (): JSX.Element => {
   const theme = useTheme();
 
   const click = action('clicked navigation item');
@@ -84,7 +84,7 @@ export const NavigationDisabledStory = (): JSX.Element => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Navigation disabled header={'Disabled Finances'}>
+      <NavigationMobile disabled>
         <NavigationItemGroup title={'Accounting'}>
           {Labels.map((label) => (
             <NavigationItem
@@ -95,7 +95,7 @@ export const NavigationDisabledStory = (): JSX.Element => {
             />
           ))}
         </NavigationItemGroup>
-      </Navigation>
+      </NavigationMobile>
       <Popover
         open={open}
         popoverRef={popoverRef}
@@ -110,4 +110,4 @@ export const NavigationDisabledStory = (): JSX.Element => {
     </div>
   );
 };
-NavigationDisabledStory.storyName = 'Disabled';
+NavigationMobileDisableStory.storyName = 'Disabled';

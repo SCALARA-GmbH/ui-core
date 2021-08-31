@@ -31,9 +31,29 @@ export const AvatarOverviewSBS = (): JSX.Element => {
       >
         {SIZES.map((size) => (
           <Avatar
-            image={
-              'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
-            }
+            registered
+            image={'shari.png'}
+            key={size}
+            size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+          />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            image={'ferdi.png'}
             key={size}
             size={size}
             editable

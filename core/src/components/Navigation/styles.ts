@@ -3,13 +3,12 @@ import { getFontWeight } from '../Typography/styles';
 
 export const useStyles = makeStylesWithProps<{
   disabled?: boolean;
-  secondary?: boolean;
 }>(
-  ({ colors, spacing }) => ({
+  ({ colors, spacing, mixins, zIndex }) => ({
     item: {
       height: spacing(6),
       '&:hover': {
-        backgroundColor: colors.neutral['6']
+        backgroundColor: colors.background.hover
       }
     },
     selected: {
@@ -38,7 +37,8 @@ export const useStyles = makeStylesWithProps<{
     },
     drawer: {
       width: spacing(28),
-      flexShrink: 0
+      flexShrink: 0,
+      zIndex: zIndex.secondaryNavigation
     },
     header: {
       userSelect: 'none',
@@ -54,10 +54,11 @@ export const useStyles = makeStylesWithProps<{
       height: spacing(6),
       padding: spacing(0, 2.5)
     },
+    secondary: {
+      left: mixins.primaryNavigationDesktopWidth
+    },
     drawerPaper: {
       width: spacing(28),
-      left: ({ secondary }) => (secondary ? spacing(7) : 0),
-      zIndex: 9997,
       cursor: ({ disabled }) => (disabled ? 'not-allowed' : 'inherit')
     },
     bottom: {
@@ -71,6 +72,57 @@ export const useStyles = makeStylesWithProps<{
     },
     text: {
       padding: spacing(1.5, 3.75)
+    },
+    hide: {
+      display: 'none'
+    },
+    secondaryMobile: {
+      top: mixins.primaryNavigationMobileHeight
+    },
+    select: {
+      zIndex: zIndex.secondaryNavigation,
+      border: `1px solid ${colors.border.main}`,
+      position: 'fixed',
+      left: 0,
+      right: 0,
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingRight: spacing(1.5),
+      paddingLeft: spacing(2.5),
+      height: spacing(6),
+      backgroundColor: colors.background.primary,
+      '&:hover': {
+        backgroundColor: colors.background.hover
+      },
+      cursor: ({ disabled }) => (disabled ? 'not-allowed' : 'pointer')
+    },
+    open: {
+      backgroundColor: colors.background.hover
+    },
+    selectIcon: {
+      marginLeft: 'auto'
+    },
+    mobileRoot: {
+      width: '100%',
+      zIndex: zIndex.secondaryNavigation
+    },
+    drawerMobile: {
+      width: '100%',
+      position: 'fixed'
+    },
+    drawerPaperMobile: {
+      width: '100%',
+      top: spacing(6)
+    },
+    areaSecondary: {
+      marginTop: mixins.primaryNavigationMobileHeight
+    },
+    area: {
+      paddingTop: spacing(3)
+    },
+    iconOpen: {
+      transform: 'rotate(180deg)'
     }
   }),
   { name: 'SCA__Navigation' }

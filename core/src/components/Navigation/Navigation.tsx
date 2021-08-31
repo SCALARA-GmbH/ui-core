@@ -1,11 +1,10 @@
-import { Drawer, List } from '@material-ui/core';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import * as React from 'react';
 
-import DefaultDivider from '../DefaultDivider';
-import Typography from '../Typography';
-
+import NavigationDesktop from './NavigationDesktop';
 import { NavigationItemGroupProps } from './NavigationItemGroup';
-import { useStyles } from './styles';
+
+import { NavigationMobile } from './index';
 
 export interface Props {
   children:
@@ -22,28 +21,21 @@ const Navigation: React.FunctionComponent<Props> = ({
   disabled,
   secondary
 }) => {
-  const classes = useStyles({ disabled, secondary });
+  const theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  return (
-    <Drawer
-      className={classes.drawer}
-      variant="permanent"
-      classes={{
-        paper: classes.drawerPaper
-      }}
-      anchor="left"
+  return desktop ? (
+    <NavigationDesktop
+      disabled={disabled}
+      secondary={secondary}
+      header={header}
     >
-      <Typography variant={'t3'} className={classes.header}>
-        {header}
-      </Typography>
-      <DefaultDivider className={classes.divider} />
-      <List className={classes.list}>
-        {React.Children.map<
-          React.ReactNode,
-          React.ReactElement<NavigationItemGroupProps>
-        >(children, (child) => React.cloneElement(child, { disabled }))}
-      </List>
-    </Drawer>
+      {children}
+    </NavigationDesktop>
+  ) : (
+    <NavigationMobile secondary={secondary} disabled={disabled}>
+      {children}
+    </NavigationMobile>
   );
 };
 

@@ -4,13 +4,13 @@ import * as React from 'react';
 import Logo from '../Logo';
 
 import PrimaryNavigationDesktop from './PrimaryNavigationDesktop';
-import { NavigationItemProps } from './PrimaryNavigationItem';
+import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import PrimaryNavigationMobile from './PrimaryNavigationMobile';
 
 interface Props {
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
+    | React.ReactElement<PrimaryNavigationItemProps>[]
+    | React.ReactElement<PrimaryNavigationItemProps>;
 }
 
 const PrimaryNavigation: React.FunctionComponent<Props> = ({ children }) => {

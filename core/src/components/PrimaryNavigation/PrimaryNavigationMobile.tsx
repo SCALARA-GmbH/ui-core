@@ -7,15 +7,15 @@ import { Typography, useTheme } from '../../index';
 import { Icon } from '../Icon';
 import { LogoProps } from '../Logo/Logo';
 
-import { NavigationItemProps } from './PrimaryNavigationItem';
+import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import { useStyles } from './styles';
 
 export interface Props {
   LogoComponent?: React.ComponentType<LogoProps>;
   LogoComponentProps?: LogoProps;
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
+    | React.ReactElement<PrimaryNavigationItemProps>[]
+    | React.ReactElement<PrimaryNavigationItemProps>;
 }
 
 const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
@@ -28,17 +28,17 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div>
+    <div className={classes.mobileRoot}>
       <AppBar position="absolute" className={classes.appBar}>
         <div className={classes.toolbar}>
           {React.Children.map<
             React.ReactNode,
-            React.ReactElement<NavigationItemProps>
+            React.ReactElement<PrimaryNavigationItemProps>
           >(children, (child) =>
             child.props.selected ? (
               <span
                 className={cx(classes.appBarSelectedItem, {
-                  [classes.hide]: open
+                  [classes.transparent]: open
                 })}
               >
                 <Icon
@@ -72,7 +72,6 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
         </div>
       </AppBar>
       <Drawer
-        transitionDuration={333}
         BackdropProps={{ invisible: true }}
         variant="temporary"
         anchor="top"
@@ -92,11 +91,14 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
         <List className={classes.list}>
           {React.Children.map<
             React.ReactNode,
-            React.ReactElement<NavigationItemProps>
+            React.ReactElement<PrimaryNavigationItemProps>
           >(children, (child) => (
             <li>
-              {React.cloneElement(child, {
-                mobile: true
+              {React.cloneElement<PrimaryNavigationItemProps>(child, {
+                onClick: () => {
+                  setOpen(false);
+                  child.props.onClick?.();
+                }
               })}
             </li>
           ))}

@@ -51,6 +51,7 @@ const useIconStyles = makeStyles(
       right: 0,
       padding: theme.spacing(0, 1),
       transition: theme.transitions.create('transform'),
+      color: theme.colors.icon.control,
       '&.MuiSelect-icon': {
         color: theme.colors.icon.control
       },
@@ -61,9 +62,14 @@ const useIconStyles = makeStyles(
   }),
   { name: 'SCA__Select-Icon' }
 );
-const ArrowDownIcon = ({ className }: { className: string }) => {
+export const ArrowDownIcon = ({ className }: { className?: string }) => {
   const classes = useIconStyles();
-  return <Icon name={'arrow-down'} className={cx(classes.root, className)} />;
+  return (
+    <Icon
+      name={'arrow-down'}
+      className={className ? cx(classes.root, className) : classes.root}
+    />
+  );
 };
 
 const Select: React.FunctionComponent<SelectProps> = ({

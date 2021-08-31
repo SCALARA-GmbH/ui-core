@@ -11,7 +11,7 @@ import { useStyles as useTypographyStyles } from '../Typography/styles';
 import 'react-toastify/dist/ReactToastify.css';
 
 const useStyles = makeStyles(
-  ({ colors, spacing, shadows }) =>
+  ({ colors, spacing, shadows, zIndex }) =>
     createStyles({
       container: {
         display: 'flex',
@@ -19,9 +19,11 @@ const useStyles = makeStyles(
         width: 'auto',
         height: 'auto',
         padding: 0,
-        boxSizing: 'content-box'
+        boxSizing: 'content-box',
+        zIndex: zIndex.toast
       },
       root: {
+        zIndex: zIndex.toast,
         boxSizing: 'content-box',
         display: 'flex',
         flexDirection: 'column',

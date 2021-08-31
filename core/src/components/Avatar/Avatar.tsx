@@ -53,16 +53,12 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
           data-testid={testId}
           src={image}
           alt={alt}
-          className={classNames(
-            classes.root,
-            { [classes.iconOutline]: !image },
-            className
-          )}
+          className={classNames(classes.root, className)}
         >
           <Icon
             className={classes.icon}
             size={size}
-            name={type === 'person' ? 'person-outline' : 'company'}
+            name={type}
             testId={'fallback-icon'}
           />
         </MaterialAvatar>

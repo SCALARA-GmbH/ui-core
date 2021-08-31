@@ -14,6 +14,21 @@ declare module '@material-ui/core/styles/createMuiTheme' {
   }
 }
 
+declare module '@material-ui/core/styles/createMixins' {
+  export interface Mixins {
+    primaryNavigationDesktopWidth: string;
+    primaryNavigationMobileHeight: string;
+  }
+}
+
+declare module '@material-ui/core/styles/zIndex' {
+  export interface ZIndex {
+    toast: number;
+    primaryNavigation: number;
+    secondaryNavigation: number;
+  }
+}
+
 const generateShadows = (...colors: Color[]): Shadows => {
   const scalaraShadows = new Array(shadows.length).fill(
     `0px 20px 30px 0px ${fade(colors[0] as string, 0.12)}`
@@ -171,6 +186,15 @@ const theme = (type: PaletteType): Theme => {
       }
     },
     type,
+    zIndex: {
+      toast: 9999,
+      primaryNavigation: 9998,
+      secondaryNavigation: 9997
+    },
+    mixins: {
+      primaryNavigationDesktopWidth: '56px',
+      primaryNavigationMobileHeight: '48px'
+    },
     overrides: {
       MuiCssBaseline: {
         '@global': {

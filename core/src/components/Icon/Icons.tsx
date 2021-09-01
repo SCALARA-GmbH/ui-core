@@ -10,6 +10,8 @@ export type SvgSize = 24 | 40 | 72 | 30;
 
 export interface Svg {
   children: React.ReactNode;
+  outline?: React.ReactElement;
+  background?: React.ReactElement;
   viewBox: string;
   size: SvgSize;
 }
@@ -288,7 +290,6 @@ export const icons: Record<IconName, Svg> = {
   company: {
     children: (
       <>
-        <path d="M20,36A16,16,0,1,1,36,20,16,16,0,0,1,20,36ZM20,5A15,15,0,1,0,35,20,15,15,0,0,0,20,5Z" />
         <polygon points="19 11 19 14.28 10 17.28 10 28 12 28 12 18.72 19 16.39 19 27.96 21 27.96 21 13 28 13 28 28 30 28 30 11 19 11" />
         <rect x="23" y="16" width="3" height="2" />
         <rect x="23" y="20" width="3" height="2" />
@@ -297,6 +298,10 @@ export const icons: Record<IconName, Svg> = {
         <rect x="14" y="24" width="3" height="2" />
       </>
     ),
+    outline: (
+      <path d="M20,36A16,16,0,1,1,36,20,16,16,0,0,1,20,36ZM20,5A15,15,0,1,0,35,20,15,15,0,0,0,20,5Z" />
+    ),
+    background: <circle r={16} cx="20" cy="20" />,
     viewBox: viewBox40,
     size: 40
   },
@@ -305,9 +310,12 @@ export const icons: Record<IconName, Svg> = {
       <>
         <path d="M20,9a5,5,0,1,0,5,5A5,5,0,0,0,20,9Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,20,17Z" />
         <path d="M27,29.39l-.18-1c-.66-3.67-3.55-6.34-6.86-6.34s-6.2,2.67-6.86,6.34l-.18,1L11,29l.18-1c.83-4.62,4.54-8,8.82-8s8,3.36,8.82,8L29,29Z" />
-        <path d="M20,36A16,16,0,1,1,36,20,16,16,0,0,1,20,36ZM20,5A15,15,0,1,0,35,20,15,15,0,0,0,20,5Z" />
       </>
     ),
+    outline: (
+      <path d="M20,36A16,16,0,1,1,36,20,16,16,0,0,1,20,36ZM20,5A15,15,0,1,0,35,20,15,15,0,0,0,20,5Z" />
+    ),
+    background: <circle r={16} cx="20" cy="20" />,
     viewBox: viewBox40,
     size: 40
   },

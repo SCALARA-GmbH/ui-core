@@ -5,7 +5,7 @@ import { Size } from '../../types';
 import { Color } from '../ThemeProvider/types';
 
 import { icons } from './Icons';
-import { useStyles } from './styles';
+import { getSizeFactor, useStyles } from './styles';
 
 export type IconName = keyof typeof icons;
 
@@ -16,6 +16,8 @@ export interface IconProps {
   style?: React.CSSProperties;
   testId?: string;
   color?: Color;
+  outlineColor?: Color;
+  backgroundColor?: Color;
 }
 
 const Icon: React.FunctionComponent<IconProps> = ({
@@ -24,7 +26,9 @@ const Icon: React.FunctionComponent<IconProps> = ({
   size = 'medium',
   style = {},
   testId = '',
-  color
+  color,
+  outlineColor,
+  backgroundColor
 }) => {
   const icon = icons[name];
   if (!icon) {
@@ -41,7 +45,15 @@ const Icon: React.FunctionComponent<IconProps> = ({
       focusable={'false'}
       viewBox={icon.viewBox}
     >
+      {backgroundColor &&
+        icon.background &&
+        React.cloneElement(icon.background, {
+          style: { color: backgroundColor }
+        })}
       {icon.children}
+      {outlineColor &&
+        icon.outline &&
+        React.cloneElement(icon.outline, { style: { color: outlineColor } })}
     </svg>
   );
 };

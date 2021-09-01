@@ -32,7 +32,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
         {SIZES.map((size) => (
           <Avatar
             registered
-            image={'shari.png'}
+            image={'elmar.jpeg'}
             key={size}
             size={size}
             editable
@@ -53,7 +53,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
       >
         {SIZES.map((size) => (
           <Avatar
-            image={'ferdi.png'}
+            image={'armin.png'}
             key={size}
             size={size}
             editable
@@ -76,6 +76,48 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           <Avatar
             key={size}
             size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+          />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            key={size}
+            size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+            registered
+          />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            key={size}
+            size={size}
+            type="company"
             editable
             onClick={() => console.log('onClick')}
             tooltip={'You can click me'}
@@ -100,6 +142,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
             editable
             onClick={() => console.log('onClick')}
             tooltip={'You can click me'}
+            registered
           />
         ))}
       </div>

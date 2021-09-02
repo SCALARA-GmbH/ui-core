@@ -11,6 +11,8 @@ import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import { useStyles } from './styles';
 
 export interface Props {
+  tablet?: boolean;
+  menuAriaLabel?: string;
   LogoComponent?: React.ComponentType<LogoProps>;
   LogoComponentProps?: LogoProps;
   children:
@@ -19,9 +21,11 @@ export interface Props {
 }
 
 const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
+  tablet,
   LogoComponent,
   LogoComponentProps,
-  children
+  children,
+  menuAriaLabel
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -30,7 +34,12 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   return (
     <div className={classes.mobileRoot}>
       <AppBar position="absolute" className={classes.appBar}>
-        <div className={classes.toolbar}>
+        <div
+          className={cx(classes.toolbar, {
+            [classes.toolbarMobile]: !tablet,
+            [classes.toolbarTablet]: tablet
+          })}
+        >
           {React.Children.map<
             React.ReactNode,
             React.ReactElement<PrimaryNavigationItemProps>
@@ -41,24 +50,39 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
                   [classes.transparent]: open
                 })}
               >
-                <Icon
-                  color={theme.colors.icon.navigation}
-                  name={child.props.iconName}
+                {child.props.iconName && (
+                  <Icon
+                    color={theme.colors.icon.navigation}
+                    name={child.props.iconName}
+                  >
+                    {child.props.label}
+                  </Icon>
+                )}
+                <Typography
+                  className={cx(
+                    classes.deselectedItem,
+                    classes.appBarSelectedItemText
+                  )}
                 >
-                  {child.props.label}
-                </Icon>
-                <Typography className={classes.deselectedItem}>
                   {child.props.label}
                 </Typography>
               </span>
             ) : null
           )}
-          {LogoComponent && (
+          {LogoComponent && tablet && (
             <LogoComponent
-              className={classes.logoMobile}
+              className={classes.logoTablet}
               {...LogoComponentProps}
               color={'white'}
-              size={'small'}
+            />
+          )}
+          {LogoComponent && !tablet && (
+            <LogoComponent
+              className={cx(classes.logoMobile, {
+                [classes.transparent]: !open
+              })}
+              {...LogoComponentProps}
+              color={'white'}
             />
           )}
           <span className={classes.mobileMenuButton}>
@@ -67,6 +91,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
               toggle={setOpen}
               size={18}
               color={theme.colors.icon.navigation}
+              label={menuAriaLabel}
             />
           </span>
         </div>

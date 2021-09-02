@@ -8,24 +8,28 @@ import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import PrimaryNavigationMobile from './PrimaryNavigationMobile';
 
 interface Props {
+  menuAriaLabel?: string;
   children:
     | React.ReactElement<PrimaryNavigationItemProps>[]
     | React.ReactElement<PrimaryNavigationItemProps>;
 }
 
-const PrimaryNavigation: React.FunctionComponent<Props> = ({ children }) => {
+const PrimaryNavigation: React.FunctionComponent<Props> = ({
+  children,
+  menuAriaLabel
+}) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
   const tablet = useMediaQuery(theme.breakpoints.up('sm'));
 
   return desktop ? (
-    <PrimaryNavigationDesktop LogoComponentProps={{ text: true }}>
-      {children}
-    </PrimaryNavigationDesktop>
+    <PrimaryNavigationDesktop>{children}</PrimaryNavigationDesktop>
   ) : (
     <PrimaryNavigationMobile
-      LogoComponent={tablet ? Logo : undefined}
-      LogoComponentProps={{ text: true, size: 'small' }}
+      tablet={tablet}
+      LogoComponent={Logo}
+      LogoComponentProps={{ text: true, size: 'medium' }}
+      menuAriaLabel={menuAriaLabel}
     >
       {children}
     </PrimaryNavigationMobile>

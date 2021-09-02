@@ -8,6 +8,7 @@ import Navigation from '../Navigation/Navigation';
 import NavigationItem from '../Navigation/NavigationItem';
 import NavigationItemGroup from '../Navigation/NavigationItemGroup';
 
+import PrimaryNavigationAvatar from './PrimaryNavigationAvatar';
 import PrimaryNavigationItem from './PrimaryNavigationItem';
 
 export default {
@@ -90,12 +91,6 @@ const PrimaryLabels = [
     name: 'Contacts',
     title: 'Contacts',
     secondaryLabels: ['Invitations', 'Business partners']
-  },
-  {
-    key: 'account',
-    icon: 'person',
-    name: 'account',
-    secondaryLabels: ['Profile', 'Business relations', 'log out']
   }
 ];
 type PrimaryLabelTypes = typeof PrimaryLabels;
@@ -118,7 +113,11 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
 
   const handleClick = (key: string) => {
     setSelected(key);
-    setSelectedSecond(primaryLabelMap[key].secondaryLabels[0]);
+    if (key === 'account') {
+      setSelectedSecond('Profile');
+    } else {
+      setSelectedSecond(primaryLabelMap[key].secondaryLabels[0]);
+    }
     click(key);
   };
 
@@ -180,19 +179,29 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
             selected={label.key === selected}
             iconName={label.icon as IconName}
             onClick={() => handleClick(label.key)}
-            bottom={label.key === 'account'}
-            divider={label.key === 'account'}
           />
-        )).concat(
-          <PrimaryNavigationItem
-            label={'Log out'}
-            key={'logout'}
-            iconName={'logout'}
-            onClick={() => toast.success('Logged out')}
-            bottom
-            hideInDesktop
-          />
-        )}
+        ))
+          .concat(
+            <PrimaryNavigationAvatar
+              label={'My Account'}
+              key={'account'}
+              selected={selected === 'account'}
+              bottom
+              image={''}
+              onClick={() => handleClick('account')}
+              divider
+            />
+          )
+          .concat(
+            <PrimaryNavigationItem
+              label={'Log out'}
+              key={'logout'}
+              iconName={'logout'}
+              onClick={() => toast.success('Logged out')}
+              bottom
+              hideInDesktop
+            />
+          )}
       </PrimaryNavigation>
       {renderSecondNavigation()}
     </div>

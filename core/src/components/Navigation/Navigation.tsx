@@ -23,6 +23,7 @@ const Navigation: React.FunctionComponent<Props> = ({
 }) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const tablet = useMediaQuery(theme.breakpoints.up('sm'));
 
   return desktop ? (
     <NavigationDesktop
@@ -33,7 +34,7 @@ const Navigation: React.FunctionComponent<Props> = ({
       {children}
     </NavigationDesktop>
   ) : (
-    <NavigationMobile secondary={secondary} disabled={disabled}>
+    <NavigationMobile secondary={secondary} disabled={disabled} tablet={tablet}>
       {children}
     </NavigationMobile>
   );

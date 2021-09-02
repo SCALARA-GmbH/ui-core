@@ -75,7 +75,7 @@ export const useStyles = makeStylesWithProps<{
       padding: spacing(1.5, 1.5)
     },
     text: {
-      padding: spacing(1.5, 3.75)
+      padding: spacing(1.5, 4)
     },
     hide: {
       display: 'none'
@@ -92,14 +92,20 @@ export const useStyles = makeStylesWithProps<{
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      paddingRight: spacing(1.5),
-      paddingLeft: spacing(2.5),
       height: spacing(6),
       backgroundColor: colors.background.primary,
       '&:hover': {
         backgroundColor: colors.background.hover
       },
       cursor: ({ disabled }) => (disabled ? 'not-allowed' : 'pointer')
+    },
+    selectMobile: {
+      paddingRight: spacing(1),
+      paddingLeft: spacing(1.25)
+    },
+    selectTablet: {
+      paddingRight: spacing(1.5),
+      paddingLeft: spacing(2.5)
     },
     open: {
       backgroundColor: colors.background.hover

@@ -2,26 +2,20 @@ import { ListItem, useMediaQuery, useTheme } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
 
-import { Typography } from '../../index';
+import { Avatar, Typography } from '../../index';
 import DefaultDivider from '../DefaultDivider';
-import { Icon } from '../Icon';
-import { IconName } from '../Icon/Icon';
 
+import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import { useStyles } from './styles';
 
-export interface PrimaryNavigationItemProps {
-  label: string;
-  iconName?: IconName;
-  selected?: boolean;
-  onClick?: () => void;
-  bottom?: boolean;
-  divider?: boolean;
-  hideInDesktop?: boolean;
+export interface PrimaryNavigationAvatarProps
+  extends PrimaryNavigationItemProps {
+  image: string;
 }
 
-const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps> = ({
+const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationAvatarProps> = ({
   label,
-  iconName,
+  image,
   selected,
   onClick,
   bottom,
@@ -66,7 +60,7 @@ const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps>
         }}
       >
         {!mobile && <span className={classes.tooltip}>{label}</span>}
-        {iconName && <Icon name={iconName} className={itemClass} />}
+        <Avatar registered image={image} />
         {mobile && (
           <Typography
             variant={selected ? 'c1' : 'c2'}
@@ -80,4 +74,4 @@ const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps>
   );
 };
 
-export default PrimaryNavigationItem;
+export default PrimaryNavigationAvatar;

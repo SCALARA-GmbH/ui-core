@@ -33,6 +33,9 @@ export const useStyles = makeStyles(
       padding: spacing(1.5, 1),
       '&:hover': {
         backgroundColor: colors.neutral['1']
+      },
+      '&:hover > $deselectedItem': {
+        color: colors.neutral.F
       }
     },
     mobileSpace: {
@@ -40,14 +43,19 @@ export const useStyles = makeStyles(
     },
     itemMobile: {
       height: spacing(7),
-      padding: spacing(1, 1),
+      padding: spacing(1, 1.5),
       '&:hover': {
+        color: colors.neutral.F,
         backgroundColor: colors.neutral['1']
+      },
+      '&:hover > $deselectedItem': {
+        color: colors.neutral.F
       }
     },
     logo: {
       overflowX: 'hidden',
-      padding: spacing(1.25)
+      padding: spacing(1),
+      marginBottom: spacing(2.5)
     },
     selected: {
       transition: transitions.create('box-shadow', {
@@ -95,9 +103,10 @@ export const useStyles = makeStyles(
       ...getTooltipStyle({ colors, shadows, spacing })
     },
     mobileMenuButton: {
+      '&:hover': {
+        backgroundColor: colors.neutral['1']
+      },
       marginLeft: 'auto',
-      width: spacing(4),
-      height: spacing(4),
       alignItems: 'center',
       display: 'flex'
     },
@@ -105,10 +114,16 @@ export const useStyles = makeStyles(
       position: 'absolute',
       zIndex: zIndex.primaryNavigation - 1
     },
+    toolbarMobile: {
+      paddingLeft: spacing(0.25),
+      paddingRight: spacing(0)
+    },
+    toolbarTablet: {
+      paddingLeft: spacing(1.5),
+      paddingRight: spacing(0)
+    },
     toolbar: {
       height: mixins.primaryNavigationMobileHeight,
-      paddingLeft: spacing(1.5),
-      paddingRight: spacing(2.0),
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
@@ -120,18 +135,27 @@ export const useStyles = makeStyles(
       alignItems: 'center',
       opacity: 1,
       transition: transitions.create('opacity', {
-        easing: transitions.easing.easeIn,
+        easing: transitions.easing.easeInOut,
+        duration: transitions.duration.short
+      })
+    },
+    logoTablet: {
+      position: 'fixed',
+      left: '50%',
+      transform: 'translateX(-50%)'
+    },
+    logoMobile: {
+      position: 'fixed',
+      top: spacing(1),
+      left: spacing(1.5),
+      opacity: 1,
+      transition: transitions.create('opacity', {
+        easing: transitions.easing.easeInOut,
         duration: transitions.duration.short
       })
     },
     transparent: {
       opacity: 0
-    },
-    logoMobile: {
-      position: 'fixed',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      top: spacing(1)
     },
     bottom: {
       display: 'flex',
@@ -157,6 +181,12 @@ export const useStyles = makeStyles(
     dividerBottomMobile: {
       marginTop: spacing(6),
       backgroundColor: colors.neutral['2']
+    },
+    text: {
+      paddingLeft: spacing(2)
+    },
+    appBarSelectedItemText: {
+      paddingLeft: spacing(0.25)
     }
   }),
   { name: 'SCA__PrimaryNavigation' }

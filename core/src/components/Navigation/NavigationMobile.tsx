@@ -18,13 +18,15 @@ export interface Props {
   disabled?: boolean;
   secondary?: boolean;
   ariaLabel?: string;
+  tablet?: boolean;
 }
 
 const NavigationMobile: React.FunctionComponent<Props> = ({
   children,
   disabled,
   secondary,
-  ariaLabel
+  ariaLabel,
+  tablet
 }) => {
   const classes = useStyles({ disabled });
   const [open, setOpen] = React.useState(false);
@@ -34,7 +36,9 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
       <div
         className={cx(classes.select, {
           [classes.open]: open,
-          [classes.secondaryMobile]: secondary
+          [classes.secondaryMobile]: secondary,
+          [classes.selectTablet]: tablet,
+          [classes.selectMobile]: !tablet
         })}
         role={'button'}
         aria-label={ariaLabel}

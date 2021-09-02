@@ -102,6 +102,8 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
   const click = action('clicked navigation item');
   const secondClick = action('clicked secondary navigation item');
   const [selected, setSelected] = React.useState<string>(PrimaryLabels[0].key);
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [openPrimary, setOpenPrimary] = React.useState<boolean>(false);
   const [selectedSecond, setSelectedSecond] = React.useState<string>(
     PrimaryLabels[0].secondaryLabels[0]
   );
@@ -119,17 +121,24 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
       setSelectedSecond(primaryLabelMap[key].secondaryLabels[0]);
     }
     click(key);
+    setOpenPrimary(false);
   };
 
   const handleSecondClick = (label: string) => {
     if (label === 'Accounts') toast.success('You clicked on accounts');
     setSelectedSecond(label);
     secondClick(label);
+    setOpen(false);
   };
 
   const renderSecondNavigation = () => {
     return selected === 'account' ? (
-      <Navigation header={'My Account'} secondary>
+      <Navigation
+        header={'My Account'}
+        secondary
+        onClick={() => setOpen((value) => !value)}
+        open={open}
+      >
         <NavigationItemGroup>
           <NavigationItem
             label={'Profile'}
@@ -147,7 +156,12 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
         </NavigationItemGroup>
       </Navigation>
     ) : (
-      <Navigation header={primaryLabelMap[selected].name} secondary>
+      <Navigation
+        header={primaryLabelMap[selected].name}
+        secondary
+        onClick={() => setOpen((value) => !value)}
+        open={open}
+      >
         <NavigationItemGroup title={primaryLabelMap[selected].title}>
           {primaryLabelMap[selected].secondaryLabels.map((label) => (
             <NavigationItem
@@ -171,7 +185,10 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
       }}
     >
       <ToastContainer />
-      <PrimaryNavigation>
+      <PrimaryNavigation
+        open={openPrimary}
+        onClick={() => setOpenPrimary((value) => !value)}
+      >
         {PrimaryLabels.map((label) => (
           <PrimaryNavigationItem
             label={label.name}
@@ -188,6 +205,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
               selected={selected === 'account'}
               bottom
               image={''}
+              accountType={'person'}
               onClick={() => handleClick('account')}
               divider
             />
@@ -199,7 +217,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
               iconName={'logout'}
               onClick={() => toast.success('Logged out')}
               bottom
-              hideInDesktop
+              hideForDesktop
             />
           )}
       </PrimaryNavigation>

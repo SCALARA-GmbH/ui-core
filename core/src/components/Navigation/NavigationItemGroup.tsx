@@ -32,6 +32,7 @@ const NavigationItemGroup: React.FunctionComponent<NavigationItemGroupProps> = (
   return (
     <div
       className={cx({
+        [classes.test]: true,
         [classes.bottom]: bottom,
         [classes.hide]: mobile && hideForMobile
       })}

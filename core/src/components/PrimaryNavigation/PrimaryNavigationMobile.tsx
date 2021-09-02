@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 import * as React from 'react';
 
-import { Typography, useTheme } from '../../index';
+import { Avatar, Typography, useTheme } from '../../index';
 import { Icon } from '../Icon';
 import { LogoProps } from '../Logo/Logo';
 
@@ -18,6 +18,9 @@ export interface Props {
   children:
     | React.ReactElement<PrimaryNavigationItemProps>[]
     | React.ReactElement<PrimaryNavigationItemProps>;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
@@ -25,11 +28,13 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   LogoComponent,
   LogoComponentProps,
   children,
-  menuAriaLabel
+  menuAriaLabel,
+  open,
+  onClose,
+  onClick
 }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
   return (
     <div className={classes.mobileRoot}>
@@ -57,6 +62,13 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
                   >
                     {child.props.label}
                   </Icon>
+                )}
+                {child.props.image !== undefined && (
+                  <Avatar
+                    registered
+                    image={child.props.image}
+                    type={child.props.accountType}
+                  />
                 )}
                 <Typography
                   className={cx(
@@ -88,7 +100,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
           <span className={classes.mobileMenuButton}>
             <Hamburger
               toggled={open}
-              toggle={setOpen}
+              toggle={onClick}
               size={18}
               color={theme.colors.icon.navigation}
               label={menuAriaLabel}
@@ -101,7 +113,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
         variant="temporary"
         anchor="top"
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={onClose}
         classes={{
           paper: classes.drawerPaperMobile
         }}
@@ -118,14 +130,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
             React.ReactNode,
             React.ReactElement<PrimaryNavigationItemProps>
           >(children, (child) => (
-            <li>
-              {React.cloneElement<PrimaryNavigationItemProps>(child, {
-                onClick: () => {
-                  setOpen(false);
-                  child.props.onClick?.();
-                }
-              })}
-            </li>
+            <li>{child}</li>
           ))}
         </List>
       </Drawer>

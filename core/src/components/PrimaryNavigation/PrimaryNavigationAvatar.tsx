@@ -8,19 +8,15 @@ import DefaultDivider from '../DefaultDivider';
 import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
 import { useStyles } from './styles';
 
-export interface PrimaryNavigationAvatarProps
-  extends PrimaryNavigationItemProps {
-  image: string;
-}
-
-const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationAvatarProps> = ({
+const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationItemProps> = ({
   label,
   image,
   selected,
   onClick,
   bottom,
   divider,
-  hideInDesktop
+  accountType,
+  hideForDesktop
 }) => {
   const classes = useStyles();
 
@@ -33,7 +29,7 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationAvatarPr
   const mobile = !desktop;
 
   return (
-    <div className={cx({ [classes.hide]: desktop && hideInDesktop })}>
+    <div className={cx({ [classes.hide]: desktop && hideForDesktop })}>
       {divider && (
         <DefaultDivider
           className={cx({
@@ -60,7 +56,7 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationAvatarPr
         }}
       >
         {!mobile && <span className={classes.tooltip}>{label}</span>}
-        <Avatar registered image={image} />
+        <Avatar registered image={image} type={accountType} />
         {mobile && (
           <Typography
             variant={selected ? 'c1' : 'c2'}

@@ -12,11 +12,13 @@ import { useStyles } from './styles';
 export interface PrimaryNavigationItemProps {
   label: string;
   iconName?: IconName;
+  image?: string;
   selected?: boolean;
   onClick?: () => void;
   bottom?: boolean;
   divider?: boolean;
-  hideInDesktop?: boolean;
+  hideForDesktop?: boolean;
+  accountType?: 'person' | 'company';
 }
 
 const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps> = ({
@@ -26,7 +28,7 @@ const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps>
   onClick,
   bottom,
   divider,
-  hideInDesktop
+  hideForDesktop
 }) => {
   const classes = useStyles();
 
@@ -39,7 +41,7 @@ const PrimaryNavigationItem: React.FunctionComponent<PrimaryNavigationItemProps>
   const mobile = !desktop;
 
   return (
-    <div className={cx({ [classes.hide]: desktop && hideInDesktop })}>
+    <div className={cx({ [classes.hide]: desktop && hideForDesktop })}>
       {divider && (
         <DefaultDivider
           className={cx({

@@ -19,6 +19,9 @@ export interface Props {
   secondary?: boolean;
   ariaLabel?: string;
   tablet?: boolean;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const NavigationMobile: React.FunctionComponent<Props> = ({
@@ -26,10 +29,12 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
   disabled,
   secondary,
   ariaLabel,
-  tablet
+  tablet,
+  open,
+  onClick,
+  onClose
 }) => {
   const classes = useStyles({ disabled });
-  const [open, setOpen] = React.useState(false);
 
   return (
     <div className={classes.mobileRoot}>
@@ -42,7 +47,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
         })}
         role={'button'}
         aria-label={ariaLabel}
-        onClick={() => setOpen((value) => !value)}
+        onClick={onClick}
       >
         <Icon name={'subMenu'} className={classes.subMenuIcon} />
         {React.Children.map<
@@ -66,7 +71,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
         variant="temporary"
         anchor="top"
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={onClose}
         ModalProps={{
           // Better open performance on mobile.
           keepMounted: true,
@@ -86,19 +91,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
             {React.Children.map<
               React.ReactNode,
               React.ReactElement<NavigationItemGroupProps>
-            >(children, (group) =>
-              React.Children.map<
-                React.ReactNode,
-                React.ReactElement<NavigationItemProps>
-              >(group.props.children, (child) =>
-                React.cloneElement<NavigationItemProps>(child, {
-                  onClick: () => {
-                    setOpen(false);
-                    child.props.onClick?.();
-                  }
-                })
-              )
-            )}
+            >(children, (group) => group)}
           </List>
         </Area>
       </Drawer>

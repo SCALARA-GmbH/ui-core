@@ -13,13 +13,19 @@ export interface Props {
   header?: string;
   disabled?: boolean;
   secondary?: boolean;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const Navigation: React.FunctionComponent<Props> = ({
   header,
   children,
   disabled,
-  secondary
+  secondary,
+  open,
+  onClick,
+  onClose
 }) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -34,7 +40,14 @@ const Navigation: React.FunctionComponent<Props> = ({
       {children}
     </NavigationDesktop>
   ) : (
-    <NavigationMobile secondary={secondary} disabled={disabled} tablet={tablet}>
+    <NavigationMobile
+      secondary={secondary}
+      disabled={disabled}
+      tablet={tablet}
+      open={open}
+      onClick={onClick}
+      onClose={onClose}
+    >
       {children}
     </NavigationMobile>
   );

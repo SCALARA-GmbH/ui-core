@@ -12,11 +12,17 @@ interface Props {
   children:
     | React.ReactElement<PrimaryNavigationItemProps>[]
     | React.ReactElement<PrimaryNavigationItemProps>;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const PrimaryNavigation: React.FunctionComponent<Props> = ({
   children,
-  menuAriaLabel
+  menuAriaLabel,
+  onClose,
+  open,
+  onClick
 }) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -30,6 +36,9 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
       LogoComponent={Logo}
       LogoComponentProps={{ text: true, size: 'medium' }}
       menuAriaLabel={menuAriaLabel}
+      onClick={onClick}
+      open={open}
+      onClose={onClose}
     >
       {children}
     </PrimaryNavigationMobile>

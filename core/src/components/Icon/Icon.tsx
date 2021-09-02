@@ -5,7 +5,7 @@ import { Size } from '../../types';
 import { Color } from '../ThemeProvider/types';
 
 import { icons } from './Icons';
-import { getSizeFactor, useStyles } from './styles';
+import { useStyles } from './styles';
 
 export type IconName = keyof typeof icons;
 

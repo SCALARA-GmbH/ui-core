@@ -151,11 +151,6 @@ export const AvatarOverviewSBS = (): JSX.Element => {
 };
 AvatarOverviewSBS.storyName = 'Overview';
 
-export const AvatarTooltipOverview = (): JSX.Element => {
-  return <Avatar size={'large'} type="person" tooltip={'Lorem ipsum'} />;
-};
-AvatarTooltipOverview.storyName = 'Tooltip';
-
 export const AvatarEditOverview = (): JSX.Element => {
   return (
     <Avatar

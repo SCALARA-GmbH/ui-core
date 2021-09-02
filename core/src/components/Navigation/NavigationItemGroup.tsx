@@ -28,7 +28,7 @@ const NavigationItemGroup: React.FunctionComponent<NavigationItemGroupProps> = (
   const mobile = !useMediaQuery(theme.breakpoints.up('lg'));
 
   const classes = useStyles({ disabled });
-  console.log(title, hideForMobile, mobile);
+
   return (
     <div
       className={cx({

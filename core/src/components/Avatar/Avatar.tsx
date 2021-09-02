@@ -39,9 +39,8 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
 
   return (
     <Tooltip title={tooltip} onClick={onClick}>
-      <div className={classes.root}>
+      <div className={classes.root} data-testid={testId}>
         <MaterialAvatar
-          data-testid={testId}
           src={image}
           alt={alt}
           className={cx(

@@ -9,6 +9,7 @@ import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
 import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
+import NavigationSection from './NavigationSection';
 
 export default {
   title: 'Components/Navigation',
@@ -16,18 +17,20 @@ export default {
   decorators: [withKnobs]
 };
 
-const Labels: string[] = [
+const LabelsAccounting: string[] = [
   'Accounts',
   'Transactions',
   'Business plan',
   'Fiscal year'
 ];
 
+const LabelsZahlungsverkehr: string[] = ['Bankkonten'];
+
 export const NavigationStory = (): JSX.Element => {
   const theme = useTheme();
 
   const click = action('clicked navigation item');
-  const [selected, setSelected] = React.useState<string>(Labels[0]);
+  const [selected, setSelected] = React.useState<string>(LabelsAccounting[0]);
 
   const handleClick = (label: string) => {
     setSelected(label);
@@ -43,13 +46,19 @@ export const NavigationStory = (): JSX.Element => {
     >
       <Navigation
         header={'Finances'}
-        title={'Accounting'}
         onClick={handleClick}
         selectedKey={selected}
       >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
+        <NavigationSection title={'Accounting'}>
+          {LabelsAccounting.map((label) => (
+            <NavigationItem label={label} key={label} selectKey={label} />
+          ))}
+        </NavigationSection>
+        <NavigationSection title={'Zahlungsverkehr'}>
+          {LabelsZahlungsverkehr.map((label) => (
+            <NavigationItem label={label} key={label} selectKey={label} />
+          ))}
+        </NavigationSection>
       </Navigation>
     </div>
   );
@@ -86,13 +95,14 @@ export const NavigationDisabledStory = (): JSX.Element => {
       <Navigation
         disabled
         header={'Disabled Finances'}
-        title={'Accounting'}
         onClick={handleClick}
         selectedKey={selected}
       >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
+        <NavigationSection title={'Accounting'}>
+          {LabelsAccounting.map((label) => (
+            <NavigationItem label={label} key={label} selectKey={label} />
+          ))}
+        </NavigationSection>
       </Navigation>
       <Popover
         open={open}
@@ -123,7 +133,9 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
   const click = action('clicked navigation item');
   const secondClick = action('clicked secondary navigation item');
   const [selected, setSelected] = React.useState<string>(PrimaryLabels[0].key);
-  const [selectedSecond, setSelectedSecond] = React.useState<string>(Labels[0]);
+  const [selectedSecond, setSelectedSecond] = React.useState<string>(
+    LabelsAccounting[0]
+  );
 
   const handleClick = (label: string) => {
     setSelected(label);
@@ -159,14 +171,15 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
       </PrimaryNavigation>
       <Navigation
         header={'Finances'}
-        title={'Accounting'}
+        isSecondary
         onClick={handleSecondClick}
         selectedKey={selectedSecond}
-        isSecondary
       >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
+        <NavigationSection title={'Accounting'}>
+          {LabelsAccounting.map((label) => (
+            <NavigationItem label={label} key={label} selectKey={label} />
+          ))}
+        </NavigationSection>
       </Navigation>
     </div>
   );

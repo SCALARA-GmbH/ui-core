@@ -5,7 +5,6 @@ on:
 
 jobs:
   unit-test:
-    if: startsWith(github.ref, 'refs/tags/release')
     runs-on: ubuntu-20.04
     defaults:
       run:
@@ -19,18 +18,9 @@ jobs:
       - run: yarn install
       - run: yarn type-check
       - run: yarn lint
-      - run: yarn test:coverage
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./core/coverage/coverage-final.json
-          flags: ui-core
-          name: codecov-ui-core
-          fail_ci_if_error: true
-
+      - run: yarn test
 
   visual-test:
-    if: startsWith(github.ref, 'refs/tags/release')
     defaults:
       run:
         working-directory: visual-test
@@ -47,7 +37,7 @@ jobs:
       - run: docker volume rm $(docker volume ls -q) || echo 'no volumes to remove'
       - run: docker-compose down -v
       - run: docker-compose pull
-      - run: docker-compose up --build -d ui-core
+      - run: docker-compose up --build -d core
 
       - run: yarn install
       - name: lint
@@ -57,6 +47,9 @@ jobs:
         timeout-minutes: 5
         run: |
           yarn run wait-on "http-get://localhost:6006"
+      - name: test assets
+        run: |
+          yarn test:assets
       - name: test basics
         run: |
           yarn test:basics
@@ -78,7 +71,6 @@ jobs:
 
   publish:
     needs: [unit-test, visual-test]
-    if: startsWith(github.ref, 'refs/tags/release')
     runs-on: ubuntu-20.04
     defaults:
       run:

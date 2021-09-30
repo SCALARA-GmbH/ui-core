@@ -33,10 +33,10 @@ export interface TypographyProps {
   selectable?: boolean;
   style?: React.CSSProperties;
   testId?: string;
-  underlined?: boolean;
-  underlinedAnimated?: boolean;
   variant?: Variant;
   span?: boolean;
+  linkColor?: TextColor;
+  linkVariant?: Variant;
 }
 
 export type Tag = 'h1' | 'p' | 'span';
@@ -73,7 +73,9 @@ const Typography: React.FunctionComponent<TypographyProps> = ({
   style = {},
   testId = '',
   variant = 'c1',
-  span = false
+  span = false,
+  linkColor = 'secondary',
+  linkVariant = 'c1'
 }) => {
   const classes = useStyles({
     align,
@@ -84,7 +86,9 @@ const Typography: React.FunctionComponent<TypographyProps> = ({
     onClick,
     preserveHeight,
     selectable,
-    variant
+    variant,
+    linkColor,
+    linkVariant
   });
   const Tag = span ? 'span' : getTag(variant);
 

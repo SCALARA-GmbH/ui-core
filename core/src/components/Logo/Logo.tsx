@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import * as React from 'react';
 
 import { Icon } from '../..';
+import { Size } from '../../types';
 import { Color } from '../ThemeProvider/types';
 
 import { useStyles } from './styles';
@@ -13,6 +14,7 @@ export interface LogoProps {
   testId?: string;
   onClick?: () => void;
   color?: Color;
+  size?: Size;
 }
 
 const Logo: React.FunctionComponent<LogoProps> = ({
@@ -21,9 +23,10 @@ const Logo: React.FunctionComponent<LogoProps> = ({
   style = {},
   testId = '',
   onClick,
-  color
+  color,
+  size = 'medium'
 }) => {
-  const classes = useStyles({ clickable: !!onClick });
+  const classes = useStyles({ clickable: !!onClick, size });
   return (
     <div
       className={classNames(classes.root, className)}
@@ -31,7 +34,7 @@ const Logo: React.FunctionComponent<LogoProps> = ({
       data-testid={testId}
       onClick={onClick}
     >
-      {!text && <Icon name={'scalara-logo'} color={color} />}
+      {!text && <Icon name={'scalara-logo'} color={color} size={size} />}
       {text && (
         <Icon
           name={'scalara-text'}

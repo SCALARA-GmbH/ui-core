@@ -39,17 +39,25 @@ export { default as GridItem } from './components/GridItem';
 export { default as useGridItemClass } from './components/GridItemHook';
 export { Icon } from './components/Icon';
 export { CountIcon } from './components/Icon';
+export { default as IconBubble } from './components/IconBubble';
 export { default as IconButton } from './components/IconButton';
 export { default as LinearProgress } from './components/LinearProgress';
 export { default as Loading } from './components/Loading';
 export { default as Logo } from './components/Logo';
-export { Navigation } from './components/Navigation';
-export { NavigationItem } from './components/Navigation';
+export {
+  Navigation,
+  NavigationItem,
+  NavigationItemGroup,
+  NavigationDesktop,
+  NavigationMobile
+} from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
 export { Popover, usePopoverPositionUpdate } from './components/Popover';
 export {
   PrimaryNavigation,
+  PrimaryNavigationDesktop,
+  PrimaryNavigationMobile,
   PrimaryNavigationItem
 } from './components/PrimaryNavigation';
 export { default as Radio } from './components/Radio';
@@ -66,6 +74,7 @@ export { default as TextField } from './components/TextField';
 export { default as ThemeProvider } from './components/ThemeProvider';
 export { ToastContainer } from './components/Toast';
 export { toast } from './components/Toast';
+export { default as Tooltip } from './components/Tooltip';
 export { default as Typography } from './components/Typography';
 export { Theme } from './components/ThemeProvider/types';
 export { createStyles, withStyles } from '@material-ui/core/styles';

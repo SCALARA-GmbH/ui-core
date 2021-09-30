@@ -1,12 +1,17 @@
 import { Tooltip } from '@material-ui/core';
-import classNames from 'classnames';
+import cx from 'classnames';
 import React from 'react';
 
 import { Icon as IconComponent, Typography } from '../..';
 import { Size } from '../../types';
 import { IconName } from '../Icon/Icon';
+import { Color } from '../ThemeProvider/types';
 
 import { useLabelStyles, useStyles } from './styles';
+
+export const Variants = ['primary', 'secondary'] as const;
+type VariantTypes = typeof Variants;
+export type Variant = VariantTypes[number];
 
 export interface IconProps {
   size?: Size;
@@ -26,6 +31,8 @@ export interface IconButtonProps {
   iconName: IconName;
   tooltip?: string;
   label?: string;
+  variant?: Variant;
+  iconColor?: Color;
 }
 
 const IconButton: React.FunctionComponent<IconButtonProps> = ({
@@ -39,9 +46,10 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   Icon = IconComponent,
   iconName,
   tooltip,
-  label
+  label,
+  variant = 'primary'
 }) => {
-  const classes = useStyles({ disabled });
+  const classes = useStyles();
   const labelClasses = useLabelStyles();
   const [hovered, setHovered] = React.useState(false);
 
@@ -49,7 +57,10 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
     return (
       <button
         aria-label={ariaLabel}
-        className={classNames(classes.root, classes.button, className)}
+        className={cx(classes.root, classes.button, className, {
+          [classes.primary]: variant === 'primary',
+          [classes.secondary]: variant === 'secondary'
+        })}
         data-testid={testId}
         disabled={disabled}
         aria-disabled={disabled}
@@ -68,7 +79,9 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
       >
         <span className={classes.span}>
           <Icon
-            className={classes.icon}
+            className={cx({
+              [classes.disabled]: disabled
+            })}
             name={iconName}
             testId={`${testId}-icon`}
           />
@@ -77,7 +90,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
               span
               variant={'c3'}
               align={'center'}
-              className={classNames(labelClasses.root, {
+              className={cx(labelClasses.root, {
                 [labelClasses.enabled]: !disabled && !hovered,
                 [labelClasses.disabled]: disabled,
                 [labelClasses.hovered]: hovered

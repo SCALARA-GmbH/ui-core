@@ -1,86 +1,47 @@
-import { Drawer, List, ListItem } from '@material-ui/core';
-import cx from 'classnames';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import * as React from 'react';
 
-import { Logo } from '../../index';
-import { LogoProps } from '../Logo/Logo';
+import Logo from '../Logo';
 
-import { NavigationItemProps } from './PrimaryNavigationItem';
-import { useStyles } from './styles';
+import PrimaryNavigationDesktop from './PrimaryNavigationDesktop';
+import { PrimaryNavigationItemProps } from './PrimaryNavigationItem';
+import PrimaryNavigationMobile from './PrimaryNavigationMobile';
 
-export interface Props {
-  LogoComponent?: React.ComponentType<LogoProps>;
-  LogoComponentProps?: LogoProps;
+interface Props {
+  menuAriaLabel?: string;
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
-
-  onClick?: (value: string) => void;
-  selectedKey?: string;
+    | React.ReactElement<PrimaryNavigationItemProps>[]
+    | React.ReactElement<PrimaryNavigationItemProps>;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const PrimaryNavigation: React.FunctionComponent<Props> = ({
-  LogoComponent = Logo,
-  LogoComponentProps,
-  selectedKey,
   children,
+  menuAriaLabel,
+  onClose,
+  open,
   onClick
 }) => {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const tablet = useMediaQuery(theme.breakpoints.up('sm'));
 
-  return (
-    <Drawer
-      variant="permanent"
-      anchor="left"
-      className={cx({
-        [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open
-      })}
-      classes={{
-        paper: cx(classes.drawerPaper, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open
-        })
-      }}
-      onMouseEnter={() => {
-        setOpen(true);
-      }}
-      onMouseLeave={() => {
-        setOpen(false);
-      }}
+  return desktop ? (
+    <PrimaryNavigationDesktop>{children}</PrimaryNavigationDesktop>
+  ) : (
+    <PrimaryNavigationMobile
+      tablet={tablet}
+      LogoComponent={Logo}
+      LogoComponentProps={{ text: true, size: 'medium' }}
+      menuAriaLabel={menuAriaLabel}
+      onClick={onClick}
+      open={open}
+      onClose={onClose}
     >
-      <LogoComponent
-        {...LogoComponentProps}
-        className={classes.logo}
-        color={'white'}
-      />
-      <List className={classes.list}>
-        {React.Children.map<
-          React.ReactNode,
-          React.ReactElement<NavigationItemProps>
-        >(children, (child) => (
-          <li>
-            <ListItem
-              className={cx(classes.item, {
-                [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey
-              })}
-              button
-              disableRipple
-              onClick={(event: React.MouseEvent<HTMLElement>) => {
-                // note: this is fixed in mui v5 and does not have to be set manually
-                event.preventDefault();
-                setOpen(false);
-                onClick?.(child.props.selectKey);
-              }}
-            >
-              {child}
-            </ListItem>
-          </li>
-        ))}
-      </List>
-    </Drawer>
+      {children}
+    </PrimaryNavigationMobile>
   );
 };
 

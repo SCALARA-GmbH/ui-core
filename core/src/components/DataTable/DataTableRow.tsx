@@ -1,4 +1,4 @@
-import { fade, TableRow } from '@material-ui/core';
+import { TableRow } from '@material-ui/core';
 import * as React from 'react';
 
 import { makeStyles } from '../ThemeProvider/styles';
@@ -16,10 +16,7 @@ const useStyles = makeStyles(
       '&:focus-visible': {
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
-        boxShadow: `0px 0px 0px 7px ${fade(
-          theme.colors.secondary.default as string,
-          0.15
-        )} `
+        boxShadow: theme.shadows[1]
       }
     }
   }),

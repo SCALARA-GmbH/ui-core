@@ -107,23 +107,22 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         <label htmlFor={name}>
           <Typography
             testId={`${testId}-label`}
-            color={'altLabel'}
+            color={disabled ? 'disabled' : 'label'}
             variant={'c4'}
             className={classes.label}
             preserveHeight
             span
           >
-            {required ? `${label}*` : label}
+            {label}
           </Typography>
         </label>
         <InputBase
           classes={{
             input: cx(classes.input, {
               [classes.error]: error || internalError,
-              [classes.notAdornedEnd]: !endAdornment && !multiline,
-              [classes.adornedEnd]: !!endAdornment,
               [classes.multiline]: multiline
-            })
+            }),
+            multiline: classes.noPadding
           }}
           id={name}
           disabled={disabled}

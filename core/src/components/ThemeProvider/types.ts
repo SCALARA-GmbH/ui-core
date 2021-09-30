@@ -1,4 +1,5 @@
 import { PaletteType, Theme as MuiTheme } from '@material-ui/core';
+import { CSSProperties } from '@material-ui/core/styles/withStyles';
 import * as React from 'react';
 
 export type Color = React.CSSProperties['color'];
@@ -35,13 +36,16 @@ export interface Colors {
     disabled: Color;
     hover: Color;
   };
+  icon: {
+    navigation: Color;
+    control: Color;
+  };
   border: {
     main: Color;
   };
   text: {
     main: Color;
     label: Color;
-    altLabel: Color;
     subtitle: Color;
   };
   disabled: Color;

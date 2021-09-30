@@ -1,6 +1,4 @@
-import { fade } from '@material-ui/core';
-
-import { createStyles, makeStylesWithProps } from '../..';
+import { makeStylesWithProps } from '../..';
 import { Size } from '../../types';
 
 const getSize = (size: Size): number => {
@@ -10,7 +8,20 @@ const getSize = (size: Size): number => {
     case 'medium':
       return 40;
     case 'large':
-      return 96;
+      return 122;
+    default:
+      return 40;
+  }
+};
+
+const getImageSize = (size: Size): number => {
+  switch (size) {
+    case 'small':
+      return 28;
+    case 'medium':
+      return 32;
+    case 'large':
+      return 97.6;
     default:
       return 40;
   }
@@ -19,49 +30,46 @@ const getSize = (size: Size): number => {
 export const useStyles = makeStylesWithProps<{
   size: Size;
   onClick?: () => void;
-}>((theme) =>
-  createStyles({
+}>(
+  (theme) => ({
     root: {
+      position: 'relative',
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
-      background: theme.colors.background.primary,
+      '&:hover > $editOverlay': {
+        opacity: ({ onClick }) => (onClick ? 1 : 0)
+      }
+    },
+    avatar: {
+      background: 'none'
+    },
+    fallback: {
       height: (props) => getSize(props.size),
       width: (props) => getSize(props.size)
     },
-    badge: {
-      backgroundColor: theme.colors.success.main,
-      color: theme.colors.success.main,
-      boxShadow: `0 0 0 2px ${fade(theme.palette.background.paper, 0.5)}`,
-      '&::after': {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        borderRadius: '50%',
-        content: '""'
-      }
+    image: {
+      boxShadow: `0 0 0 1px ${theme.colors.border.main}`,
+      height: (props) => getImageSize(props.size),
+      width: (props) => getImageSize(props.size)
+    },
+    registered: {
+      color: theme.colors.secondary.default
+    },
+    unregistered: {
+      color: theme.colors.neutral['3']
     },
     editOverlay: {
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
       position: 'absolute',
-      transition: 'opacity 0.2s',
+      transition: theme.transitions.create('opacity'),
       opacity: 0,
-      width: 'calc(100% - 32px)',
-      height: 'calc(100% - 32px)',
-      margin: theme.spacing(2, 0, 0, 2),
-      color: theme.colors.text.main,
-      '&:hover': {
-        opacity: ({ onClick }) => (onClick ? 1 : 0)
-      }
+      top: '50%',
+      left: '50%',
+      transform: 'translateX(-50%) translateY(-50%)'
     },
     icon: {
       width: '100%',
-      height: '100%',
-      paddingTop: theme.spacing(1),
-      strokeWidth: ({ size }) => (size === 'large' ? 3 : 1.5)
-    },
-    iconOutline: {
-      boxShadow: `0px 0px 0px 1.5px ${theme.colors.text.main} inset`
+      height: '100%'
     }
-  })
+  }),
+  { name: 'SCA__Avatar' }
 );

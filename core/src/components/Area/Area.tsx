@@ -26,14 +26,14 @@ const Area: React.FunctionComponent<PaperProps> = ({
   border = false
 }) => {
   const [innerElevated, setInnerElevated] = useState(false);
-  const classes = useStyles({
-    elevated: innerElevated || elevated,
-    hoverable,
-    border
-  });
+  const classes = useStyles();
   return (
     <div
-      className={classNames(classes.root, className)}
+      className={classNames(classes.root, className, {
+        [classes.border]: border,
+        [classes.elevated]: innerElevated || elevated,
+        [classes.hoverable]: hoverable
+      })}
       data-testid={testId}
       onMouseEnter={() => {
         if (hoverable) {

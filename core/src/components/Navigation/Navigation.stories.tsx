@@ -4,11 +4,10 @@ import * as React from 'react';
 
 import { Popover, useTheme } from '../..';
 import { usePopoverPositionUpdate } from '../Popover';
-import PrimaryNavigation from '../PrimaryNavigation/PrimaryNavigation';
-import PrimaryNavigationItem from '../PrimaryNavigation/PrimaryNavigationItem';
 
 import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
+import NavigationItemGroup from './NavigationItemGroup';
 
 export default {
   title: 'Components/Navigation',
@@ -41,15 +40,17 @@ export const NavigationStory = (): JSX.Element => {
         display: 'flex'
       }}
     >
-      <Navigation
-        header={'Finances'}
-        title={'Accounting'}
-        onClick={handleClick}
-        selectedKey={selected}
-      >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
+      <Navigation header={'Finances'}>
+        <NavigationItemGroup title={'Accounting'}>
+          {Labels.map((label) => (
+            <NavigationItem
+              label={label}
+              key={label}
+              onClick={() => handleClick(label)}
+              selected={label === selected}
+            />
+          ))}
+        </NavigationItemGroup>
       </Navigation>
     </div>
   );
@@ -83,16 +84,17 @@ export const NavigationDisabledStory = (): JSX.Element => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Navigation
-        disabled
-        header={'Disabled Finances'}
-        title={'Accounting'}
-        onClick={handleClick}
-        selectedKey={selected}
-      >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
+      <Navigation disabled header={'Disabled Finances'}>
+        <NavigationItemGroup title={'Accounting'}>
+          {Labels.map((label) => (
+            <NavigationItem
+              label={label}
+              key={label}
+              onClick={() => handleClick(label)}
+              selected={selected === label}
+            />
+          ))}
+        </NavigationItemGroup>
       </Navigation>
       <Popover
         open={open}
@@ -109,66 +111,3 @@ export const NavigationDisabledStory = (): JSX.Element => {
   );
 };
 NavigationDisabledStory.storyName = 'Disabled';
-
-const PrimaryLabels = [
-  { key: 'real-estate', name: 'Real Estate' },
-  { key: 'finance', name: 'Finances' },
-  { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' }
-];
-
-export const TwoLayerNavigationStory = (): JSX.Element => {
-  const theme = useTheme();
-
-  const click = action('clicked navigation item');
-  const secondClick = action('clicked secondary navigation item');
-  const [selected, setSelected] = React.useState<string>(PrimaryLabels[0].key);
-  const [selectedSecond, setSelectedSecond] = React.useState<string>(Labels[0]);
-
-  const handleClick = (label: string) => {
-    setSelected(label);
-    click(label);
-  };
-
-  const handleSecondClick = (label: string) => {
-    setSelectedSecond(label);
-    secondClick(label);
-  };
-
-  return (
-    <div
-      style={{
-        backgroundColor: theme.colors.background.primary,
-        display: 'flex',
-        flexDirection: 'column'
-      }}
-    >
-      <PrimaryNavigation
-        LogoComponentProps={{ text: true }}
-        onClick={handleClick}
-        selectedKey={selected}
-      >
-        {PrimaryLabels.map((label) => (
-          <PrimaryNavigationItem
-            label={label.name}
-            key={label.key}
-            selectKey={label.key}
-            iconName={label.key}
-          />
-        ))}
-      </PrimaryNavigation>
-      <Navigation
-        header={'Finances'}
-        title={'Accounting'}
-        onClick={handleSecondClick}
-        selectedKey={selectedSecond}
-        isSecondary
-      >
-        {Labels.map((label) => (
-          <NavigationItem label={label} key={label} selectKey={label} />
-        ))}
-      </Navigation>
-    </div>
-  );
-};
-TwoLayerNavigationStory.storyName = 'Primary and Secondary Navigation';

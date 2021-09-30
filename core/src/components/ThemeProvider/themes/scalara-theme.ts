@@ -14,10 +14,31 @@ declare module '@material-ui/core/styles/createMuiTheme' {
   }
 }
 
-const generateShadows = (color: Color): Shadows => {
-  return new Array(shadows.length).fill(
-    `0px 20px 30px 0px ${fade(color as string, 0.12)}`
-  ) as Shadows;
+declare module '@material-ui/core/styles/createMixins' {
+  export interface Mixins {
+    primaryNavigationDesktopWidth: string;
+    primaryNavigationMobileHeight: string;
+  }
+}
+
+declare module '@material-ui/core/styles/zIndex' {
+  export interface ZIndex {
+    toast: number;
+    primaryNavigation: number;
+    secondaryNavigation: number;
+  }
+}
+
+const generateShadows = (...colors: Color[]): Shadows => {
+  const scalaraShadows = new Array(shadows.length).fill(
+    `0px 20px 30px 0px ${fade(colors[0] as string, 0.12)}`
+  );
+
+  scalaraShadows[1] = `0px 0px 0px 7px ${fade(colors[1] as string, 0.15)}`;
+
+  scalaraShadows[2] = `0px 0px 0px 2px ${colors[2]} inset`;
+
+  return scalaraShadows as Shadows;
 };
 
 const theme = (type: PaletteType): Theme => {
@@ -63,6 +84,10 @@ const theme = (type: PaletteType): Theme => {
       7: '#FAFCFD',
       F: '#FFFFFF'
     },
+    icon: {
+      navigation: '#A9ACAD',
+      control: '#77797A'
+    },
     background: {
       primary: '#FFFFFF',
       secondary: '#000000',
@@ -79,7 +104,6 @@ const theme = (type: PaletteType): Theme => {
     text: {
       main: '#202124',
       label: '#77797A',
-      altLabel: '#A9ACAD',
       subtitle: '#3F4041'
     },
     error: {
@@ -112,10 +136,13 @@ const theme = (type: PaletteType): Theme => {
         '75': '#464748',
         '50': '#8F9192'
       },
+      icon: {
+        navigation: '#A9ACAD',
+        control: '#E5E7E9'
+      },
       text: {
         main: '#FFFFFF',
-        label: '#FAFCFD',
-        altLabel: '#A9ACAD',
+        label: '#A9ACAD',
         subtitle: '#F4F6F7'
       },
       background: {
@@ -135,14 +162,18 @@ const theme = (type: PaletteType): Theme => {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 568,
-        md: 768,
+        sm: 704,
+        md: 960,
         lg: 1024,
         xl: 1440
       }
     },
     colors,
-    shadows: generateShadows(colors.shadow.main),
+    shadows: generateShadows(
+      colors.shadow.main,
+      colors.secondary.default,
+      colors.error.main
+    ),
     palette: {
       background: {
         default: '#FFFFFF'
@@ -155,6 +186,15 @@ const theme = (type: PaletteType): Theme => {
       }
     },
     type,
+    zIndex: {
+      toast: 9999,
+      primaryNavigation: 9998,
+      secondaryNavigation: 9997
+    },
+    mixins: {
+      primaryNavigationDesktopWidth: '56px',
+      primaryNavigationMobileHeight: '48px'
+    },
     overrides: {
       MuiCssBaseline: {
         '@global': {

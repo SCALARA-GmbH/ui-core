@@ -1,80 +1,55 @@
-import { Drawer, List, ListItem } from '@material-ui/core';
-import cx from 'classnames';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import * as React from 'react';
 
-import DefaultDivider from '../DefaultDivider';
-import Typography from '../Typography';
+import NavigationDesktop from './NavigationDesktop';
+import { NavigationItemGroupProps } from './NavigationItemGroup';
 
-import { NavigationItemProps } from './NavigationItem';
-import { useStyles } from './styles';
+import { NavigationMobile } from './index';
 
 export interface Props {
   children:
-    | React.ReactElement<NavigationItemProps>[]
-    | React.ReactElement<NavigationItemProps>;
+    | React.ReactElement<NavigationItemGroupProps>[]
+    | React.ReactElement<NavigationItemGroupProps>;
   header?: string;
-  title?: string;
-  onClick?: (value: string) => void;
   disabled?: boolean;
-  selectedKey?: string;
-  isSecondary?: boolean;
+  secondary?: boolean;
+  onClick?: () => void;
+  onClose?: () => void;
+  open?: boolean;
 }
 
 const Navigation: React.FunctionComponent<Props> = ({
   header,
-  selectedKey,
-  title,
   children,
-  onClick,
   disabled,
-  isSecondary
+  secondary,
+  open,
+  onClick,
+  onClose
 }) => {
-  const classes = useStyles({ disabled, isSecondary });
+  const theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const tablet = useMediaQuery(theme.breakpoints.up('sm'));
 
-  return (
-    <Drawer
-      className={classes.drawer}
-      variant="permanent"
-      classes={{
-        paper: classes.drawerPaper
-      }}
-      anchor="left"
+  return desktop ? (
+    <NavigationDesktop
+      disabled={disabled}
+      secondary={secondary}
+      header={header}
     >
-      <Typography variant={'t3'} className={classes.header}>
-        {header}
-      </Typography>
-      <DefaultDivider />
-      <div className={classes.title}>
-        <Typography color={disabled ? 'disabled' : 'initial'} variant={'c1'}>
-          {title}
-        </Typography>
-      </div>
-      <List className={classes.list}>
-        {React.Children.map<
-          React.ReactNode,
-          React.ReactElement<NavigationItemProps>
-        >(children, (child) => (
-          <li>
-            <ListItem
-              disabled={disabled}
-              className={cx(classes.item, {
-                [classes.selected]: selectedKey === child.props.selectKey,
-                [classes.deselected]: selectedKey !== child.props.selectKey
-              })}
-              button
-              disableRipple
-              onClick={(event: React.MouseEvent<HTMLElement>) => {
-                // note: this is fixed in mui v5 and does not have to be set manually
-                event.preventDefault();
-                if (!disabled) onClick?.(child.props.selectKey);
-              }}
-            >
-              {child}
-            </ListItem>
-          </li>
-        ))}
-      </List>
-    </Drawer>
+      {children}
+    </NavigationDesktop>
+  ) : (
+    <NavigationMobile
+      secondary={secondary}
+      disabled={disabled}
+      tablet={tablet}
+      open={open}
+      onClick={onClick}
+      onClose={onClose}
+    >
+      {children}
+    </NavigationMobile>
   );
 };
 

@@ -5,7 +5,7 @@ import MuiAutocomplete, {
 } from '@material-ui/lab/Autocomplete';
 import * as React from 'react';
 
-import { Avatar, Icon, TextField, Typography } from '../..';
+import { Avatar, Icon, TextField, Typography, useTheme } from '../..';
 import { SelectOption } from '../Select/Select';
 import { TextColor } from '../Typography/types';
 
@@ -69,6 +69,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   virtualized
 }) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <MuiAutocomplete
@@ -78,7 +79,9 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
       }}
       className={className}
       clearText={clearLabel}
-      closeIcon={<Icon name={'close'} size={'small'} />}
+      closeIcon={
+        <Icon color={theme.colors.icon.control} name={'close'} size={'small'} />
+      }
       disabled={disabled}
       filterOptions={(options, params) => {
         const filtered = filter(options, params);
@@ -113,7 +116,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
       openOnFocus
       noOptionsText={noOptionsText}
       options={options}
-      popupIcon={<Icon name={'arrow-down'} />}
+      popupIcon={<Icon color={theme.colors.icon.control} name={'arrow-down'} />}
       renderInput={(params) => (
         <TextField
           endAdornment={params.InputProps.endAdornment}

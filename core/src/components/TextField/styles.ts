@@ -8,7 +8,7 @@ export const useStyles = makeStyles(
     createStyles({
       root: {
         position: 'relative',
-        minHeight: '92px',
+        minHeight: theme.spacing(11.5),
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
@@ -18,14 +18,10 @@ export const useStyles = makeStyles(
       },
       multiline: {
         alignItems: 'flex-start',
-        height: 'fit-content',
-        padding: theme.spacing(2, 2, 2, 2)
+        height: 'fit-content'
       },
-      adornedEnd: {
-        padding: theme.spacing(2, 2, 2, 2)
-      },
-      notAdornedEnd: {
-        padding: theme.spacing(2, 2, 2, 2)
+      noPadding: {
+        padding: theme.spacing(0)
       },
       endAdornment: {
         margin: 0,
@@ -38,14 +34,16 @@ export const useStyles = makeStyles(
       },
       input: {
         ...getFontStyle('c3'),
+        padding: theme.spacing(2, 2, 2, 2),
         color: theme.colors.text.main,
         '&::placeholder': {
           color: theme.colors.neutral['3']
         },
-        transition: 'background-color 0.2s',
+        transition: theme.transitions.create('background-color'),
         borderRadius: 0,
         backgroundColor: theme.colors.neutral['6'],
         '&:disabled': {
+          color: theme.colors.disabled,
           backgroundColor: theme.colors.background.disabled
         },
         '&:hover:enabled': {
@@ -56,10 +54,10 @@ export const useStyles = makeStyles(
         }
       },
       error: {
-        boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+        boxShadow: theme.shadows[2],
         borderRadius: 0,
         '&:invalid': {
-          boxShadow: `0px 0px 0px 2px ${theme.colors.error.main} inset`,
+          boxShadow: theme.shadows[2],
           borderRadius: 0
         }
       },

@@ -8,7 +8,7 @@ import { SvgSize } from './Icons';
 export const getSizeFactor = (size: Size): number => {
   switch (size) {
     case 'small':
-      return 0.75;
+      return 0.8;
     case 'medium':
       return 1.0;
     case 'large':

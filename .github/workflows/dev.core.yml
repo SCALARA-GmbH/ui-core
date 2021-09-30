@@ -44,7 +44,7 @@ jobs:
       - run: docker volume rm $(docker volume ls -q) || echo 'no volumes to remove'
       - run: docker-compose down -v
       - run: docker-compose pull
-      - run: docker-compose up --build -d ui-core
+      - run: docker-compose up --build -d core
 
       - run: yarn install
       - name: lint
@@ -54,6 +54,9 @@ jobs:
         timeout-minutes: 5
         run: |
           yarn run wait-on "http-get://localhost:6006"
+      - name: test assets
+        run: |
+          yarn test:assets
       - name: test basics
         run: |
           yarn test:basics
@@ -142,5 +145,5 @@ jobs:
 #          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
 #          IMAGE_TAG: ${{ github.event_name }}_${{ github.sha }}
 #          KUBECONFIG: /tmp/config
-#        run: ${{ steps.install.outputs.helm-path }} upgrade -f ./values.yaml --set core.image=$ECR_REGISTRY/dev-ui-core:$IMAGE_TAG dev-ui .
+#        run: ${{ steps.install.outputs.helm-path }} upgrade -f ./values.yaml --set image=$ECR_REGISTRY/dev-ui-core:$IMAGE_TAG dev-ui .
 #

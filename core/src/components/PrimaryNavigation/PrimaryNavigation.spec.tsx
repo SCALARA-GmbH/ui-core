@@ -1,20 +1,15 @@
 import * as React from 'react';
+import { fireEvent, render } from 'test-utils/render';
 
-import { fireEvent, render } from '../../../test-utils/render';
-
-import PrimaryNavigation from './PrimaryNavigation';
+import PrimaryNavigationDesktop from './PrimaryNavigationDesktop';
 import PrimaryNavigationItem from './PrimaryNavigationItem';
 
 describe('<Navigation />', () => {
   it('renders without crashing', () => {
     const { container } = render(
-      <PrimaryNavigation>
-        <PrimaryNavigationItem
-          label={'Buchung'}
-          selectKey={'Buchung'}
-          iconName={'select'}
-        />
-      </PrimaryNavigation>
+      <PrimaryNavigationDesktop>
+        <PrimaryNavigationItem label={'Buchung'} selected iconName={'select'} />
+      </PrimaryNavigationDesktop>
     );
 
     expect(container).toBeInTheDocument();
@@ -22,18 +17,14 @@ describe('<Navigation />', () => {
 
   it('renders two navigation button', () => {
     const { getByRole } = render(
-      <PrimaryNavigation>
+      <PrimaryNavigationDesktop>
         <PrimaryNavigationItem
           label={'Konten'}
-          selectKey={'Konten'}
+          selected
           iconName={'information'}
         />
-        <PrimaryNavigationItem
-          label={'Buchungen'}
-          selectKey={'Buchung'}
-          iconName={'upload'}
-        />
-      </PrimaryNavigation>
+        <PrimaryNavigationItem label={'Buchungen'} iconName={'upload'} />
+      </PrimaryNavigationDesktop>
     );
 
     expect(getByRole('button', { name: 'Konten' })).toBeTruthy();
@@ -44,22 +35,23 @@ describe('<Navigation />', () => {
     const handleClick = jest.fn();
 
     const { getByRole } = render(
-      <PrimaryNavigation onClick={handleClick}>
+      <PrimaryNavigationDesktop>
         <PrimaryNavigationItem
           label={'Konten'}
-          selectKey={'Konten'}
+          onClick={() => handleClick('test1')}
+          selected
           iconName={'information'}
         />
         <PrimaryNavigationItem
           label={'Buchungen'}
-          selectKey={'Buchung'}
+          onClick={() => handleClick('test2')}
           iconName={'upload'}
         />
-      </PrimaryNavigation>
+      </PrimaryNavigationDesktop>
     );
 
     fireEvent.click(getByRole('button', { name: 'Buchungen' }));
 
-    expect(handleClick).toHaveBeenCalledWith('Buchung');
+    expect(handleClick).toHaveBeenCalledWith('test2');
   });
 });

@@ -1,14 +1,7 @@
 import { createStyles } from '@material-ui/core';
 import * as React from 'react';
 
-import {
-  Frame,
-  makeStyles,
-  Paper,
-  Theme,
-  Typography,
-  useTheme
-} from '../../..';
+import { Area, Frame, makeStyles, Theme, Typography, useTheme } from '../../..';
 
 const useStyles = makeStyles(({ spacing }: Theme) =>
   createStyles({
@@ -55,7 +48,7 @@ const ThemeDemo: React.FunctionComponent = () => {
       style={{ backgroundColor: theme.colors.background.primary }}
       orientation={'vertical'}
     >
-      <Paper className={classes.block}>
+      <Area className={classes.block} elevated>
         <div className={classes.palette}>
           <Typography>Primary</Typography>
           <div className={classes.stripe}>
@@ -327,7 +320,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             </div>
           </div>
         </div>
-      </Paper>
+      </Area>
     </Frame>
   );
 };

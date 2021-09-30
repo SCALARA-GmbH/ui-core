@@ -31,9 +31,29 @@ export const AvatarOverviewSBS = (): JSX.Element => {
       >
         {SIZES.map((size) => (
           <Avatar
-            image={
-              'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
-            }
+            registered
+            image={'elmar.jpeg'}
+            key={size}
+            size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+          />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            image={'armin.png'}
             key={size}
             size={size}
             editable
@@ -59,6 +79,27 @@ export const AvatarOverviewSBS = (): JSX.Element => {
             editable
             onClick={() => console.log('onClick')}
             tooltip={'You can click me'}
+          />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            key={size}
+            size={size}
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+            registered
           />
         ))}
       </div>
@@ -83,50 +124,29 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           />
         ))}
       </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: 200,
+          padding: 8
+        }}
+      >
+        {SIZES.map((size) => (
+          <Avatar
+            key={size}
+            size={size}
+            type="company"
+            editable
+            onClick={() => console.log('onClick')}
+            tooltip={'You can click me'}
+            registered
+          />
+        ))}
+      </div>
     </div>
   );
 };
 AvatarOverviewSBS.storyName = 'Overview';
-
-export const AvatarTooltipOverview = (): JSX.Element => {
-  return <Avatar size={'large'} type="person" tooltip={'Lorem ipsum'} />;
-};
-AvatarTooltipOverview.storyName = 'Tooltip';
-
-export const AvatarEditOverview = (): JSX.Element => {
-  return (
-    <Avatar
-      editable
-      onClick={() => console.log('onClick')}
-      tooltip={'You can click me'}
-      size={'large'}
-      type="company"
-    />
-  );
-};
-AvatarEditOverview.storyName = 'Editable';
-
-export const AvatarRegisteredOverview = (): JSX.Element => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        padding: 8
-      }}
-    >
-      {SIZES.map((size) => (
-        <Avatar
-          key={size}
-          size={size}
-          registered
-          type="person"
-          image={
-            'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
-          }
-        />
-      ))}
-    </div>
-  );
-};
-AvatarRegisteredOverview.storyName = 'Registered';

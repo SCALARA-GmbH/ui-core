@@ -1,9 +1,12 @@
-import { createStyles, makeStylesWithProps } from '../..';
+import { makeStylesWithProps } from '../..';
+import { Size } from '../../types';
+import { getSizeFactor } from '../Icon/styles';
 
 export const useStyles = makeStylesWithProps<{
   clickable: boolean;
-}>(() =>
-  createStyles({
+  size: Size;
+}>(
+  () => ({
     root: {
       display: 'flex',
       alignItems: 'center',
@@ -12,8 +15,9 @@ export const useStyles = makeStylesWithProps<{
       width: 'fit-content'
     },
     iconWithText: {
-      width: '146px',
-      height: '40px'
+      width: ({ size }) => `${getSizeFactor(size) * 146}px`,
+      height: ({ size }) => `${getSizeFactor(size) * 40}px`
     }
-  })
+  }),
+  { name: 'SCA__Logo' }
 );

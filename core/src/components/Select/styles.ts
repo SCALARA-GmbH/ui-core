@@ -1,107 +1,112 @@
-import { fade } from '@material-ui/core';
+import { createStyles, makeStyles } from '../..';
+import { getFontStyle } from '../Typography/styles';
 
-import { createStyles, makeStylesWithProps, Theme } from '../..';
-import { TextColor } from '../Typography/types';
-
-export const getFrameColor = ({
-  color,
-  theme
-}: {
-  color?: TextColor;
-  theme: Theme;
-}): string | undefined => {
-  switch (color) {
-    case 'initial':
-      return theme.colors.border.main;
-    case 'primary':
-      return theme.colors.primary.default;
-    case 'secondary':
-      return theme.colors.secondary.default;
-    case 'error':
-      return theme.colors.error.main;
-    default:
-      return color;
-  }
-};
-
-export const getBackgroundColor = ({
-  disabled,
-  active,
-  theme
-}: {
-  disabled?: boolean;
-  active?: boolean;
-  theme: Theme;
-}): string | undefined => {
-  if (disabled) {
-    return theme.colors.background.disabled;
-  } else if (active) {
-    return theme.type === 'light' ? '#fff' : fade('#fff', 0.11);
-  }
-  return 'transparent';
-};
-
-export const useStyles = makeStylesWithProps<{
-  color: TextColor;
-  disabled: boolean;
-}>((theme) =>
-  createStyles({
-    inputWrapper: {
-      backgroundColor: ({ disabled }) =>
-        getBackgroundColor({ disabled, theme, active: false }),
-      borderRadius: 2,
-      boxShadow: (props) =>
-        `0px 0px 0px 1px ${getFrameColor({ color: props.color, theme })} inset`,
-      display: 'flex',
-      flexDirection: 'column',
-      height: theme.spacing(7),
-      marginBottom: theme.spacing(0.5),
-      transition: 'background-color 0.2s',
-      '&:hover': {
-        backgroundColor: ({ disabled }) =>
-          getBackgroundColor({ disabled, theme, active: true })
-      }
-    },
-    inputWrapperFilled: {
-      backgroundColor: ({ disabled }) =>
-        getBackgroundColor({ disabled, theme, active: true })
-    },
-    input: {
-      flex: 1,
-      padding: theme.spacing(0, 2),
-      '&&': {
+export const useStyles = makeStyles(
+  (theme) =>
+    createStyles({
+      root: {
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      },
+      paper: {
+        borderRadius: 0,
+        border: `1px solid ${theme.colors.border.main}`,
+        boxShadow: theme.shadows[0]
+      },
+      item: {
+        display: 'flex',
         alignItems: 'center',
-        fontSize: '16px',
-        lineHeight: '24px'
-      }
-    },
-    inputBaseInput: {
-      color: theme.colors.text.main,
-      padding: '7px 0 11px 0',
-      alignSelf: 'flex-end'
-    },
-    errorBaseInput: {
-      boxShadow: `0px 0px 0px 1px ${theme.colors.error.main} inset`,
-      borderRadius: 2
-    },
-    label: {
-      '&&': {
+        width: '100%',
+        cursor: 'pointer',
+        padding: theme.spacing(0, 3),
+        minHeight: theme.spacing(7),
+        '&&': {
+          backgroundColor: theme.colors.background.primary
+        },
+        '&:hover': {
+          backgroundColor: theme.colors.neutral['6']
+        },
+        '&.Mui-disabled': {
+          opacity: 1
+        },
+        '&.Mui-selected': {
+          backgroundColor: theme.colors.neutral['6']
+        },
+        '&.Mui-selected:hover': {
+          backgroundColor: theme.colors.neutral['6']
+        }
+      },
+      placeholder: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        cursor: 'pointer',
+        padding: theme.spacing(0, 3),
+        minHeight: theme.spacing(6),
+        '&&': {
+          backgroundColor: theme.colors.background.primary
+        },
+        '&.Mui-disabled': {
+          opacity: 1
+        }
+      },
+      selected: {
+        backgroundColor: theme.colors.neutral['6']
+      },
+      list: {
+        backgroundColor: theme.colors.background.primary,
+        padding: theme.spacing(0, 0, 1.5, 0)
+      },
+      disabled: {
+        pointerEvents: 'none',
+        backgroundColor: theme.colors.background.disabled,
+        color: theme.colors.disabled
+      },
+      filled: {
+        backgroundColor: theme.colors.neutral['6'],
         color: theme.colors.text.main,
-        position: 'absolute',
-        marginLeft: theme.spacing(2),
-        marginTop: theme.spacing(2)
+        '&:focus': {
+          backgroundColor: theme.colors.neutral['5']
+        }
+      },
+      empty: {
+        backgroundColor: theme.colors.neutral['6'],
+        color: theme.colors.text.label,
+        '&:focus': {
+          backgroundColor: theme.colors.neutral['5']
+        }
+      },
+      input: {
+        display: 'flex',
+        alignItems: 'center',
+        ...getFontStyle('c3'),
+        padding: theme.spacing(0, 2),
+        minHeight: theme.spacing(6),
+        transition: theme.transitions.create('background-color'),
+        borderRadius: 0,
+        '&:hover': {
+          backgroundColor: theme.colors.neutral['5']
+        }
+      },
+      error: {
+        boxShadow: theme.shadows[2],
+        borderRadius: 0,
+        '&:invalid': {
+          boxShadow: theme.shadows[2],
+          borderRadius: 0
+        }
+      },
+      label: {
+        marginBottom: theme.spacing(0.5)
+      },
+      bottomText: {
+        minHeight: 18
+      },
+      optionImage: {
+        paddingRight: theme.spacing(1)
       }
-    },
-    labelElevated: {
-      '&&': {
-        marginTop: 7
-      }
-    },
-    bottomText: {
-      minHeight: 18
-    },
-    optionImage: {
-      paddingRight: theme.spacing(1)
-    }
-  })
+    }),
+  { name: 'SCA__Select' }
 );

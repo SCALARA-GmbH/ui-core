@@ -1,5 +1,3 @@
-import { fade } from '@material-ui/core';
-
 import { makeStylesWithProps, Theme } from '../..';
 import { ColorPalette } from '../ThemeProvider/types';
 
@@ -52,8 +50,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     outlined: {
-      paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
       '&:enabled': {
         background: theme.colors.background.primary,
         color: theme.colors.neutral['0'],
@@ -67,10 +67,7 @@ export const useStyles = makeStylesWithProps<{
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       },
       '&:disabled': {
@@ -80,8 +77,10 @@ export const useStyles = makeStylesWithProps<{
       }
     },
     text: {
-      paddingLeft: theme.spacing(1.5),
-      paddingRight: theme.spacing(1.5),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(1.5),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(1.5),
       '&:enabled': {
         '&:hover': {
           background: theme.colors.neutral['6']
@@ -92,16 +91,15 @@ export const useStyles = makeStylesWithProps<{
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       }
     },
     contained: {
-      paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3),
+      paddingLeft: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
+      paddingRight: ({ fullWidth }) =>
+        fullWidth ? theme.spacing(0) : theme.spacing(3),
       '&:enabled': {
         background: (props) =>
           backgroundStatePalette({ theme, hierarchy: props.hierarchy }).default,
@@ -119,10 +117,7 @@ export const useStyles = makeStylesWithProps<{
               .default,
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       },
       '&:disabled': {

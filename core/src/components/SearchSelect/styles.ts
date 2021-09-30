@@ -1,5 +1,3 @@
-import { fade } from '@material-ui/core';
-
 import { createStyles, makeStylesWithProps } from '../..';
 import { getFontStyle } from '../Typography/styles';
 
@@ -29,9 +27,6 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         alignItems: 'center',
         userSelect: 'none'
       },
-      noPadding: {
-        padding: 0
-      },
       selected: {
         backgroundColor: theme.colors.neutral['6']
       },
@@ -39,9 +34,9 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        width: '100%',
         height: theme.spacing(8),
         padding: theme.spacing(0, 0, 0, 6),
+        cursor: 'pointer',
         '&:hover': {
           backgroundColor: theme.colors.neutral['6']
         }
@@ -57,6 +52,8 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         paddingRight: theme.spacing(2.5)
       },
       label: {
+        ...getFontStyle('c4'),
+        color: theme.colors.text.label,
         flexDirection: 'row',
         alignItems: 'center',
         minHeight: '56px',
@@ -71,10 +68,7 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: `0px 0px 0px 7px ${fade(
-            theme.colors.secondary.default as string,
-            0.15
-          )} `
+          boxShadow: theme.shadows[1]
         }
       },
       inputBase: {

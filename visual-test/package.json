@@ -6,6 +6,7 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "test:basics": "playwright test ./test/basics/*.spec.ts --config=./test/basics/playwright.config.ts",
+    "test:assets": "playwright test ./test/assets/*.spec.ts --config=./test/assets/playwright.config.ts",
     "test:components:interactions": "playwright test test/components/*.spec.ts --config=./test/components/playwright.config.ts",
     "test:elements:interactions": "playwright test test/elements/*.spec.ts --config=./test/elements/playwright.config.ts",
     "test:generate": "playwright codegen http://localhost:6006",

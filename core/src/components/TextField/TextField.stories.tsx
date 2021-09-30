@@ -36,23 +36,23 @@ export const TextFieldStorySBS = (): JSX.Element => {
       <TextField
         placeholder={'Placeholder'}
         className={classes.padding}
-        name={'test'}
+        name={`test-${theme.type}`}
       />
       <TextField
         label={'Label'}
         placeholder={'Placeholder'}
         className={classes.padding}
-        name={'test2'}
+        name={`test1-${theme.type}`}
       />
       <TextField
-        name={'test3'}
+        name={`test2-${theme.type}`}
         helperText={'I am a helper text'}
         label={'Label'}
         placeholder={'Placeholder'}
         className={classes.padding}
       />
       <TextField
-        name={'test4'}
+        name={`test3-${theme.type}`}
         disabled
         helperText={'I am a disabled'}
         label={'Label'}
@@ -60,7 +60,18 @@ export const TextFieldStorySBS = (): JSX.Element => {
         className={classes.padding}
       />
       <TextField
-        name={'test5'}
+        name={`test4-${theme.type}`}
+        disabled
+        helperText={'I am filled and disabled'}
+        label={'Label'}
+        inputProps={{
+          defaultValue: 'Filled'
+        }}
+        placeholder={'Placeholder'}
+        className={classes.padding}
+      />
+      <TextField
+        name={`test5-${theme.type}`}
         error
         errorText={'This is an error'}
         label={'Label'}

@@ -1,10 +1,7 @@
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { useState } from 'react';
 
-import { Grid, Typography, useTheme } from '../../index';
-import GridItem from '../GridItem';
-import Switch from '../Switch';
+import { Grid, makeStyles, Typography, useTheme } from '../../index';
 
 import { getFontSize, getFontWeight } from './styles';
 import {
@@ -21,37 +18,61 @@ export default {
   decorators: [withKnobs]
 };
 
+const useStyles = makeStyles(
+  ({ spacing }) => ({
+    item: {
+      padding: spacing(1)
+    }
+  }),
+  { name: 'SCA__TypographyStory' }
+);
+
 export const TypographyStorySBS = (): JSX.Element => {
   const theme = useTheme();
+  const classes = useStyles();
 
   return (
-    <Grid
-      xs={1}
+    <div
       style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
     >
       {TITLE_VARIANTS.map((variant) => (
-        <Typography key={variant} variant={variant}>
+        <Typography key={variant} variant={variant} className={classes.item}>
           {variant.toUpperCase()} Desktop {getFontSize(variant)}px{' '}
           {getFontWeight(variant)} weight. <br />
           With SCALARA you can concentrate on the essentials.
         </Typography>
       ))}
       {CONTENT_VARIANTS.map((variant) => (
-        <Typography key={variant} variant={variant}>
-          {variant.toUpperCase()} Desktop {getFontSize(variant)}px{' '}
-          {getFontWeight(variant)} weight
-          <br />
-          The platform enables efficient, smooth and transparent communication
-          between managers, owners, tenants and even service providers. With
-          SCALARA you can concentrate on the essentials.{' '}
-          <a href={'https://scalara.de/'} target="_blank" rel="noreferrer">
-            SCALARA
-          </a>{' '}
-          Our highest requirement is to develop a technically correct and
-          legally compliant software.
-        </Typography>
+        <div key={variant} className={classes.item}>
+          <Typography variant={variant}>
+            {variant.toUpperCase()} Desktop {getFontSize(variant)}px{' '}
+            {getFontWeight(variant)} weight
+            <br />
+            The platform enables efficient, smooth and transparent communication
+            between managers, owners, tenants and even service providers. With
+            SCALARA you can concentrate on the essentials.{' '}
+            <a href={'https://scalara.de/'} target="_blank" rel="noreferrer">
+              SCALARA
+            </a>{' '}
+            Our highest requirement is to develop a technically correct and
+          </Typography>
+          <Typography
+            variant={variant}
+            linkColor={'clickable'}
+            linkVariant={variant}
+            wrap={Wrap.NO_WRAP}
+          >
+            <a
+              href={'https://scalara.de/datenschutz/'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              legally compliant software.
+            </a>
+          </Typography>
+        </div>
       ))}
-    </Grid>
+    </div>
   );
 };
 TypographyStorySBS.storyName = 'Overview';
@@ -90,43 +111,6 @@ export const TypographyDisabledStory = (): JSX.Element => {
 };
 TypographyDisabledStory.storyName = 'Disabled';
 
-export const TypographyUnderlinedStory = (): JSX.Element => {
-  const theme = useTheme();
-  const [underlined, setUnderlined] = useState(true);
-  const [underlinedAnimated, setUnderlinedAnimated] = useState(false);
-
-  return (
-    <div
-      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
-    >
-      <Switch
-        label={'underlined'}
-        checked={underlined}
-        onChange={(event) => setUnderlined(event.target.checked)}
-      />
-      <Switch
-        label={'underlinedAnimated'}
-        checked={underlinedAnimated}
-        onChange={(event) => setUnderlinedAnimated(event.target.checked)}
-      />
-      <Grid xs={2} style={{ padding: 16 }}>
-        {TEXT_COLORS.map((c) => (
-          <GridItem key={c}>
-            <Typography
-              color={c}
-              underlined={underlined}
-              underlinedAnimated={underlinedAnimated}
-            >
-              {c}
-            </Typography>
-          </GridItem>
-        ))}
-      </Grid>
-    </div>
-  );
-};
-TypographyUnderlinedStory.storyName = 'Underlined';
-
 export const TypographyColorsStory = (): JSX.Element => {
   const theme = useTheme();
   return (
@@ -160,7 +144,6 @@ export const LabStory = (): JSX.Element => (
       variant={select('Variant', VARIANTS, 'c1')}
       fullWidth={boolean('FullWidth', false)}
       gutterBottom={boolean('GutterBottom', true)}
-      underlined={boolean('Underlined', false)}
       wrap={select(
         'wrap',
         [Wrap.NO_WRAP, Wrap.PRESERVE_BREAK_LINES, Wrap.DEFAULT],

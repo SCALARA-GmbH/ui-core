@@ -13,7 +13,10 @@ export const CommentStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
     <div
-      style={{ backgroundColor: theme.colors.background.main, padding: '16px' }}
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: '16px'
+      }}
     >
       <Paper style={{ padding: '16px' }}>
         <Comment text={'this is a comment'} />
@@ -36,6 +39,11 @@ export const CommentStorySBS = (): JSX.Element => {
           avatarProps={{ registered: true }}
           title={'Registered User 1337'}
           text={'Hey I am registered!'}
+        />
+        <Comment
+          avatarProps={{ registered: true, image: 'elmar.jpeg' }}
+          title={'Registered User with an image'}
+          text={'Hey I am registered and have an image!'}
         />
       </Paper>
     </div>

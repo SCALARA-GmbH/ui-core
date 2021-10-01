@@ -47,9 +47,10 @@ export const useStyles = makeStylesWithProps<{
       width: (props) => getSize(props.size)
     },
     image: {
-      boxShadow: `0 0 0 1px ${theme.colors.border.main}`,
+      boxShadow: `0 0 0 1px ${theme.colors.neutral['5']}`,
       height: (props) => getImageSize(props.size),
-      width: (props) => getImageSize(props.size)
+      width: (props) => getImageSize(props.size),
+      margin: (props) => (getSize(props.size) - getImageSize(props.size)) / 2
     },
     registered: {
       color: theme.colors.secondary.default

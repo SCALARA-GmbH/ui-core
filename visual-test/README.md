@@ -11,16 +11,18 @@ refer to [https://playwright.dev/docs/test-snapshots/][playwright] for more info
 linux: 
 ```shell
 sed -i '' "s/localhost/$(hostname -f)/" ./utils/config.ts
+yarn storybook
 docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.12.3-focal /bin/bash
 yarn
-yarn test:basics --snapshot-update
+yarn test:basics --update-snapshots
 exit
 sed -i '' "s/$(hostname -f)/localhost/" ./utils/config.ts
 ```
 
 darwin:
 ```shell
-yarn test:basics --snapshot-update
+yarn storybook
+yarn test:basics --update-snapshots
 ```
 refer to `package.json` for all available test suites
 

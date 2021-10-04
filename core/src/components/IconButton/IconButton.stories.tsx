@@ -21,15 +21,26 @@ export const IconButtonStorySBS = (): JSX.Element => {
         flexDirection: 'column'
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
         <IconButton
           label={'Button'}
-          iconName={'close'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+          iconSize={'medium'}
+        />
+        <IconButton
+          label={'Button'}
+          iconName={'error'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
         />
         <IconButton
-          iconName={'close'}
+          iconName={'error'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
         />
@@ -37,13 +48,19 @@ export const IconButtonStorySBS = (): JSX.Element => {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <IconButton
           label={'Button'}
-          iconName={'close'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
           disabled
         />
         <IconButton
-          iconName={'close'}
+          label={'Button'}
+          iconName={'error'}
+          style={{ margin: 8 }}
+          tooltip={'Tooltip'}
+          disabled
+        />
+        <IconButton
+          iconName={'error'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
           disabled
@@ -60,7 +77,7 @@ export const GridStory = (): JSX.Element => {
     <Grid xs={12} style={{ margin: 4 }}>
       <IconButton
         label={'Button'}
-        iconName={'close'}
+        iconName={'error'}
         style={{ margin: 8 }}
         tooltip={'Tooltip'}
         className={classGridItem}

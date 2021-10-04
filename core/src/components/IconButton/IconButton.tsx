@@ -29,6 +29,7 @@ export interface IconButtonProps {
   type?: 'button' | 'submit' | 'reset';
   Icon?: React.ComponentType<IconProps>;
   iconName: IconName;
+  iconSize?: Size;
   tooltip?: string;
   label?: string;
   variant?: Variant;
@@ -45,6 +46,8 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   type = 'button',
   Icon = IconComponent,
   iconName,
+  iconSize = 'small',
+  iconColor,
   tooltip,
   label,
   variant = 'primary'
@@ -53,56 +56,57 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   const labelClasses = useLabelStyles();
   const [hovered, setHovered] = React.useState(false);
 
-  const renderComponent = () => {
-    return (
-      <button
-        aria-label={ariaLabel}
-        className={cx(classes.root, classes.button, className, {
-          [classes.primary]: variant === 'primary',
-          [classes.secondary]: variant === 'secondary'
-        })}
-        data-testid={testId}
-        disabled={disabled}
-        aria-disabled={disabled}
-        onClick={(event) => {
-          event.stopPropagation();
-          onClick?.();
-        }}
-        onMouseEnter={() => {
-          setHovered(true);
-        }}
-        onMouseLeave={() => {
-          setHovered(false);
-        }}
-        style={style}
-        type={type}
-      >
-        <span className={classes.span}>
-          <Icon
-            className={cx({
-              [classes.disabled]: disabled
+  const renderComponent = () => (
+    <button
+      aria-label={ariaLabel}
+      className={cx(classes.root, classes.button, className, {
+        [classes.primary]: variant === 'primary',
+        [classes.secondary]: variant === 'secondary'
+      })}
+      data-testid={testId}
+      disabled={disabled}
+      aria-disabled={disabled}
+      onClick={(event) => {
+        event.stopPropagation();
+        onClick?.();
+      }}
+      onMouseEnter={() => {
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+      }}
+      style={style}
+      type={type}
+    >
+      <span className={classes.span}>
+        <Icon
+          className={cx({
+            [classes.disabled]: disabled,
+            [classes.icon]: !iconColor
+          })}
+          name={iconName}
+          size={iconSize}
+          testId={`${testId}-icon`}
+          color={iconColor}
+        />
+        {label && (
+          <Typography
+            span
+            variant={'c3'}
+            align={'center'}
+            className={cx(labelClasses.root, {
+              [labelClasses.enabled]: !disabled && !hovered,
+              [labelClasses.disabled]: disabled,
+              [labelClasses.hovered]: hovered
             })}
-            name={iconName}
-            testId={`${testId}-icon`}
-          />
-          {label && (
-            <Typography
-              span
-              variant={'c3'}
-              align={'center'}
-              className={cx(labelClasses.root, {
-                [labelClasses.enabled]: !disabled && !hovered,
-                [labelClasses.disabled]: disabled,
-                [labelClasses.hovered]: hovered
-              })}
-            >
-              {label}
-            </Typography>
-          )}
-        </span>
-      </button>
-    );
-  };
+          >
+            {label}
+          </Typography>
+        )}
+      </span>
+    </button>
+  );
 
   if (tooltip && !disabled && !label) {
     return <Tooltip title={tooltip}>{renderComponent()}</Tooltip>;

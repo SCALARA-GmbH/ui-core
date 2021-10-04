@@ -91,35 +91,6 @@ export const ButtonStoryVS = (): JSX.Element => {
           disabled
         />
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          padding: 16
-        }}
-      >
-        <Typography
-          style={{ minHeight: '64px', alignSelf: 'center' }}
-          variant={'c4'}
-        >
-          text
-        </Typography>
-
-        <Button
-          ariaLabel={'This is a text button'}
-          style={{ margin: 8 }}
-          label={'Button'}
-          variant={'text'}
-          hierarchy={'primary'}
-        />
-        <Button
-          style={{ margin: 8 }}
-          label={'Button'}
-          variant={'text'}
-          disabled
-        />
-      </div>
     </div>
   );
 };

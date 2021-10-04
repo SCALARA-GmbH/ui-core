@@ -66,6 +66,9 @@ export const useStyles = makeStyles(
           outline: 'none'
         }
       },
+      icon: {
+        color: theme.colors.neutral['2']
+      },
       disabled: {
         color: theme.colors.disabled
       }

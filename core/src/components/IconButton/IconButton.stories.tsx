@@ -18,17 +18,13 @@ export const IconButtonStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        flexDirection: 'column',
-        border: '1px solid red',
-        boxSizing: 'border-box'
+        flexDirection: 'column'
       }}
     >
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
-          border: '1px solid green',
-          boxSizing: 'border-box'
+          alignItems: 'center'
         }}
       >
         <IconButton

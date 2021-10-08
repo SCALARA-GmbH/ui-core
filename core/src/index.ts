@@ -79,3 +79,5 @@ export { default as Typography } from './components/Typography';
 export { Theme } from './components/ThemeProvider/types';
 export { createStyles, withStyles } from '@material-ui/core/styles';
 export { useMediaQuery } from '@material-ui/core';
+
+export { default as Footer } from './components/Footer';

@@ -11,20 +11,19 @@ export default {
 };
 
 export const FooterOverviewVS = (): JSX.Element => {
-  const copyright = `${new Date().getUTCFullYear()} SCALARA`;
-
   return (
     <div
       style={{
+        width: '100%',
+        height: '100%',
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%'
+        justifyContent: 'center'
       }}
     >
-      <Footer copyright={copyright}>
-        <a href="/legal/imprint">imprint</a>
-        <a href="/legal/privacy">privacy</a>
+      <Footer>
+        {`${String.fromCharCode(169)} ${new Date().getUTCFullYear()} SCALARA`}
+        <a href="#">imprint</a>
+        <a href="#">privacy</a>
       </Footer>
     </div>
   );

@@ -1,41 +1,15 @@
 import { createStyles, makeStyles } from '../..';
 
 export const useStyles = makeStyles(
-  (theme) => {
-    const footer = {
-      display: 'flex',
-      alignItems: 'center',
-      height: 56
-    };
-    const child = {
-      height: 48,
-      display: 'flex',
-      alignItems: 'center',
-      padding: theme.spacing(0, 18 / 8),
-      margin: theme.spacing(0, 12 / 8)
-    };
-
-    const children = {
-      display: 'flex',
-      alignItems: 'center'
-    };
-
-    const debug = {
-      boxShadow: `inset 0 0 1px 1px ${theme.colors.shadow.main}`
-    };
-
-    return createStyles({
+  (theme) =>
+    createStyles({
       root: {
-        margin: theme.spacing(2, 0, 2, 0),
-        width: '100%',
         display: 'flex',
-        justifyContent: 'center',
+        alignItems: 'center',
+        height: theme.spacing(7),
         color: theme.colors.neutral['2'],
         background: theme.colors.background.primary,
-        ...debug
-      },
-      footer: {
-        ...footer,
+        margin: theme.spacing(2, 0, 2, 0),
         boxSizing: 'border-box',
         [theme.breakpoints.down('xs')]: {
           width: 320,
@@ -51,68 +25,25 @@ export const useStyles = makeStyles(
         },
         [theme.breakpoints.up('lg')]: {
           width: 1024,
-          padding: theme.spacing(0, 4, 0, 280 / 8 + 4)
+          padding: theme.spacing(0, 1, 0, 312 / 8 - 3)
         },
         [theme.breakpoints.up('xl')]: {
           width: 1440,
-          padding: theme.spacing(0, 5, 0, 280 / 8 + 5)
+          padding: theme.spacing(0, 3, 0, 328 / 8 - 3)
         }
       },
-      // footerXL: {
-      //   ...footer,
-      //   width: 1440,
-      //   padding: theme.spacing(0, 5, 0, 280 / 8 + 5),
-      //   boxSizing: 'border-box',
-      //   ...debug
-      // },
-      // footerL: {
-      //   ...footer,
-      //   width: 1024,
-      //   padding: theme.spacing(0, 4, 0, 280 / 8 + 4),
-      //   boxSizing: 'border-box'
-      // },
-      // footerM: {
-      //   ...footer,
-      //   width: 960,
-      //   boxSizing: 'border-box'
-      // },
-      // footerS: {
-      //   ...footer,
-      //   width: 704,
-      //   boxSizing: 'border-box'
-      // },
-      // footerXS: {
-      //   ...footer,
-      //   width: 320,
-      //   boxSizing: 'border-box',
-      //   flexDirection: 'column',
-      //   justifyContent: 'center',
-      //   height: 'auto'
-      // },
-      copyright: {
-        ...child,
-        marginRight: 'auto',
-        [theme.breakpoints.down('sm')]: {
-          marginLeft: 'auto'
-        }
-      },
-      children: {
-        ...children,
-        [theme.breakpoints.down('xs')]: {
-          flexDirection: 'column'
-        }
-      },
-
       child: {
-        ...child,
-        [theme.breakpoints.down('sm')]: {
-          margin: theme.spacing(0.5, 0)
+        margin: theme.spacing(0, 3),
+        [theme.breakpoints.down('xs')]: {
+          margin: theme.spacing(2.5, 'auto')
         },
         '&:first-child': {
-          backgroundColor: 'red !important'
+          marginRight: 'auto',
+          [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(1.5)
+          }
         }
       }
-    });
-  },
+    }),
   { name: 'SCA__Footer' }
 );

@@ -34,6 +34,7 @@ export { default as Dialog } from './components/Dialog';
 export { default as DialogActions } from './components/DialogActions';
 export { default as Divider } from './components/Divider';
 export { default as Frame } from './components/Frame';
+export { default as Footer } from './components/Footer';
 export { default as Grid } from './components/Grid';
 export { default as GridItem } from './components/GridItem';
 export { default as useGridItemClass } from './components/GridItemHook';
@@ -79,5 +80,3 @@ export { default as Typography } from './components/Typography';
 export { Theme } from './components/ThemeProvider/types';
 export { createStyles, withStyles } from '@material-ui/core/styles';
 export { useMediaQuery } from '@material-ui/core';
-
-export { default as Footer } from './components/Footer';

@@ -63,7 +63,7 @@ export const useStyles = makeStyles(
         duration: transitions.duration.short
       }),
       backgroundColor: colors.neutral['1'],
-      boxShadow: `4px 0px 0px 0px ${colors.secondary.default} inset`,
+      boxShadow: `4px 0px 0px 0px ${colors.secondary['75']} inset`,
       cursor: 'default'
     },
     deselected: {

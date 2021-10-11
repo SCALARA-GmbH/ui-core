@@ -29,7 +29,6 @@ export interface IconButtonProps {
   type?: 'button' | 'submit' | 'reset';
   Icon?: React.ComponentType<IconProps>;
   iconName: IconName;
-  iconSize?: Size;
   tooltip?: string;
   label?: string;
   variant?: Variant;
@@ -46,7 +45,6 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   type = 'button',
   Icon = IconComponent,
   iconName,
-  iconSize = 'small',
   iconColor,
   tooltip,
   label,
@@ -86,7 +84,6 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
             [classes.icon]: !iconColor
           })}
           name={iconName}
-          size={iconSize}
           testId={`${testId}-icon`}
           color={iconColor}
         />

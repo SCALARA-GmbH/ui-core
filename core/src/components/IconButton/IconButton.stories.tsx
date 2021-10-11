@@ -35,12 +35,12 @@ export const IconButtonStorySBS = (): JSX.Element => {
         />
         <IconButton
           label={'Button'}
-          iconName={'error'}
+          iconName={'close'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
         />
         <IconButton
-          iconName={'error'}
+          iconName={'close'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
         />
@@ -54,13 +54,13 @@ export const IconButtonStorySBS = (): JSX.Element => {
         />
         <IconButton
           label={'Button'}
-          iconName={'error'}
+          iconName={'close'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
           disabled
         />
         <IconButton
-          iconName={'error'}
+          iconName={'close'}
           style={{ margin: 8 }}
           tooltip={'Tooltip'}
           disabled
@@ -77,7 +77,7 @@ export const GridStory = (): JSX.Element => {
     <Grid xs={12} style={{ margin: 4 }}>
       <IconButton
         label={'Button'}
-        iconName={'error'}
+        iconName={'close'}
         style={{ margin: 8 }}
         tooltip={'Tooltip'}
         className={classGridItem}

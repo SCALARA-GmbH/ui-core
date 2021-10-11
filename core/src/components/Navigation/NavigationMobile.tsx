@@ -49,7 +49,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
         aria-label={ariaLabel}
         onClick={onClick}
       >
-        <Icon name={'subMenu'} className={classes.subMenuIcon} />
+        <Icon name={'subMenu'} className={classes.subMenuIconMobile} />
         {React.Children.map<
           React.ReactNode,
           React.ReactElement<NavigationItemGroupProps>

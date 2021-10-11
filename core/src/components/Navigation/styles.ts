@@ -72,7 +72,11 @@ export const useStyles = makeStylesWithProps<{
       color: 'red'
     },
     subMenuIcon: {
-      paddingRight: spacing(1.25),
+      paddingRight: spacing(0.75),
+      color: colors.icon.control
+    },
+    subMenuIconMobile: {
+      paddingRight: spacing(0.75),
       color: colors.icon.navigation
     },
     icon: {

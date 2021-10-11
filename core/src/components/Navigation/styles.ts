@@ -55,7 +55,8 @@ export const useStyles = makeStylesWithProps<{
       padding: spacing(0, 2.5)
     },
     secondary: {
-      left: mixins.primaryNavigationDesktopWidth
+      left: mixins.primaryNavigationDesktopWidth,
+      borderRight: `1px solid ${colors.border.main}`
     },
     drawerPaper: {
       width: spacing(28),
@@ -84,7 +85,8 @@ export const useStyles = makeStylesWithProps<{
       display: 'none'
     },
     secondaryMobile: {
-      top: mixins.primaryNavigationMobileHeight
+      top: mixins.primaryNavigationMobileHeight,
+      borderRight: `1px solid ${colors.border.main}`
     },
     select: {
       zIndex: zIndex.secondaryNavigation,

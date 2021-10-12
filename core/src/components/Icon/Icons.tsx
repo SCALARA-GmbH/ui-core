@@ -20,6 +20,7 @@ export type IconName =
   | 'accounting-not-available'
   | 'add'
   | 'arrow-down'
+  | 'arrow-left'
   | 'up-down'
   | 'circle'
   | 'close'
@@ -29,11 +30,13 @@ export type IconName =
   | 'contact-data'
   | 'delete'
   | 'delete40'
+  | 'edit'
   | 'error'
   | 'finance'
   | 'information'
   | 'information40'
   | 'logout'
+  | 'menu'
   | 'payment-data'
   | 'person'
   | 'property'
@@ -41,7 +44,9 @@ export type IconName =
   | 'real-estate'
   | 'scalara-logo'
   | 'scalara-text'
+  | 'search'
   | 'select'
+  | 'subMenu'
   | 'success'
   | 'upload'
   | 'unlock-accounts'
@@ -53,6 +58,16 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox30,
     size: 30
   },
+  subMenu: {
+    children: (
+      <>
+        <path d="M18.2,10.6L14,6.3l-1.4,1.4l3.2,3.2H8c-1.7,0-3-1.3-3-3V4H3v4c0,2.8,2.2,5,5,5h7.8l-3.2,3.2l1.4,1.4l5.7-5.7L18.2,10.6z" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24
+  },
+
   error: {
     children: (
       <g>
@@ -133,6 +148,22 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40
   },
+  search: {
+    children: (
+      <>
+        <circle
+          cx="9.813"
+          cy="9.812"
+          r="9.063"
+          transform="translate(-3.056 4.62) rotate(-23.025)"
+        />
+        <line x1="16.221" y1="16.22" x2="23.25" y2="23.25" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24
+  },
+
   information: {
     children: (
       <>
@@ -161,6 +192,18 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40
   },
+  menu: {
+    children: (
+      <>
+        <path d="M9.00854 11.7021C9.00854 11.3144 9.31367 11 9.69006 11H21.9574C22.3337 11 22.6389 11.3144 22.6389 11.7021C22.6389 12.0899 22.3337 12.4043 21.9574 12.4043H9.69006C9.31367 12.4043 9.00854 12.0899 9.00854 11.7021Z" />
+        <path d="M9.00854 16.9681C9.00854 16.5803 9.31367 16.2659 9.69006 16.2659H21.9574C22.3337 16.2659 22.6389 16.5803 22.6389 16.9681C22.6389 17.3558 22.3337 17.6702 21.9574 17.6702H9.69006C9.31367 17.6702 9.00854 17.3558 9.00854 16.9681Z" />
+        <path d="M9.00854 22.234C9.00854 21.8463 9.31367 21.5319 9.69006 21.5319H21.9574C22.3337 21.5319 22.6389 21.8463 22.6389 22.234C22.6389 22.6218 22.3337 22.9362 21.9574 22.9362H9.69006C9.31367 22.9362 9.00854 22.6218 9.00854 22.234Z" />
+      </>
+    ),
+    viewBox: viewBox32,
+    size: 24
+  },
+
   'scalara-text': {
     children: (
       <g transform="translate(4.000000, 2.000000)">
@@ -176,6 +219,16 @@ export const icons: Record<IconName, Svg> = {
     ),
     viewBox: '0 0 146 40',
     size: 40
+  },
+  'arrow-left': {
+    children: (
+      <polyline
+        transform="translate(17.000000, 12.000000) rotate(-225.000000) translate(-17.000000, -12.000000) "
+        points="9 20 25 20 25 4"
+      />
+    ),
+    viewBox: viewBox24,
+    size: 24
   },
   logout: {
     children: (
@@ -228,6 +281,14 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40
   },
+  edit: {
+    children: (
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+    ),
+    viewBox: viewBox24,
+    size: 24
+  },
+
   close: {
     children: (
       <polygon

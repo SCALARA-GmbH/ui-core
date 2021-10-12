@@ -10,6 +10,6 @@ test('visual', async ({ page }) => {
   );
 
   expect(await page.screenshot()).toMatchSnapshot('typography.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 });

@@ -3,7 +3,7 @@ module.exports = {
   parserOptions: {
     project: ['tsconfig.json', 'tsconfig.js.json'],
     extraFileExtensions: ['.json'],
-    sourceType: 'module'
+    sourceType: 'module',
   },
   root: true,
 
@@ -14,11 +14,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:promise/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
   ],
 
   env: {
-    node: true
+    node: true,
   },
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
@@ -27,8 +27,8 @@ module.exports = {
       {
         allowShortCircuit: true,
         allowTernary: true,
-        allowTaggedTemplates: true
-      }
+        allowTaggedTemplates: true,
+      },
     ],
     'import/order': [
       'error',
@@ -36,7 +36,7 @@ module.exports = {
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
-          caseInsensitive: true
+          caseInsensitive: true,
         },
         groups: [
           'builtin',
@@ -44,17 +44,17 @@ module.exports = {
           'internal',
           'parent',
           'sibling',
-          'index'
+          'index',
         ],
         pathGroups: [
           {
             pattern: '#**/*',
-            group: 'external'
-          }
-        ]
-      }
+            group: 'external',
+          },
+        ],
+      },
     ],
     'no-unused-expressions': 'off',
-    'no-useless-constructor': 'off'
-  }
+    'no-useless-constructor': 'off',
+  },
 };

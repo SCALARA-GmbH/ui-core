@@ -12,7 +12,7 @@ export const Hierarchies = [
   'tertiary',
   'destructive',
   'required-instruction',
-  'optional-instruction'
+  'optional-instruction',
 ] as const;
 type HierarchyTypes = typeof Hierarchies;
 export type Hierarchy = HierarchyTypes[number];
@@ -25,7 +25,7 @@ interface Props {
 
 const getPalette = ({
   hierarchy,
-  colors
+  colors,
 }: {
   hierarchy?: Hierarchy;
   colors: Colors;
@@ -35,7 +35,7 @@ const getPalette = ({
       return {
         default: colors.neutral['3'],
         '75': colors.neutral['4'],
-        '50': colors.neutral['6']
+        '50': colors.neutral['6'],
       };
     case 'secondary':
       return colors.secondary;
@@ -59,8 +59,8 @@ const useStyles = makeStylesWithProps<{ hierarchy: Hierarchy }>(
       borderRadius: '50%',
       padding: spacing(3),
       color: ({ hierarchy }) => getPalette({ hierarchy, colors }).default,
-      overflow: 'overlay'
-    }
+      overflow: 'overlay',
+    },
   }),
   { name: 'SCA__IconBubble' }
 );
@@ -68,7 +68,7 @@ const useStyles = makeStylesWithProps<{ hierarchy: Hierarchy }>(
 const IconBubble: React.FunctionComponent<Props> = ({
   name,
   className,
-  hierarchy = 'secondary'
+  hierarchy = 'secondary',
 }) => {
   const classes = useStyles({ hierarchy });
   return (

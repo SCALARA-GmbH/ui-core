@@ -37,7 +37,7 @@ describe('<TableRow />', () => {
         onClick={handleClickRow}
         actionIconButtonProps={{
           iconName: 'close',
-          onClick: handleClickAction
+          onClick: handleClickAction,
         }}
       />
     );

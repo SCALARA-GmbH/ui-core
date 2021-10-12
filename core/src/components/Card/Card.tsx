@@ -33,7 +33,7 @@ const Card: React.FunctionComponent<DividerProps> = ({
   testId = '',
   text,
   title,
-  variant = 'outlined'
+  variant = 'outlined',
 }) => {
   const classes = useStyles({ img });
   return (

@@ -15,8 +15,8 @@ const useStyles = makeStylesWithProps<{ width?: number }>(
     root: {
       width: ({ width }) => width && `${width}%`,
       padding: spacing(2.5, 1.5, 1, 1.5),
-      borderBottom: `1px solid ${colors.border.main}`
-    }
+      borderBottom: `1px solid ${colors.border.main}`,
+    },
   }),
   { name: 'SCA__DataTableHeadCell' }
 );
@@ -24,7 +24,7 @@ const useStyles = makeStylesWithProps<{ width?: number }>(
 const DataTableHeadCell: React.FunctionComponent<Props> = ({
   text,
   align,
-  widthPercentage
+  widthPercentage,
 }) => {
   const classes = useStyles({ width: widthPercentage });
   return (

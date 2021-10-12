@@ -10,7 +10,7 @@ import { Hierarchies, Variants } from './types';
 export default {
   title: 'Elements/Controls/Button',
   component: Button,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const ButtonStoryVS = (): JSX.Element => {
@@ -20,7 +20,7 @@ export const ButtonStoryVS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        padding: 8
+        padding: 8,
       }}
     >
       {Hierarchies.map((hierarchy) => (
@@ -30,7 +30,7 @@ export const ButtonStoryVS = (): JSX.Element => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
-            padding: 16
+            padding: 16,
           }}
         >
           <Typography
@@ -67,7 +67,7 @@ export const ButtonStoryVS = (): JSX.Element => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          padding: 16
+          padding: 16,
         }}
       >
         <Typography

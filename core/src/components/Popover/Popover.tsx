@@ -41,7 +41,7 @@ const getBorder = (variant: TooltipVariant, theme: Theme): string => {
 const useStyles = makeStylesWithProps<{ variant: TooltipVariant }>(
   (theme) => ({
     popover: {
-      zIndex: 9999
+      zIndex: 9999,
     },
     root: {
       minWidth: '160px',
@@ -49,17 +49,17 @@ const useStyles = makeStylesWithProps<{ variant: TooltipVariant }>(
       display: 'flex',
       alignItems: 'center',
       backgroundColor: theme.colors.text.main,
-      boxShadow: ({ variant }) => getBorder(variant, theme)
+      boxShadow: ({ variant }) => getBorder(variant, theme),
     },
     icon: {
       padding: theme.spacing(0, 0, 0, 1.5),
-      flexShrink: 0
+      flexShrink: 0,
     },
     content: {
       width: '100%',
       color: theme.colors.neutral['6'],
-      padding: theme.spacing(1.5, 1.5, 1.5, 1.5)
-    }
+      padding: theme.spacing(1.5, 1.5, 1.5, 1.5),
+    },
   }),
   { name: 'Popover' }
 );
@@ -70,7 +70,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   anchorElement,
   variant = 'neutral',
   children,
-  testId
+  testId,
 }) => {
   const classes = useStyles({ variant });
   const theme = useTheme();

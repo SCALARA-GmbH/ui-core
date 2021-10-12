@@ -30,8 +30,8 @@ export const useStyles = makeStylesWithProps<{
         width: ({ size, svgSize }) => getSizeFactor(size) * svgSize,
         overflow: 'hidden',
         color: ({ color }) => color ?? colors.text.main,
-        fill: 'currentColor'
-      }
+        fill: 'currentColor',
+      },
     }),
   { name: 'SCA__Icon' }
 );

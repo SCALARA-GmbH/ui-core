@@ -10,7 +10,7 @@ jest.mock('@material-ui/core', () => {
   const actual = jest.requireActual('@material-ui/core');
   return {
     ...actual,
-    useMediaQuery: () => true
+    useMediaQuery: () => true,
   };
 });
 

@@ -20,7 +20,7 @@ const Comment: React.FunctionComponent<Props> = ({
   text,
   extra,
   title,
-  className
+  className,
 }) => {
   const classes = useStyles();
   return (

@@ -5,7 +5,7 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
   (theme) =>
     createStyles({
       root: {
-        position: 'relative'
+        position: 'relative',
       },
       area: {
         maxHeight: ({ maxHeight }) => maxHeight,
@@ -14,21 +14,21 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         position: 'absolute',
         left: 0,
         right: 0,
-        zIndex: 999999
+        zIndex: 999999,
       },
       list: {
         paddingTop: theme.spacing(0),
-        paddingBottom: theme.spacing(3)
+        paddingBottom: theme.spacing(3),
       },
       header: {
         height: theme.spacing(10),
         padding: theme.spacing(0, 6),
         display: 'flex',
         alignItems: 'center',
-        userSelect: 'none'
+        userSelect: 'none',
       },
       selected: {
-        backgroundColor: theme.colors.neutral['6']
+        backgroundColor: theme.colors.neutral['6'],
       },
       row: {
         display: 'flex',
@@ -38,18 +38,18 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         padding: theme.spacing(0, 0, 0, 6),
         cursor: 'pointer',
         '&:hover': {
-          backgroundColor: theme.colors.neutral['6']
-        }
+          backgroundColor: theme.colors.neutral['6'],
+        },
       },
       hidden: {
-        display: 'none'
+        display: 'none',
       },
       visible: {
-        display: 'flex'
+        display: 'flex',
       },
       icon: {
         marginLeft: 'auto',
-        paddingRight: theme.spacing(2.5)
+        paddingRight: theme.spacing(2.5),
       },
       label: {
         ...getFontStyle('c4'),
@@ -60,16 +60,16 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         paddingLeft: theme.spacing(6),
         '&:hover': {
           cursor: 'pointer',
-          backgroundColor: theme.colors.background.hover
+          backgroundColor: theme.colors.background.hover,
         },
         '&:focus': {
-          backgroundColor: theme.colors.background.hover
+          backgroundColor: theme.colors.background.hover,
         },
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: theme.shadows[1]
-        }
+          boxShadow: theme.shadows[1],
+        },
       },
       inputBase: {
         ...getFontStyle('c3'),
@@ -77,15 +77,15 @@ export const useStyles = makeStylesWithProps<{ maxHeight: string }>(
         alignSelf: 'center',
         color: theme.colors.text.main,
         '&::placeholder': {
-          color: theme.colors.neutral['3']
+          color: theme.colors.neutral['3'],
         },
         alignItems: 'center',
-        padding: theme.spacing(2.125, 0, 2.125, 6)
+        padding: theme.spacing(2.125, 0, 2.125, 6),
       },
       input: {
         height: 'auto',
-        backgroundColor: theme.colors.background.hover
-      }
+        backgroundColor: theme.colors.background.hover,
+      },
     }),
   { name: 'SCA__SearchSelect' }
 );

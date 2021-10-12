@@ -1,7 +1,7 @@
 import {
   InputAdornment,
   InputBase,
-  InputBaseComponentProps
+  InputBaseComponentProps,
 } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
@@ -77,7 +77,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       required = false,
       startAdornment,
       testId,
-      type = 'text'
+      type = 'text',
     },
     ref
   ) => {
@@ -99,7 +99,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         }
       },
       onClick,
-      ...inputProps
+      ...inputProps,
     };
 
     return (
@@ -120,9 +120,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           classes={{
             input: cx(classes.input, {
               [classes.error]: error || internalError,
-              [classes.multiline]: multiline
+              [classes.multiline]: multiline,
             }),
-            multiline: classes.noPadding
+            multiline: classes.noPadding,
           }}
           id={name}
           disabled={disabled}

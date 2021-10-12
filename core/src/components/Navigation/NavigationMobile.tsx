@@ -32,7 +32,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
   tablet,
   open,
   onClick,
-  onClose
+  onClose,
 }) => {
   const classes = useStyles({ disabled });
 
@@ -43,7 +43,7 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
           [classes.open]: open,
           [classes.secondaryMobile]: secondary,
           [classes.selectTablet]: tablet,
-          [classes.selectMobile]: !tablet
+          [classes.selectMobile]: !tablet,
         })}
         role={'button'}
         aria-label={ariaLabel}
@@ -76,10 +76,10 @@ const NavigationMobile: React.FunctionComponent<Props> = ({
           // Better open performance on mobile.
           keepMounted: true,
           // solves zIndex issues with appbar
-          disablePortal: true
+          disablePortal: true,
         }}
         classes={{
-          paper: classes.drawerPaperMobile
+          paper: classes.drawerPaperMobile,
         }}
       >
         <Area

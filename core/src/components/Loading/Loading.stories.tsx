@@ -4,7 +4,7 @@ import { Loading, useTheme } from '../..';
 
 export default {
   title: 'Basics/Loading',
-  component: Loading
+  component: Loading,
 };
 
 export const LoadingStorySBS = (): JSX.Element => {

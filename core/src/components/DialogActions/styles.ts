@@ -7,17 +7,17 @@ export const useStyles = makeStyles(({ spacing, breakpoints }) =>
       paddingTop: spacing(3),
       flexDirection: 'column',
       [breakpoints.up('sm')]: {
-        flexDirection: 'row'
-      }
+        flexDirection: 'row',
+      },
     },
     buttons: {
       margin: spacing(1, 0, 0, 0),
       [breakpoints.up('sm')]: {
-        margin: spacing(0, 0, 0, 2)
-      }
+        margin: spacing(0, 0, 0, 2),
+      },
     },
     spacer: {
-      flex: 1
-    }
+      flex: 1,
+    },
   })
 );

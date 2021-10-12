@@ -16,13 +16,13 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationItemProp
   bottom,
   divider,
   accountType,
-  hideForDesktop
+  hideForDesktop,
 }) => {
   const classes = useStyles();
 
   const itemClass = cx({
     [classes.selectedItem]: selected,
-    [classes.deselectedItem]: !selected
+    [classes.deselectedItem]: !selected,
   });
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -34,7 +34,7 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationItemProp
         <DefaultDivider
           className={cx({
             [classes.dividerBottom]: bottom && !mobile,
-            [classes.dividerBottomMobile]: bottom && mobile
+            [classes.dividerBottomMobile]: bottom && mobile,
           })}
         />
       )}
@@ -45,7 +45,7 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationItemProp
           [classes.selected]: selected,
           [classes.deselected]: !selected,
           [classes.itemMobile]: mobile,
-          [classes.item]: !mobile
+          [classes.item]: !mobile,
         })}
         button
         disableRipple

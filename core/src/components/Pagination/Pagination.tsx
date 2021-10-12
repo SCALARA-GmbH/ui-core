@@ -96,7 +96,7 @@ const Pagination: React.FunctionComponent<Props> = ({
   showLastButton = false,
   siblingCount,
   size = 'medium',
-  variant = 'text'
+  variant = 'text',
 }) => {
   return (
     <MuiLabPagination

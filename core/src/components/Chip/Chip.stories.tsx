@@ -8,13 +8,13 @@ import { COLORS } from './styles';
 export default {
   title: 'Components/Chip',
   component: Chip,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(0.5)
-  }
+    margin: theme.spacing(0.5),
+  },
 }));
 
 export const ChipStorySBS = (): JSX.Element => {

@@ -8,7 +8,7 @@ import useGridItemClass from '../GridItemHook';
 export default {
   title: 'Elements/Controls/IconButton',
   component: IconButton,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const IconButtonStorySBS = (): JSX.Element => {
@@ -18,13 +18,13 @@ export const IconButtonStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <div
         style={{
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <IconButton

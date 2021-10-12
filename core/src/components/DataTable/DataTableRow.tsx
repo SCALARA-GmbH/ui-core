@@ -11,14 +11,14 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       '&:hover': {
-        backgroundColor: theme.colors.background.hover
+        backgroundColor: theme.colors.background.hover,
       },
       '&:focus-visible': {
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
-        boxShadow: theme.shadows[1]
-      }
-    }
+        boxShadow: theme.shadows[1],
+      },
+    },
   }),
   { name: 'SCA__DataTableRow' }
 );

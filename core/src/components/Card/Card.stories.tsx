@@ -7,7 +7,7 @@ import { Hierarchy, Variant } from '../Button/types';
 export default {
   title: 'Components/Card',
   component: Card,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const CardStory = (): JSX.Element => (

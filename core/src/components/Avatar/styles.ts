@@ -36,27 +36,27 @@ export const useStyles = makeStylesWithProps<{
       position: 'relative',
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
       '&:hover > $editOverlay': {
-        opacity: ({ onClick }) => (onClick ? 1 : 0)
-      }
+        opacity: ({ onClick }) => (onClick ? 1 : 0),
+      },
     },
     avatar: {
-      background: 'none'
+      background: 'none',
     },
     fallback: {
       height: (props) => getSize(props.size),
-      width: (props) => getSize(props.size)
+      width: (props) => getSize(props.size),
     },
     image: {
       boxShadow: `0 0 0 1px ${theme.colors.neutral['5']}`,
       height: (props) => getImageSize(props.size),
       width: (props) => getImageSize(props.size),
-      margin: (props) => (getSize(props.size) - getImageSize(props.size)) / 2
+      margin: (props) => (getSize(props.size) - getImageSize(props.size)) / 2,
     },
     registered: {
-      color: theme.colors.secondary.default
+      color: theme.colors.secondary.default,
     },
     unregistered: {
-      color: theme.colors.neutral['3']
+      color: theme.colors.neutral['3'],
     },
     editOverlay: {
       cursor: ({ onClick }) => (onClick ? 'pointer' : 'inherit'),
@@ -65,12 +65,12 @@ export const useStyles = makeStylesWithProps<{
       opacity: 0,
       top: '50%',
       left: '50%',
-      transform: 'translateX(-50%) translateY(-50%)'
+      transform: 'translateX(-50%) translateY(-50%)',
     },
     icon: {
       width: '100%',
-      height: '100%'
-    }
+      height: '100%',
+    },
   }),
   { name: 'SCA__Avatar' }
 );

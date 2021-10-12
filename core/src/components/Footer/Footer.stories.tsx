@@ -7,7 +7,7 @@ import { Footer, useTheme } from '../..';
 export default {
   title: 'Components/Footer',
   component: Footer,
-  decorators: [withKnobs, withActions]
+  decorators: [withKnobs, withActions],
 };
 
 export const FooterOverviewVS = (): JSX.Element => {
@@ -17,7 +17,7 @@ export const FooterOverviewVS = (): JSX.Element => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <Footer>

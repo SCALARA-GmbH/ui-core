@@ -1,7 +1,7 @@
 import { ListItemAvatar, ListItemText } from '@material-ui/core';
 import MuiAutocomplete, {
   AutocompleteProps as MuiAutocompleteProps,
-  createFilterOptions
+  createFilterOptions,
 } from '@material-ui/lab/Autocomplete';
 import * as React from 'react';
 
@@ -66,7 +66,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   onNewOptionClick,
   renderNewOptionTitle,
   onClear,
-  virtualized
+  virtualized,
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -75,7 +75,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
     <MuiAutocomplete
       autoComplete={false}
       classes={{
-        popupIndicator: classes.popupIndicator
+        popupIndicator: classes.popupIndicator,
       }}
       className={className}
       clearText={clearLabel}
@@ -93,7 +93,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
               value: params.inputValue,
               title:
                 renderNewOptionTitle?.(params.inputValue) ||
-                `New "${params.inputValue}"`
+                `New "${params.inputValue}"`,
             });
           }
         }
@@ -128,7 +128,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           inputProps={{
             ...params.inputProps,
             'aria-label': ariaLabel || label || name,
-            autoComplete: 'new-password'
+            autoComplete: 'new-password',
           }}
           label={label}
           ref={params.InputProps.ref}

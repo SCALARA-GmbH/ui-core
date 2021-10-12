@@ -16,7 +16,7 @@ export enum Wrap {
    * Sequences of white space are preserved. Lines are broken at newline characters, at <br>, and as necessary to fill line boxes.
    * Note that text overflow can only happen with block or inline-block level elements
    */
-  PRESERVE_BREAK_LINES = 'PRESERVE_BREAK_LINES'
+  PRESERVE_BREAK_LINES = 'PRESERVE_BREAK_LINES',
 }
 
 export interface TypographyProps {
@@ -75,7 +75,7 @@ const Typography: React.FunctionComponent<TypographyProps> = ({
   variant = 'c1',
   span = false,
   linkColor = 'secondary',
-  linkVariant = 'c1'
+  linkVariant = 'c1',
 }) => {
   const classes = useStyles({
     align,
@@ -88,7 +88,7 @@ const Typography: React.FunctionComponent<TypographyProps> = ({
     selectable,
     variant,
     linkColor,
-    linkVariant
+    linkVariant,
   });
   const Tag = span ? 'span' : getTag(variant);
 
@@ -98,7 +98,7 @@ const Typography: React.FunctionComponent<TypographyProps> = ({
         classes.root,
         {
           [classes.noWrap]: wrap === Wrap.NO_WRAP,
-          [classes.withLineBreak]: wrap === Wrap.PRESERVE_BREAK_LINES
+          [classes.withLineBreak]: wrap === Wrap.PRESERVE_BREAK_LINES,
         },
         className
       )}

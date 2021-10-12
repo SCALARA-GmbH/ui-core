@@ -4,7 +4,7 @@ import { Paper, Typography, useTheme } from '../..';
 
 export default {
   title: 'Basics/Paper',
-  component: Paper
+  component: Paper,
 };
 
 export const PaperStorySBS = (): JSX.Element => {

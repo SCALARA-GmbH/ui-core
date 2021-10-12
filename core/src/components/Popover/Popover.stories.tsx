@@ -10,7 +10,7 @@ import { Popover } from './Popover';
 export default {
   title: 'Components/Popover',
   component: Popover,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const PopoverStory = (): JSX.Element => {
@@ -49,14 +49,14 @@ export const PopoverStory = (): JSX.Element => {
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
         flexDirection: 'column',
-        padding: '12px'
+        padding: '12px',
       }}
     >
       <div
         style={{
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref1}
       >
@@ -81,7 +81,7 @@ export const PopoverStory = (): JSX.Element => {
         style={{
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref2}
       >
@@ -102,7 +102,7 @@ export const PopoverStory = (): JSX.Element => {
         style={{
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref3}
       >
@@ -125,7 +125,7 @@ const Labels = [
   'Accounts',
   'Transactions',
   'Business plan',
-  'Fiscal year'
+  'Fiscal year',
 ] as const;
 type LabelTypes = typeof Labels;
 export type Label = LabelTypes[number];
@@ -156,7 +156,7 @@ export const PopoverVisualTestStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
       }}
     >
       <div
@@ -164,7 +164,7 @@ export const PopoverVisualTestStory = (): JSX.Element => {
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
           width: '640px',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref1}
       >
@@ -189,7 +189,7 @@ export const PopoverVisualTestStory = (): JSX.Element => {
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
           width: '640px',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref2}
       >
@@ -209,7 +209,7 @@ export const PopoverVisualTestStory = (): JSX.Element => {
           backgroundColor: theme.colors.background.primary,
           display: 'flex',
           width: '640px',
-          padding: '12px'
+          padding: '12px',
         }}
         ref={ref3}
       >

@@ -5,7 +5,7 @@ import { TextColor, Variant } from './types';
 
 export const getColor = ({
   color,
-  theme
+  theme,
 }: {
   color?: TextColor;
   theme: Theme;
@@ -111,7 +111,7 @@ export const getFontStyle = (
     fontFamily: 'Open Sans',
     fontSize: getFontSize(variant),
     fontWeight: getFontWeight(variant),
-    lineHeight: getLineHeight(variant)
+    lineHeight: getLineHeight(variant),
   };
 };
 
@@ -164,24 +164,24 @@ export const useStyles = makeStylesWithProps<{
             transform: 'scale(0)',
             backgroundColor: ({ linkColor }) =>
               getColor({ color: linkColor, theme }),
-            transition: 'transform 300ms ease'
+            transition: 'transform 300ms ease',
           },
           '&:hover::after': {
             transform: 'scale(1)',
-            transformOrigin: 'center'
-          }
-        }
+            transformOrigin: 'center',
+          },
+        },
       },
       noWrap: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
       },
       withLineBreak: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'pre-wrap'
-      }
+        whiteSpace: 'pre-wrap',
+      },
     }),
   { name: 'SCA__Typography' }
 );

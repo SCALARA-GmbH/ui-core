@@ -10,7 +10,7 @@ import AppBar from './AppBar';
 export default {
   title: 'Components/AppBar',
   component: AppBar,
-  decorators: [withKnobs, withActions]
+  decorators: [withKnobs, withActions],
 };
 
 export const AppBarStory = (): JSX.Element => {
@@ -52,9 +52,9 @@ export const AppBarStory = (): JSX.Element => {
           id: 0,
           title: 'PROFILE',
           label: 'SIGN OUT',
-          iconName: 'person-outline'
+          iconName: 'person-outline',
         },
-        { id: 1, title: 'SIGN OUT', label: 'SIGN OUT', iconName: 'logout' }
+        { id: 1, title: 'SIGN OUT', label: 'SIGN OUT', iconName: 'logout' },
       ]}
     />
   );
@@ -67,17 +67,17 @@ export const AppBarStory = (): JSX.Element => {
         ProfileComponentProps={{
           onClick: handleClickProfile,
           image:
-            'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns'
+            'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns',
         }}
         LogoComponentProps={{
           onClick: handleLogoClick,
-          size: 'small'
+          size: 'small',
         }}
         onClick={handleClickLeft}
         menuItems={[
           { title: 'REALY LOOOOOONG RELATIONS', id: 0, label: 'RELATIONS' },
           { title: 'CONTACTS', id: 1, label: 'CONTACTS' },
-          { title: 'MESSAGES', id: 2, label: 'MESSAGES' }
+          { title: 'MESSAGES', id: 2, label: 'MESSAGES' },
         ]}
         selectedId={leftMenuSelected}
         menuTrayLabel={'Left Menu'}
@@ -125,9 +125,9 @@ export const AppBarIconStory = (): JSX.Element => {
           id: 0,
           title: 'PROFILE',
           label: 'SIGN OUT',
-          iconName: 'person-outline'
+          iconName: 'person-outline',
         },
-        { id: 1, title: 'SIGN OUT', label: 'SIGN OUT', iconName: 'logout' }
+        { id: 1, title: 'SIGN OUT', label: 'SIGN OUT', iconName: 'logout' },
       ]}
       selectedId={rightSelectedId}
     />
@@ -139,11 +139,11 @@ export const AppBarIconStory = (): JSX.Element => {
       {renderMenu()}
       <AppBar
         ProfileComponentProps={{
-          onClick: handleClickProfile
+          onClick: handleClickProfile,
         }}
         LogoComponentProps={{
           onClick: handleLogoClick,
-          size: 'small'
+          size: 'small',
         }}
         onClick={handleClickLeft}
         menuItems={[
@@ -151,9 +151,9 @@ export const AppBarIconStory = (): JSX.Element => {
             title: 'RELATIONS',
             id: 0,
             label: 'RELATIONS',
-            iconName: 'attachment'
+            iconName: 'attachment',
           },
-          { title: 'CONTACTS', id: 1, label: 'CONTACTS', iconName: 'edit' }
+          { title: 'CONTACTS', id: 1, label: 'CONTACTS', iconName: 'edit' },
         ]}
         selectedId={leftMenuSelected}
         menuTrayLabel={'Left Menu'}
@@ -201,9 +201,9 @@ export const AppBarOnlyIconStory = (): JSX.Element => {
           id: 0,
           label: 'PROFILE',
           iconName: 'person-outline',
-          title: 'PROFILE'
+          title: 'PROFILE',
         },
-        { id: 1, label: 'SIGN OUT', iconName: 'logout', title: 'SIGN OUT' }
+        { id: 1, label: 'SIGN OUT', iconName: 'logout', title: 'SIGN OUT' },
       ]}
       selectedId={rightSelectedId}
     />
@@ -216,15 +216,15 @@ export const AppBarOnlyIconStory = (): JSX.Element => {
       <AppBar
         ProfileComponentProps={{
           onClick: handleClickProfile,
-          type: 'company'
+          type: 'company',
         }}
         LogoComponentProps={{
           onClick: handleLogoClick,
-          size: 'small'
+          size: 'small',
         }}
         menuItems={[
           { id: 0, label: 'RELATIONS', iconName: 'attachment' },
-          { id: 1, label: 'CONTACTS', iconName: 'edit' }
+          { id: 1, label: 'CONTACTS', iconName: 'edit' },
         ]}
         onClick={handleClickLeft}
         selectedId={leftMenuSelected}

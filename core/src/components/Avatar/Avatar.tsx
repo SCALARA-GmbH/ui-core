@@ -32,7 +32,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
   type = 'person',
   editable,
   tooltip = '',
-  registered
+  registered,
 }) => {
   const classes = useStyles({ size, onClick });
   const theme = useTheme();
@@ -52,7 +52,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
           <Icon
             className={cx(classes.icon, {
               [classes.registered]: registered,
-              [classes.unregistered]: !registered
+              [classes.unregistered]: !registered,
             })}
             outlineColor={theme.colors.neutral['5']}
             backgroundColor={

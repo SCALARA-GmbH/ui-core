@@ -7,7 +7,7 @@ export const useStyles = makeStylesWithProps<{ clickable: boolean }>(
         backgroundColor: colors.background.primary,
         cursor: (props) => (props.clickable ? 'pointer' : 'default'),
         padding: spacing(2),
-        transition: 'background-color 0.2s'
-      }
+        transition: 'background-color 0.2s',
+      },
     })
 );

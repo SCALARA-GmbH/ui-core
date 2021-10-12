@@ -13,7 +13,7 @@ const Table: React.FunctionComponent<TableProps> = ({
   children,
   className = '',
   style = {},
-  testId = ''
+  testId = '',
 }) => (
   <div className={className} data-testid={testId} style={style}>
     {React.Children.map(children, (child, index) => {

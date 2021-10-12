@@ -18,7 +18,7 @@ export const useStyles = makeStylesWithProps<{
         orientation === 'horizontal' ? 'row' : 'column',
       padding: ({ disableGutters }) =>
         disableGutters ? 0 : theme.spacing(0, 3),
-      justifyContent: ({ justifyContent }) => justifyContent
-    }
+      justifyContent: ({ justifyContent }) => justifyContent,
+    },
   })
 );

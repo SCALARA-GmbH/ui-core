@@ -9,7 +9,7 @@ export const COLORS = [
   'primary',
   'secondary',
   'error',
-  'success'
+  'success',
 ] as const;
 type ColorTypes = typeof COLORS;
 export type Color = ColorTypes[number];

@@ -10,31 +10,31 @@ export const useStyles = makeStylesWithProps<{
       display: 'flex',
       cursor: 'pointer',
       [breakpoints.down('sm')]: {
-        flexDirection: 'column'
+        flexDirection: 'column',
       },
       [breakpoints.up('md')]: {
-        flexDirection: 'row'
-      }
+        flexDirection: 'row',
+      },
     },
     content: {
       flex: 1,
-      padding: spacing(3)
+      padding: spacing(3),
     },
     title: {
-      marginBottom: spacing(1)
+      marginBottom: spacing(1),
     },
     text: {
-      marginBottom: spacing(3)
+      marginBottom: spacing(3),
     },
     image: {
       backgroundImage: ({ img }) => `url(${img})`,
       backgroundSize: 'cover',
       [breakpoints.down('sm')]: {
-        height: 100
+        height: 100,
       },
       [breakpoints.up('md')]: {
-        flex: 1
-      }
-    }
+        flex: 1,
+      },
+    },
   })
 );

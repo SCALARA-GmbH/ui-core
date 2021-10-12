@@ -10,7 +10,7 @@ import Avatar from './Avatar';
 export default {
   title: 'Components/Avatar',
   component: Avatar,
-  decorators: [withKnobs, withActions]
+  decorators: [withKnobs, withActions],
 };
 
 export const AvatarOverviewSBS = (): JSX.Element => {
@@ -26,7 +26,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (
@@ -48,7 +48,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (
@@ -69,7 +69,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (
@@ -89,7 +89,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (
@@ -110,7 +110,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (
@@ -131,7 +131,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
           alignItems: 'center',
           justifyContent: 'space-between',
           width: 200,
-          padding: 8
+          padding: 8,
         }}
       >
         {SIZES.map((size) => (

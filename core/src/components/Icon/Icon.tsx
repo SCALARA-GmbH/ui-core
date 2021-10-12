@@ -28,7 +28,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   testId = '',
   color,
   outlineColor,
-  backgroundColor
+  backgroundColor,
 }) => {
   const icon = icons[name];
   if (!icon) {
@@ -48,7 +48,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
       {backgroundColor &&
         icon.background &&
         React.cloneElement(icon.background, {
-          style: { color: backgroundColor }
+          style: { color: backgroundColor },
         })}
       {icon.children}
       {outlineColor &&

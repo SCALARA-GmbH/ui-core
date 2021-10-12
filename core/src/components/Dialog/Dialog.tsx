@@ -3,7 +3,7 @@ import {
   DialogContent,
   DialogProps as MuiDialogProps,
   DialogTitle,
-  useMediaQuery
+  useMediaQuery,
 } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
@@ -33,7 +33,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
   onClose,
   open = false,
   title,
-  backLabel
+  backLabel,
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -49,7 +49,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
       onClose={onClose}
       scroll={'body'}
       classes={{
-        paperScrollBody: classes.scrollPaper
+        paperScrollBody: classes.scrollPaper,
       }}
     >
       <DialogTitle disableTypography className={classes.titleWrapper}>

@@ -4,7 +4,7 @@ import { Grid, LinearProgress, useTheme } from '../..';
 
 export default {
   title: 'Basics/LinearProgress',
-  component: LinearProgress
+  component: LinearProgress,
 };
 
 export const LinearProgressStorySBS = (): JSX.Element => {
@@ -27,7 +27,7 @@ export const LinearProgressStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.main,
         padding: '16px',
-        width: 200
+        width: 200,
       }}
     >
       <LinearProgress variant={'indeterminate'} />

@@ -7,7 +7,7 @@ import Tooltip from './Tooltip';
 
 export default {
   title: 'Components/Tooltip',
-  component: Tooltip
+  component: Tooltip,
 };
 
 export const TooltipStory = (): JSX.Element => {

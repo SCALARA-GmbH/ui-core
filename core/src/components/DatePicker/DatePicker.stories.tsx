@@ -8,7 +8,7 @@ import { DatePicker, Button, Grid, useTheme } from '../..';
 
 export default {
   title: 'Elements/Input/DatePicker',
-  component: DatePicker
+  component: DatePicker,
 };
 
 export const DatePickerStorySBS = (): JSX.Element => {
@@ -52,12 +52,12 @@ export const FormStorySBS = (): JSX.Element => {
     resolver: yupResolver(
       yup.object().shape({
         start: yup.date().required(),
-        end: yup.date().nullable()
+        end: yup.date().nullable(),
       })
     ),
     defaultValues: {
-      start: new Date()
-    }
+      start: new Date(),
+    },
   });
 
   React.useEffect(() => {
@@ -81,7 +81,7 @@ export const FormStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.main,
         padding: 16,
-        maxWidth: 500
+        maxWidth: 500,
       }}
     >
       <Grid xs={2}>

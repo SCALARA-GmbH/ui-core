@@ -57,7 +57,8 @@ export type IconName =
   | 'real-estate'
   | 'communication'
   | 'contacts'
-  | 'subMenu';
+  | 'subMenu'
+  | 'property-avatar';
 
 export const icons: Record<IconName, Svg> = {
   circle: {
@@ -551,6 +552,15 @@ export const icons: Record<IconName, Svg> = {
         <polygon points="30 32 28 32 28 15.52 20 9.5 12 15.52 12 32 10 32 10 14.52 20 7 30 14.52 30 32" />
         <polygon points="24 32 22 32 22 25 18 25 18 32 16 32 16 23 24 23 24 32" />
       </g>
+    ),
+    viewBox: viewBox40,
+    size: 40
+  },
+  'property-avatar': {
+    children: (
+      <>
+        <path d="M22,22V8.5l-9.5-7.8L3,8.5V22H1v2h23v-2H22z M5,9.5l7.5-6.2L20,9.5V22h-3v-6v-1v-1H8v1v1v6H5V9.5z M15,16v6h-5v-6H15z" />
+      </>
     ),
     viewBox: viewBox40,
     size: 40

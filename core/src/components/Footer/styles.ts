@@ -13,37 +13,46 @@ export const useStyles = makeStyles(
         boxSizing: 'border-box',
         [theme.breakpoints.down('xs')]: {
           width: 320,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          height: 'auto'
+          height: 'auto',
         },
         [theme.breakpoints.up('sm')]: {
-          width: 704
+          width: 704,
         },
         [theme.breakpoints.up('md')]: {
-          width: 960
+          width: 960,
         },
         [theme.breakpoints.up('lg')]: {
+          padding: theme.spacing(0, 0, 0, 280 / 8),
           width: 1024,
-          padding: theme.spacing(0, 1, 0, 312 / 8 - 3)
         },
         [theme.breakpoints.up('xl')]: {
           width: 1440,
-          padding: theme.spacing(0, 3, 0, 328 / 8 - 3)
-        }
-      },
-      child: {
-        margin: theme.spacing(0, 3),
-        [theme.breakpoints.down('xs')]: {
-          margin: theme.spacing(2.5, 'auto')
         },
-        '&:first-child': {
-          marginRight: 'auto',
-          [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1.5)
-          }
-        }
-      }
+      },
+      content: {
+        width: '100%',
+        display: 'flex',
+        columnGap: `${theme.spacing(6)}px`,
+        [theme.breakpoints.down('xs')]: {
+          flexFlow: 'column wrap',
+          height: 'auto',
+          rowGap: `${theme.spacing(5)}px`,
+          '& > *': {
+            margin: 'auto',
+          },
+          padding: theme.spacing(2.125, 0),
+        },
+        [theme.breakpoints.up('sm')]: {
+          padding: theme.spacing(0, 3),
+        },
+
+        [theme.breakpoints.up('lg')]: {
+          padding: theme.spacing(0, 4),
+        },
+        [theme.breakpoints.up('xl')]: {
+          padding: theme.spacing(0, 6),
+        },
+      },
     }),
   { name: 'SCA__Footer' }
 );

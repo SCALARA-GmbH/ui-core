@@ -2,7 +2,7 @@ import { withActions } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { Footer, useTheme } from '../..';
+import { Footer, Typography } from '../..';
 
 export default {
   title: 'Components/Footer',
@@ -21,9 +21,27 @@ export const FooterOverviewVS = (): JSX.Element => {
       }}
     >
       <Footer>
-        {`${String.fromCharCode(169)} ${new Date().getUTCFullYear()} SCALARA`}
-        <a href="#">imprint</a>
-        <a href="#">privacy</a>
+        <Typography align={'left'} variant={'c3'} style={{ flexGrow: 1 }}>
+          {`${String.fromCharCode(169)} ${new Date().getUTCFullYear()} SCALARA`}
+        </Typography>
+        <Typography
+          color={'primary'}
+          align={'center'}
+          linkColor={'clickable'}
+          linkVariant={'c3'}
+          variant={'c3'}
+        >
+          <a href="#">Imprint</a>
+        </Typography>
+        <Typography
+          color={'primary'}
+          align={'center'}
+          linkColor={'clickable'}
+          linkVariant={'c3'}
+          variant={'c3'}
+        >
+          <a href="#">Privacy</a>
+        </Typography>
       </Footer>
     </div>
   );

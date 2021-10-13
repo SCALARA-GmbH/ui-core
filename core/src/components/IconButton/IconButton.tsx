@@ -81,7 +81,8 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
         <Icon
           className={cx({
             [classes.disabled]: disabled,
-            [classes.icon]: !iconColor
+            [classes.icon]: !iconColor,
+            [classes.iconHovered]: hovered
           })}
           name={iconName}
           testId={`${testId}-icon`}

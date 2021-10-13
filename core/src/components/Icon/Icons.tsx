@@ -17,47 +17,40 @@ export interface Svg {
 }
 
 export type IconName =
-  | 'attachment'
+  | 'accounting-not-available'
   | 'add'
   | 'arrow-down'
-  | 'arrow-up'
   | 'arrow-left'
-  | 'arrow-right'
   | 'up-down'
+  | 'circle'
   | 'close'
   | 'company'
-  | 'edit'
-  | 'filter'
-  | 'information'
-  | 'information40'
-  | 'person'
-  | 'scalara-logo'
-  | 'delete'
-  | 'delete40'
-  | 'upload'
-  | 'logout'
-  | 'scalara-text'
-  | 'reload'
-  | 'refresh'
-  | 'search'
-  | 'menu'
-  | 'minus'
-  | 'check'
-  | 'select'
-  | 'success'
-  | 'property'
-  | 'unlock-accounts'
-  | 'contact-data'
-  | 'payment-data'
-  | 'error'
-  | 'warning'
-  | 'accounting-not-available'
-  | 'circle'
-  | 'finance'
-  | 'real-estate'
   | 'communication'
   | 'contacts'
-  | 'subMenu';
+  | 'contact-data'
+  | 'delete'
+  | 'delete40'
+  | 'edit'
+  | 'error'
+  | 'finance'
+  | 'information'
+  | 'information40'
+  | 'logout'
+  | 'menu'
+  | 'payment-data'
+  | 'person'
+  | 'property'
+  | 'property-avatar'
+  | 'real-estate'
+  | 'scalara-logo'
+  | 'scalara-text'
+  | 'search'
+  | 'select'
+  | 'subMenu'
+  | 'success'
+  | 'upload'
+  | 'unlock-accounts'
+  | 'warning';
 
 export const icons: Record<IconName, Svg> = {
   circle: {
@@ -74,6 +67,7 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24
   },
+
   error: {
     children: (
       <g>
@@ -169,6 +163,7 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24
   },
+
   information: {
     children: (
       <>
@@ -208,35 +203,7 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox32,
     size: 24
   },
-  reload: {
-    children: (
-      <>
-        <polyline points="22.7608696 4.69232174 17.9533913 4.69232174 17.9533913 9.4998" />
-        <path d="M17.9530087,4.69146087 C20.1090087,6.38546087 21.4940522,9.01685217 21.4940522,11.9725043 C21.4940522,17.0832 17.3504,21.2268522 12.2387478,21.2268522 C11.3042261,21.2268522 10.4012696,21.089113 9.55092174,20.8308522" />
-        <polyline points="1.7173913 19.2522087 6.52486957 19.2522087 6.52486957 14.4447304" />
-        <path d="M6.52477391,19.2522087 C4.36877391,17.5582087 2.98468696,14.9277739 2.98468696,11.9721217 C2.98468696,6.86046957 7.12738261,2.71681739 12.2390348,2.71681739 C13.174513,2.71681739 14.076513,2.85551304 14.9278174,3.11377391" />
-      </>
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
-  filter: {
-    children: (
-      <polygon points="0.855032242 2.87744586 22.9601521 2.87744586 14.6011304 13 14.6011304 20.6576867 9.55903913 22.7755059 9.55903913 13" />
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
-  refresh: {
-    children: (
-      <>
-        <polyline points="15.5959 6.483 21.0789 6.483 21.0789 1" />
-        <path d="M22.633,11.939 C22.633,17.636 18.014,22.255 12.317,22.255 C6.619,22.255 2,17.636 2,11.939 C2,6.241 6.619,1.623 12.317,1.623 C16.012,1.623 19.253,3.565 21.075,6.486" />
-      </>
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
+
   'scalara-text': {
     children: (
       <g transform="translate(4.000000, 2.000000)">
@@ -253,16 +220,6 @@ export const icons: Record<IconName, Svg> = {
     viewBox: '0 0 146 40',
     size: 40
   },
-  logout: {
-    children: (
-      <>
-        <path d="M22,29h-9V11h9l0,4h2v-4c0-1.1-0.9-2-2-2h-9c-1.1,0-2,0.9-2,2v18c0,1.1,0.9,2,2,2h9c1.1,0,2-0.9,2-2v-4h-2L22,29z" />
-        <polygon points="33.2,18.6 29,14.3 27.6,15.8 30.8,19 18,19 18,21 30.8,21 27.6,24.2 29,25.7 34.7,20 	" />
-      </>
-    ),
-    viewBox: viewBox40,
-    size: 40
-  },
   'arrow-left': {
     children: (
       <polyline
@@ -273,15 +230,15 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24
   },
-  'arrow-right': {
+  logout: {
     children: (
-      <polyline
-        transform="translate(7.000000, 12.000000) rotate(-45.000000) translate(-7.000000, -12.000000) "
-        points="-1 20 15 20 15 4"
-      />
+      <>
+        <path d="M22,29h-9V11h9l0,4h2v-4c0-1.1-0.9-2-2-2h-9c-1.1,0-2,0.9-2,2v18c0,1.1,0.9,2,2,2h9c1.1,0,2-0.9,2-2v-4h-2L22,29z" />
+        <polygon points="33.2,18.6 29,14.3 27.6,15.8 30.8,19 18,19 18,21 30.8,21 27.6,24.2 29,25.7 34.7,20 	" />
+      </>
     ),
-    viewBox: viewBox24,
-    size: 24
+    viewBox: viewBox40,
+    size: 40
   },
   'scalara-logo': {
     children: (
@@ -331,10 +288,10 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24
   },
+
   close: {
     children: (
       <polygon
-        className="st1"
         points="19.1,6.3 17.7,4.9 12,10.6 6.3,4.9 4.9,6.3 10.6,12 4.9,17.7 6.3,19.1 12,13.4 17.7,19.1 19.1,17.7
 	13.4,12 "
       />
@@ -359,23 +316,11 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24
   },
-  'arrow-up': {
-    children: (
-      <polyline
-        transform="translate(12.000000, 18.000000) rotate(-135.000000) translate(-12.000000, -18.000000) "
-        points="4 26 20 26 20 10"
-      />
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
   add: {
     children: (
-      <path
-        d="M12,24c-0.414,0-0.75-0.336-0.75-0.75v-10.5H0.75C0.336,12.75,0,12.414,0,12s0.336-0.75,0.75-0.75h10.5V0.75
-		C11.25,0.336,11.586,0,12,0s0.75,0.336,0.75,0.75v10.5h10.5c0.414,0,0.75,0.336,0.75,0.75s-0.336,0.75-0.75,0.75h-10.5v10.5
-		C12.75,23.664,12.414,24,12,24z"
-      />
+      <>
+        <polygon points="13 4 11 4 11 11 4 11 4 13 11 13 11 20 13 20 13 13 20 13 20 11 13 11 13 4" />
+      </>
     ),
     viewBox: viewBox24,
     size: 24
@@ -418,33 +363,6 @@ export const icons: Record<IconName, Svg> = {
     ),
     viewBox: viewBox40,
     size: 40
-  },
-  attachment: {
-    children: (
-      <path d="M23.25,9.9,12.273,20.878a6.75,6.75,0,0,1-9.546-9.546l9.016-9.015A4.5,4.5,0,1,1,18.106,8.68L9.091,17.7a2.25,2.25,0,0,1-3.182-3.181L14.925,5.5" />
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
-  minus: {
-    children: (
-      <path
-        d="M0.75,12.788c-0.414,0-0.75-0.336-0.75-0.75s0.336-0.75,0.75-0.75h22.5c0.414,0,0.75,0.336,0.75,0.75
-		s-0.336,0.75-0.75,0.75H0.75z"
-      />
-    ),
-    viewBox: viewBox24,
-    size: 24
-  },
-  check: {
-    children: (
-      <g>
-        <polygon points="10,17.2 5,12.2 6.4,10.8 10,14.4 17.6,6.8 19,8.2 		" />
-        <rect x="4" y="5.8" width="16" height="12.4" />
-      </g>
-    ),
-    viewBox: '0 0 24 24',
-    size: 24
   },
   select: {
     children: (
@@ -551,6 +469,15 @@ export const icons: Record<IconName, Svg> = {
         <polygon points="30 32 28 32 28 15.52 20 9.5 12 15.52 12 32 10 32 10 14.52 20 7 30 14.52 30 32" />
         <polygon points="24 32 22 32 22 25 18 25 18 32 16 32 16 23 24 23 24 32" />
       </g>
+    ),
+    viewBox: viewBox40,
+    size: 40
+  },
+  'property-avatar': {
+    children: (
+      <>
+        <path d="M22,22V8.5l-9.5-7.8L3,8.5V22H1v2h23v-2H22z M5,9.5l7.5-6.2L20,9.5V22h-3v-6v-1v-1H8v1v1v6H5V9.5z M15,16v6h-5v-6H15z" />
+      </>
     ),
     viewBox: viewBox40,
     size: 40

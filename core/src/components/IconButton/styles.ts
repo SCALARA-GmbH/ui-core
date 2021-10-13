@@ -54,7 +54,8 @@ export const useStyles = makeStyles(
       },
       span: {
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        columnGap: theme.spacing(0.5)
       },
       button: {
         border: 'none',
@@ -69,6 +70,9 @@ export const useStyles = makeStyles(
       icon: {
         color: theme.colors.neutral['2']
       },
+      iconHovered: {
+        color: theme.colors.neutral['1']
+      },
       disabled: {
         color: theme.colors.disabled
       }
@@ -80,8 +84,7 @@ export const useLabelStyles = makeStyles((theme) =>
   createStyles({
     root: {
       display: 'inline-block',
-      letterSpacing: '0.3px',
-      marginLeft: theme.spacing(0.5)
+      letterSpacing: '0.3px'
     },
     disabled: {
       color: theme.colors.neutral['4']

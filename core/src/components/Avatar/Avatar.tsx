@@ -16,7 +16,7 @@ export interface AvatarProps {
   className?: string;
   onClick?: () => void;
   testId?: string;
-  type?: 'company' | 'person';
+  type?: 'company' | 'person' | 'property-avatar';
   tooltip?: string;
   editable?: boolean;
   registered?: boolean;
@@ -54,7 +54,12 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
               [classes.registered]: registered,
               [classes.unregistered]: !registered,
             })}
-            outlineColor={theme.colors.neutral['5']}
+            color={
+              registered
+                ? theme.colors.primary.default
+                : theme.colors.neutral['6']
+            }
+            outlineColor={theme.colors.border.main}
             backgroundColor={
               registered
                 ? theme.colors.secondary['50']

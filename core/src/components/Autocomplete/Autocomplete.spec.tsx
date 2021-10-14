@@ -26,7 +26,7 @@ describe('<Autocomplete />', () => {
         name={'test-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' }
+          { title: 'test2', value: '2' },
         ]}
       />
     );
@@ -42,14 +42,14 @@ describe('<Autocomplete />', () => {
         name={'test-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' }
+          { title: 'test2', value: '2' },
         ]}
       />
     );
 
     act(() => {
       fireEvent.change(getByRole('textbox', { name: 'test-name' }), {
-        target: { value: 'tes' }
+        target: { value: 'tes' },
       });
     });
 
@@ -69,14 +69,14 @@ describe('<Autocomplete />', () => {
         clearLabel={'clear-input-test-label'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' }
+          { title: 'test2', value: '2' },
         ]}
       />
     );
 
     act(() => {
       fireEvent.change(getByRole('textbox', { name: 'test-name' }), {
-        target: { value: 'tes' }
+        target: { value: 'tes' },
       });
     });
 
@@ -99,7 +99,7 @@ describe('<Autocomplete />', () => {
         ariaLabel={'test-yet-another-name'}
         options={[
           { title: 'test1', value: '1' },
-          { title: 'test2', value: '2' }
+          { title: 'test2', value: '2' },
         ]}
       />
     );
@@ -108,7 +108,7 @@ describe('<Autocomplete />', () => {
 
     expect(
       fireEvent.input(getByLabelText('test-yet-another-name'), {
-        target: { value: 'testing entering text' }
+        target: { value: 'testing entering text' },
       })
     );
 

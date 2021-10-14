@@ -1,6 +1,6 @@
 import {
   Radio as MuiRadio,
-  RadioProps as MuiRadioProps
+  RadioProps as MuiRadioProps,
 } from '@material-ui/core';
 import * as React from 'react';
 
@@ -35,7 +35,7 @@ const Radio: React.FunctionComponent<RadioProps> = ({
   options,
   style = {},
   testId,
-  value
+  value,
 }) => {
   const classes = useStyles();
   return (
@@ -48,7 +48,7 @@ const Radio: React.FunctionComponent<RadioProps> = ({
             className={classes.radio}
             classes={{
               checked: classes.checked,
-              colorSecondary: classes.secondary
+              colorSecondary: classes.secondary,
             }}
             value={option.value}
             onChange={(event) => {
@@ -58,7 +58,7 @@ const Radio: React.FunctionComponent<RadioProps> = ({
             data-testid={`${testId}-radio-${option.value}`}
             checked={`${value}` === `${option.value}`}
             inputProps={{
-              'aria-label': option.title
+              'aria-label': option.title,
             }}
           />
           <div className={classes.text}>

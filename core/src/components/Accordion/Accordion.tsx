@@ -29,7 +29,7 @@ const Accordion: React.FunctionComponent<Props> = ({
   testId = 'accordion',
   initiallyOpen = false,
   onChange,
-  className
+  className,
 }) => {
   const [open, setOpen] = React.useState<boolean>(initiallyOpen);
   const classes = useStyles({ open });

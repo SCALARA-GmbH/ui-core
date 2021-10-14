@@ -56,7 +56,7 @@ export const icons: Record<IconName, Svg> = {
   circle: {
     children: <circle cx="15" cy="15" r="15" />,
     viewBox: viewBox30,
-    size: 30
+    size: 30,
   },
   subMenu: {
     children: (
@@ -65,7 +65,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
 
   error: {
@@ -84,7 +84,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'accounting-not-available': {
     children: (
@@ -104,7 +104,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox72,
-    size: 72
+    size: 72,
   },
   warning: {
     children: (
@@ -115,7 +115,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'contact-data': {
     children: (
@@ -130,7 +130,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'payment-data': {
     children: (
@@ -146,7 +146,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   search: {
     children: (
@@ -161,7 +161,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
 
   information: {
@@ -176,7 +176,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   information40: {
     children: (
@@ -190,7 +190,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   menu: {
     children: (
@@ -201,7 +201,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox32,
-    size: 24
+    size: 24,
   },
 
   'scalara-text': {
@@ -218,7 +218,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: '0 0 146 40',
-    size: 40
+    size: 40,
   },
   'arrow-left': {
     children: (
@@ -228,7 +228,7 @@ export const icons: Record<IconName, Svg> = {
       />
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   logout: {
     children: (
@@ -238,7 +238,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'scalara-logo': {
     children: (
@@ -247,7 +247,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   company: {
     children: (
@@ -265,7 +265,7 @@ export const icons: Record<IconName, Svg> = {
     ),
     background: <circle r={16} cx="20" cy="20" />,
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   person: {
     children: (
@@ -279,14 +279,14 @@ export const icons: Record<IconName, Svg> = {
     ),
     background: <circle r={16} cx="20" cy="20" />,
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   edit: {
     children: (
       <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
 
   close: {
@@ -297,14 +297,14 @@ export const icons: Record<IconName, Svg> = {
       />
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   'arrow-down': {
     children: (
       <polygon points="17.7,9.9 16.2,8.5 12,12.7 7.8,8.5 6.3,9.9 10.6,14.1 12,15.5 13.4,14.1 13.4,14.1 " />
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   'up-down': {
     children: (
@@ -314,7 +314,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   add: {
     children: (
@@ -323,7 +323,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   upload: {
     children: (
@@ -333,7 +333,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   delete: {
     children: (
@@ -347,7 +347,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   delete40: {
     children: (
@@ -362,7 +362,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   select: {
     children: (
@@ -372,7 +372,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox24,
-    size: 24
+    size: 24,
   },
   success: {
     children: (
@@ -385,7 +385,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   property: {
     children: (
@@ -411,7 +411,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox72,
-    size: 72
+    size: 72,
   },
   'unlock-accounts': {
     children: (
@@ -428,7 +428,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox72,
-    size: 72
+    size: 72,
   },
   finance: {
     children: (
@@ -438,7 +438,7 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   communication: {
     children: (
@@ -450,7 +450,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   contacts: {
     children: (
@@ -461,7 +461,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'real-estate': {
     children: (
@@ -471,7 +471,7 @@ export const icons: Record<IconName, Svg> = {
       </g>
     ),
     viewBox: viewBox40,
-    size: 40
+    size: 40,
   },
   'property-avatar': {
     children: (
@@ -480,6 +480,6 @@ export const icons: Record<IconName, Svg> = {
       </>
     ),
     viewBox: viewBox40,
-    size: 40
-  }
+    size: 40,
+  },
 };

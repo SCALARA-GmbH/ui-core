@@ -3,7 +3,7 @@ import {
   InputBaseComponentProps,
   ListItemText,
   MenuItem,
-  Select as MuiSelect
+  Select as MuiSelect,
 } from '@material-ui/core';
 import cx from 'classnames';
 import * as React from 'react';
@@ -53,12 +53,12 @@ const useIconStyles = makeStyles(
       transition: theme.transitions.create('transform'),
       color: theme.colors.icon.control,
       '&.MuiSelect-icon': {
-        color: theme.colors.icon.control
+        color: theme.colors.icon.control,
       },
       '&.Mui-disabled': {
-        color: theme.colors.disabled
-      }
-    }
+        color: theme.colors.disabled,
+      },
+    },
   }),
   { name: 'SCA__Select-Icon' }
 );
@@ -89,7 +89,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
   onChange,
   value,
   required,
-  ariaLabel
+  ariaLabel,
 }) => {
   const [internalError, setInternalError] = React.useState<boolean>(error);
   const classes = useStyles();
@@ -126,8 +126,8 @@ const Select: React.FunctionComponent<SelectProps> = ({
         MenuProps={{
           classes: {
             paper: classes.paper,
-            list: classes.list
-          }
+            list: classes.list,
+          },
         }}
         input={
           <InputBase
@@ -137,14 +137,14 @@ const Select: React.FunctionComponent<SelectProps> = ({
                 [classes.error]: error || internalError,
                 [classes.disabled]: disabled,
                 [classes.filled]: value && !disabled,
-                [classes.empty]: !value && !disabled
-              })
+                [classes.empty]: !value && !disabled,
+              }),
             }}
             disabled={disabled}
             error={error || internalError}
             inputProps={{
               'data-testid': `${testId}-input`,
-              ...inputProps
+              ...inputProps,
             }}
             onInvalid={(event) => {
               event.preventDefault();
@@ -166,7 +166,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
             disableTouchRipple
             value={option.value}
             className={cx(classes.item, {
-              [classes.selected]: option.value === value
+              [classes.selected]: option.value === value,
             })}
           >
             {option.avatarProps && (

@@ -35,7 +35,7 @@ const TableCell: React.FunctionComponent<TableCellProps> = ({
   style = {},
   subtitle,
   testId = '',
-  title
+  title,
 }) => {
   const classes = useStyles();
 

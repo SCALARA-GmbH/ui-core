@@ -5,7 +5,7 @@ import { Hierarchy, Variant } from './types';
 
 const backgroundStatePalette = ({
   hierarchy,
-  theme
+  theme,
 }: {
   hierarchy?: Hierarchy;
   theme: Theme;
@@ -43,11 +43,11 @@ export const useStyles = makeStylesWithProps<{
       paddingBottom: '0px',
       width: ({ fullWidth }) => (fullWidth ? '100%' : 'fit-content'),
       '&:disabled': {
-        cursor: 'not-allowed'
+        cursor: 'not-allowed',
       },
       '&:focus': {
-        outline: 'none'
-      }
+        outline: 'none',
+      },
     },
     outlined: {
       paddingLeft: ({ fullWidth }) =>
@@ -62,19 +62,19 @@ export const useStyles = makeStylesWithProps<{
           background:
             theme.type === 'dark'
               ? theme.colors.neutral.F
-              : theme.colors.neutral['0']
+              : theme.colors.neutral['0'],
         },
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: theme.shadows[1]
-        }
+          boxShadow: theme.shadows[1],
+        },
       },
       '&:disabled': {
         border: `2px solid ${theme.colors.neutral['4']}`,
         color: theme.colors.neutral['4'],
-        background: theme.colors.background.primary
-      }
+        background: theme.colors.background.primary,
+      },
     },
     text: {
       paddingLeft: ({ fullWidth }) =>
@@ -83,17 +83,17 @@ export const useStyles = makeStylesWithProps<{
         fullWidth ? theme.spacing(0) : theme.spacing(1.5),
       '&:enabled': {
         '&:hover': {
-          background: theme.colors.neutral['6']
+          background: theme.colors.neutral['6'],
         },
         '&:active': {
-          background: theme.colors.neutral['6']
+          background: theme.colors.neutral['6'],
         },
         '&:focus-visible': {
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: theme.shadows[1]
-        }
-      }
+          boxShadow: theme.shadows[1],
+        },
+      },
     },
     contained: {
       paddingLeft: ({ fullWidth }) =>
@@ -105,11 +105,11 @@ export const useStyles = makeStylesWithProps<{
           backgroundStatePalette({ theme, hierarchy: props.hierarchy }).default,
         '&:hover': {
           background: (props) =>
-            backgroundStatePalette({ theme, hierarchy: props.hierarchy })['75']
+            backgroundStatePalette({ theme, hierarchy: props.hierarchy })['75'],
         },
         '&:active': {
           background: (props) =>
-            backgroundStatePalette({ theme, hierarchy: props.hierarchy })['75']
+            backgroundStatePalette({ theme, hierarchy: props.hierarchy })['75'],
         },
         '&:focus-visible': {
           background: (props) =>
@@ -117,13 +117,13 @@ export const useStyles = makeStylesWithProps<{
               .default,
           outline: `2px solid ${theme.colors.secondary.default}`,
           outlineOffset: `1px`,
-          boxShadow: theme.shadows[1]
-        }
+          boxShadow: theme.shadows[1],
+        },
       },
       '&:disabled': {
-        background: theme.colors.neutral['4']
-      }
-    }
+        background: theme.colors.neutral['4'],
+      },
+    },
   }),
   { name: 'SCA__Button' }
 );
@@ -135,38 +135,38 @@ export const useLabelStyles = makeStylesWithProps<{
   (theme) => ({
     root: {
       display: 'inline-block',
-      letterSpacing: '0.3px'
+      letterSpacing: '0.3px',
     },
     disabled: {
-      color: theme.colors.neutral['4']
+      color: theme.colors.neutral['4'],
     },
     outlineHovered: {
       color:
         theme.type === 'dark'
           ? theme.colors.neutral['0']
-          : theme.colors.neutral.F
+          : theme.colors.neutral.F,
     },
     outlineEnabled: {
       color:
         theme.type === 'dark'
           ? theme.colors.neutral.F
-          : theme.colors.neutral['0']
+          : theme.colors.neutral['0'],
     },
     textEnabled: {
       color:
         theme.type === 'dark'
           ? theme.colors.neutral.F
-          : theme.colors.neutral['2']
+          : theme.colors.neutral['2'],
     },
     textHovered: {
       color:
         theme.type === 'dark'
           ? theme.colors.neutral['0']
-          : theme.colors.neutral['1']
+          : theme.colors.neutral['1'],
     },
     contained: {
-      color: theme.colors.neutral.F
-    }
+      color: theme.colors.neutral.F,
+    },
   }),
   { name: 'SCA__Button_Label' }
 );

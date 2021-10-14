@@ -1,6 +1,6 @@
 import {
   makeStyles as muiMakeStyles,
-  useTheme as muiUseTheme
+  useTheme as muiUseTheme,
 } from '@material-ui/core/styles';
 import { Styles, WithStylesOptions } from '@material-ui/styles/withStyles';
 import { Omit } from '@material-ui/types';

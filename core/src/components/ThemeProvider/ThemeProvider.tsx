@@ -15,7 +15,7 @@ export interface ThemeProps {
 
 const ThemeProvider: React.FunctionComponent<ThemeProps> = ({
   children,
-  type = 'light'
+  type = 'light',
 }) => {
   const getTheme = React.useCallback(() => ScalaraTheme(type), [type]);
 

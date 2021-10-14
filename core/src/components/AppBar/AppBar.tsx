@@ -56,7 +56,7 @@ const AppBar: React.FunctionComponent<Props> = ({
   onClick,
   menuTrayLabel,
   selectedId,
-  className
+  className,
 }) => {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState<boolean>(false);

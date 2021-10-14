@@ -28,7 +28,7 @@ describe('<AppHeader />', () => {
         onClick={handleClick}
         menuItems={[
           { id: 0, label: 'RELATIONS', title: 'TITLE' },
-          { id: 1, label: 'THINGS', title: 'TITLE' }
+          { id: 1, label: 'THINGS', title: 'TITLE' },
         ]}
         menuTrayLabel={'test'}
         selectedId={0}
@@ -47,7 +47,7 @@ describe('<AppHeader />', () => {
         onClick={handleClick}
         menuItems={[
           { id: 0, label: 'RELATIONS', title: 'TITLE' },
-          { id: 1, label: 'THINGS', title: 'TITLE' }
+          { id: 1, label: 'THINGS', title: 'TITLE' },
         ]}
         menuTrayLabel={'testingLabel'}
         selectedId={0}

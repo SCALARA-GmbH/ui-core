@@ -18,7 +18,7 @@ test('clicks on another navigation item', async ({ page }) => {
   await visual.waitForElementState('stable');
 
   expect(await page.screenshot()).toMatchSnapshot('after-click-on-select.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 
   await page.click('text=/Ursulagartenstr 56/');
@@ -30,6 +30,6 @@ test('clicks on another navigation item', async ({ page }) => {
   await visualAfterClick.waitForElementState('stable');
 
   expect(await page.screenshot()).toMatchSnapshot('after-click-on-option.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 });

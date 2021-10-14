@@ -25,7 +25,7 @@ const Navigation: React.FunctionComponent<Props> = ({
   secondary,
   open,
   onClick,
-  onClose
+  onClose,
 }) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));

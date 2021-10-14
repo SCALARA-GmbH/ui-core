@@ -4,7 +4,7 @@ import { Button, Dialog, DialogActions, Typography, useDialog } from '../..';
 
 export default {
   title: 'Components/Dialog',
-  component: Dialog
+  component: Dialog,
 };
 
 export const DialogStory = (): JSX.Element => {
@@ -72,7 +72,7 @@ export const StepDialogStory = (): JSX.Element => {
           }}
           onSubmit={() => setStep((prev) => prev + 1)}
           SubmitButtonProps={{
-            label: 'Next'
+            label: 'Next',
           }}
         />
       </Dialog>
@@ -93,7 +93,7 @@ export const DialogHookStory = (): JSX.Element => {
       callback: () => alert('Submit from useDialog'),
       hierarchy: 'primary',
       message: 'Lorem ipsum',
-      title: 'Title'
+      title: 'Title',
     });
   };
   const handleShowDialog = () => {
@@ -102,7 +102,7 @@ export const DialogHookStory = (): JSX.Element => {
       callback: () => alert('Submit from useDialog'),
       hierarchy: 'primary',
       message: 'Are you ok with this dialog?',
-      title: 'Example title'
+      title: 'Example title',
     });
   };
   const handleShowErrorDialog = () => {
@@ -112,7 +112,7 @@ export const DialogHookStory = (): JSX.Element => {
       hierarchy: 'error',
       message:
         'Do you really know what you are doing here? This seems very radical',
-      title: 'Much important'
+      title: 'Much important',
     });
   };
 
@@ -122,7 +122,7 @@ export const DialogHookStory = (): JSX.Element => {
         padding: 16,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
       }}
     >
       <Button

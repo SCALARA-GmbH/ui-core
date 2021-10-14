@@ -46,32 +46,32 @@ const theme = (type: PaletteType): Theme => {
     primary: {
       default: '#000000',
       '75': '#3F4041',
-      '50': '#77797A'
+      '50': '#77797A',
     },
     secondary: {
       default: '#1FB990',
       '75': '#3DCCA6',
-      '50': '#E5F8F3'
+      '50': '#E5F8F3',
     },
     tertiary: {
       default: '#FFA748',
       '75': '#FCBE7C',
-      '50': '#FFF3E6'
+      '50': '#FFF3E6',
     },
     destructive: {
       default: '#E41030',
       '75': '#F56B80',
-      '50': '#FCE8EB'
+      '50': '#FCE8EB',
     },
     requiredInstruction: {
       default: '#5D22D3',
       '75': '#8967CE',
-      '50': '#F0EAFF'
+      '50': '#F0EAFF',
     },
     optionalInstruction: {
       default: '#0852FA',
       '75': '#6B97FF',
-      '50': '#E8F3FF'
+      '50': '#E8F3FF',
     },
     neutral: {
       0: '#000000',
@@ -82,39 +82,39 @@ const theme = (type: PaletteType): Theme => {
       5: '#E5E7E9',
       6: '#F4F6F7',
       7: '#FAFCFD',
-      F: '#FFFFFF'
+      F: '#FFFFFF',
     },
     icon: {
       navigation: '#A9ACAD',
-      control: '#77797A'
+      control: '#77797A',
     },
     background: {
       primary: '#FFFFFF',
       secondary: '#000000',
       disabled: '#FAFCFD',
-      hover: '#F4F6F7'
+      hover: '#F4F6F7',
     },
     border: {
-      main: '#E5E7E9'
+      main: '#E5E7E9',
     },
     shadow: {
-      main: '#202124'
+      main: '#202124',
     },
     disabled: '#A9ACAD',
     text: {
       main: '#202124',
       label: '#77797A',
-      subtitle: '#3F4041'
+      subtitle: '#3F4041',
     },
     error: {
-      main: '#E41030'
+      main: '#E41030',
     },
     success: {
-      main: '#1FB990'
+      main: '#1FB990',
     },
     warning: {
-      main: '#5D22D3'
-    }
+      main: '#5D22D3',
+    },
   };
 
   if (type === 'dark') {
@@ -129,31 +129,31 @@ const theme = (type: PaletteType): Theme => {
         3: '#E5E7E9',
         2: '#F4F6F7',
         1: '#FAFCFD',
-        F: '#FFFFFF'
+        F: '#FFFFFF',
       },
       primary: {
         default: '#000000',
         '75': '#464748',
-        '50': '#8F9192'
+        '50': '#8F9192',
       },
       icon: {
         navigation: '#A9ACAD',
-        control: '#E5E7E9'
+        control: '#E5E7E9',
       },
       text: {
         main: '#FFFFFF',
         label: '#A9ACAD',
-        subtitle: '#F4F6F7'
+        subtitle: '#F4F6F7',
       },
       background: {
         primary: '#202124',
         secondary: '#FFFFFF',
         disabled: '#2b2d2d',
-        hover: '#F4F6F7'
+        hover: '#F4F6F7',
       },
       shadow: {
-        main: '#8F9192'
-      }
+        main: '#8F9192',
+      },
     };
   }
 
@@ -165,8 +165,8 @@ const theme = (type: PaletteType): Theme => {
         sm: 728,
         md: 960,
         lg: 1024,
-        xl: 1440
-      }
+        xl: 1440,
+      },
     },
     colors,
     shadows: generateShadows(
@@ -176,42 +176,42 @@ const theme = (type: PaletteType): Theme => {
     ),
     palette: {
       background: {
-        default: '#FFFFFF'
+        default: '#FFFFFF',
       },
       primary: {
-        main: colors.primary.default as string
+        main: colors.primary.default as string,
       },
       secondary: {
-        main: colors.secondary.default as string
-      }
+        main: colors.secondary.default as string,
+      },
     },
     type,
     zIndex: {
       toast: 9999,
       primaryNavigation: 9998,
-      secondaryNavigation: 9997
+      secondaryNavigation: 9997,
     },
     mixins: {
       primaryNavigationDesktopWidth: '56px',
-      primaryNavigationMobileHeight: '48px'
+      primaryNavigationMobileHeight: '48px',
     },
     overrides: {
       MuiCssBaseline: {
         '@global': {
           html: {
-            boxSizing: 'content-box'
-          }
-        }
+            boxSizing: 'content-box',
+          },
+        },
       },
       MuiInputBase: {
         input: {
           '&:-webkit-autofill': {
             transitionDelay: '9999s',
-            transitionProperty: 'background-color, color'
-          }
-        }
-      }
-    }
+            transitionProperty: 'background-color, color',
+          },
+        },
+      },
+    },
   });
 };
 

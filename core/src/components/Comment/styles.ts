@@ -4,25 +4,25 @@ export const useStyles = makeStyles(({ spacing }) =>
   createStyles({
     root: {
       display: 'flex',
-      marginBottom: spacing(3)
+      marginBottom: spacing(3),
     },
     content: {
       display: 'flex',
       flexWrap: 'wrap',
       width: 'calc(100% - 45px)',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     text: {
-      flex: '1 100%'
+      flex: '1 100%',
     },
     avatar: {
-      margin: spacing(0, 1)
+      margin: spacing(0, 1),
     },
     marginRight: {
-      marginRight: spacing(1)
+      marginRight: spacing(1),
     },
     marginBottom: {
-      marginBottom: spacing(0.25)
-    }
+      marginBottom: spacing(0.25),
+    },
   })
 );

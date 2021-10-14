@@ -5,7 +5,7 @@ import {
   AlignContent,
   AlignItems,
   JustifyContent,
-  JustifyItems
+  JustifyItems,
 } from './types';
 
 const getTemplateColumns = (count: Omit<Columns, 'auto'>): string => {
@@ -37,24 +37,24 @@ export const useStyles = makeStylesWithProps<{
       [breakpoints.up('xs')]: {
         gridRowGap: spacing(0),
         gridColumnGap: spacing(2),
-        gridTemplateColumns: ({ xs }) => getTemplateColumns(xs)
+        gridTemplateColumns: ({ xs }) => getTemplateColumns(xs),
       },
       [breakpoints.up('sm')]: {
-        gridTemplateColumns: ({ sm }) => getTemplateColumns(sm)
+        gridTemplateColumns: ({ sm }) => getTemplateColumns(sm),
       },
       [breakpoints.up('md')]: {
         gridRowGap: spacing(0),
         gridColumnGap: spacing(2.75),
-        gridTemplateColumns: ({ md }) => getTemplateColumns(md)
+        gridTemplateColumns: ({ md }) => getTemplateColumns(md),
       },
       [breakpoints.up('lg')]: {
-        gridTemplateColumns: ({ lg }) => getTemplateColumns(lg)
+        gridTemplateColumns: ({ lg }) => getTemplateColumns(lg),
       },
       [breakpoints.up('xl')]: {
-        gridTemplateColumns: ({ xl }) => getTemplateColumns(xl)
+        gridTemplateColumns: ({ xl }) => getTemplateColumns(xl),
       },
       justifyItems: ({ justifyItems }) => justifyItems,
-      justifyContent: ({ justifyContent }) => justifyContent
-    }
+      justifyContent: ({ justifyContent }) => justifyContent,
+    },
   })
 );

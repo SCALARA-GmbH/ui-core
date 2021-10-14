@@ -1,4 +1,11 @@
-import { render as testingLibraryRender, fireEvent, act, RenderResult, waitFor, screen } from '@testing-library/react';
+import {
+  render as testingLibraryRender,
+  fireEvent,
+  act,
+  RenderResult,
+  waitFor,
+  screen,
+} from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import * as React from 'react';
 
@@ -9,9 +16,11 @@ import '@testing-library/jest-dom';
 export const render = (
   element: React.ReactElement,
   container?: HTMLElement,
-  ThemeProvider: React.ComponentType<ThemeProps> = InternalThemeProvider,
+  ThemeProvider: React.ComponentType<ThemeProps> = InternalThemeProvider
 ): RenderResult => {
-  return testingLibraryRender(<ThemeProvider>{element}</ThemeProvider>, { container });
+  return testingLibraryRender(<ThemeProvider>{element}</ThemeProvider>, {
+    container,
+  });
 };
 
 export { fireEvent, act, waitFor, renderHook, screen };

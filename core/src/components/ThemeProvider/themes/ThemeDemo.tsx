@@ -9,17 +9,17 @@ const useStyles = makeStyles(({ spacing }: Theme) =>
       display: 'grid',
       gridGap: spacing(2),
       gridTemplateColumns: '1fr',
-      padding: spacing(2)
+      padding: spacing(2),
     },
     block: {
-      display: 'flex'
+      display: 'flex',
     },
     color: {
       display: 'flex',
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'space-between',
-      padding: spacing(2)
+      padding: spacing(2),
     },
     palette: {
       display: 'flex',
@@ -27,15 +27,15 @@ const useStyles = makeStyles(({ spacing }: Theme) =>
       flexDirection: 'column',
       justifyContent: 'space-between',
       padding: spacing(2),
-      borderLeft: `2px solid`
+      borderLeft: `2px solid`,
     },
     stripe: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
     },
     stripePart: {
-      padding: spacing(0.5)
-    }
+      padding: spacing(0.5),
+    },
   })
 );
 
@@ -55,7 +55,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.primary.default}`
+                borderRight: `40px solid ${theme.colors.primary.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -86,7 +86,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.secondary.default}`
+                borderRight: `40px solid ${theme.colors.secondary.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -96,7 +96,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.secondary[75]}`
+                borderRight: `40px solid ${theme.colors.secondary[75]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -106,7 +106,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.secondary[50]}`
+                borderRight: `40px solid ${theme.colors.secondary[50]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -121,7 +121,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.tertiary.default}`
+                borderRight: `40px solid ${theme.colors.tertiary.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -152,7 +152,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.destructive.default}`
+                borderRight: `40px solid ${theme.colors.destructive.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -162,7 +162,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.destructive[75]}`
+                borderRight: `40px solid ${theme.colors.destructive[75]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -172,7 +172,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.destructive[50]}`
+                borderRight: `40px solid ${theme.colors.destructive[50]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -187,7 +187,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.requiredInstruction.default}`
+                borderRight: `40px solid ${theme.colors.requiredInstruction.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -197,7 +197,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.requiredInstruction[75]}`
+                borderRight: `40px solid ${theme.colors.requiredInstruction[75]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -207,7 +207,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.requiredInstruction[50]}`
+                borderRight: `40px solid ${theme.colors.requiredInstruction[50]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -222,7 +222,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.optionalInstruction.default}`
+                borderRight: `40px solid ${theme.colors.optionalInstruction.default}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -232,7 +232,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.optionalInstruction[75]}`
+                borderRight: `40px solid ${theme.colors.optionalInstruction[75]}`,
               }}
             >
               <Typography variant={'c3'}>
@@ -242,7 +242,7 @@ const ThemeDemo: React.FunctionComponent = () => {
             <div
               className={classes.stripePart}
               style={{
-                borderRight: `40px solid ${theme.colors.optionalInstruction[50]}`
+                borderRight: `40px solid ${theme.colors.optionalInstruction[50]}`,
               }}
             >
               <Typography variant={'c3'}>

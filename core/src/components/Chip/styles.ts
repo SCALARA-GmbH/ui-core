@@ -30,39 +30,39 @@ export const useStyles = makeStylesWithProps<{
         borderRadius: theme.spacing(2),
         height: theme.spacing(3),
         padding: 0,
-        color: ({ color }) => getColorPalette(color, theme).default
+        color: ({ color }) => getColorPalette(color, theme).default,
       },
       enabled: {
-        backgroundColor: ({ color }) => getColorPalette(color, theme)['50']
+        backgroundColor: ({ color }) => getColorPalette(color, theme)['50'],
       },
       selected: {
-        backgroundColor: ({ color }) => getColorPalette(color, theme).default
+        backgroundColor: ({ color }) => getColorPalette(color, theme).default,
       },
       disabled: {
         cursor: 'not-allowed',
-        background: theme.colors.neutral['5']
+        background: theme.colors.neutral['5'],
       },
       label: {
         color: ({ color }) => getColorPalette(color, theme).default,
-        padding: theme.spacing(0, 1.5)
+        padding: theme.spacing(0, 1.5),
       },
       labelSelected: {
         padding: theme.spacing(0, 1.5),
-        color: theme.colors.neutral.F
+        color: theme.colors.neutral.F,
       },
       labelDisabled: {
         padding: theme.spacing(0, 1.5),
-        color: theme.colors.neutral['3']
+        color: theme.colors.neutral['3'],
       },
       clickable: {
         cursor: 'pointer',
         '&:hover': {
           '& > p': {
-            color: theme.colors.neutral.F
+            color: theme.colors.neutral.F,
           },
-          background: ({ color }) => getColorPalette(color, theme)['75']
-        }
-      }
+          background: ({ color }) => getColorPalette(color, theme)['75'],
+        },
+      },
     }),
   { name: 'SCA__Chip' }
 );

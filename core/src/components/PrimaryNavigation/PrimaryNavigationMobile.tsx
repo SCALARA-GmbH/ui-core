@@ -31,7 +31,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
   menuAriaLabel,
   open,
   onClose,
-  onClick
+  onClick,
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -42,7 +42,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
         <div
           className={cx(classes.toolbar, {
             [classes.toolbarMobile]: !tablet,
-            [classes.toolbarTablet]: tablet
+            [classes.toolbarTablet]: tablet,
           })}
         >
           {React.Children.map<
@@ -52,7 +52,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
             child.props.selected ? (
               <span
                 className={cx(classes.appBarSelectedItem, {
-                  [classes.transparent]: open
+                  [classes.transparent]: open,
                 })}
               >
                 {child.props.iconName && (
@@ -91,7 +91,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
           {LogoComponent && !tablet && (
             <LogoComponent
               className={cx(classes.logoMobile, {
-                [classes.transparent]: !open
+                [classes.transparent]: !open,
               })}
               {...LogoComponentProps}
               color={'white'}
@@ -115,13 +115,13 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
         open={open}
         onClose={onClose}
         classes={{
-          paper: classes.drawerPaperMobile
+          paper: classes.drawerPaperMobile,
         }}
         ModalProps={{
           // Better open performance on mobile.
           keepMounted: true,
           // solves zIndex issues with appbar
-          disablePortal: true
+          disablePortal: true,
         }}
       >
         <div className={classes.mobileSpace} />

@@ -1,6 +1,6 @@
 import {
   Checkbox as MuiCheckbox,
-  CheckboxProps as MuiCheckboxProps
+  CheckboxProps as MuiCheckboxProps,
 } from '@material-ui/core';
 import classNames from 'classnames';
 import * as React from 'react';
@@ -41,7 +41,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       ariaLabel,
       name,
       disabled = false,
-      onChange
+      onChange,
     },
     ref
   ) => {
@@ -64,7 +64,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <div
         className={classNames(classes.root, className, {
-          [classes.focus]: focus
+          [classes.focus]: focus,
         })}
         style={style}
       >
@@ -72,7 +72,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           disableRipple
           classes={{
             root: internalError || error ? classes.error : classes.checkbox,
-            checked: classes.checked
+            checked: classes.checked,
           }}
           id={name}
           disabled={disabled}
@@ -102,7 +102,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           }}
           inputProps={{
             'aria-label': ariaLabel,
-            ...inputProps
+            ...inputProps,
           }}
         />
         <div className={classes.text}>

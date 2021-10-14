@@ -48,7 +48,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
   iconColor,
   tooltip,
   label,
-  variant = 'primary'
+  variant = 'primary',
 }) => {
   const classes = useStyles();
   const labelClasses = useLabelStyles();
@@ -59,7 +59,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
       aria-label={ariaLabel}
       className={cx(classes.root, classes.button, className, {
         [classes.primary]: variant === 'primary',
-        [classes.secondary]: variant === 'secondary'
+        [classes.secondary]: variant === 'secondary',
       })}
       data-testid={testId}
       disabled={disabled}
@@ -82,7 +82,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
           className={cx({
             [classes.disabled]: disabled,
             [classes.icon]: !iconColor,
-            [classes.iconHovered]: hovered
+            [classes.iconHovered]: hovered,
           })}
           name={iconName}
           testId={`${testId}-icon`}
@@ -96,7 +96,7 @@ const IconButton: React.FunctionComponent<IconButtonProps> = ({
             className={cx(labelClasses.root, {
               [labelClasses.enabled]: !disabled && !hovered,
               [labelClasses.disabled]: disabled,
-              [labelClasses.hovered]: hovered
+              [labelClasses.hovered]: hovered,
             })}
           >
             {label}

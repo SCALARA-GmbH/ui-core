@@ -12,14 +12,14 @@ export interface FooterProps {
 const Footer: React.FunctionComponent<FooterProps> = ({
   className,
   testId = '',
-  children
+  children,
 }) => {
   const classes = useStyles();
 
   return (
-    // <div className={classNames(className, classes.root)} data-testid={testId}>
-    <div className={classes.content}>{children}</div>
-    // </div>
+    <div className={classNames(className, classes.root)} data-testid={testId}>
+      {children}
+    </div>
   );
 };
 

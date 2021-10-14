@@ -8,7 +8,7 @@ import useGridItemStyles from '../GridItemHook';
 export default {
   title: 'Basics/Grid',
   component: Grid,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const GridStory = (): JSX.Element => {
@@ -17,7 +17,7 @@ export const GridStory = (): JSX.Element => {
     backgroundColor: theme.colors.primary.default,
     border: `1px solid ${theme.colors.secondary.default}`,
     color: theme.colors.neutral.F,
-    height: 64
+    height: 64,
   };
   return (
     <Grid xs={5} justifyContent={'stretch'}>
@@ -51,7 +51,7 @@ export const GridStyleHookStory = (): JSX.Element => {
     backgroundColor: theme.colors.primary.default,
     border: `1px solid ${theme.colors.secondary.default}`,
     color: theme.colors.neutral.F,
-    height: 64
+    height: 64,
   };
 
   return (
@@ -87,7 +87,7 @@ export const GridPlaygroundStory = (): JSX.Element => (
         'stretch',
         'space-between',
         'space-around',
-        'space-evenly'
+        'space-evenly',
       ],
       'start'
     )}
@@ -105,7 +105,7 @@ export const GridPlaygroundStory = (): JSX.Element => (
         'stretch',
         'space-between',
         'space-around',
-        'space-evenly'
+        'space-evenly',
       ],
       'start'
     )}

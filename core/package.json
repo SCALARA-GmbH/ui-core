@@ -87,8 +87,8 @@
   "scripts": {
     "build": "tsc --declaration",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" --config .eslintrc.js",
-    "lint:fix": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" *.ts --quiet --fix --config .eslintrc.js",
+    "lint": "eslint \"{src,test-utils}/**/*{.ts,tsx,js}\" --config .eslintrc.js",
+    "lint:fix": "eslint \"{src,test-utils}/**/*{.ts,tsx,js}\" --quiet --fix --config .eslintrc.js",
     "prebuild": "rm -rf dist/",
     "postbuild": "cp package.json dist/ && cp README.package.md dist/README.md && cp -r src/components/ThemeProvider/font dist/components/ThemeProvider",
     "storybook": "start-storybook -s ./public -p 6006",

@@ -25,7 +25,7 @@ describe('<Radio />', () => {
   it('changes the selection', () => {
     const options = [
       { title: 'test1', value: '1' },
-      { title: 'test2', value: '2' }
+      { title: 'test2', value: '2' },
     ];
     const handleChange = jest.fn();
 
@@ -39,7 +39,7 @@ describe('<Radio />', () => {
   it('rerender with value change', () => {
     const options = [
       { title: 'test1', value: '1' },
-      { title: 'test2', value: '2' }
+      { title: 'test2', value: '2' },
     ];
     const handleChange = jest.fn();
 

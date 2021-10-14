@@ -8,21 +8,21 @@ import {
   CONTENT_VARIANTS,
   TEXT_COLORS,
   TITLE_VARIANTS,
-  VARIANTS
+  VARIANTS,
 } from './types';
 import { Wrap } from './Typography';
 
 export default {
   title: 'Basics/Typography',
   component: Typography,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const useStyles = makeStyles(
   ({ spacing }) => ({
     item: {
-      padding: spacing(1)
-    }
+      padding: spacing(1),
+    },
   }),
   { name: 'SCA__TypographyStory' }
 );

@@ -44,7 +44,7 @@ const DialogProvider: React.FunctionComponent<Props> = ({ children }) => {
           <DialogActions
             SubmitButtonProps={{
               hierarchy: config.hierarchy || 'primary',
-              label: config.action
+              label: config.action,
             }}
             onCancel={() => setOpen(false)}
             onSubmit={handleActionAndClose}

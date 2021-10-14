@@ -10,19 +10,19 @@ import {
   makeStyles,
   Select,
   Typography,
-  useTheme
+  useTheme,
 } from '../..';
 
 export default {
   title: 'Elements/Input/Select',
   component: Select,
-  decorators: [withKnobs, withActions]
+  decorators: [withKnobs, withActions],
 };
 
 const useStyles = makeStyles(({ spacing }) => ({
   marginBottom: {
-    marginBottom: spacing(2)
-  }
+    marginBottom: spacing(2),
+  },
 }));
 
 export const SelectStorySBS = (): JSX.Element => {
@@ -54,7 +54,7 @@ export const SelectStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         padding: 16,
-        minWidth: 256
+        minWidth: 256,
       }}
     >
       <Select
@@ -67,12 +67,12 @@ export const SelectStorySBS = (): JSX.Element => {
         options={[
           {
             value: '1',
-            title: 'Brühl Office'
+            title: 'Brühl Office',
           },
           {
             value: '2',
-            title: 'Köln Office'
-          }
+            title: 'Köln Office',
+          },
         ]}
         required
       />
@@ -86,13 +86,13 @@ export const SelectStorySBS = (): JSX.Element => {
           {
             value: '1',
             title: 'The Clippies',
-            subtitle: 'Iteration 1'
+            subtitle: 'Iteration 1',
           },
           {
             value: '2',
             title: 'The No-Names-Yet',
-            subtitle: 'Iteration 2'
-          }
+            subtitle: 'Iteration 2',
+          },
         ]}
         required
         value={team}
@@ -111,35 +111,35 @@ export const SelectStorySBS = (): JSX.Element => {
             subtitle: 'CTO',
             avatarProps: {
               registered: true,
-              image: 'armin.png'
-            }
+              image: 'armin.png',
+            },
           },
           {
             value: '3',
             title: 'Elmar Hufenbach',
             avatarProps: {
               registered: true,
-              image: 'elmar.jpeg'
+              image: 'elmar.jpeg',
             },
-            subtitle: 'CPO'
+            subtitle: 'CPO',
           },
           {
             value: '4',
             title: 'Lamina Amatyakul Vedder',
             avatarProps: {
               registered: true,
-              image: 'lamina.jpeg'
+              image: 'lamina.jpeg',
             },
-            subtitle: 'Devops Specialist'
+            subtitle: 'Devops Specialist',
           },
           {
             value: '5',
             title: 'Lorem ipsum',
             avatarProps: {
-              type: 'person'
+              type: 'person',
             },
-            subtitle: 'Lorem ipsum'
-          }
+            subtitle: 'Lorem ipsum',
+          },
         ]}
         required
       />
@@ -156,9 +156,9 @@ export const SelectStorySBS = (): JSX.Element => {
             subtitle: 'CTO',
             avatarProps: {
               registered: true,
-              image: 'armin.png'
-            }
-          }
+              image: 'armin.png',
+            },
+          },
         ]}
         required
       />
@@ -177,9 +177,9 @@ export const SelectStorySBS = (): JSX.Element => {
             subtitle: 'CEO',
             avatarProps: {
               registered: true,
-              image: 'shari.png'
-            }
-          }
+              image: 'shari.png',
+            },
+          },
         ]}
         required
       />
@@ -223,26 +223,26 @@ export const SmallScreen = (): JSX.Element => {
                   value: '1',
                   title: 'Adho Mukho Svanasana ( Downward Facing Dog Pose )',
                   subtitle:
-                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar'
+                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar',
                 },
                 {
                   value: '2',
                   title: 'Trikonasana ( Triangle Pose )',
                   subtitle:
-                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana'
+                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana',
                 },
                 {
                   value: '3',
                   title: 'Utkatasana (Chair Pose)',
                   subtitle:
-                    'a standing yoga posture that strengthens the core and lower body'
+                    'a standing yoga posture that strengthens the core and lower body',
                 },
                 {
                   value: '4',
                   title: 'Paschimottanasana ( Seated Forward Bend )',
                   subtitle:
-                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body'
-                }
+                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body',
+                },
               ]}
             />
             <Select
@@ -255,26 +255,26 @@ export const SmallScreen = (): JSX.Element => {
                   value: '1',
                   title: 'Adho Mukho Svanasana ( Downward Facing Dog Pose )',
                   subtitle:
-                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar'
+                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar',
                 },
                 {
                   value: '2',
                   title: 'Trikonasana ( Triangle Pose )',
                   subtitle:
-                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana'
+                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana',
                 },
                 {
                   value: '3',
                   title: 'Utkatasana (Chair Pose)',
                   subtitle:
-                    'a standing yoga posture that strengthens the core and lower body'
+                    'a standing yoga posture that strengthens the core and lower body',
                 },
                 {
                   value: '4',
                   title: 'Paschimottanasana ( Seated Forward Bend )',
                   subtitle:
-                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body'
-                }
+                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body',
+                },
               ]}
             />
             <Select
@@ -287,26 +287,26 @@ export const SmallScreen = (): JSX.Element => {
                   value: '1',
                   title: 'Adho Mukho Svanasana ( Downward Facing Dog Pose )',
                   subtitle:
-                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar'
+                    'an inversion asana practised as part of a flowing sequence of poses, especially Surya Namaskar',
                 },
                 {
                   value: '2',
                   title: 'Trikonasana ( Triangle Pose )',
                   subtitle:
-                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana'
+                    'The name comes from the Sanskrit words utthita (उत्थित), "extended", trikoṇa (त्रिकोण) "triangle", and āsana',
                 },
                 {
                   value: '3',
                   title: 'Utkatasana (Chair Pose)',
                   subtitle:
-                    'a standing yoga posture that strengthens the core and lower body'
+                    'a standing yoga posture that strengthens the core and lower body',
                 },
                 {
                   value: '4',
                   title: 'Paschimottanasana ( Seated Forward Bend )',
                   subtitle:
-                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body'
-                }
+                    'The name comes from the Sanskrit words paschima (पश्चिम, paścima) meaning "west" or "the back of the body',
+                },
               ]}
             />
             <Typography align={'center'}>{'Patañjali '}</Typography>
@@ -343,7 +343,7 @@ export const SelectVisualStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         padding: 16,
-        minWidth: 256
+        minWidth: 256,
       }}
     >
       <Select
@@ -357,16 +357,16 @@ export const SelectVisualStory = (): JSX.Element => {
         options={[
           {
             value: '1',
-            title: 'Brühl Office'
+            title: 'Brühl Office',
           },
           {
             value: '2',
-            title: 'Köln Office'
+            title: 'Köln Office',
           },
           {
             value: '3',
-            title: 'some place else'
-          }
+            title: 'some place else',
+          },
         ]}
         required
       />

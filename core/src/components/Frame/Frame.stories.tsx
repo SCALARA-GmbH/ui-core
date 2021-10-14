@@ -8,7 +8,7 @@ import Frame from './Frame';
 export default {
   title: 'Basics/Frame',
   component: Frame,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const FrameStory = (): JSX.Element => (

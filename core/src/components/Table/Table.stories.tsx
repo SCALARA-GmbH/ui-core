@@ -8,25 +8,25 @@ import {
   Table,
   TableCell,
   TableRow,
-  useTheme
+  useTheme,
 } from '../..';
 
 export default {
   title: 'Components/Table',
-  component: Table
+  component: Table,
 };
 
 const useStyles = makeStyles(({ spacing }) =>
   createStyles({
     avatar: {
-      paddingRight: spacing(1)
+      paddingRight: spacing(1),
     },
     withAvatar: {
       display: 'flex',
       flexDirection: 'row-reverse',
       justifyContent: 'flex-end',
-      alignItems: 'center'
-    }
+      alignItems: 'center',
+    },
   })
 );
 
@@ -189,7 +189,7 @@ export const TableRowActionStory = (): JSX.Element => (
         <TableRow
           actionIconButtonProps={{
             iconName: 'close',
-            onClick: () => alert('clicked icon button')
+            onClick: () => alert('clicked icon button'),
           }}
           onClick={() => alert('clicked row')}
         >
@@ -200,7 +200,7 @@ export const TableRowActionStory = (): JSX.Element => (
         <TableRow
           actionIconButtonProps={{
             iconName: 'close',
-            onClick: () => alert('clicked icon button')
+            onClick: () => alert('clicked icon button'),
           }}
           onClick={() => alert('clicked row')}
         >
@@ -211,7 +211,7 @@ export const TableRowActionStory = (): JSX.Element => (
         <TableRow
           actionIconButtonProps={{
             iconName: 'close',
-            onClick: () => alert('clicked icon button')
+            onClick: () => alert('clicked icon button'),
           }}
           onClick={() => alert('clicked row')}
         >

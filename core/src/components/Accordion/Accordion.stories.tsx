@@ -9,7 +9,7 @@ import {
   DataTableBody,
   DataTableCell,
   DataTableHead,
-  DataTableRow
+  DataTableRow,
 } from '../DataTable';
 import DataTableHeadTextCell from '../DataTable/DataTableHeadTextCell';
 import CountIcon from '../Icon/CountIcon';
@@ -29,9 +29,9 @@ export default {
       maxWidth: '1064px',
       gap: '22px',
       gutterLeft: '16px',
-      gutterRight: '16px'
-    }
-  }
+      gutterRight: '16px',
+    },
+  },
 };
 
 const renderItems = () => (
@@ -67,7 +67,7 @@ export const AccordionStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        minWidth: '512px'
+        minWidth: '512px',
       }}
     >
       <div style={{ padding: 16 }}>
@@ -129,7 +129,7 @@ const rows = [
   createData('Wartung Feuerlöscher', 'Zusatzbezeichnung', 123.262, 12316.0),
   createData('Straßenreinigung', 'Zusatzbezeichnung', 30.3335, 123.7),
   createData('Außenanlagen 1', 'Zusatzbezeichnung', 35.31236, 16.0),
-  createData('Außenanlagen 2', 'Zusatzbezeichnung', 356, 165555.0)
+  createData('Außenanlagen 2', 'Zusatzbezeichnung', 356, 165555.0),
 ];
 
 const CustomHeader = ({ count, title }: { count: number; title: string }) => {
@@ -151,7 +151,7 @@ export const AccordionTableStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        padding: '16px'
+        padding: '16px',
       }}
     >
       <Accordion
@@ -255,7 +255,7 @@ export const AccordionTableVisualTestStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        padding: '16px'
+        padding: '16px',
       }}
       data-testid={'visual'}
     >

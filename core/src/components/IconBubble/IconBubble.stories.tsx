@@ -8,7 +8,7 @@ import IconBubble, { Hierarchies } from './IconBubble';
 export default {
   title: 'Assets/IconBubble',
   component: IconBubble,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const IconBubbleStory = (): JSX.Element => {
@@ -20,7 +20,7 @@ export const IconBubbleStory = (): JSX.Element => {
         display: 'flex',
         flexDirection: 'row',
         height: '1024px',
-        width: '1024px'
+        width: '1024px',
       }}
     >
       {Hierarchies.map((hierarchy) => (

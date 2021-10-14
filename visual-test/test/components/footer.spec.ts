@@ -16,7 +16,7 @@ breakpoints.forEach((breakpoint) => {
       );
 
       expect(await page.screenshot()).toMatchSnapshot(`footer-${bp}.png`, {
-        threshold: 0.01
+        threshold: 0.01,
       });
     });
   });

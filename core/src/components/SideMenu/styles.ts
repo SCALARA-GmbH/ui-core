@@ -3,27 +3,27 @@ import { createStyles, makeStyles } from '../..';
 export const useStyles = makeStyles((theme) =>
   createStyles({
     backgroundColor: {
-      backgroundColor: theme.colors.background.primary
+      backgroundColor: theme.colors.background.primary,
     },
     menuItem: {
       display: 'flex',
       padding: theme.spacing(1, 5, 1, 2),
-      alignItems: 'center'
+      alignItems: 'center',
     },
     icon: {
       display: 'flex',
       alignItems: 'center',
-      paddingRight: theme.spacing(1.5)
+      paddingRight: theme.spacing(1.5),
     },
     hover: {
       '&:hover': {
-        color: theme.colors.primary.default
-      }
+        color: theme.colors.primary.default,
+      },
     },
     anchor: {
       position: 'fixed',
-      right: 0
+      right: 0,
     },
-    toolbarMixin: theme.mixins.toolbar
+    toolbarMixin: theme.mixins.toolbar,
   })
 );

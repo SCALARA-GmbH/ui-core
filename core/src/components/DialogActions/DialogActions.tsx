@@ -23,7 +23,7 @@ const DialogActions: React.FunctionComponent<DialogActionsProps> = ({
   className,
   onCancel,
   onDelete,
-  onSubmit
+  onSubmit,
 }) => {
   const classes = useStyles();
 

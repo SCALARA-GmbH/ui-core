@@ -61,7 +61,7 @@ const top100Films = [
   {
     title:
       'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
-    year: 1964
+    year: 1964,
   },
   { title: 'The Great Dictator', year: 1940 },
   { title: 'Cinema Paradiso', year: 1988 },
@@ -109,7 +109,7 @@ const top100Films = [
   { title: 'Inglourious Basterds', year: 2009 },
   { title: 'Snatch', year: 2000 },
   { title: '3 Idiots', year: 2009 },
-  { title: 'Monty Python and the Holy Grail', year: 1975 }
+  { title: 'Monty Python and the Holy Grail', year: 1975 },
 ];
 
 const teamMembers: SelectOption[] = [
@@ -120,8 +120,8 @@ const teamMembers: SelectOption[] = [
     avatarProps: {
       registered: true,
       image:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns'
-    }
+        'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns',
+    },
   },
   {
     value: '2',
@@ -129,9 +129,9 @@ const teamMembers: SelectOption[] = [
     avatarProps: {
       registered: true,
       image:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQGrFXISv4g-gg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=r_qp5IeojHdjudhN0GtU3dW6kYX_uPcFdzghCCswFzc'
+        'https://media-exp1.licdn.com/dms/image/C4D03AQGrFXISv4g-gg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=r_qp5IeojHdjudhN0GtU3dW6kYX_uPcFdzghCCswFzc',
     },
-    subtitle: 'Frontend Hero'
+    subtitle: 'Frontend Hero',
   },
   {
     value: '3',
@@ -139,9 +139,9 @@ const teamMembers: SelectOption[] = [
     avatarProps: {
       registered: true,
       image:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQE0WGsrMkyfKg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=eHT24e-nVE3LqC1OoRhhBx_G0qYIXAMWPggj2dAfcMY'
+        'https://media-exp1.licdn.com/dms/image/C4D03AQE0WGsrMkyfKg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=eHT24e-nVE3LqC1OoRhhBx_G0qYIXAMWPggj2dAfcMY',
     },
-    subtitle: 'CPO'
+    subtitle: 'CPO',
   },
   {
     value: '4',
@@ -149,31 +149,31 @@ const teamMembers: SelectOption[] = [
     avatarProps: {
       registered: true,
       image:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQGJV4a4kX-SxQ/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=ykwN2F1R7WPItq5EF_X7bnciU7jPmguVxULLiPp-q5E'
+        'https://media-exp1.licdn.com/dms/image/C4D03AQGJV4a4kX-SxQ/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=ykwN2F1R7WPItq5EF_X7bnciU7jPmguVxULLiPp-q5E',
     },
-    subtitle: 'Devops Specialist'
+    subtitle: 'Devops Specialist',
   },
   {
     value: '5',
     title: 'Lorem ipsum',
     avatarProps: {
-      type: 'person'
+      type: 'person',
     },
-    subtitle: 'Lorem ipsum'
+    subtitle: 'Lorem ipsum',
   },
   {
     value: '5',
     title: 'Lorem ipsum',
     avatarProps: {
-      type: 'company'
+      type: 'company',
     },
-    subtitle: 'Lorem ipsum'
-  }
+    subtitle: 'Lorem ipsum',
+  },
 ];
 
 export default {
   title: 'Elements/Input/Autocomplete',
-  component: Autocomplete
+  component: Autocomplete,
 };
 
 export const AutocompleteStorySBS = (): JSX.Element => {
@@ -186,7 +186,7 @@ export const AutocompleteStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         padding: 16,
-        minWidth: 300
+        minWidth: 300,
       }}
     >
       <div style={{ paddingTop: '16px' }}>
@@ -201,7 +201,7 @@ export const AutocompleteStorySBS = (): JSX.Element => {
           options={top100Films.map(({ title, year }) => ({
             title,
             subtitle: `${year}`,
-            value: `${title}-${year}`
+            value: `${title}-${year}`,
           }))}
         />
       </div>
@@ -229,7 +229,7 @@ export const AutocompleteVirtStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         padding: 16,
-        maxWidth: 500
+        maxWidth: 500,
       }}
     >
       <Autocomplete
@@ -238,7 +238,7 @@ export const AutocompleteVirtStory = (): JSX.Element => {
         options={top100Films.map(({ title, year }) => ({
           title,
           subtitle: `${year}`,
-          value: `${title}-${year}`
+          value: `${title}-${year}`,
         }))}
         onNewOptionClick={onChange}
         onChange={onChange}

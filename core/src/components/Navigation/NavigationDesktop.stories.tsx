@@ -12,14 +12,14 @@ import NavigationItemGroup from './NavigationItemGroup';
 export default {
   title: 'Components/NavigationDesktop',
   component: NavigationDesktop,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const Labels: string[] = [
   'Accounts',
   'Transactions',
   'Business plan',
-  'Fiscal year'
+  'Fiscal year',
 ];
 
 export const NavigationDesktopStory = (): JSX.Element => {
@@ -37,7 +37,7 @@ export const NavigationDesktopStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
     >
       <NavigationDesktop header={'Finances'}>
@@ -76,7 +76,7 @@ export const NavigationDesktopDisabledStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
       onMouseMove={(event: React.MouseEvent<HTMLElement>) =>
         update({ x: event.clientX, y: event.clientY })

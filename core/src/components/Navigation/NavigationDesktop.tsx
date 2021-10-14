@@ -21,7 +21,7 @@ const NavigationDesktop: React.FunctionComponent<Props> = ({
   header,
   children,
   disabled,
-  secondary
+  secondary,
 }) => {
   const classes = useStyles({ disabled });
 
@@ -30,7 +30,7 @@ const NavigationDesktop: React.FunctionComponent<Props> = ({
       className={classes.drawer}
       variant="permanent"
       classes={{
-        paper: cx(classes.drawerPaper, { [classes.secondary]: secondary })
+        paper: cx(classes.drawerPaper, { [classes.secondary]: secondary }),
       }}
       anchor="left"
     >

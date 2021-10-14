@@ -1,6 +1,6 @@
 import {
   DatePicker as MuiDatePicker,
-  DatePickerProps as MuiDatePickerProps
+  DatePickerProps as MuiDatePickerProps,
 } from '@material-ui/pickers';
 import * as React from 'react';
 
@@ -44,7 +44,7 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   shouldDisableDate,
   style = {},
   testId,
-  value
+  value,
 }) => (
   <MuiDatePicker
     autoOk

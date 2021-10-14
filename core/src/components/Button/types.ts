@@ -3,7 +3,7 @@ export const Hierarchies = [
   'secondary',
   'destructive',
   'required-instruction',
-  'optional-instruction'
+  'optional-instruction',
 ] as const;
 type HierarchyTypes = typeof Hierarchies;
 export type Hierarchy = HierarchyTypes[number];
@@ -17,7 +17,7 @@ export const States = [
   'hover',
   'active',
   'focus',
-  'disabled'
+  'disabled',
 ] as const;
 type StateTypes = typeof States;
 export type State = StateTypes[number];

@@ -21,7 +21,7 @@ const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
   selected,
   onClick,
   disabled,
-  iconName
+  iconName,
 }) => {
   const classes = useStyles({ disabled });
   return (
@@ -30,7 +30,7 @@ const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
         [classes.selected]: selected,
         [classes.deselected]: !selected,
         [classes.icon]: !!iconName,
-        [classes.text]: !iconName
+        [classes.text]: !iconName,
       })}
       button
       disabled={disabled}

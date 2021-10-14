@@ -33,25 +33,25 @@ const useStyles = makeStyles(
       minWidth: '300px',
       maxWidth: '452px',
       width: '100%',
-      padding: spacing(3, 5, 3, 2.5)
+      padding: spacing(3, 5, 3, 2.5),
     },
     error: {
-      borderLeft: `4px solid ${colors.error.main}`
+      borderLeft: `4px solid ${colors.error.main}`,
     },
     warning: {
-      borderLeft: `4px solid ${colors.warning.main}`
+      borderLeft: `4px solid ${colors.warning.main}`,
     },
     success: {
-      borderLeft: `4px solid ${colors.success.main}`
+      borderLeft: `4px solid ${colors.success.main}`,
     },
     children: {
       color: colors.text.main,
-      flexGrow: 1
+      flexGrow: 1,
     },
     icon: {
       paddingRight: spacing(2.5),
-      flexShrink: 0
-    }
+      flexShrink: 0,
+    },
   }),
   { name: 'Toast' }
 );
@@ -64,7 +64,7 @@ const ToastIcon: React.FunctionComponent<Props> = ({ children, name }) => {
       className={cx(classes.root, {
         [classes.success]: name === 'success',
         [classes.error]: name === 'error',
-        [classes.warning]: name === 'warning'
+        [classes.warning]: name === 'warning',
       })}
     >
       {name && (

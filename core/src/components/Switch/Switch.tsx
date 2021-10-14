@@ -1,6 +1,6 @@
 import {
   Switch as MuiSwitch,
-  SwitchProps as MuiSwitchProps
+  SwitchProps as MuiSwitchProps,
 } from '@material-ui/core';
 import classNames from 'classnames';
 import * as React from 'react';
@@ -29,7 +29,7 @@ const Switch: React.FunctionComponent<SwitchProps> = ({
   label,
   onChange,
   style = {},
-  testId = ''
+  testId = '',
 }) => {
   const classes = useStyles();
   return (
@@ -42,7 +42,7 @@ const Switch: React.FunctionComponent<SwitchProps> = ({
         classes={{
           checked: classes.checked,
           switchBase: classes.switchBase,
-          track: classes.track
+          track: classes.track,
         }}
         checked={checked}
         defaultChecked={defaultChecked}

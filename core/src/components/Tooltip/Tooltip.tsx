@@ -10,7 +10,7 @@ import { getFontStyle } from '../Typography/styles';
 export const getTooltipStyle = ({
   spacing,
   colors,
-  shadows
+  shadows,
 }: {
   spacing: Spacing;
   colors: Colors;
@@ -37,13 +37,13 @@ export const getTooltipStyle = ({
   borderTopLeftRadius: spacing(1),
   borderBottomLeftRadius: spacing(0),
   padding: spacing(1, 2),
-  ...getFontStyle('c2')
+  ...getFontStyle('c2'),
 });
 
 const useStyles = makeStyles((theme) => ({
   tooltip: {
-    ...getTooltipStyle(theme)
-  }
+    ...getTooltipStyle(theme),
+  },
 }));
 
 interface Props {
@@ -55,7 +55,7 @@ interface Props {
 const Tooltip: React.FunctionComponent<Props> = ({
   className,
   children,
-  title
+  title,
 }) => {
   const classes = useStyles();
   return (

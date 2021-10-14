@@ -17,9 +17,9 @@ const Footer: React.FunctionComponent<FooterProps> = ({
   const classes = useStyles();
 
   return (
-    <div className={classNames(className, classes.root)} data-testid={testId}>
-      <div className={classes.content}>{children}</div>
-    </div>
+    // <div className={classNames(className, classes.root)} data-testid={testId}>
+    <div className={classes.content}>{children}</div>
+    // </div>
   );
 };
 

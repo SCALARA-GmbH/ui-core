@@ -9,6 +9,10 @@ export const useStyles = makeStylesWithProps<{
       height: spacing(6),
       '&:hover': {
         backgroundColor: colors.background.hover
+      },
+
+      '& > div': {
+        minWidth: 0
       }
     },
     selected: {

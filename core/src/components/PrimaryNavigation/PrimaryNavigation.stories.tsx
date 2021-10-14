@@ -14,14 +14,14 @@ import PrimaryNavigationItem from './PrimaryNavigationItem';
 export default {
   title: 'Components/PrimaryNavigation',
   component: PrimaryNavigation,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const Labels = [
   { key: 'real-estate', name: 'Real Estate' },
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' }
+  { key: 'contacts', name: 'Contacts' },
 ] as const;
 
 export const PrimaryNavigationStory = (): JSX.Element => {
@@ -39,7 +39,7 @@ export const PrimaryNavigationStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
     >
       <PrimaryNavigation>
@@ -64,7 +64,7 @@ const PrimaryLabels = [
     name: 'Real Estate',
     icon: 'real-estate',
     title: 'Real Estate',
-    secondaryLabels: ['Units', 'Buildings']
+    secondaryLabels: ['Units', 'Buildings'],
   },
   {
     key: 'finance',
@@ -75,23 +75,23 @@ const PrimaryLabels = [
       'Accounts',
       'Transactions',
       'Business plan',
-      'Fiscal year'
-    ]
+      'Fiscal year',
+    ],
   },
   {
     key: 'communication',
     icon: 'communication',
     name: 'Communication',
     title: 'Communication',
-    secondaryLabels: ['Issues']
+    secondaryLabels: ['Issues'],
   },
   {
     key: 'contacts',
     icon: 'contacts',
     name: 'Contacts',
     title: 'Contacts',
-    secondaryLabels: ['Invitations', 'Business partners']
-  }
+    secondaryLabels: ['Invitations', 'Business partners'],
+  },
 ];
 type PrimaryLabelTypes = typeof PrimaryLabels;
 export type PrimaryLabel = PrimaryLabelTypes[number];
@@ -181,7 +181,7 @@ export const TwoLayerNavigationStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <ToastContainer />

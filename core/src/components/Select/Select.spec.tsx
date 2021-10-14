@@ -10,7 +10,7 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' }
+          { value: '1', title: 'test2' },
         ]}
       />
     );
@@ -22,7 +22,7 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' }
+          { value: '1', title: 'test2' },
         ]}
       />
     );
@@ -34,7 +34,7 @@ describe('<Select />', () => {
       <Select
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' }
+          { value: '1', title: 'test2' },
         ]}
       />
     );
@@ -50,7 +50,7 @@ describe('<Select />', () => {
         testId={'testid'}
         options={[
           { value: '0', title: 'test' },
-          { value: '1', title: 'test2' }
+          { value: '1', title: 'test2' },
         ]}
         onChange={handleChange}
       />
@@ -75,7 +75,7 @@ describe('<Select />', () => {
         testId={'testid'}
         options={[
           { value: '0', title: 'test3' },
-          { value: '1', title: 'test2' }
+          { value: '1', title: 'test2' },
         ]}
         onChange={handleChange}
       />

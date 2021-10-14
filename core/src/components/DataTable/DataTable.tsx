@@ -11,8 +11,8 @@ interface Props {
 const useStyles = makeStyles(
   (theme) => ({
     root: {
-      borderColor: theme.colors.border.main
-    }
+      borderColor: theme.colors.border.main,
+    },
   }),
   { name: 'SCA__DataTable' }
 );

@@ -29,7 +29,7 @@ const GridItem: React.FunctionComponent<GridItemProps> = ({
   sm,
   md,
   lg,
-  xl
+  xl,
 }) => {
   const classes = useStyles({
     alignSelf,
@@ -38,7 +38,7 @@ const GridItem: React.FunctionComponent<GridItemProps> = ({
     sm: sm || xs,
     md: md || sm || xs,
     lg: lg || md || sm || xs,
-    xl: xl || lg || md || sm || xs
+    xl: xl || lg || md || sm || xs,
   });
 
   return (

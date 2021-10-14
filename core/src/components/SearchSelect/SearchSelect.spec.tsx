@@ -15,8 +15,8 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['address', 'EGF', 'test']
-      }
+        cells: ['address', 'EGF', 'test'],
+      },
     ];
     const { container } = render(
       <SearchSelect
@@ -35,13 +35,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['address', 'EGF', 'test']
+        cells: ['address', 'EGF', 'test'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address 2', 'EGF', 'test']
-      }
+        cells: ['address 2', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -61,7 +61,7 @@ describe('<SearchSelect />', () => {
     expect(handleChange).toHaveBeenCalledWith({
       cells: ['address 2', 'EGF', 'test'],
       title: 'WEG 2',
-      value: '1'
+      value: '1',
     });
   });
 
@@ -70,13 +70,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['address', 'EGF', 'test']
+        cells: ['address', 'EGF', 'test'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address 2', 'EGF', 'test']
-      }
+        cells: ['address 2', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -102,13 +102,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['address', 'EGF', 'test']
+        cells: ['address', 'EGF', 'test'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address 2', 'EGF', 'test']
-      }
+        cells: ['address 2', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -130,13 +130,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['something', 'else']
+        cells: ['something', 'else'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address', 'EGF', 'test']
-      }
+        cells: ['address', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -160,13 +160,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['something', 'else']
+        cells: ['something', 'else'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address', 'EGF', 'test']
-      }
+        cells: ['address', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -185,7 +185,7 @@ describe('<SearchSelect />', () => {
     expect(queryByText('something')).toBeTruthy();
 
     fireEvent.input(getByRole('textbox', { name: 'please select' }), {
-      target: { value: 'address EGF' }
+      target: { value: 'address EGF' },
     });
 
     expect(queryByText('something')).toBeFalsy();
@@ -196,13 +196,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['something', 'else']
+        cells: ['something', 'else'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address', 'EGF', 'test']
-      }
+        cells: ['address', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -222,7 +222,7 @@ describe('<SearchSelect />', () => {
     expect(queryByText('something')).toBeTruthy();
 
     fireEvent.input(getByRole('textbox', { name: 'please select' }), {
-      target: { value: 'nonexistingvalue' }
+      target: { value: 'nonexistingvalue' },
     });
 
     expect(queryByText('if not found text')).toBeTruthy();
@@ -233,13 +233,13 @@ describe('<SearchSelect />', () => {
       {
         value: '0',
         title: 'WEG 1',
-        cells: ['something', 'else']
+        cells: ['something', 'else'],
       },
       {
         value: '1',
         title: 'WEG 2',
-        cells: ['address', 'EGF', 'test']
-      }
+        cells: ['address', 'EGF', 'test'],
+      },
     ];
 
     const handleChange = jest.fn();
@@ -259,7 +259,7 @@ describe('<SearchSelect />', () => {
     expect(queryByText('something')).toBeTruthy();
 
     fireEvent.input(getByRole('textbox', { name: 'please select' }), {
-      target: { value: 'address' }
+      target: { value: 'address' },
     });
 
     expect(queryByText('if not found text')).toBeFalsy();

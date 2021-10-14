@@ -23,7 +23,7 @@ const Area: React.FunctionComponent<PaperProps> = ({
   style = {},
   onClick,
   testId = '',
-  border = false
+  border = false,
 }) => {
   const [innerElevated, setInnerElevated] = useState(false);
   const classes = useStyles();
@@ -32,7 +32,7 @@ const Area: React.FunctionComponent<PaperProps> = ({
       className={classNames(classes.root, className, {
         [classes.border]: border,
         [classes.elevated]: innerElevated || elevated,
-        [classes.hoverable]: hoverable
+        [classes.hoverable]: hoverable,
       })}
       data-testid={testId}
       onMouseEnter={() => {

@@ -3,17 +3,17 @@ import { makeStyles } from '../..';
 export const useStyles = makeStyles(
   ({ colors, shadows }) => ({
     root: {
-      backgroundColor: colors.background.primary
+      backgroundColor: colors.background.primary,
     },
     border: {
-      border: `1px solid ${colors.border.main}`
+      border: `1px solid ${colors.border.main}`,
     },
     elevated: {
-      boxShadow: shadows[0]
+      boxShadow: shadows[0],
     },
     hoverable: {
-      cursor: 'pointer'
-    }
+      cursor: 'pointer',
+    },
   }),
   { name: 'SCA__Area' }
 );

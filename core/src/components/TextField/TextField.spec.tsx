@@ -59,7 +59,7 @@ describe('<TextField />', () => {
     expect(getByRole('textbox', { name: 'I am a label' })).toHaveValue('');
 
     fireEvent.input(getByRole('textbox', { name: 'I am a label' }), {
-      target: { value: 'new text value' }
+      target: { value: 'new text value' },
     });
 
     expect(getByRole('textbox', { name: 'I am a label' })).toHaveValue(

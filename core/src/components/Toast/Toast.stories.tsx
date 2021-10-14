@@ -6,7 +6,7 @@ import { Button, ToastContainer, toast } from '../..';
 export default {
   title: 'Components/Toast',
   component: ToastContainer,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const ToastStory = (): JSX.Element => {
@@ -19,7 +19,7 @@ export const ToastStory = (): JSX.Element => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'start',
-          padding: 16
+          padding: 16,
         }}
       >
         <Button

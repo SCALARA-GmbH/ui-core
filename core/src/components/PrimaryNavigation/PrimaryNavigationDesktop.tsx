@@ -18,7 +18,7 @@ export interface Props {
 const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
   LogoComponent = Logo,
   LogoComponentProps,
-  children
+  children,
 }) => {
   const classes = useStyles();
   return (
@@ -27,7 +27,7 @@ const PrimaryNavigationDesktop: React.FunctionComponent<Props> = ({
       anchor="left"
       className={classes.drawer}
       classes={{
-        paper: classes.drawerPaper
+        paper: classes.drawerPaper,
       }}
     >
       <LogoComponent

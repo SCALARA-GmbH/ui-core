@@ -8,7 +8,7 @@ import { Button, Checkbox, Grid, useTheme } from '../..';
 
 export default {
   title: 'Elements/Controls/Checkbox',
-  component: Checkbox
+  component: Checkbox,
 };
 
 export const CheckboxStorySBS = (): JSX.Element => {
@@ -66,9 +66,9 @@ export const CheckFormStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        test: yup.boolean().required()
+        test: yup.boolean().required(),
       })
-    )
+    ),
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 
@@ -95,12 +95,12 @@ export const CheckFormDefaultValueStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        test: yup.boolean().required()
+        test: yup.boolean().required(),
       })
     ),
     defaultValues: {
-      test: true
-    }
+      test: true,
+    },
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 

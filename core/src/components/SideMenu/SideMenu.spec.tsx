@@ -20,7 +20,7 @@ describe('<SideMenu />', () => {
         menuHandle={null}
         onClose={jest.fn()}
         menuItems={[
-          { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+          { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' },
         ]}
       />
     );
@@ -40,7 +40,7 @@ describe('<SideMenu />', () => {
             menuHandle={ref.current}
             onClose={jest.fn()}
             menuItems={[
-              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' },
             ]}
             onClick={handleClick}
           />
@@ -64,7 +64,7 @@ describe('<SideMenu />', () => {
             menuHandle={null}
             onClose={jest.fn()}
             menuItems={[
-              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' }
+              { id: 0, iconName: 'person', label: 'PROFILE', title: 'PROFILE' },
             ]}
             onClick={handleClick}
           />

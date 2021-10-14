@@ -6,7 +6,7 @@ import Area from './Area';
 
 export default {
   title: 'Basics/Area',
-  component: Area
+  component: Area,
 };
 
 export const AreaStorySBS = (): JSX.Element => {

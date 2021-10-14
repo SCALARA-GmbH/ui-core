@@ -77,19 +77,19 @@ describe('<Accordion /> <AccordionItem />', () => {
     );
 
     expect(getByTestId('accordion-icon')).toHaveStyle({
-      transform: 'rotate(0deg)'
+      transform: 'rotate(0deg)',
     });
     act(() => {
       fireEvent.click(getByTestId('accordion'));
     });
     expect(getByTestId('accordion-icon')).toHaveStyle({
-      transform: 'rotate(180deg)'
+      transform: 'rotate(180deg)',
     });
     act(() => {
       fireEvent.click(getByTestId('accordion'));
     });
     expect(getByTestId('accordion-icon')).toHaveStyle({
-      transform: 'rotate(0deg)'
+      transform: 'rotate(0deg)',
     });
   });
 

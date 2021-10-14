@@ -6,7 +6,7 @@ import Comment from './Comment';
 
 export default {
   title: 'Components/Comment',
-  component: Comment
+  component: Comment,
 };
 
 export const CommentStorySBS = (): JSX.Element => {
@@ -15,7 +15,7 @@ export const CommentStorySBS = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        padding: '16px'
+        padding: '16px',
       }}
     >
       <Paper style={{ padding: '16px' }}>

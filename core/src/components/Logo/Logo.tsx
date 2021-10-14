@@ -24,7 +24,7 @@ const Logo: React.FunctionComponent<LogoProps> = ({
   testId = '',
   onClick,
   color,
-  size = 'medium'
+  size = 'medium',
 }) => {
   const classes = useStyles({ clickable: !!onClick, size });
   return (

@@ -26,7 +26,7 @@ const TableRow: React.FunctionComponent<TableRowProps> = ({
   className = '',
   onClick,
   style = {},
-  testId = ''
+  testId = '',
 }) => {
   const classes = useStyles({ onClick });
   const theme = useTheme();

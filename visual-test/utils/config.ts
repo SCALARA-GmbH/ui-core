@@ -2,7 +2,7 @@ import { LaunchOptions } from 'playwright';
 
 export const launchOptions: LaunchOptions = {
   headless: true,
-  devtools: false
+  devtools: false,
 } as const;
 
 export class Config {

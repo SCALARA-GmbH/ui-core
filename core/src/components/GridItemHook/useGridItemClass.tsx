@@ -50,7 +50,7 @@ const useGridItemClass: (props: GridItemProps) => string = ({
   sm,
   md,
   lg,
-  xl
+  xl,
 }) => {
   const classes = useStyles({
     alignSelf,
@@ -59,7 +59,7 @@ const useGridItemClass: (props: GridItemProps) => string = ({
     sm: sm || xs,
     md: md || sm || xs,
     lg: lg || md || sm || xs,
-    xl: xl || lg || md || sm || xs
+    xl: xl || lg || md || sm || xs,
   });
   return classes.root;
 };

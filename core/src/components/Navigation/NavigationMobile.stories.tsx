@@ -12,14 +12,14 @@ import NavigationMobile from './NavigationMobile';
 export default {
   title: 'Components/NavigationMobile',
   component: NavigationMobile,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const Labels: string[] = [
   'Accounts',
   'Transactions',
   'Business plan',
-  'Fiscal year'
+  'Fiscal year',
 ];
 
 export const NavigationMobileStory = (): JSX.Element => {
@@ -37,7 +37,7 @@ export const NavigationMobileStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
     >
       <NavigationMobile>
@@ -76,7 +76,7 @@ export const NavigationMobileDisableStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
       onMouseMove={(event: React.MouseEvent<HTMLElement>) =>
         update({ x: event.clientX, y: event.clientY })

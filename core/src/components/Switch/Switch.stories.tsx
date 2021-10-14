@@ -4,7 +4,7 @@ import { Grid, Switch, useTheme } from '../..';
 
 export default {
   title: 'Elements/Controls/Switch',
-  component: Switch
+  component: Switch,
 };
 
 export const SwitchStorySBS = (): JSX.Element => {

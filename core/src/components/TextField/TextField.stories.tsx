@@ -10,14 +10,14 @@ import IconButton from '../IconButton';
 
 export default {
   title: 'Elements/Input/TextField',
-  component: TextField
+  component: TextField,
 };
 
 const useStyles = makeStyles(
   ({ spacing }) => ({
     padding: {
-      padding: spacing(1)
-    }
+      padding: spacing(1),
+    },
   }),
   { name: 'SCA__TextFieldStory' }
 );
@@ -30,7 +30,7 @@ export const TextFieldStorySBS = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         minWidth: 384,
-        padding: 16
+        padding: 16,
       }}
     >
       <TextField
@@ -65,7 +65,7 @@ export const TextFieldStorySBS = (): JSX.Element => {
         helperText={'I am filled and disabled'}
         label={'Label'}
         inputProps={{
-          defaultValue: 'Filled'
+          defaultValue: 'Filled',
         }}
         placeholder={'Placeholder'}
         className={classes.padding}
@@ -91,7 +91,7 @@ export const TextFieldVisualInputStory = (): JSX.Element => {
       style={{
         backgroundColor: theme.colors.background.primary,
         minWidth: 384,
-        padding: 16
+        padding: 16,
       }}
     >
       <TextField
@@ -139,9 +139,9 @@ export const LoginFormStory = (): JSX.Element => {
     resolver: yupResolver(
       yup.object().shape({
         email: yup.string().email().required(),
-        password: yup.string().required()
+        password: yup.string().required(),
       })
-    )
+    ),
   });
   const onSubmit = (data: FormEvent) => alert(JSON.stringify(data));
 
@@ -175,9 +175,9 @@ export const ValidationFormStory = (): JSX.Element => {
   }>({
     resolver: yupResolver(
       yup.object().shape({
-        phone: yup.string().required()
+        phone: yup.string().required(),
       })
-    )
+    ),
   });
   const onSubmit = (data: { phone: string }) => alert(data.phone);
 
@@ -220,13 +220,13 @@ export const AccountFormStory = (): JSX.Element => {
         addressLine: yup.string(),
         postalCode: yup.string(),
         city: yup.string(),
-        country: yup.string()
+        country: yup.string(),
       })
     ),
     defaultValues: {
       firstName: 'Max',
-      lastName: 'Mustermann'
-    }
+      lastName: 'Mustermann',
+    },
   });
   const onSubmit = (data: FormEvent) => alert(data);
 

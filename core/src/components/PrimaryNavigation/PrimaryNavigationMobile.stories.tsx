@@ -10,14 +10,14 @@ import PrimaryNavigationMobile from './PrimaryNavigationMobile';
 export default {
   title: 'Components/PrimaryNavigationMobile',
   component: PrimaryNavigationMobile,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const Labels = [
   { key: 'real-estate', name: 'Real Estate' },
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' }
+  { key: 'contacts', name: 'Contacts' },
 ] as const;
 
 export const PrimaryNavigationMobileStory = (): JSX.Element => {
@@ -35,7 +35,7 @@ export const PrimaryNavigationMobileStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        width: '100%'
+        width: '100%',
       }}
     >
       <PrimaryNavigationMobile

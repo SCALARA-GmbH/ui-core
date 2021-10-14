@@ -22,7 +22,7 @@ const PrimaryNavigation: React.FunctionComponent<Props> = ({
   menuAriaLabel,
   onClose,
   open,
-  onClick
+  onClick,
 }) => {
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));

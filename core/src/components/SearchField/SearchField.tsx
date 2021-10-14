@@ -37,7 +37,7 @@ const SearchField: React.FunctionComponent<SearchFieldProps> = ({
   style,
   testId,
   textFieldProps,
-  name
+  name,
 }) => {
   const [innerValue, setInnerValue] = useState('');
 

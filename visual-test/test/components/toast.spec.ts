@@ -5,7 +5,7 @@ import { Config } from '../../utils/config';
 const config = new Config();
 
 test('clicks on accordion header and opens the table as content', async ({
-  page
+  page,
 }) => {
   await page.goto(`${config.url}/iframe.html?id=components-toast--toast-story`);
 
@@ -20,6 +20,6 @@ test('clicks on accordion header and opens the table as content', async ({
   await success.waitForElementState('stable');
 
   expect(await page.screenshot()).toMatchSnapshot('toasts.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 });

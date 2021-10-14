@@ -29,7 +29,7 @@ const SideMenu: React.FunctionComponent<Props> = ({
   onClose,
   menuItems,
   onClick,
-  selectedId
+  selectedId,
 }) => {
   const classes = useStyles();
 

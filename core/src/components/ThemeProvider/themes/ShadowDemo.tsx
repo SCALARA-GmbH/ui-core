@@ -5,7 +5,7 @@ import { makeStyles, Theme, Typography, useTheme } from '../../..';
 const useStyles = makeStyles(({ spacing, shadows }: Theme) => ({
   root: {
     display: 'flex',
-    padding: spacing(3)
+    padding: spacing(3),
   },
   shadow: {
     display: 'flex',
@@ -14,8 +14,8 @@ const useStyles = makeStyles(({ spacing, shadows }: Theme) => ({
     height: 125,
     width: 125,
     margin: spacing(4),
-    boxShadow: shadows[0]
-  }
+    boxShadow: shadows[0],
+  },
 }));
 
 const ShadowDemo: React.FunctionComponent = () => {

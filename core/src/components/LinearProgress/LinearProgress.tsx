@@ -1,6 +1,6 @@
 import {
   LinearProgress as MuiLinearProgress,
-  LinearProgressProps as MuiLinearProgressProps
+  LinearProgressProps as MuiLinearProgressProps,
 } from '@material-ui/core';
 import * as React from 'react';
 
@@ -17,7 +17,7 @@ const LinearProgress: React.FunctionComponent<LinearProgressProps> = ({
   className,
   value,
   valueBuffer,
-  variant
+  variant,
 }) => {
   const classes = useStyles();
   return (
@@ -25,7 +25,7 @@ const LinearProgress: React.FunctionComponent<LinearProgressProps> = ({
       className={className}
       color={'primary'}
       classes={{
-        colorPrimary: classes.linearProgressColor
+        colorPrimary: classes.linearProgressColor,
       }}
       valueBuffer={valueBuffer}
       variant={variant}

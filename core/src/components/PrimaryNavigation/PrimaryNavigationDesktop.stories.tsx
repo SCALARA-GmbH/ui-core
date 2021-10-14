@@ -9,14 +9,14 @@ import PrimaryNavigationItem from './PrimaryNavigationItem';
 export default {
   title: 'Components/PrimaryNavigationDesktop',
   component: PrimaryNavigationDesktop,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 const Labels = [
   { key: 'real-estate', name: 'Real Estate' },
   { key: 'finance', name: 'Finances' },
   { key: 'communication', name: 'Communication' },
-  { key: 'contacts', name: 'Contacts' }
+  { key: 'contacts', name: 'Contacts' },
 ] as const;
 
 export const PrimaryNavigationStory = (): JSX.Element => {
@@ -34,7 +34,7 @@ export const PrimaryNavigationStory = (): JSX.Element => {
     <div
       style={{
         backgroundColor: theme.colors.background.primary,
-        display: 'flex'
+        display: 'flex',
       }}
     >
       <PrimaryNavigationDesktop>

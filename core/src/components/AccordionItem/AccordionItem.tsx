@@ -12,7 +12,7 @@ export interface Props {
 const AccordionItem: React.FunctionComponent<Props> = ({
   children,
   className,
-  onClick
+  onClick,
 }) => {
   const classes = useStyles({ clickable: !!onClick });
 

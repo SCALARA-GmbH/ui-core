@@ -5,7 +5,7 @@ export * from './hooks';
 export {
   makeStyles,
   makeStylesWithProps,
-  useTheme
+  useTheme,
 } from './components/ThemeProvider/styles';
 
 export { default as Accordion } from './components/Accordion';
@@ -26,7 +26,7 @@ export {
   DataTableCell,
   DataTableHead,
   DataTableRow,
-  DataTableHeadTextCell
+  DataTableHeadTextCell,
 } from './components/DataTable';
 export { default as DatePicker } from './components/DatePicker';
 export { DialogProvider, useDialog } from './components/DialogProvider';
@@ -50,7 +50,7 @@ export {
   NavigationItem,
   NavigationItemGroup,
   NavigationDesktop,
-  NavigationMobile
+  NavigationMobile,
 } from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
@@ -59,7 +59,7 @@ export {
   PrimaryNavigation,
   PrimaryNavigationDesktop,
   PrimaryNavigationMobile,
-  PrimaryNavigationItem
+  PrimaryNavigationItem,
 } from './components/PrimaryNavigation';
 export { default as Radio } from './components/Radio';
 export { default as SearchField } from './components/SearchField';

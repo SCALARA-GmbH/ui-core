@@ -4,7 +4,7 @@ import { Grid, Pagination } from '../..';
 
 export default {
   title: 'Components/Pagination',
-  component: Pagination
+  component: Pagination,
 };
 
 export const PaginationStory = (): JSX.Element => {

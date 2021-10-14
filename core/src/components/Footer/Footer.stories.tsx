@@ -7,7 +7,7 @@ import { Footer, Typography } from '../..';
 export default {
   title: 'Components/Footer',
   component: Footer,
-  decorators: [withKnobs, withActions]
+  decorators: [withKnobs, withActions],
 };
 
 export const FooterOverviewVS = (): JSX.Element => {

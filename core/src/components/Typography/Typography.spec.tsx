@@ -27,7 +27,7 @@ describe('<Typography />', () => {
     ['c1', 'p'],
     ['c2', 'p'],
     ['c3', 'p'],
-    ['c4', 'p']
+    ['c4', 'p'],
   ])('returns $expected for variant $a', (a, expected) => {
     expect(getTag(a)).toBe(expected);
   });

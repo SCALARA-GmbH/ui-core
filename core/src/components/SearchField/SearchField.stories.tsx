@@ -5,7 +5,7 @@ import { SearchField, Typography, useTheme } from '../..';
 
 export default {
   title: 'Elements/Input/SearchField',
-  component: SearchField
+  component: SearchField,
 };
 
 export const SearchFieldStorySBS = (): JSX.Element => {

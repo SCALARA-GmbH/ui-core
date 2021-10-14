@@ -13,7 +13,7 @@ test('visual states', async ({ page }) => {
   expect(await page.screenshot()).toMatchSnapshot('select.png');
 
   expect(await page.screenshot()).toMatchSnapshot('select.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 });
 
@@ -34,7 +34,7 @@ test('selects and item', async ({ page }) => {
   await waitForTransition(page, '[data-testid="visual"]');
 
   expect(await page.screenshot()).toMatchSnapshot('after-click-on-select.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 
   await page.click('text=/Brühl Office/');
@@ -47,6 +47,6 @@ test('selects and item', async ({ page }) => {
   await waitForTransition(page, '[data-testid="visual"]');
 
   expect(await page.screenshot()).toMatchSnapshot('after-click-on-option.png', {
-    threshold: 0.01
+    threshold: 0.01,
   });
 });

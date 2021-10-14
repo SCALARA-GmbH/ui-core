@@ -19,9 +19,9 @@ const useStyles = makeStyles(
       border: 'none',
       padding: theme.spacing(2.5, 1.5, 2.5, 1.5),
       '&:hover': {
-        backgroundColor: theme.colors.background.hover
-      }
-    }
+        backgroundColor: theme.colors.background.hover,
+      },
+    },
   }),
   { name: 'SCA__DataTableCell' }
 );
@@ -30,7 +30,7 @@ const DataTableCell: React.FunctionComponent<Props> = ({
   content,
   align,
   header,
-  contentVariant
+  contentVariant,
 }) => {
   const classes = useStyles();
   return (

@@ -7,7 +7,7 @@ import Radio, { RadioOption } from './Radio';
 
 export default {
   title: 'Elements/Controls/Radio',
-  component: Radio
+  component: Radio,
 };
 
 export const RadioStory = (): JSX.Element => {
@@ -16,7 +16,7 @@ export const RadioStory = (): JSX.Element => {
     { title: 'Zuān', value: '1' },
     { title: 'Bēng', value: '2' },
     { title: 'Pào', value: '3' },
-    { title: 'Héng', value: '4' }
+    { title: 'Héng', value: '4' },
   ];
 
   const theme = useTheme();
@@ -45,7 +45,7 @@ export const RadioWithSubtitleStory = (): JSX.Element => {
     { title: 'The Godfather', subtitle: lorem, value: '1' },
     { title: 'The Godfather: Part II', subtitle: lorem, value: '2' },
     { title: 'The Dark Knight', subtitle: lorem, value: '3' },
-    { title: '12 Angry Men', subtitle: lorem, value: '4' }
+    { title: '12 Angry Men', subtitle: lorem, value: '4' },
   ];
 
   const theme = useTheme();

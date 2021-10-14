@@ -11,17 +11,17 @@ export const useStyles = makeStyles(
         minHeight: theme.spacing(11.5),
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
       },
       label: {
-        marginBottom: theme.spacing(0.5)
+        marginBottom: theme.spacing(0.5),
       },
       multiline: {
         alignItems: 'flex-start',
-        height: 'fit-content'
+        height: 'fit-content',
       },
       noPadding: {
-        padding: theme.spacing(0)
+        padding: theme.spacing(0),
       },
       endAdornment: {
         margin: 0,
@@ -30,40 +30,40 @@ export const useStyles = makeStyles(
         backgroundColor:
           theme.type === 'light'
             ? theme.colors.neutral['6']
-            : theme.colors.neutral['3']
+            : theme.colors.neutral['3'],
       },
       input: {
         ...getFontStyle('c3'),
         padding: theme.spacing(2, 2, 2, 2),
         color: theme.colors.text.main,
         '&::placeholder': {
-          color: theme.colors.neutral['3']
+          color: theme.colors.neutral['3'],
         },
         transition: theme.transitions.create('background-color'),
         borderRadius: 0,
         backgroundColor: theme.colors.neutral['6'],
         '&:disabled': {
           color: theme.colors.disabled,
-          backgroundColor: theme.colors.background.disabled
+          backgroundColor: theme.colors.background.disabled,
         },
         '&:hover:enabled': {
-          backgroundColor: theme.colors.neutral['5']
+          backgroundColor: theme.colors.neutral['5'],
         },
         '&:focus:enabled': {
-          backgroundColor: theme.colors.neutral['6']
-        }
+          backgroundColor: theme.colors.neutral['6'],
+        },
       },
       error: {
         boxShadow: theme.shadows[2],
         borderRadius: 0,
         '&:invalid': {
           boxShadow: theme.shadows[2],
-          borderRadius: 0
-        }
+          borderRadius: 0,
+        },
       },
       bottomText: {
-        minHeight: 18
-      }
+        minHeight: 18,
+      },
     }),
   { name: 'SCA__TextField' }
 );

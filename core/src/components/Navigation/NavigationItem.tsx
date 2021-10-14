@@ -43,7 +43,7 @@ const NavigationItem: React.FunctionComponent<NavigationItemProps> = ({
     >
       {iconName && (
         <ListItemIcon aria-label={label}>
-          <Icon name={iconName} />
+          <Icon name={iconName} className={classes.subMenuIcon} />
         </ListItemIcon>
       )}
       <ListItemText>

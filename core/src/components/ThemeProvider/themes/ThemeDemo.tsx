@@ -59,7 +59,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.primary.default}
+                <b>black</b> - main <br /> {theme.colors.primary.default}
               </Typography>
             </div>
             <div
@@ -67,7 +67,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.primary[75]}` }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.primary[75]}
+                <b>gray 02</b> - 75 <br /> {theme.colors.primary[75]}
               </Typography>
             </div>
             <div
@@ -75,7 +75,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.primary[50]}` }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.primary[50]}
+                <b>gray 03</b> - 50 <br /> {theme.colors.primary[50]}
               </Typography>
             </div>
           </div>
@@ -90,7 +90,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.secondary.default}
+                <b>green 01</b> - main <br /> {theme.colors.secondary.default}
               </Typography>
             </div>
             <div
@@ -100,7 +100,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.secondary[75]}
+                <b>green 02</b> - 75 <br /> {theme.colors.secondary[75]}
               </Typography>
             </div>
             <div
@@ -110,7 +110,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.secondary[50]}
+                <b>green 03</b> - 50 <br /> {theme.colors.secondary[50]}
               </Typography>
             </div>
           </div>
@@ -125,7 +125,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.tertiary.default}
+                <b>orange 01</b> - main <br /> {theme.colors.tertiary.default}
               </Typography>
             </div>
             <div
@@ -133,7 +133,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.tertiary[75]}` }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.tertiary[75]}
+                <b>orange 02</b> - 75 <br /> {theme.colors.tertiary[75]}
               </Typography>
             </div>
             <div
@@ -141,7 +141,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.tertiary[50]}` }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.tertiary[50]}
+                <b>orange 03</b> - 50 <br /> {theme.colors.tertiary[50]}
               </Typography>
             </div>
           </div>
@@ -156,7 +156,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.destructive.default}
+                <b>red 01</b> - main <br /> {theme.colors.destructive.default}
               </Typography>
             </div>
             <div
@@ -166,7 +166,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.destructive[75]}
+                <b>red 02</b> - 75 <br /> {theme.colors.destructive[75]}
               </Typography>
             </div>
             <div
@@ -176,7 +176,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.destructive[50]}
+                <b>red 03</b> - 50 <br /> {theme.colors.destructive[50]}
               </Typography>
             </div>
           </div>
@@ -191,7 +191,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.requiredInstruction.default}
+                <b>purple 01</b> - main <br />{' '}
+                {theme.colors.requiredInstruction.default}
               </Typography>
             </div>
             <div
@@ -201,7 +202,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.requiredInstruction[75]}
+                <b>purple 02</b> - 75 <br />{' '}
+                {theme.colors.requiredInstruction[75]}
               </Typography>
             </div>
             <div
@@ -211,7 +213,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.requiredInstruction[50]}
+                <b>purple 03</b> - 50 <br />{' '}
+                {theme.colors.requiredInstruction[50]}
               </Typography>
             </div>
           </div>
@@ -226,7 +229,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                main <br /> {theme.colors.optionalInstruction.default}
+                <b>blue 01</b> - main <br />{' '}
+                {theme.colors.optionalInstruction.default}
               </Typography>
             </div>
             <div
@@ -236,7 +240,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                75 <br /> {theme.colors.optionalInstruction[75]}
+                <b>blue 02</b> - 75 <br />{' '}
+                {theme.colors.optionalInstruction[75]}
               </Typography>
             </div>
             <div
@@ -246,7 +251,8 @@ const ThemeDemo: React.FunctionComponent = () => {
               }}
             >
               <Typography variant={'c3'}>
-                50 <br /> {theme.colors.optionalInstruction[50]}
+                <b>blue 03</b> - 50 <br />{' '}
+                {theme.colors.optionalInstruction[50]}
               </Typography>
             </div>
           </div>
@@ -259,7 +265,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['0']}` }}
             >
               <Typography variant={'c3'}>
-                0 <br /> {theme.colors.neutral['0']}
+                <b>black</b> 0 <br /> {theme.colors.neutral['0']}
               </Typography>
             </div>
             <div
@@ -267,7 +273,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['1']}` }}
             >
               <Typography variant={'c3'}>
-                1 <br /> {theme.colors.neutral['1']}
+                <b>gray 01</b> - 1 <br /> {theme.colors.neutral['1']}
               </Typography>
             </div>
             <div
@@ -275,7 +281,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['2']}` }}
             >
               <Typography variant={'c3'}>
-                2 <br /> {theme.colors.neutral['2']}
+                <b>gray 02</b> - 2 <br /> {theme.colors.neutral['2']}
               </Typography>
             </div>
             <div
@@ -283,7 +289,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['3']}` }}
             >
               <Typography variant={'c3'}>
-                3 <br /> {theme.colors.neutral['3']}
+                <b>gray 03</b> - 3 <br /> {theme.colors.neutral['3']}
               </Typography>
             </div>
             <div
@@ -291,7 +297,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['4']}` }}
             >
               <Typography variant={'c3'}>
-                4 <br /> {theme.colors.neutral['4']}
+                <b>gray 04</b> - 4 <br /> {theme.colors.neutral['4']}
               </Typography>
             </div>
             <div
@@ -299,7 +305,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['5']}` }}
             >
               <Typography variant={'c3'}>
-                5 <br /> {theme.colors.neutral['5']}
+                <b>gray 05</b> - 5 <br /> {theme.colors.neutral['5']}
               </Typography>
             </div>
             <div
@@ -307,7 +313,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['6']}` }}
             >
               <Typography variant={'c3'}>
-                6 <br /> {theme.colors.neutral['6']}
+                <b>gray 06</b> - 6 <br /> {theme.colors.neutral['6']}
               </Typography>
             </div>
             <div
@@ -315,7 +321,7 @@ const ThemeDemo: React.FunctionComponent = () => {
               style={{ borderRight: `40px solid ${theme.colors.neutral['7']}` }}
             >
               <Typography variant={'c3'}>
-                7 <br /> {theme.colors.neutral['7']}
+                <b>gray 07</b> - 7 <br /> {theme.colors.neutral['7']}
               </Typography>
             </div>
           </div>

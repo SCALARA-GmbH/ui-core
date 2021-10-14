@@ -55,7 +55,7 @@ const theme = (type: PaletteType): Theme => {
     },
     tertiary: {
       default: '#FFA748',
-      '75': '#FCBE7C',
+      '75': '#FFB361',
       '50': '#FFF3E6',
     },
     destructive: {

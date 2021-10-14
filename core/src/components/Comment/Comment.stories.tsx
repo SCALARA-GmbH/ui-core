@@ -36,12 +36,12 @@ export const CommentStorySBS = (): JSX.Element => {
           extra={'2020-01-01'}
         />
         <Comment
-          avatarProps={{ registered: true }}
+          avatarProps={{ active: true }}
           title={'Registered User 1337'}
           text={'Hey I am registered!'}
         />
         <Comment
-          avatarProps={{ registered: true, image: 'elmar.jpeg' }}
+          avatarProps={{ active: true, image: 'elmar.jpeg' }}
           title={'Registered User with an image'}
           text={'Hey I am registered and have an image!'}
         />

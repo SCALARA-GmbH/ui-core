@@ -56,7 +56,7 @@ const PrimaryNavigationAvatar: React.FunctionComponent<PrimaryNavigationItemProp
         }}
       >
         {!mobile && <span className={classes.tooltip}>{label}</span>}
-        <Avatar registered image={image} type={accountType} />
+        <Avatar active image={image} type={accountType} />
         {mobile && (
           <Typography
             variant={selected ? 'c1' : 'c2'}

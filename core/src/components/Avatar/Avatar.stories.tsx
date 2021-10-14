@@ -31,7 +31,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
       >
         {SIZES.map((size) => (
           <Avatar
-            registered
+            active
             image={'elmar.jpeg'}
             key={size}
             size={size}
@@ -99,7 +99,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
             editable
             onClick={() => console.log('onClick')}
             tooltip={'You can click me'}
-            registered
+            active
           />
         ))}
       </div>
@@ -142,7 +142,7 @@ export const AvatarOverviewSBS = (): JSX.Element => {
             editable
             onClick={() => console.log('onClick')}
             tooltip={'You can click me'}
-            registered
+            active
           />
         ))}
       </div>

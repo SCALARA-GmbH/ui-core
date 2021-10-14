@@ -7,32 +7,22 @@ export const useStyles = makeStyles(
         display: 'flex',
         alignItems: 'center',
         height: theme.spacing(7),
+        width: '100%',
         color: theme.colors.neutral['2'],
         background: theme.colors.background.primary,
-        margin: theme.spacing(2, 0, 2, 0),
-        boxSizing: 'border-box',
         [theme.breakpoints.down('xs')]: {
-          width: 320,
           height: 'auto'
-        },
-        [theme.breakpoints.up('sm')]: {
-          width: 704
-        },
-        [theme.breakpoints.up('md')]: {
-          width: 960
-        },
-        [theme.breakpoints.up('lg')]: {
-          padding: theme.spacing(0, 0, 0, 280 / 8),
-          width: 1024
-        },
-        [theme.breakpoints.up('xl')]: {
-          width: 1440
         }
       },
       content: {
-        width: '100%',
         display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        height: theme.spacing(7),
         columnGap: `${theme.spacing(6)}px`,
+        background: theme.colors.background.primary,
+        color: theme.colors.neutral['2'],
+        boxSizing: 'border-box',
         [theme.breakpoints.down('xs')]: {
           flexFlow: 'column wrap',
           height: 'auto',

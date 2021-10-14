@@ -12,38 +12,29 @@ export default {
 
 export const FooterOverviewVS = (): JSX.Element => {
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center'
-      }}
-    >
-      <Footer>
-        <Typography align={'left'} variant={'c3'} style={{ flexGrow: 1 }}>
-          {`${String.fromCharCode(169)} ${new Date().getUTCFullYear()} SCALARA`}
-        </Typography>
-        <Typography
-          color={'primary'}
-          align={'center'}
-          linkColor={'clickable'}
-          linkVariant={'c3'}
-          variant={'c3'}
-        >
-          <a href="#">Imprint</a>
-        </Typography>
-        <Typography
-          color={'primary'}
-          align={'center'}
-          linkColor={'clickable'}
-          linkVariant={'c3'}
-          variant={'c3'}
-        >
-          <a href="#">Privacy</a>
-        </Typography>
-      </Footer>
-    </div>
+    <Footer>
+      <Typography align={'left'} variant={'c3'} style={{ flexGrow: 1 }}>
+        {`${String.fromCharCode(169)} ${new Date().getUTCFullYear()} SCALARA`}
+      </Typography>
+      <Typography
+        color={'primary'}
+        align={'center'}
+        linkColor={'clickable'}
+        linkVariant={'c3'}
+        variant={'c3'}
+      >
+        <a href="#">Imprint</a>
+      </Typography>
+      <Typography
+        color={'primary'}
+        align={'center'}
+        linkColor={'clickable'}
+        linkVariant={'c3'}
+        variant={'c3'}
+      >
+        <a href="#">Privacy</a>
+      </Typography>
+    </Footer>
   );
 };
 FooterOverviewVS.storyName = 'Overview';

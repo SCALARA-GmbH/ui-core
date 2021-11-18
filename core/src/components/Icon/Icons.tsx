@@ -31,6 +31,7 @@ export type IconName =
   | 'contact-data'
   | 'delete'
   | 'delete40'
+  | 'edit'
   | 'error'
   | 'finance'
   | 'information'
@@ -44,6 +45,7 @@ export type IconName =
   | 'real-estate'
   | 'scalara-logo'
   | 'scalara-text'
+  | 'search'
   | 'select'
   | 'subMenu'
   | 'success'
@@ -66,7 +68,13 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24,
   },
-
+  edit: {
+    children: (
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+    ),
+    viewBox: viewBox24,
+    size: 24,
+  },
   error: {
     children: (
       <g>
@@ -338,6 +346,21 @@ export const icons: Record<IconName, Svg> = {
     ),
     viewBox: viewBox40,
     size: 40,
+  },
+  search: {
+    children: (
+      <>
+        <circle
+          cx="9.813"
+          cy="9.812"
+          r="9.063"
+          transform="translate(-3.056 4.62) rotate(-23.025)"
+        />
+        <line x1="16.221" y1="16.22" x2="23.25" y2="23.25" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24,
   },
   select: {
     children: (

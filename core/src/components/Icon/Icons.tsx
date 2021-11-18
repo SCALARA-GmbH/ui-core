@@ -23,6 +23,7 @@ export type IconName =
   | 'arrow-left'
   | 'up-down'
   | 'circle'
+  | 'cashbox'
   | 'close'
   | 'company'
   | 'communication'
@@ -477,6 +478,23 @@ export const icons: Record<IconName, Svg> = {
     children: (
       <>
         <path d="M22,22V8.5l-9.5-7.8L3,8.5V22H1v2h23v-2H22z M5,9.5l7.5-6.2L20,9.5V22h-3v-6v-1v-1H8v1v1v6H5V9.5z M15,16v6h-5v-6H15z" />
+      </>
+    ),
+    viewBox: viewBox40,
+    size: 40,
+  },
+  cashbox: {
+    children: (
+      <>
+        <path d="M34,28V10H26V7h4V1H20V7h4v3H5V28H2V38H38V28ZM22,3h6V5H22ZM7,12H32V28H7ZM36,36H4V30H36Z" />
+        <rect x="16" y="32" width="8" height="2" />
+        <rect x="9" y="23" width="3" height="2" />
+        <rect x="9" y="19" width="3" height="2" />
+        <rect x="14" y="23" width="3" height="2" />
+        <rect x="14" y="19" width="3" height="2" />
+        <rect x="9" y="15" width="3" height="2" />
+        <rect x="14" y="15" width="3" height="2" />
+        <path d="M20,21H30V15H20Zm2-4h6v2H22Z" />
       </>
     ),
     viewBox: viewBox40,

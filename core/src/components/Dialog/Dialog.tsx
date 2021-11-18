@@ -83,7 +83,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
           </div>
         )}
       </DialogTitle>
-      <DialogContent>
+      <DialogContent className={classes.content}>
         <Grid xs={12}>
           <GridItem className={gridItemStyles}>
             <div className={classes.titleWrapper}>

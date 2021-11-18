@@ -223,9 +223,9 @@ export const icons: Record<IconName, Svg> = {
   },
   'arrow-left': {
     children: (
-      <polyline
-        transform="translate(17.000000, 12.000000) rotate(-225.000000) translate(-17.000000, -12.000000) "
-        points="9 20 25 20 25 4"
+      <polygon
+        className="cls-1"
+        points="19.54 11 8.29 11 12.95 6.34 11.54 4.93 5.88 10.59 5.88 10.59 4.46 12 5.88 13.41 11.54 19.07 12.95 17.66 8.29 13 19.54 13 19.54 11"
       />
     ),
     viewBox: viewBox24,

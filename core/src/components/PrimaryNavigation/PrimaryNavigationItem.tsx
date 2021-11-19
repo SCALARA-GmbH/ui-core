@@ -1,4 +1,4 @@
-import { ListItem, useMediaQuery, useTheme } from '@material-ui/core';
+import { ListItem, useMediaQuery, useTheme } from '@mui/material';
 import cx from 'classnames';
 import * as React from 'react';
 

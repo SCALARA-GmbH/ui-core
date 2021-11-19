@@ -1,1 +1,1 @@
-export { CssBaseline } from '@material-ui/core';
+export { CssBaseline } from '@mui/material';

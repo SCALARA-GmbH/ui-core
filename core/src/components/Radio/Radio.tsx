@@ -1,7 +1,4 @@
-import {
-  Radio as MuiRadio,
-  RadioProps as MuiRadioProps,
-} from '@material-ui/core';
+import { Radio as MuiRadio, RadioProps as MuiRadioProps } from '@mui/material';
 import * as React from 'react';
 
 import { Typography } from '../..';

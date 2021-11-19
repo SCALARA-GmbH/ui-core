@@ -1,4 +1,4 @@
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 import { select, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 

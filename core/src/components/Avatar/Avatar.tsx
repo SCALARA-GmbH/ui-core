@@ -1,4 +1,4 @@
-import { Avatar as MaterialAvatar, Tooltip } from '@material-ui/core';
+import { Avatar as MaterialAvatar, Tooltip } from '@mui/material';
 import cx from 'classnames';
 import * as React from 'react';
 

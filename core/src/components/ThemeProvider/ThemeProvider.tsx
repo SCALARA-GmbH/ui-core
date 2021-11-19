@@ -1,16 +1,17 @@
-import DateFnsUtils from '@date-io/date-fns';
-import { PaletteType } from '@material-ui/core';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { PaletteMode } from '@mui/material';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import deLocale from 'date-fns/locale/de';
 import * as React from 'react';
 
 import ScalaraTheme from './themes/scalara-theme';
+
 import './font/index.css';
 
 export interface ThemeProps {
   children?: React.ReactNode;
-  type?: PaletteType;
+  type?: PaletteMode;
 }
 
 const ThemeProvider: React.FunctionComponent<ThemeProps> = ({
@@ -20,9 +21,9 @@ const ThemeProvider: React.FunctionComponent<ThemeProps> = ({
   const getTheme = React.useCallback(() => ScalaraTheme(type), [type]);
 
   return (
-    <MuiPickersUtilsProvider locale={deLocale} utils={DateFnsUtils}>
+    <LocalizationProvider dateAdapter={AdapterDateFns} locale={deLocale}>
       <MuiThemeProvider theme={getTheme()}>{children}</MuiThemeProvider>
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 };
 

@@ -1,5 +1,5 @@
-import { Menu, MenuItem, Slide } from '@material-ui/core';
-import { TransitionProps } from '@material-ui/core/transitions';
+import { Menu, MenuItem, Slide } from '@mui/material';
+import { TransitionProps } from '@mui/material/transitions';
 import cx from 'classnames';
 import * as React from 'react';
 
@@ -44,7 +44,6 @@ const SideMenu: React.FunctionComponent<Props> = ({
       classes={{ paper: classes.backgroundColor }}
       anchorEl={menuHandle}
       PaperProps={{ square: true }}
-      getContentAnchorEl={null}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       keepMounted
       marginThreshold={0}

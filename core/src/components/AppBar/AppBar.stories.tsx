@@ -52,7 +52,7 @@ export const AppBarStory = (): JSX.Element => {
           id: 0,
           title: 'PROFILE',
           label: 'SIGN OUT',
-          iconName: 'person-outline',
+          iconName: 'person.outline',
         },
         { id: 1, title: 'SIGN OUT', label: 'SIGN OUT', iconName: 'logout' },
       ]}

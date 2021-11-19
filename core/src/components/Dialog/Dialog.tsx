@@ -3,53 +3,42 @@ import {
   DialogContent,
   DialogProps as MuiDialogProps,
   DialogTitle,
-} from '@material-ui/core';
+  useMediaQuery,
+} from '@mui/material';
 import cx from 'classnames';
 import * as React from 'react';
 
-import { Grid, Icon, IconButton, Typography } from '../..';
-import GridItem from '../GridItem';
-import useGridItemStyles from '../GridItemHook/useGridItemClass';
-import { IconName } from '../Icon/Icons';
-import IconBubble from '../IconBubble';
+import { Icon, IconButton, Typography, useTheme } from '../..';
 
 import { useStyles } from './styles';
 
 export interface DialogProps {
   children?: React.ReactNode;
-  disableBackdropClick?: MuiDialogProps['disableBackdropClick'];
-  fullScreen?: MuiDialogProps['fullScreen'];
   fullWidth?: MuiDialogProps['fullWidth'];
   maxWidth?: MuiDialogProps['maxWidth'];
   onBack?: () => void;
   onClose: () => void;
   open?: MuiDialogProps['open'];
   title: string;
-  titleIcon?: IconName;
   backLabel?: string;
 }
 
 const Dialog: React.FunctionComponent<DialogProps> = ({
   children,
-  disableBackdropClick = false,
-  fullScreen = false,
   fullWidth = true,
   maxWidth = 'lg',
   onBack,
   onClose,
   open = false,
   title,
-  titleIcon,
   backLabel,
 }) => {
   const classes = useStyles();
-  const gridItemStyles = useGridItemStyles({
-    xs: { start: '4', end: 'span 6' },
-  });
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <MuiDialog
-      disableBackdropClick={disableBackdropClick}
       fullScreen={fullScreen}
       fullWidth={fullWidth}
       maxWidth={maxWidth}
@@ -60,10 +49,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
         paperScrollBody: classes.scrollPaper,
       }}
     >
-      <DialogTitle
-        disableTypography
-        className={cx(classes.titleBar, { [classes.multiStep]: onBack })}
-      >
+      <DialogTitle className={classes.titleWrapper}>
         {onBack && (
           <IconButton
             Icon={Icon}
@@ -72,31 +58,21 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
             ariaLabel={backLabel}
           />
         )}
+        <Typography
+          className={cx({ [classes.offsetBackButton]: !onBack })}
+          align={'center'}
+          variant={'t3'}
+          span
+          fullWidth
+        >
+          {title}
+        </Typography>
         {fullScreen && (
-          <div>
-            <IconButton
-              Icon={Icon}
-              iconName={'close'}
-              onClick={onClose}
-              className={classes.closeButton}
-            />
-          </div>
+          <IconButton Icon={Icon} iconName={'close'} onClick={onClose} />
         )}
       </DialogTitle>
-      <DialogContent className={classes.content}>
-        <Grid xs={12}>
-          <GridItem className={gridItemStyles}>
-            <div className={classes.titleWrapper}>
-              {titleIcon && (
-                <div className={classes.titleIcon}>
-                  <IconBubble name={titleIcon} size={'medium'} />
-                </div>
-              )}
-              <Typography variant={'t1'}>{title}</Typography>
-            </div>
-            {children}
-          </GridItem>
-        </Grid>
+      <DialogContent classes={{ root: classes.content }}>
+        {children}
       </DialogContent>
     </MuiDialog>
   );

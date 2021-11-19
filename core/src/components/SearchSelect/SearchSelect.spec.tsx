@@ -1,11 +1,11 @@
-import { CollapseProps } from '@material-ui/core/Collapse/Collapse';
+import { CollapseProps } from '@mui/material/Collapse';
 import * as React from 'react';
 
 import { fireEvent, render } from '../../../test-utils/render';
 
 import SearchSelect, { SearchSelectOption } from './SearchSelect';
 
-jest.mock('@material-ui/core/Collapse', () => (props: CollapseProps) =>
+jest.mock('@mui/material/Collapse', () => (props: CollapseProps) =>
   props.in ? <div>{props.children}</div> : <div />
 );
 

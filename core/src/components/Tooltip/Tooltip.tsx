@@ -1,6 +1,5 @@
-import { Tooltip as MuiTooltip } from '@material-ui/core';
-import { Spacing } from '@material-ui/core/styles/createSpacing';
-import { Shadows } from '@material-ui/core/styles/shadows';
+import { Tooltip as MuiTooltip } from '@mui/material';
+import { Spacing, Shadows } from '@mui/material/styles';
 import * as React from 'react';
 
 import { makeStyles } from '../ThemeProvider/styles';

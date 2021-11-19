@@ -1,4 +1,4 @@
-import { TableCell } from '@material-ui/core';
+import { TableCell } from '@mui/material';
 import * as React from 'react';
 
 import { makeStylesWithProps } from '../ThemeProvider/styles';

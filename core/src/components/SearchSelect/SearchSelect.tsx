@@ -1,5 +1,5 @@
-import { Collapse, InputBase, List } from '@material-ui/core';
-import useAutocomplete from '@material-ui/lab/useAutocomplete';
+import { Collapse, InputBase, List } from '@mui/material';
+import useAutocomplete from '@mui/material/useAutocomplete';
 import cx from 'classnames';
 import * as React from 'react';
 
@@ -65,7 +65,7 @@ const SearchSelect: React.FunctionComponent<SearchSelectProps> = ({
       value && onChange(value);
     },
     getOptionLabel: (option) => `${option.title} ${option.cells.join(' ')}`,
-    getOptionSelected: (option, value) => option.value === value.value,
+    isOptionEqualToValue: (option, value) => option.value === value.value,
     value,
     onClose: () => setOpen(false),
   });

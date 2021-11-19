@@ -1,4 +1,4 @@
-import { createStyles } from '@material-ui/core';
+import createStyles from '@mui/styles/createStyles';
 
 import { makeStylesWithProps } from '../..';
 import { Size } from '../../types';

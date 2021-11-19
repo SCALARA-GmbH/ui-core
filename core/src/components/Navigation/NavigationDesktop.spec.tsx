@@ -6,8 +6,8 @@ import NavigationDesktop from './NavigationDesktop';
 import NavigationItem from './NavigationItem';
 import NavigationItemGroup from './NavigationItemGroup';
 
-jest.mock('@material-ui/core', () => {
-  const actual = jest.requireActual('@material-ui/core');
+jest.mock('@mui/material', () => {
+  const actual = jest.requireActual('@mui/material');
   return {
     ...actual,
     useMediaQuery: () => true,

@@ -16,7 +16,12 @@ export const DialogStory = (): JSX.Element => {
         onClick={() => setOpen(true)}
         label={'Open Dialog'}
       />
-      <Dialog onClose={() => setOpen(false)} open={open} title={'Title'}>
+      <Dialog
+        fullScreen
+        onClose={() => setOpen(false)}
+        open={open}
+        title={'Title'}
+      >
         <Typography>Hi I am content</Typography>
         <DialogActions onSubmit={() => setOpen(false)} />
       </Dialog>
@@ -24,6 +29,30 @@ export const DialogStory = (): JSX.Element => {
   );
 };
 DialogStory.storyName = 'Overview';
+
+export const IconBubbleDialogStory = (): JSX.Element => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div style={{ padding: 16 }}>
+      <Button
+        hierarchy={'primary'}
+        onClick={() => setOpen(true)}
+        label={'Open Dialog'}
+      />
+      <Dialog
+        fullScreen
+        onClose={() => setOpen(false)}
+        open={open}
+        title={'Title'}
+        titleIcon={'cashbox'}
+      >
+        <Typography>Hi I am content</Typography>
+        <DialogActions onSubmit={() => setOpen(false)} />
+      </Dialog>
+    </div>
+  );
+};
+IconBubbleDialogStory.storyName = 'Dialog with Iconbubble';
 
 export const DialogDeleteStory = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +63,12 @@ export const DialogDeleteStory = (): JSX.Element => {
         onClick={() => setOpen(true)}
         label={'Open Delete Dialog'}
       />
-      <Dialog onClose={() => setOpen(false)} open={open} title={'Title'}>
+      <Dialog
+        fullScreen
+        onClose={() => setOpen(false)}
+        open={open}
+        title={'Title'}
+      >
         <Typography>Hi I am content</Typography>
         <DialogActions
           onCancel={() => setOpen(false)}
@@ -59,6 +93,7 @@ export const StepDialogStory = (): JSX.Element => {
         label={'Open Stepper Dialog'}
       />
       <Dialog
+        fullScreen
         onBack={step > 0 ? () => setStep((prev) => prev - 1) : undefined}
         onClose={() => setOpen(false)}
         open={open}

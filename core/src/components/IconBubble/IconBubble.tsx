@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import * as React from 'react';
 
+import { Size } from '../../types';
 import { Icon } from '../Icon';
 import { IconName } from '../Icon/Icon';
 import { makeStylesWithProps } from '../ThemeProvider/styles';
@@ -17,8 +18,15 @@ export const Hierarchies = [
 type HierarchyTypes = typeof Hierarchies;
 export type Hierarchy = HierarchyTypes[number];
 
+export const Sizes = new Map<Size, number>([
+  ['large', 3],
+  ['medium', 2],
+  ['small', 1],
+]);
+
 interface Props {
   name: IconName;
+  size: Size;
   className?: string;
   hierarchy?: Hierarchy;
 }
@@ -52,12 +60,12 @@ const getPalette = ({
   }
 };
 
-const useStyles = makeStylesWithProps<{ hierarchy: Hierarchy }>(
+const useStyles = makeStylesWithProps<{ size: Size; hierarchy: Hierarchy }>(
   ({ spacing, colors }) => ({
     icon: {
       background: ({ hierarchy }) => getPalette({ hierarchy, colors })['50'],
       borderRadius: '50%',
-      padding: spacing(3),
+      padding: ({ size }) => spacing(Sizes.get(size)!),
       color: ({ hierarchy }) => getPalette({ hierarchy, colors }).default,
       overflow: 'overlay',
     },
@@ -67,10 +75,11 @@ const useStyles = makeStylesWithProps<{ hierarchy: Hierarchy }>(
 
 const IconBubble: React.FunctionComponent<Props> = ({
   name,
+  size,
   className,
   hierarchy = 'secondary',
 }) => {
-  const classes = useStyles({ hierarchy });
+  const classes = useStyles({ size, hierarchy });
   return (
     <Icon name={name} size="medium" className={cx(classes.icon, className)} />
   );

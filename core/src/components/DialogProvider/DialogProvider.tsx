@@ -39,7 +39,12 @@ const DialogProvider: React.FunctionComponent<Props> = ({ children }) => {
         {children}
       </DialogContext.Provider>
       {config && (
-        <Dialog open={open} onClose={() => setOpen(false)} title={config.title}>
+        <Dialog
+          fullScreen
+          open={open}
+          onClose={() => setOpen(false)}
+          title={config.title}
+        >
           <Typography align={'center'}>{config.message}</Typography>
           <DialogActions
             SubmitButtonProps={{

@@ -23,6 +23,7 @@ export type IconName =
   | 'arrow-left'
   | 'up-down'
   | 'circle'
+  | 'cashbox'
   | 'close'
   | 'company'
   | 'communication'
@@ -67,7 +68,13 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox24,
     size: 24,
   },
-
+  edit: {
+    children: (
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+    ),
+    viewBox: viewBox24,
+    size: 24,
+  },
   error: {
     children: (
       <g>
@@ -148,22 +155,6 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40,
   },
-  search: {
-    children: (
-      <>
-        <circle
-          cx="9.813"
-          cy="9.812"
-          r="9.063"
-          transform="translate(-3.056 4.62) rotate(-23.025)"
-        />
-        <line x1="16.221" y1="16.22" x2="23.25" y2="23.25" />
-      </>
-    ),
-    viewBox: viewBox24,
-    size: 24,
-  },
-
   information: {
     children: (
       <>
@@ -222,9 +213,9 @@ export const icons: Record<IconName, Svg> = {
   },
   'arrow-left': {
     children: (
-      <polyline
-        transform="translate(17.000000, 12.000000) rotate(-225.000000) translate(-17.000000, -12.000000) "
-        points="9 20 25 20 25 4"
+      <polygon
+        className="cls-1"
+        points="19.54 11 8.29 11 12.95 6.34 11.54 4.93 5.88 10.59 5.88 10.59 4.46 12 5.88 13.41 11.54 19.07 12.95 17.66 8.29 13 19.54 13 19.54 11"
       />
     ),
     viewBox: viewBox24,
@@ -281,14 +272,6 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40,
   },
-  edit: {
-    children: (
-      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
-    ),
-    viewBox: viewBox24,
-    size: 24,
-  },
-
   close: {
     children: (
       <polygon
@@ -363,6 +346,21 @@ export const icons: Record<IconName, Svg> = {
     ),
     viewBox: viewBox40,
     size: 40,
+  },
+  search: {
+    children: (
+      <>
+        <circle
+          cx="9.813"
+          cy="9.812"
+          r="9.063"
+          transform="translate(-3.056 4.62) rotate(-23.025)"
+        />
+        <line x1="16.221" y1="16.22" x2="23.25" y2="23.25" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24,
   },
   select: {
     children: (
@@ -477,6 +475,23 @@ export const icons: Record<IconName, Svg> = {
     children: (
       <>
         <path d="M22,22V8.5l-9.5-7.8L3,8.5V22H1v2h23v-2H22z M5,9.5l7.5-6.2L20,9.5V22h-3v-6v-1v-1H8v1v1v6H5V9.5z M15,16v6h-5v-6H15z" />
+      </>
+    ),
+    viewBox: viewBox40,
+    size: 40,
+  },
+  cashbox: {
+    children: (
+      <>
+        <path d="M34,28V10H26V7h4V1H20V7h4v3H5V28H2V38H38V28ZM22,3h6V5H22ZM7,12H32V28H7ZM36,36H4V30H36Z" />
+        <rect x="16" y="32" width="8" height="2" />
+        <rect x="9" y="23" width="3" height="2" />
+        <rect x="9" y="19" width="3" height="2" />
+        <rect x="14" y="23" width="3" height="2" />
+        <rect x="14" y="19" width="3" height="2" />
+        <rect x="9" y="15" width="3" height="2" />
+        <rect x="14" y="15" width="3" height="2" />
+        <path d="M20,21H30V15H20Zm2-4h6v2H22Z" />
       </>
     ),
     viewBox: viewBox40,

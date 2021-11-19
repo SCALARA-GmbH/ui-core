@@ -4,7 +4,7 @@ export const useStyles = makeStyles(({ spacing, breakpoints }) =>
   createStyles({
     root: {
       display: 'flex',
-      paddingTop: spacing(3),
+      marginTop: spacing(12.5),
       flexDirection: 'column',
       [breakpoints.up('sm')]: {
         flexDirection: 'row',

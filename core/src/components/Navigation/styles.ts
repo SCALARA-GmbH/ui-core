@@ -4,7 +4,7 @@ import { getFontWeight } from '../Typography/styles';
 export const useStyles = makeStylesWithProps<{
   disabled?: boolean;
 }>(
-  ({ colors, spacing, mixins, zIndex }) => ({
+  ({ colors, spacing, mixins }) => ({
     item: {
       height: spacing(6),
       '&:hover': {
@@ -42,7 +42,6 @@ export const useStyles = makeStylesWithProps<{
     drawer: {
       width: spacing(28),
       flexShrink: 0,
-      zIndex: zIndex.secondaryNavigation,
     },
     header: {
       userSelect: 'none',
@@ -97,7 +96,6 @@ export const useStyles = makeStylesWithProps<{
       borderRight: `1px solid ${colors.border.main}`,
     },
     select: {
-      zIndex: zIndex.secondaryNavigation,
       border: `1px solid ${colors.border.main}`,
       position: 'fixed',
       left: 0,
@@ -128,7 +126,6 @@ export const useStyles = makeStylesWithProps<{
     },
     mobileRoot: {
       width: '100%',
-      zIndex: zIndex.secondaryNavigation,
     },
     drawerMobile: {
       width: '100%',

@@ -1,4 +1,4 @@
-import { Fade, Popper, PopperProps } from '@material-ui/core';
+import { Fade, Popper, PopperProps } from '@mui/material';
 import PopperJs from 'popper.js';
 import * as React from 'react';
 

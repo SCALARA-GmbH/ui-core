@@ -1,4 +1,4 @@
-import { AppBar, Drawer, List } from '@material-ui/core';
+import { AppBar, Drawer, List } from '@mui/material';
 import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 import * as React from 'react';

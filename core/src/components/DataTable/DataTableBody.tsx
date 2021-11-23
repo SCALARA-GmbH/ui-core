@@ -1,4 +1,4 @@
-import { TableBody } from '@material-ui/core';
+import { TableBody } from '@mui/material';
 import * as React from 'react';
 
 interface Props {

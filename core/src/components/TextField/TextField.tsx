@@ -2,7 +2,7 @@ import {
   InputAdornment,
   InputBase,
   InputBaseComponentProps,
-} from '@material-ui/core';
+} from '@mui/material';
 import cx from 'classnames';
 import * as React from 'react';
 import { useRef, useState } from 'react';

@@ -1,7 +1,7 @@
 import {
   Checkbox as MuiCheckbox,
   CheckboxProps as MuiCheckboxProps,
-} from '@material-ui/core';
+} from '@mui/material';
 import classNames from 'classnames';
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';

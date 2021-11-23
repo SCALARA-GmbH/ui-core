@@ -1,4 +1,4 @@
-import Collapse from '@material-ui/core/Collapse';
+import Collapse from '@mui/material/Collapse';
 import cx from 'classnames';
 import * as React from 'react';
 

@@ -1,4 +1,4 @@
-import { Drawer, List } from '@material-ui/core';
+import { Drawer, List } from '@mui/material';
 import * as React from 'react';
 
 import { Logo } from '../../index';

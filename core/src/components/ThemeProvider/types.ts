@@ -1,5 +1,5 @@
-import { PaletteType, Theme as MuiTheme } from '@material-ui/core';
-import { CSSProperties } from '@material-ui/core/styles/withStyles';
+import { PaletteMode, Theme as MuiTheme } from '@mui/material';
+import { CSSProperties } from '@mui/material/styles';
 import * as React from 'react';
 
 export type Color = React.CSSProperties['color'];
@@ -65,5 +65,5 @@ export interface Colors {
 
 export interface Theme extends MuiTheme {
   colors: Colors;
-  type: PaletteType;
+  type: PaletteMode;
 }

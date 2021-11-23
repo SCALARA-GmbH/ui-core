@@ -1,9 +1,14 @@
 import * as React from 'react';
 
-import { ThemeProvider } from '../..';
+import { ThemeProvider, Theme } from '../..';
 import { fireEvent, render } from '../../../test-utils/render';
 
 import Radio from './Radio';
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 describe('<Radio />', () => {
   it('renders without crashing', () => {

@@ -1,27 +1,34 @@
-import { createMuiTheme, fade, PaletteType } from '@material-ui/core';
-import shadows, { Shadows } from '@material-ui/core/styles/shadows';
+import { createTheme, alpha, PaletteMode } from '@mui/material';
+import shadows, { Shadows } from '@mui/material/styles/shadows';
 
 import { Colors, Theme, Color } from '../types';
 
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@mui/material/styles/createTheme' {
   interface Theme {
     colors: Colors;
-    type: PaletteType;
+    type: PaletteMode;
   }
   interface ThemeOptions {
     colors: Colors;
-    type: PaletteType;
+    type: PaletteMode;
   }
 }
 
-declare module '@material-ui/core/styles/createMixins' {
+declare module '@mui/styles/defaultTheme' {
+  interface DefaultTheme extends Theme {
+    colors: Colors;
+    type: PaletteMode;
+  }
+}
+
+declare module '@mui/material/styles/createMixins' {
   export interface Mixins {
     primaryNavigationDesktopWidth: string;
     primaryNavigationMobileHeight: string;
   }
 }
 
-declare module '@material-ui/core/styles/zIndex' {
+declare module '@mui/material/styles/zIndex' {
   export interface ZIndex {
     toast: number;
     primaryNavigation: number;
@@ -31,17 +38,17 @@ declare module '@material-ui/core/styles/zIndex' {
 
 const generateShadows = (...colors: Color[]): Shadows => {
   const scalaraShadows = new Array(shadows.length).fill(
-    `0px 20px 30px 0px ${fade(colors[0] as string, 0.12)}`
+    `0px 20px 30px 0px ${alpha(colors[0] as string, 0.12)}`
   );
 
-  scalaraShadows[1] = `0px 0px 0px 7px ${fade(colors[1] as string, 0.15)}`;
+  scalaraShadows[1] = `0px 0px 0px 7px ${alpha(colors[1] as string, 0.15)}`;
 
   scalaraShadows[2] = `0px 0px 0px 2px ${colors[2]} inset`;
 
   return scalaraShadows as Shadows;
 };
 
-const theme = (type: PaletteType): Theme => {
+const theme = (type: PaletteMode): Theme => {
   let colors: Colors = {
     primary: {
       default: '#000000',
@@ -157,7 +164,7 @@ const theme = (type: PaletteType): Theme => {
     };
   }
 
-  return createMuiTheme({
+  return createTheme({
     spacing: 8,
     breakpoints: {
       values: {
@@ -195,19 +202,23 @@ const theme = (type: PaletteType): Theme => {
       primaryNavigationDesktopWidth: '56px',
       primaryNavigationMobileHeight: '48px',
     },
-    overrides: {
+    components: {
       MuiCssBaseline: {
-        '@global': {
-          html: {
-            boxSizing: 'content-box',
+        styleOverrides: {
+          '@global': {
+            html: {
+              boxSizing: 'content-box',
+            },
           },
         },
       },
       MuiInputBase: {
-        input: {
-          '&:-webkit-autofill': {
-            transitionDelay: '9999s',
-            transitionProperty: 'background-color, color',
+        styleOverrides: {
+          input: {
+            '&:-webkit-autofill': {
+              transitionDelay: '9999s',
+              transitionProperty: 'background-color, color',
+            },
           },
         },
       },

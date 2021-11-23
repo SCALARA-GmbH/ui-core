@@ -4,7 +4,7 @@ import {
   ListItemText,
   MenuItem,
   Select as MuiSelect,
-} from '@material-ui/core';
+} from '@mui/material';
 import cx from 'classnames';
 import * as React from 'react';
 
@@ -62,7 +62,9 @@ const useIconStyles = makeStyles(
   }),
   { name: 'SCA__Select-Icon' }
 );
-export const ArrowDownIcon = ({ className }: { className?: string }) => {
+export const ArrowDownIcon: React.FunctionComponent<{ className?: string }> = ({
+  className,
+}) => {
   const classes = useIconStyles();
   return (
     <Icon

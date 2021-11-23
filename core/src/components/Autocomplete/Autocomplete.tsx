@@ -1,8 +1,8 @@
-import { ListItemAvatar, ListItemText } from '@material-ui/core';
+import { ListItemAvatar, ListItemText } from '@mui/material';
 import MuiAutocomplete, {
   AutocompleteProps as MuiAutocompleteProps,
   createFilterOptions,
-} from '@material-ui/lab/Autocomplete';
+} from '@mui/material/Autocomplete';
 import * as React from 'react';
 
 import { Avatar, Icon, TextField, Typography, useTheme } from '../..';
@@ -79,7 +79,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
       }}
       className={className}
       clearText={clearLabel}
-      closeIcon={
+      clearIcon={
         <Icon color={theme.colors.icon.control} name={'close'} size={'small'} />
       }
       disabled={disabled}
@@ -101,7 +101,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
         return filtered;
       }}
       getOptionLabel={(option) => option.title}
-      getOptionSelected={(option, value) => option.value === value.value}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
       onChange={(event, newValue: SelectOption | null) => {
         if (newValue) {
           if (options.map(({ value }) => value).includes(newValue.value)) {
@@ -136,8 +136,8 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           name={name}
         />
       )}
-      renderOption={({ avatarProps, subtitle, title }) => (
-        <>
+      renderOption={(props, { avatarProps, subtitle, title }) => (
+        <li {...props}>
           {avatarProps && (
             <ListItemAvatar>
               <Avatar size={'small'} {...avatarProps} />
@@ -148,7 +148,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
             primary={<Typography>{title}</Typography>}
             secondary={<Typography variant={'c3'}>{subtitle}</Typography>}
           />
-        </>
+        </li>
       )}
       style={style}
       value={value}

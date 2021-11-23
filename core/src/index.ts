@@ -78,5 +78,5 @@ export { toast } from './components/Toast';
 export { default as Tooltip } from './components/Tooltip';
 export { default as Typography } from './components/Typography';
 export { Theme } from './components/ThemeProvider/types';
-export { createStyles, withStyles } from '@material-ui/core/styles';
-export { useMediaQuery } from '@material-ui/core';
+export { createStyles, withStyles } from '@mui/styles';
+export { useMediaQuery } from '@mui/material';

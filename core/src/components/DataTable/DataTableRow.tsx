@@ -1,4 +1,4 @@
-import { TableRow } from '@material-ui/core';
+import { TableRow } from '@mui/material';
 import * as React from 'react';
 
 import { makeStyles } from '../ThemeProvider/styles';

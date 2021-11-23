@@ -1,4 +1,4 @@
-import { createStyles } from '@material-ui/core';
+import { createStyles } from '@mui/styles';
 import * as React from 'react';
 
 import {

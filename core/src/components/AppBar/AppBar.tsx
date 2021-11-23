@@ -1,6 +1,6 @@
-import { Drawer, List, ListItem } from '@material-ui/core';
-import MuiAppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Drawer, List, ListItem } from '@mui/material';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import cx from 'classnames';
 import * as React from 'react';
 import { ComponentType } from 'react';

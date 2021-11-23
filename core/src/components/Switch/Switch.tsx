@@ -1,7 +1,7 @@
 import {
   Switch as MuiSwitch,
   SwitchProps as MuiSwitchProps,
-} from '@material-ui/core';
+} from '@mui/material';
 import classNames from 'classnames';
 import * as React from 'react';
 

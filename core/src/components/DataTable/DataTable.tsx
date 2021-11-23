@@ -1,4 +1,4 @@
-import { Table, TableContainer } from '@material-ui/core';
+import { Table, TableContainer } from '@mui/material';
 import * as React from 'react';
 
 import { makeStyles } from '../ThemeProvider/styles';

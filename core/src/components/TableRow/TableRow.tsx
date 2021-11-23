@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@mui/material';
 import classNames from 'classnames';
 import * as React from 'react';
 
@@ -30,7 +30,7 @@ const TableRow: React.FunctionComponent<TableRowProps> = ({
 }) => {
   const classes = useStyles({ onClick });
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <div

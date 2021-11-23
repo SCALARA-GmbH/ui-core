@@ -1,4 +1,4 @@
-import { createStyles } from '@material-ui/core';
+import { createStyles } from '@mui/styles';
 
 import { makeStyles } from '../ThemeProvider/styles';
 import { getFontStyle } from '../Typography/styles';

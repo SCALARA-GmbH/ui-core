@@ -1,10 +1,10 @@
-import MuiLabSkeleton from '@material-ui/lab/Skeleton';
+import MuiLabSkeleton from '@mui/material/Skeleton';
 import * as React from 'react';
 
 interface Props {
   children?: React.ReactNode;
   height?: number | string;
-  variant?: 'text' | 'rect' | 'circle';
+  variant?: 'text' | 'rectangular' | 'circular';
   width?: number | string;
 }
 

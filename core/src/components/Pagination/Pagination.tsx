@@ -1,4 +1,4 @@
-import MuiLabPagination from '@material-ui/lab/Pagination';
+import MuiLabPagination from '@mui/material/Pagination';
 import * as React from 'react';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
   /**
    * The shape of the pagination items.
    */
-  shape?: 'round' | 'rounded';
+  shape?: 'circular' | 'rounded';
   /**
    * The size of the pagination component.
    */
@@ -91,7 +91,7 @@ const Pagination: React.FunctionComponent<Props> = ({
   hidePrevButton = false,
   onChange,
   page,
-  shape = 'round',
+  shape = 'circular',
   showFirstButton = false,
   showLastButton = false,
   siblingCount,

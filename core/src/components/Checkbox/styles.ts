@@ -1,4 +1,4 @@
-import { fade } from '@material-ui/core';
+import { alpha } from '@mui/material';
 
 import { createStyles, makeStyles } from '../..';
 
@@ -38,7 +38,7 @@ export const useStyles = makeStyles(
         background: theme.colors.neutral['6'],
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
-        boxShadow: `0px 0px 0px 7px ${fade(
+        boxShadow: `0px 0px 0px 7px ${alpha(
           theme.colors.secondary.default as string,
           0.15
         )} `,

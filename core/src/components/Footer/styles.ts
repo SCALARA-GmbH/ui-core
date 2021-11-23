@@ -8,14 +8,14 @@ export const useStyles = makeStyles(
         alignItems: 'center',
         width: '100%',
         height: theme.spacing(7),
-        columnGap: `${theme.spacing(6)}px`,
+        columnGap: theme.spacing(6),
         background: theme.colors.background.primary,
         color: theme.colors.neutral['2'],
         boxSizing: 'border-box',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
           flexFlow: 'column wrap',
           height: 'auto',
-          rowGap: `${theme.spacing(5)}px`,
+          rowGap: theme.spacing(5),
           '& > *': {
             margin: 'auto',
           },

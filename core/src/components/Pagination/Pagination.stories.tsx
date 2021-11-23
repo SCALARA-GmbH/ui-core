@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Pagination } from '../..';
+import { Grid, Pagination, useTheme } from '../..';
 
 export default {
   title: 'Components/Pagination',
@@ -8,8 +8,15 @@ export default {
 };
 
 export const PaginationStory = (): JSX.Element => {
+  const theme = useTheme();
+
   return (
-    <div style={{ padding: 16 }}>
+    <div
+      style={{
+        padding: 16,
+        backgroundColor: theme.colors.background.primary,
+      }}
+    >
       <Grid xs={1}>
         <Pagination count={10} />
         <Pagination count={10} color="primary" />

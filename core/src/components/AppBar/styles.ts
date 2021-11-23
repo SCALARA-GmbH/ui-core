@@ -13,21 +13,21 @@ export const useStyles = makeStyles((theme) =>
     },
     logoRightBorder: {
       padding: theme.spacing(0, 2, 0, 0),
-      borderRight: `${theme.spacing(0.125)}px solid ${
+      borderRight: `${theme.spacing(0.125)} solid ${
         theme.colors.background.disabled
       }`,
     },
     desktopLeft: {
       display: 'flex',
       paddingLeft: theme.spacing(2),
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         display: 'none',
       },
     },
     mobileLeft: {
       paddingLeft: theme.spacing(1),
       display: 'none',
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         display: 'flex',
       },
     },

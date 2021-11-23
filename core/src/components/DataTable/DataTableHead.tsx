@@ -1,4 +1,4 @@
-import { TableHead } from '@material-ui/core';
+import { TableHead } from '@mui/material';
 import * as React from 'react';
 
 interface Props {

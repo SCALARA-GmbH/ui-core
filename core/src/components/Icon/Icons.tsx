@@ -474,9 +474,13 @@ export const icons: Record<IconName, Svg> = {
   'property-avatar': {
     children: (
       <>
-        <path d="M22,22V8.5l-9.5-7.8L3,8.5V22H1v2h23v-2H22z M5,9.5l7.5-6.2L20,9.5V22h-3v-6v-1v-1H8v1v1v6H5V9.5z M15,16v6h-5v-6H15z" />
+        <path d="M30,28V14.5L20,6.7,10,14.5V28H8v2H32V28ZM12,15.5l8-6.2,8,6.2V28H24V20H16v8H12ZM22,22v6H18V22Z" />
       </>
     ),
+    outline: (
+      <path d="M20,1A19,19,0,1,1,1,20,19,19,0,0,1,20,1m0-1A20,20,0,1,0,40,20,20,20,0,0,0,20,0Z" />
+    ),
+    background: <circle r={20} cx="20" cy="20" />,
     viewBox: viewBox40,
     size: 40,
   },

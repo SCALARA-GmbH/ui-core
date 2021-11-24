@@ -65,7 +65,7 @@ const PrimaryNavigationMobile: React.FunctionComponent<Props> = ({
                 )}
                 {child.props.image !== undefined && (
                   <Avatar
-                    registered
+                    active
                     image={child.props.image}
                     type={child.props.accountType}
                   />

@@ -16,10 +16,10 @@ export interface AvatarProps {
   className?: string;
   onClick?: () => void;
   testId?: string;
-  type?: 'company' | 'person';
+  type?: 'company' | 'person' | 'property-avatar';
   tooltip?: string;
   editable?: boolean;
-  registered?: boolean;
+  active?: boolean;
 }
 
 const Avatar: React.FunctionComponent<AvatarProps> = ({
@@ -32,7 +32,7 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
   type = 'person',
   editable,
   tooltip = '',
-  registered,
+  active,
 }) => {
   const classes = useStyles({ size, onClick });
   const theme = useTheme();
@@ -51,14 +51,15 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({
         >
           <Icon
             className={cx(classes.icon, {
-              [classes.registered]: registered,
-              [classes.unregistered]: !registered,
+              [classes.registered]: active,
+              [classes.unregistered]: !active,
             })}
-            outlineColor={theme.colors.neutral['5']}
+            color={
+              active ? theme.colors.primary.default : theme.colors.neutral['6']
+            }
+            outlineColor={theme.colors.border.main}
             backgroundColor={
-              registered
-                ? theme.colors.secondary['50']
-                : theme.colors.neutral['6']
+              active ? theme.colors.secondary['50'] : theme.colors.neutral['6']
             }
             size={size}
             name={type}

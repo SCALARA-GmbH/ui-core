@@ -118,7 +118,7 @@ const teamMembers: SelectOption[] = [
     title: 'Armin Jazi',
     subtitle: 'CTO',
     avatarProps: {
-      registered: true,
+      active: true,
       image:
         'https://media-exp1.licdn.com/dms/image/C4D03AQHOVO2QjkzNEA/profile-displayphoto-shrink_200_200/0/1581937441755?e=1612396800&v=beta&t=28v-zA2TLatECb9OnybCacuw1bSbz-6qqohADJ633Ns',
     },
@@ -127,7 +127,7 @@ const teamMembers: SelectOption[] = [
     value: '2',
     title: 'Sascha Becker',
     avatarProps: {
-      registered: true,
+      active: true,
       image:
         'https://media-exp1.licdn.com/dms/image/C4D03AQGrFXISv4g-gg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=r_qp5IeojHdjudhN0GtU3dW6kYX_uPcFdzghCCswFzc',
     },
@@ -137,7 +137,7 @@ const teamMembers: SelectOption[] = [
     value: '3',
     title: 'Elmar Hufenbach',
     avatarProps: {
-      registered: true,
+      active: true,
       image:
         'https://media-exp1.licdn.com/dms/image/C4D03AQE0WGsrMkyfKg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=eHT24e-nVE3LqC1OoRhhBx_G0qYIXAMWPggj2dAfcMY',
     },
@@ -147,7 +147,7 @@ const teamMembers: SelectOption[] = [
     value: '4',
     title: 'Lamina Amatyakul Vedder',
     avatarProps: {
-      registered: true,
+      active: true,
       image:
         'https://media-exp1.licdn.com/dms/image/C4D03AQGJV4a4kX-SxQ/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=ykwN2F1R7WPItq5EF_X7bnciU7jPmguVxULLiPp-q5E',
     },

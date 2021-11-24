@@ -110,7 +110,7 @@ export const SelectStorySBS = (): JSX.Element => {
             title: 'Armin Jazi',
             subtitle: 'CTO',
             avatarProps: {
-              registered: true,
+              active: true,
               image: 'armin.png',
             },
           },
@@ -118,7 +118,7 @@ export const SelectStorySBS = (): JSX.Element => {
             value: '3',
             title: 'Elmar Hufenbach',
             avatarProps: {
-              registered: true,
+              active: true,
               image: 'elmar.jpeg',
             },
             subtitle: 'CPO',
@@ -127,7 +127,7 @@ export const SelectStorySBS = (): JSX.Element => {
             value: '4',
             title: 'Lamina Amatyakul Vedder',
             avatarProps: {
-              registered: true,
+              active: true,
               image: 'lamina.jpeg',
             },
             subtitle: 'Devops Specialist',
@@ -155,7 +155,7 @@ export const SelectStorySBS = (): JSX.Element => {
             title: 'Armin Jazi',
             subtitle: 'CTO',
             avatarProps: {
-              registered: true,
+              active: true,
               image: 'armin.png',
             },
           },
@@ -176,7 +176,7 @@ export const SelectStorySBS = (): JSX.Element => {
             title: 'Shari Heep',
             subtitle: 'CEO',
             avatarProps: {
-              registered: true,
+              active: true,
               image: 'shari.png',
             },
           },

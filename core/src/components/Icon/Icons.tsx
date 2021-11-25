@@ -49,6 +49,7 @@ export type IconName =
   | 'select'
   | 'subMenu'
   | 'success'
+  | 'transactions'
   | 'upload'
   | 'unlock-accounts'
   | 'warning';
@@ -500,5 +501,16 @@ export const icons: Record<IconName, Svg> = {
     ),
     viewBox: viewBox40,
     size: 40,
+  },
+  transactions: {
+    children: (
+      <>
+        <polygon points="17.75 2.75 16.34 4.16 18.17 6 7 6 7 7.99 18.17 7.99 16.34 9.82 17.75 11.23 22 6.99 17.75 2.75" />
+        <polygon points="11.24 21.23 12.66 19.82 10.83 17.99 22 17.99 22 16 10.83 16 12.66 14.16 11.24 12.75 7 16.99 11.24 21.23" />
+        <rect x="2" y="3" width="2" height="18" />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24,
   },
 };

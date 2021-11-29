@@ -17,6 +17,7 @@ export interface Svg {
 }
 
 export type IconName =
+  | 'accounting-setup'
   | 'accounting-not-available'
   | 'add'
   | 'arrow-down'
@@ -55,6 +56,15 @@ export type IconName =
   | 'warning';
 
 export const icons: Record<IconName, Svg> = {
+  'accounting-setup': {
+    children: (
+      <>
+        <path d="M34,3H8.87A4.88,4.88,0,0,0,4,7.87V33a4,4,0,0,0,4,4H35V35H33V31h2V3ZM6,9V7.87A2.88,2.88,0,0,1,8.87,5H10V29H8a3.91,3.91,0,0,0-2,.56V9ZM31,35H8a2,2,0,0,1,0-4H31ZM12,29V5H33V29Z" />
+      </>
+    ),
+    viewBox: viewBox40,
+    size: 40,
+  },
   circle: {
     children: <circle cx="15" cy="15" r="15" />,
     viewBox: viewBox30,

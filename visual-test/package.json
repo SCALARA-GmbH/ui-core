@@ -10,6 +10,7 @@
     "test:components:interactions": "playwright test test/components/*.spec.ts --config=./test/components/playwright.config.ts",
     "test:elements:interactions": "playwright test test/elements/*.spec.ts --config=./test/elements/playwright.config.ts",
     "test:update:snapshots": "for TEST in basics assets \"components:interactions\" \"elements:interactions\"; do yarn test:${TEST} --update-snapshots; done",
+    "test:all": "for TEST in basics assets \"components:interactions\" \"elements:interactions\"; do yarn test:${TEST}; done",
     "test:generate": "playwright codegen http://localhost:6006",
     "lint": "eslint \"{test,utils}/**/*.ts\" --config .eslintrc.js",
     "lint:fix": "eslint \"{test,utils}/**/*.ts\" --quiet --fix --config .eslintrc.js",

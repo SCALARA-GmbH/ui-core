@@ -25,6 +25,7 @@ export interface DialogProps {
   onClose: () => void;
   open?: MuiDialogProps['open'];
   title: string;
+  subtitle?: string;
   titleIcon?: IconName;
   backLabel?: string;
 }
@@ -39,6 +40,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
   onClose,
   open = false,
   title,
+  subtitle,
   titleIcon,
   backLabel,
 }) => {
@@ -86,7 +88,13 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
       <DialogContent className={classes.content}>
         <Grid xs={12}>
           <GridItem className={gridItemStyles}>
-            <div className={classes.titleWrapper}>
+            <div
+              className={
+                subtitle
+                  ? classes.titleWithSubtitleWrapper
+                  : classes.titleWrapper
+              }
+            >
               {titleIcon && (
                 <div className={classes.titleIcon}>
                   <IconBubble name={titleIcon} size={'medium'} />
@@ -94,6 +102,11 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
               )}
               <Typography variant={'t1'}>{title}</Typography>
             </div>
+            {subtitle && (
+              <div className={classes.subtitleWrapper}>
+                {subtitle && <Typography variant={'c1'}>{subtitle}</Typography>}
+              </div>
+            )}
             {children}
           </GridItem>
         </Grid>

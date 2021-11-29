@@ -20,7 +20,17 @@ export const useStyles = makeStyles(({ colors, spacing, breakpoints }) =>
     titleWrapper: {
       display: 'flex',
       alignItems: 'center',
-      marginBottom: '83px',
+      marginBottom: spacing(8),
+    },
+    titleWithSubtitleWrapper: {
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: spacing(5),
+    },
+    subtitleWrapper: {
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: spacing(5),
     },
     titleIcon: {
       marginRight: '24px',

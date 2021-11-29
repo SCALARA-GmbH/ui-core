@@ -22,7 +22,7 @@ export const DialogStory = (): JSX.Element => {
         open={open}
         title={'Title'}
       >
-        <Typography>Hi I am content</Typography>
+        <Typography variant={'c3'}>Hi I am content</Typography>
         <DialogActions onSubmit={() => setOpen(false)} />
       </Dialog>
     </div>
@@ -44,9 +44,10 @@ export const IconBubbleDialogStory = (): JSX.Element => {
         onClose={() => setOpen(false)}
         open={open}
         title={'Title'}
+        subtitle={'La baguette'}
         titleIcon={'cashbox'}
       >
-        <Typography>Hi I am content</Typography>
+        <Typography variant={'c3'}>Hi I am content</Typography>
         <DialogActions onSubmit={() => setOpen(false)} />
       </Dialog>
     </div>

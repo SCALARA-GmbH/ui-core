@@ -52,7 +52,6 @@ export function getTag(variant: Variant): Tag {
     case 'c3':
     case 'c4':
     case 'c5':
-      return 'p';
     default:
       return 'p';
   }

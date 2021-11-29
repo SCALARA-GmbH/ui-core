@@ -46,7 +46,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
 }) => {
   const classes = useStyles();
   const gridItemStyles = useGridItemStyles({
-    xs: { start: '4', end: 'span 12' },
+    xs: { start: '4', end: 'span 6' },
   });
 
   return (

@@ -11,6 +11,7 @@ interface Props {
   content: string | number;
   contentVariant?: Variant;
   header?: boolean;
+  onClick?: () => void;
 }
 
 const useStyles = makeStyles(
@@ -31,6 +32,7 @@ const DataTableCell: React.FunctionComponent<Props> = ({
   align,
   header,
   contentVariant,
+  onClick,
 }) => {
   const classes = useStyles();
   return (
@@ -38,6 +40,7 @@ const DataTableCell: React.FunctionComponent<Props> = ({
       className={classes.root}
       component={header ? 'th' : 'td'}
       align={align}
+      onClick={onClick}
     >
       <Typography variant={contentVariant}>{content}</Typography>
     </TableCell>

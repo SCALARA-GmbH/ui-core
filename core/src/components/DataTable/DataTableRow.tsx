@@ -5,6 +5,7 @@ import { makeStyles } from '../ThemeProvider/styles';
 
 interface Props {
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const useStyles = makeStyles(
@@ -23,9 +24,16 @@ const useStyles = makeStyles(
   { name: 'SCA__DataTableRow' }
 );
 
-const DataTableRow: React.FunctionComponent<Props> = ({ children }) => {
+const DataTableRow: React.FunctionComponent<Props> = ({
+  children,
+  onClick,
+}) => {
   const classes = useStyles();
-  return <TableRow className={classes.root}>{children}</TableRow>;
+  return (
+    <TableRow className={classes.root} onClick={onClick}>
+      {children}
+    </TableRow>
+  );
 };
 
 export default DataTableRow;

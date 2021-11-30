@@ -22,8 +22,7 @@ interface Props {
   onClose?: () => void;
   role?: string;
   severity: 'success' | 'info' | 'warning' | 'error';
-  variant: 'filled' | 'outlined' | 'standard';
-  text: string;
+  variant?: 'filled' | 'outlined' | 'standard';
   title?: string;
 }
 

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 
 import { Icon } from '../Icon';
+import Typography from '../Typography';
 
 import { useStyles } from './styles';
 
@@ -61,7 +62,11 @@ const Alert: React.FunctionComponent<Props> = ({
       severity={severity}
       variant={variant}
     >
-      {title && <MuiAlertTitle>{title}</MuiAlertTitle>}
+      {title && (
+        <MuiAlertTitle>
+          <Typography variant={'t3'}>{title}</Typography>
+        </MuiAlertTitle>
+      )}
       {children}
     </MuiAlert>
   );

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { useTheme } from '../ThemeProvider/styles';
+import Typography from '../Typography';
 
 import Alert from './Alert';
 
@@ -19,10 +20,18 @@ export const AlertOverview = (): JSX.Element => {
     <div
       style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
     >
-      <Alert severity={'error'}>{loremIpsum}</Alert>
-      <Alert severity={'info'}>{loremIpsum}</Alert>
-      <Alert severity={'success'}>{loremIpsum}</Alert>
-      <Alert severity={'warning'}>{loremIpsum}</Alert>
+      <Alert severity={'error'}>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+      <Alert severity={'info'}>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+      <Alert severity={'success'}>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+      <Alert severity={'warning'}>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
     </div>
   );
 };
@@ -36,16 +45,16 @@ export const WithTitle = (): JSX.Element => {
       style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
     >
       <Alert severity={'error'} title={'Error'}>
-        {loremIpsum}
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'info'} title={'Info'}>
-        {loremIpsum}
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'success'} title={'Success'}>
-        {loremIpsum}
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'warning'} title={'Warning'}>
-        {loremIpsum}
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
     </div>
   );

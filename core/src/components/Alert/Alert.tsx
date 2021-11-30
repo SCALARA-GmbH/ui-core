@@ -4,15 +4,16 @@ import classNames from 'classnames';
 import React from 'react';
 
 import { Icon } from '../Icon';
+import Typography from '../Typography';
 
 import { useStyles } from './styles';
 
 interface Props {
-  action: React.ReactNode;
+  action?: React.ReactNode;
   children?: React.ReactNode;
-  className?: '';
-  closeText?: '';
-  icon?: React.ReactNode /* todo: here */;
+  className?: string;
+  closeText?: string;
+  icon?: React.ReactNode;
   iconMapping?: {
     error?: React.ReactNode;
     info?: React.ReactNode;
@@ -22,8 +23,7 @@ interface Props {
   onClose?: () => void;
   role?: string;
   severity: 'success' | 'info' | 'warning' | 'error';
-  variant: 'filled' | 'outlined' | 'standard';
-  text: string;
+  variant?: 'filled' | 'outlined' | 'standard';
   title?: string;
 }
 
@@ -45,7 +45,7 @@ const Alert: React.FunctionComponent<Props> = ({
   return (
     <MuiAlert
       action={action}
-      className={classNames(className, classes.root, {
+      className={classNames(className, {
         [classes.error]: severity === 'error',
         [classes.info]: severity === 'info',
         [classes.success]: severity === 'success',
@@ -53,13 +53,20 @@ const Alert: React.FunctionComponent<Props> = ({
       })}
       closeText={closeText}
       icon={icon}
-      iconMapping={{ warning: <Icon name={'attention'} />, ...iconMapping }}
+      iconMapping={{
+        warning: <Icon name={'attention'} className={classes.iconWarning} />,
+        ...iconMapping,
+      }}
       onClose={onClose}
       role={role}
       severity={severity}
       variant={variant}
     >
-      {title && <MuiAlertTitle>{title}</MuiAlertTitle>}
+      {title && (
+        <MuiAlertTitle>
+          <Typography variant={'t3'}>{title}</Typography>
+        </MuiAlertTitle>
+      )}
       {children}
     </MuiAlert>
   );

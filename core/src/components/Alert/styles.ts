@@ -1,37 +1,37 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
   error: {
-    borderLeft: `${theme.spacing(0.5)}px ${theme.colors.error.main} solid`,
+    boxShadow: `inset ${theme.spacing(0.5)}px 0 0 ${theme.colors.error.main}`,
     borderRadius: 0,
-    '&  *': {
-      color: theme.colors.secondary['50'],
-    },
+    color: theme.colors.secondary['50'],
   },
   info: {
-    borderLeft: `${theme.spacing(0.5)}px ${theme.colors.text.main} solid`,
+    boxShadow: `inset ${theme.spacing(0.5)}px 0 0 ${theme.colors.text.main}`,
     borderRadius: 0,
-    '&  *': {
-      color: theme.colors.secondary['50'],
-    },
+    color: theme.colors.secondary['50'],
   },
   success: {
-    color: theme.colors.secondary['50'],
-    borderLeft: `${theme.spacing(0.5)}px ${theme.colors.success.main} solid`,
+    boxShadow: `inset ${theme.spacing(0.5)}px 0 0 ${theme.colors.success.main}`,
     borderRadius: 0,
-    '&  *': {
-      color: theme.colors.secondary['50'],
-    },
+    color: theme.colors.secondary['50'],
   },
   warning: {
     backgroundColor: theme.colors.requiredInstruction['50'],
-    borderLeft: `${theme.spacing(0.5)}px ${theme.colors.warning.main} solid`,
+    boxShadow: `inset ${theme.spacing(0.5)}px 0 0 ${theme.colors.warning.main}`,
     borderRadius: 0,
-    '&  *': {
-      color: theme.colors.neutral['2'],
-    },
+    color: theme.colors.neutral['2'],
+  },
+  iconError: {
+    color: theme.colors.error.main,
+  },
+  iconInfo: {
+    color: theme.colors.text.main,
+  },
+  iconSuccess: {
+    color: theme.colors.success.main,
+  },
+  iconWarning: {
+    color: theme.colors.warning.main,
   },
 }));

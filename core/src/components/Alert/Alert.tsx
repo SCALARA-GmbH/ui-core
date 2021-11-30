@@ -8,11 +8,11 @@ import { Icon } from '../Icon';
 import { useStyles } from './styles';
 
 interface Props {
-  action: React.ReactNode;
+  action?: React.ReactNode;
   children?: React.ReactNode;
-  className?: '';
-  closeText?: '';
-  icon?: React.ReactNode /* todo: here */;
+  className?: string;
+  closeText?: string;
+  icon?: React.ReactNode;
   iconMapping?: {
     error?: React.ReactNode;
     info?: React.ReactNode;
@@ -44,7 +44,7 @@ const Alert: React.FunctionComponent<Props> = ({
   return (
     <MuiAlert
       action={action}
-      className={classNames(className, classes.root, {
+      className={classNames(className, {
         [classes.error]: severity === 'error',
         [classes.info]: severity === 'info',
         [classes.success]: severity === 'success',
@@ -52,7 +52,10 @@ const Alert: React.FunctionComponent<Props> = ({
       })}
       closeText={closeText}
       icon={icon}
-      iconMapping={{ warning: <Icon name={'attention'} />, ...iconMapping }}
+      iconMapping={{
+        warning: <Icon name={'attention'} className={classes.iconWarning} />,
+        ...iconMapping,
+      }}
       onClose={onClose}
       role={role}
       severity={severity}

@@ -11,7 +11,10 @@ export const useStyles = makeStyles(({ colors, spacing, breakpoints }) =>
       justifyContent: 'right',
       backgroundColor: colors.background.primary,
       display: 'flex',
-      padding: spacing(4, 4, 0, 4),
+      padding: spacing(3, 3, 0, 3),
+      [breakpoints.up('xl')]: {
+        padding: spacing(4, 4, 0, 4),
+      },
       minHeight: spacing(4),
     },
     multiStep: {

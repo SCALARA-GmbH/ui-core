@@ -8,5 +8,7 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-docs',
     'storybook-addon-grid/preset',
+    '@storybook/addon-measure',
+    '@storybook/addon-outline'
   ],
 };

@@ -22,7 +22,7 @@ interface Props {
   };
   onClose?: () => void;
   role?: string;
-  severity: 'success' | 'info' | 'warning' | 'error';
+  severity: 'info' | 'warning' | 'error';
   variant?: 'filled' | 'outlined' | 'standard';
   title?: string;
 }
@@ -45,15 +45,16 @@ const Alert: React.FunctionComponent<Props> = ({
   return (
     <MuiAlert
       action={action}
-      className={classNames(className, {
+      className={classNames(className, classes.root, {
         [classes.error]: severity === 'error',
         [classes.info]: severity === 'info',
-        [classes.success]: severity === 'success',
         [classes.warning]: severity === 'warning',
       })}
       closeText={closeText}
       icon={icon}
       iconMapping={{
+        info: <Icon name={'information'} className={classes.iconInfo} />,
+        error: <Icon name={'error24'} className={classes.iconError} />,
         warning: <Icon name={'attention'} className={classes.iconWarning} />,
         ...iconMapping,
       }}

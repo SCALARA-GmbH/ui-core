@@ -18,15 +18,19 @@ export const AlertOverview = (): JSX.Element => {
 
   return (
     <div
-      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 32,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        minHeight: '30vh',
+      }}
     >
       <Alert severity={'error'}>
         <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'info'}>
-        <Typography variant={'c3'}>{loremIpsum}</Typography>
-      </Alert>
-      <Alert severity={'success'}>
         <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'warning'}>
@@ -42,15 +46,19 @@ export const WithTitle = (): JSX.Element => {
 
   return (
     <div
-      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 16,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        minHeight: '30vh',
+      }}
     >
       <Alert severity={'error'} title={'Error'}>
         <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'info'} title={'Info'}>
-        <Typography variant={'c3'}>{loremIpsum}</Typography>
-      </Alert>
-      <Alert severity={'success'} title={'Success'}>
         <Typography variant={'c3'}>{loremIpsum}</Typography>
       </Alert>
       <Alert severity={'warning'} title={'Warning'}>

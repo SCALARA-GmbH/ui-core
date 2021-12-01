@@ -34,6 +34,7 @@ export type IconName =
   | 'delete40'
   | 'edit'
   | 'error'
+  | 'error24'
   | 'finance'
   | 'information'
   | 'information40'
@@ -268,6 +269,22 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40,
   },
+  error24: {
+    children: (
+      <>
+        <path
+          className="cls-1"
+          d="M12,3a9,9,0,1,0,9,9A9,9,0,0,0,12,3Zm0,16a7,7,0,1,1,7-7A7,7,0,0,1,12,19Z"
+        />
+        <polygon
+          className="cls-1"
+          points="15.56 9.93 14.17 8.49 12 10.61 9.83 8.49 8.44 9.93 10.57 12 8.44 14.07 9.83 15.51 12 13.4 14.17 15.51 15.56 14.07 13.43 12 15.56 9.93"
+        />
+      </>
+    ),
+    viewBox: viewBox24,
+    size: 24,
+  },
   finance: {
     children: (
       <>
@@ -278,7 +295,6 @@ export const icons: Record<IconName, Svg> = {
     viewBox: viewBox40,
     size: 40,
   },
-
   information: {
     children: (
       <>

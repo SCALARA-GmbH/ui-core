@@ -58,6 +58,7 @@ const useIconStyles = makeStyles(
       '&.Mui-disabled': {
         color: theme.colors.disabled,
       },
+      boxSizing: 'content-box',
     },
   }),
   { name: 'SCA__Select-Icon' }

@@ -1,7 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(({ spacing, colors }) => ({
-  root: { padding: spacing(1, 5, 1, 1.5) },
+  root: {
+    padding: spacing(1, 5, 1, 1.5),
+  },
+  disableElevation: {
+    boxShadow: 'none',
+  },
   error: {
     backgroundColor: colors.destructive['50'],
     color: colors.secondary['50'],

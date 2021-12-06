@@ -25,6 +25,7 @@ interface Props {
   severity: 'info' | 'warning' | 'error';
   variant?: 'filled' | 'outlined' | 'standard';
   title?: string;
+  disableElevation?: boolean;
 }
 
 const Alert: React.FunctionComponent<Props> = ({
@@ -39,6 +40,7 @@ const Alert: React.FunctionComponent<Props> = ({
   severity = 'error',
   variant = 'filled',
   title,
+  disableElevation,
 }) => {
   const classes = useStyles();
 
@@ -46,6 +48,7 @@ const Alert: React.FunctionComponent<Props> = ({
     <MuiAlert
       action={action}
       className={classNames(className, classes.root, {
+        [classes.disableElevation]: disableElevation,
         [classes.error]: severity === 'error',
         [classes.info]: severity === 'info',
         [classes.warning]: severity === 'warning',

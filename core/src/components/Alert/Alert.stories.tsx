@@ -41,6 +41,34 @@ export const AlertOverview = (): JSX.Element => {
 };
 AlertOverview.storyName = 'Overview';
 
+export const AlertDisabledElevation = (): JSX.Element => {
+  const theme = useTheme();
+
+  return (
+    <div
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        padding: 32,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        minHeight: '30vh',
+      }}
+    >
+      <Alert severity={'error'} disableElevation>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+      <Alert severity={'info'} disableElevation>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+      <Alert severity={'warning'} disableElevation>
+        <Typography variant={'c3'}>{loremIpsum}</Typography>
+      </Alert>
+    </div>
+  );
+};
+AlertDisabledElevation.storyName = 'Disabled elevation';
+
 export const WithTitle = (): JSX.Element => {
   const theme = useTheme();
 

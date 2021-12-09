@@ -16,27 +16,32 @@ export default {
   component: DataTable,
   decorators: [withKnobs, withActions],
 };
-function createData(
-  name: string,
-  description: string,
-  plan: number,
-  balance: number
-) {
-  return { name, description, plan, balance };
-}
 
 const rows = [
-  createData('Kostentragung', 'Zusatzbezeichnung', 15.33339, 65555.0),
-  createData(
-    'Durchlaufende Posten',
-    'Zusatzbezeichnung',
-    2.333137,
-    999999999.0
-  ),
-  createData('Wartung Feuerlöscher', 'Zusatzbezeichnung', 123.262, 12316.0),
-  createData('Straßenreinigung', 'Zusatzbezeichnung', 30.3335, 123.7),
-  createData('Außenanlagen 1', 'Zusatzbezeichnung', 35.31236, 16.0),
-  createData('Außenanlagen 2', 'Zusatzbezeichnung', 356, 165555.0),
+  {
+    name: 'Kostentragung',
+    description: 'Zusatzbezeichnung',
+    plan: 15.33339,
+    balance: 65555.0,
+  },
+  {
+    name: 'Kostentragung',
+    description: 'Zusatzbezeichnung',
+    plan: 15.33339,
+    balance: 65555.0,
+  },
+  {
+    name: 'Kostentragung',
+    description: 'Zusatzbezeichnung',
+    plan: 15.33339,
+    balance: 65555.0,
+  },
+  {
+    name: 'Kostentragung',
+    description: 'Zusatzbezeichnung',
+    plan: 15.33339,
+    balance: 65555.0,
+  },
 ];
 export const DataTableOverviewVS = (): JSX.Element => {
   return (

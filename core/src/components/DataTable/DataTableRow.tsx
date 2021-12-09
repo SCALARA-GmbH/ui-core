@@ -1,4 +1,5 @@
 import { TableRow } from '@material-ui/core';
+import classNames from 'classnames';
 import * as React from 'react';
 
 import { makeStyles } from '../ThemeProvider/styles';
@@ -6,6 +7,7 @@ import { makeStyles } from '../ThemeProvider/styles';
 interface Props {
   children?: React.ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
 const useStyles = makeStyles(
@@ -27,10 +29,11 @@ const useStyles = makeStyles(
 const DataTableRow: React.FunctionComponent<Props> = ({
   children,
   onClick,
+  className,
 }) => {
   const classes = useStyles();
   return (
-    <TableRow className={classes.root} onClick={onClick}>
+    <TableRow className={classNames(classes.root, className)} onClick={onClick}>
       {children}
     </TableRow>
   );

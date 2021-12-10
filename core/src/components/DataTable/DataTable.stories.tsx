@@ -33,25 +33,25 @@ const useStyles = makeStyles(
 const rows = [
   {
     name: 'Kostentragung',
-    description: 'Zusatzbezeichnung',
+    description: 'Zusatzbezeichnung1',
     plan: 15.33339,
     balance: 65555.0,
   },
   {
-    name: 'Kostentragung',
-    description: 'Zusatzbezeichnung',
+    name: 'Kostentragung1',
+    description: 'Zusatzbezeichnung1',
     plan: 15.33339,
     balance: 65555.0,
   },
   {
-    name: 'Kostentragung',
-    description: 'Zusatzbezeichnung',
+    name: 'Kostentragung2',
+    description: 'Zusatzbezeichnung2',
     plan: 15.33339,
     balance: 65555.0,
   },
   {
-    name: 'Kostentragung',
-    description: 'Zusatzbezeichnung',
+    name: 'Kostentragung3',
+    description: 'Zusatzbezeichnung3',
     plan: 15.33339,
     balance: 65555.0,
   },

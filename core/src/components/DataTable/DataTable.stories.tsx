@@ -61,7 +61,10 @@ export const DataTableOverviewVS = (): JSX.Element => {
   const theme = useTheme();
   return (
     <div
-      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+      style={{
+        backgroundColor: theme.colors.background.primary,
+        width: '100%',
+      }}
     >
       <DataTable ariaLabel={'account table'}>
         <DataTableHead>

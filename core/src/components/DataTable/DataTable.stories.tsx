@@ -33,7 +33,7 @@ const useStyles = makeStyles(
 const rows = [
   {
     name: 'Kostentragung',
-    description: 'Zusatzbezeichnung1',
+    description: 'Zusatzbezeichnung',
     plan: 15.33339,
     balance: 65555.0,
   },

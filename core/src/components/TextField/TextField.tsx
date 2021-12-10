@@ -113,7 +113,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             preserveHeight
             span
           >
-            {label}
+            {required ? `${label}*` : label}
           </Typography>
         </label>
         <InputBase

@@ -14,11 +14,19 @@ export default {
 export const DatePickerStorySBS = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.main, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <DatePicker
         onChange={(date) => alert(date)}
         label={'Date'}
         name={'date'}
+      />
+      <DatePicker
+        onChange={(date) => alert(date)}
+        label={'Date'}
+        name={'date'}
+        required
       />
     </div>
   );
@@ -28,7 +36,9 @@ DatePickerStorySBS.storyName = 'Overview';
 export const DatePickerStoryDisableDate = (): JSX.Element => {
   const theme = useTheme();
   return (
-    <div style={{ backgroundColor: theme.colors.background.main, padding: 16 }}>
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
       <DatePicker
         onChange={(date) => alert(date)}
         label={'Date'}
@@ -79,7 +89,7 @@ export const FormStorySBS = (): JSX.Element => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       style={{
-        backgroundColor: theme.colors.background.main,
+        backgroundColor: theme.colors.background.primary,
         padding: 16,
         maxWidth: 500,
       }}
@@ -101,7 +111,7 @@ export const FormStorySBS = (): JSX.Element => {
           value={watch('end')}
         />
       </Grid>
-      <Button variant={'filled'} type="submit" label="Submit" />
+      <Button variant={'contained'} type="submit" label="Submit" />
     </form>
   );
 };

@@ -2,7 +2,7 @@ import { withActions } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { makeStyles } from '../ThemeProvider/styles';
+import { makeStyles, useTheme } from '../ThemeProvider/styles';
 
 import {
   DataTable,
@@ -58,54 +58,59 @@ const rows = [
 ];
 export const DataTableOverviewVS = (): JSX.Element => {
   const classes = useStyles();
+  const theme = useTheme();
   return (
-    <DataTable ariaLabel={'account table'}>
-      <DataTableHead>
-        <DataTableRow className={classes.root}>
-          <DataTableHeadTextCell widthPercentage={33} text={'Konto'} />
-          <DataTableHeadTextCell
-            widthPercentage={33}
-            text={'Zusatzbezeichnung'}
-          />
-          <DataTableHeadTextCell
-            widthPercentage={17}
-            align={'right'}
-            text={'Planwert in €'}
-          />
-          <DataTableHeadTextCell
-            widthPercentage={17}
-            align={'right'}
-            text={'Kontostand in €'}
-          />
-        </DataTableRow>
-      </DataTableHead>
-      <DataTableBody>
-        {rows.map((row) => (
-          <DataTableRow key={row.name}>
-            <DataTableCell
-              contentVariant={'c2'}
-              content={row.name}
-              align="left"
+    <div
+      style={{ backgroundColor: theme.colors.background.primary, padding: 16 }}
+    >
+      <DataTable ariaLabel={'account table'}>
+        <DataTableHead>
+          <DataTableRow className={classes.root}>
+            <DataTableHeadTextCell widthPercentage={33} text={'Konto'} />
+            <DataTableHeadTextCell
+              widthPercentage={33}
+              text={'Zusatzbezeichnung'}
             />
-            <DataTableCell
-              contentVariant={'c3'}
-              content={row.description}
-              align="left"
+            <DataTableHeadTextCell
+              widthPercentage={17}
+              align={'right'}
+              text={'Planwert in €'}
             />
-            <DataTableCell
-              contentVariant={'c3'}
-              content={row.plan.toLocaleString('de')}
-              align="right"
-            />
-            <DataTableCell
-              contentVariant={'c1'}
-              content={row.balance.toLocaleString('de')}
-              align="right"
+            <DataTableHeadTextCell
+              widthPercentage={17}
+              align={'right'}
+              text={'Kontostand in €'}
             />
           </DataTableRow>
-        ))}
-      </DataTableBody>
-    </DataTable>
+        </DataTableHead>
+        <DataTableBody>
+          {rows.map((row) => (
+            <DataTableRow key={row.name}>
+              <DataTableCell
+                contentVariant={'c2'}
+                content={row.name}
+                align="left"
+              />
+              <DataTableCell
+                contentVariant={'c3'}
+                content={row.description}
+                align="left"
+              />
+              <DataTableCell
+                contentVariant={'c3'}
+                content={row.plan.toLocaleString('de')}
+                align="right"
+              />
+              <DataTableCell
+                contentVariant={'c1'}
+                content={row.balance.toLocaleString('de')}
+                align="right"
+              />
+            </DataTableRow>
+          ))}
+        </DataTableBody>
+      </DataTable>
+    </div>
   );
 };
 DataTableOverviewVS.storyName = 'Overview';

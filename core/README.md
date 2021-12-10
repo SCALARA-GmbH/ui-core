@@ -9,7 +9,6 @@ Startup storybook with `yarn storybook`
 Visit `http://localhost:6006/` for the interactive webview
 
 ## Publish
-
-to publish to npm registry, bump the package, make a pull request, merge to development branch and  
-make a new release from development branch with the tag `ui-core-release-<semantic-version>` and name the release exactly the same.
-the github workflow automatically builds and published the package to npm.
+1. bump the version in [package.json](package.json)
+2. create `releases/x.x.x` branch from `development`
+3. make release on github; tag: `x.x.x`; update changelog *(added, changed, fixed)*

@@ -18,6 +18,7 @@ export interface Svg {
 
 export type IconName =
   | 'accounting-not-available'
+  | 'accounting-open'
   | 'accounting-setup'
   | 'add'
   | 'arrow-down'
@@ -75,6 +76,18 @@ export const icons: Record<IconName, Svg> = {
 		54.9,17.5 	"
         />
       </g>
+    ),
+    viewBox: viewBox72,
+    size: 72,
+  },
+  'accounting-open': {
+    children: (
+      <>
+        <rect x="24" y="32" width="15" height="2" />
+        <rect x="24" y="38" width="12" height="2" />
+        <path d="M50,8A13,13,0,0,0,37.1,20H16.5A5.3,5.3,0,0,0,11,25V57a5.3,5.3,0,0,0,5.5,5H48V60H46V54h2V33.8l2,.2A13,13,0,0,0,50,8ZM16.5,22H19V52H16.5A6.1,6.1,0,0,0,13,53.1V25A3.3,3.3,0,0,1,16.5,22Zm0,38a3,3,0,1,1,0-6H44v6ZM46,52H21V22H37.1A13.1,13.1,0,0,0,46,33.4Zm4-20A11,11,0,1,1,61,21,11,11,0,0,1,50,32Z" />
+        <polygon points="56 20 51 20 51 15 49 15 49 20 44 20 44 22 49 22 49 27 51 27 51 22 56 22 56 20" />
+      </>
     ),
     viewBox: viewBox72,
     size: 72,

@@ -160,7 +160,7 @@ export const AccordionTableStory = (): JSX.Element => {
       >
         <DataTable ariaLabel={'account table'}>
           <DataTableHead>
-            <DataTableRow>
+            <DataTableRow disableHover>
               <DataTableHeadTextCell widthPercentage={33} text={'Konto'} />
               <DataTableHeadTextCell
                 widthPercentage={33}
@@ -209,7 +209,7 @@ export const AccordionTableStory = (): JSX.Element => {
       <Accordion header={<CustomHeader count={2} title={'Account Type'} />}>
         <DataTable ariaLabel={'2 account table'}>
           <DataTableHead>
-            <DataTableRow>
+            <DataTableRow disableHover>
               <DataTableHeadTextCell text={'Konto'} />
               <DataTableHeadTextCell text={'Zusatzbezeichnung'} />
               <DataTableHeadTextCell text={'Planwert in €'} />
@@ -262,7 +262,7 @@ export const AccordionTableVisualTestStory = (): JSX.Element => {
       <Accordion header={<CustomHeader count={1} title={'Account Type'} />}>
         <DataTable ariaLabel={'account table'}>
           <DataTableHead>
-            <DataTableRow>
+            <DataTableRow disableHover>
               <DataTableHeadTextCell widthPercentage={33} text={'Konto'} />
               <DataTableHeadTextCell
                 widthPercentage={33}

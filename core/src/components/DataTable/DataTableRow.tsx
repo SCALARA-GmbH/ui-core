@@ -8,18 +8,21 @@ interface Props {
   children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  disableHover?: boolean;
 }
 
 const useStyles = makeStyles(
   (theme) => ({
     root: {
-      '&:hover': {
-        backgroundColor: theme.colors.background.hover,
-      },
       '&:focus-visible': {
         outline: `2px solid ${theme.colors.secondary.default}`,
         outlineOffset: `1px`,
         boxShadow: theme.shadows[1],
+      },
+    },
+    hover: {
+      '&:hover': {
+        backgroundColor: theme.colors.background.hover,
       },
     },
   }),
@@ -30,10 +33,18 @@ const DataTableRow: React.FunctionComponent<Props> = ({
   children,
   onClick,
   className,
+  disableHover,
 }) => {
   const classes = useStyles();
   return (
-    <TableRow className={classNames(classes.root, className)} onClick={onClick}>
+    <TableRow
+      className={classNames(
+        classes.root,
+        { [classes.hover]: !disableHover },
+        className
+      )}
+      onClick={onClick}
+    >
       {children}
     </TableRow>
   );

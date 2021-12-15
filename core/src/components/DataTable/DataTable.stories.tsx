@@ -2,7 +2,7 @@ import { withActions } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { makeStyles, useTheme } from '../ThemeProvider/styles';
+import { useTheme } from '../ThemeProvider/styles';
 
 import {
   DataTable,
@@ -18,17 +18,6 @@ export default {
   component: DataTable,
   decorators: [withKnobs, withActions],
 };
-
-const useStyles = makeStyles(
-  () => ({
-    root: {
-      '&:hover': {
-        backgroundColor: 'unset',
-      },
-    },
-  }),
-  { name: 'SCA__DataTable' }
-);
 
 const rows = [
   {
@@ -57,7 +46,6 @@ const rows = [
   },
 ];
 export const DataTableOverviewVS = (): JSX.Element => {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <div
@@ -68,7 +56,7 @@ export const DataTableOverviewVS = (): JSX.Element => {
     >
       <DataTable ariaLabel={'account table'}>
         <DataTableHead>
-          <DataTableRow className={classes.root}>
+          <DataTableRow disableHover>
             <DataTableHeadTextCell widthPercentage={33} text={'Konto'} />
             <DataTableHeadTextCell
               widthPercentage={33}

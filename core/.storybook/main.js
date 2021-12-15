@@ -9,6 +9,6 @@ module.exports = {
     '@storybook/addon-docs',
     'storybook-addon-grid/preset',
     '@storybook/addon-measure',
-    '@storybook/addon-outline'
+    '@storybook/addon-outline',
   ],
 };
